@@ -1,4 +1,9454 @@
-parcelRequire=function(e,r,n,t){var i="function"==typeof parcelRequire&&parcelRequire,o="function"==typeof require&&require;function u(n,t){if(!r[n]){if(!e[n]){var f="function"==typeof parcelRequire&&parcelRequire;if(!t&&f)return f(n,!0);if(i)return i(n,!0);if(o&&"string"==typeof n)return o(n);var c=new Error("Cannot find module '"+n+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[n][1][r]||r};var l=r[n]=new u.Module(n);e[n][0].call(l.exports,p,l,l.exports,this)}return r[n].exports;function p(e){return u(p.resolve(e))}}u.isParcelRequire=!0,u.Module=function(e){this.id=e,this.bundle=u,this.exports={}},u.modules=e,u.cache=r,u.parent=i,u.register=function(r,n){e[r]=[function(e,r){r.exports=n},{}]};for(var f=0;f<n.length;f++)u(n[f]);if(n.length){var c=u(n[n.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=c:"function"==typeof define&&define.amd?define(function(){return c}):t&&(this[t]=c)}return u}({1:[function(require,module,exports) {
-var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n};!function(){return function n(e,t,r){function a(o,i){if(!t[o]){if(!e[o]){var l="function"==typeof require&&require;if(!i&&l)return l(o,!0);if(u)return u(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var c=t[o]={exports:{}};e[o][0].call(c.exports,function(n){return a(e[o][1][n]||n)},c,c.exports,n,e,t,r)}return t[o].exports}for(var u="function"==typeof require&&require,o=0;o<r.length;o++)a(r[o]);return a}}()({1:[function(e,t,r){var a={};!function(n){"use strict";(a["Data.Functor"]=a["Data.Functor"]||{}).arrayMap=function(n){return function(e){for(var t=e.length,r=new Array(t),a=0;a<t;a++)r[a]=n(e[a]);return r}}}(),function(n){"use strict";var e=function(n){this.compose=n},t=new e(function(n){return function(e){return function(t){return n(e(t))}}});n.compose=function(n){return n.compose},n.Semigroupoid=e,n.semigroupoidFn=t}(a["Control.Semigroupoid"]=a["Control.Semigroupoid"]||{}),function(n){"use strict";var e=a["Control.Semigroupoid"],t=function(n,e){this.Semigroupoid0=n,this.identity=e},r=new t(function(){return e.semigroupoidFn},function(n){return n});n.Category=t,n.identity=function(n){return n.identity},n.categoryFn=r}(a["Control.Category"]=a["Control.Category"]||{}),function(n){"use strict";(a["Data.Boolean"]=a["Data.Boolean"]||{}).otherwise=!0}(),function(n){"use strict";(a["Data.Eq"]=a["Data.Eq"]||{}).refEq=function(n){return function(e){return n===e}}}(),function(n){"use strict";n.boolConj=function(n){return function(e){return n&&e}},n.boolDisj=function(n){return function(e){return n||e}},n.boolNot=function(n){return!n}}(a["Data.HeytingAlgebra"]=a["Data.HeytingAlgebra"]||{}),function(n){"use strict";(a["Data.Unit"]=a["Data.Unit"]||{}).unit={}}(),function(n){"use strict";var e=a["Data.Unit"];a["Data.Show"];n.unit=e.unit}(a["Data.Unit"]=a["Data.Unit"]||{}),function(n){"use strict";var e=a["Data.HeytingAlgebra"],t=(a["Data.Symbol"],a["Data.Unit"],a["Record.Unsafe"],a["Type.Data.Row"],a["Type.Data.RowList"],function(n,e,t,r,a,u){this.conj=n,this.disj=e,this.ff=t,this.implies=r,this.not=a,this.tt=u}),r=function(n){return n.tt},u=function(n){return n.not},o=function(n){return n.implies},i=function(n){return n.ff},l=function(n){return n.disj},f=new t(e.boolConj,e.boolDisj,!1,function(n){return function(e){return l(f)(u(f)(n))(e)}},e.boolNot,!0),c=function(n){return n.conj};n.HeytingAlgebra=t,n.tt=r,n.ff=i,n.implies=o,n.conj=c,n.disj=l,n.not=u,n.heytingAlgebraBoolean=f,n.heytingAlgebraFunction=function(n){return new t(function(e){return function(t){return function(r){return c(n)(e(r))(t(r))}}},function(e){return function(t){return function(r){return l(n)(e(r))(t(r))}}},function(e){return i(n)},function(e){return function(t){return function(r){return o(n)(e(r))(t(r))}}},function(e){return function(t){return u(n)(e(t))}},function(e){return r(n)})}}(a["Data.HeytingAlgebra"]=a["Data.HeytingAlgebra"]||{}),function(n){"use strict";var e=a["Data.Eq"],t=(a["Data.HeytingAlgebra"],a["Data.Symbol"],a["Data.Unit"],a["Data.Void"],a["Record.Unsafe"],a["Type.Data.RowList"],function(n){this.eq=n}),r=new t(function(n){return function(n){return!0}}),u=new t(e.refEq),o=new t(e.refEq);n.Eq=t,n.eq=function(n){return n.eq},n.eqInt=o,n.eqString=u,n.eqVoid=r}(a["Data.Eq"]=a["Data.Eq"]||{}),function(n){"use strict";(a["Data.Ord.Unsafe"]=a["Data.Ord.Unsafe"]||{}).unsafeCompareImpl=function(n){return function(e){return function(t){return function(r){return function(a){return r<a?n:r===a?e:t}}}}}}(),function(n){"use strict";a["Data.Semigroup"],a["Data.Symbol"],a["Data.Unit"],a["Data.Void"],a["Record.Unsafe"],a["Type.Data.RowList"];n.Semigroup=function(n){this.append=n},n.append=function(n){return n.append}}(a["Data.Semigroup"]=a["Data.Semigroup"]||{}),function(n){"use strict";a["Data.Eq"],a["Data.Semigroup"],a["Data.Show"];var e=function(){function n(){}return n.value=new n,n}(),t=function(){function n(){}return n.value=new n,n}(),r=function(){function n(){}return n.value=new n,n}();n.LT=e,n.GT=t,n.EQ=r}(a["Data.Ordering"]=a["Data.Ordering"]||{}),function(n){"use strict";var e=a["Data.Ord.Unsafe"],t=a["Data.Ordering"],r=e.unsafeCompareImpl(t.LT.value)(t.EQ.value)(t.GT.value);n.unsafeCompare=r}(a["Data.Ord.Unsafe"]=a["Data.Ord.Unsafe"]||{}),function(n){"use strict";a["Data.Ord"];var e=a["Data.Eq"],t=a["Data.Ord.Unsafe"],r=a["Data.Ordering"],u=(a["Data.Ring"],a["Data.Semiring"],a["Data.Unit"],a["Data.Void"],function(n,e){this.Eq0=n,this.compare=e}),o=new u(function(){return e.eqVoid},function(n){return function(n){return r.EQ.value}}),i=new u(function(){return e.eqString},t.unsafeCompare),l=new u(function(){return e.eqInt},t.unsafeCompare);n.Ord=u,n.compare=function(n){return n.compare},n.ordInt=l,n.ordString=i,n.ordVoid=o}(a["Data.Ord"]=a["Data.Ord"]||{}),function(n){"use strict";a["Control.Category"],a["Data.Boolean"],a["Data.Ord"],a["Data.Ring"];n.flip=function(n){return function(e){return function(t){return n(t)(e)}}},n.const=function(n){return function(e){return n}}}(a["Data.Function"]=a["Data.Function"]||{}),function(n){"use strict";var e=a["Data.Functor"],t=a["Control.Semigroupoid"],r=a["Data.Function"],u=a["Data.Unit"],o=function(n){this.map=n},i=function(n){return n.map},l=new o(t.compose(t.semigroupoidFn)),f=new o(e.arrayMap);n.Functor=o,n.map=i,n.void=function(n){return i(n)(r.const(u.unit))},n.voidLeft=function(n){return function(e){return function(t){return i(n)(r.const(t))(e)}}},n.functorFn=l,n.functorArray=f}(a["Data.Functor"]=a["Data.Functor"]||{}),function(n){"use strict";a["Data.Functor"],a["Data.Semigroup"];n.Alt=function(n,e){this.Functor0=n,this.alt=e},n.alt=function(n){return n.alt}}(a["Control.Alt"]=a["Control.Alt"]||{}),function(n){"use strict";a["Control.Apply"];var e=a["Control.Category"],t=a["Data.Function"],r=a["Data.Functor"],u=function(n){return n.apply};n.Apply=function(n,e){this.Functor0=n,this.apply=e},n.apply=u,n.applySecond=function(n){return function(a){return function(o){return u(n)(r.map(n.Functor0())(t.const(e.identity(e.categoryFn)))(a))(o)}}},n.lift2=function(n){return function(e){return function(t){return function(a){return u(n)(r.map(n.Functor0())(e)(t))(a)}}}}}(a["Control.Apply"]=a["Control.Apply"]||{}),function(n){"use strict";var e=a["Control.Apply"],t=(a["Data.Functor"],a["Data.Unit"]),r=function(n){return n.pure};n.Applicative=function(n,e){this.Apply0=n,this.pure=e},n.pure=r,n.liftA1=function(n){return function(t){return function(a){return e.apply(n.Apply0())(r(n)(t))(a)}}},n.when=function(n){return function(e){return function(a){if(e)return a;if(!e)return r(n)(t.unit);throw new Error("Failed pattern match at Control.Applicative line 57, column 1 - line 57, column 63: "+[e.constructor.name,a.constructor.name])}}}}(a["Control.Applicative"]=a["Control.Applicative"]||{}),function(n){"use strict";a["Control.Bind"],a["Control.Applicative"],a["Control.Apply"],a["Control.Category"];var e=a["Data.Function"],t=(a["Data.Functor"],a["Data.Unit"],function(n){this.discard=n}),r=function(n){return n.bind},u=function(n){return e.flip(r(n))},o=new t(function(n){return r(n)});n.Bind=function(n,e){this.Apply0=n,this.bind=e},n.bind=r,n.bindFlipped=u,n.Discard=t,n.discard=function(n){return n.discard},n.composeKleisliFlipped=function(n){return function(e){return function(t){return function(r){return u(n)(e)(t(r))}}}},n.discardUnit=o}(a["Control.Bind"]=a["Control.Bind"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=(a["Control.Apply"],a["Control.Bind"]);a["Data.Functor"],a["Data.Unit"];n.Monad=function(n,e){this.Applicative0=n,this.Bind1=e},n.ap=function(n){return function(r){return function(a){return t.bind(n.Bind1())(r)(function(r){return t.bind(n.Bind1())(a)(function(t){return e.pure(n.Applicative0())(r(t))})})}}}}(a["Control.Monad"]=a["Control.Monad"]||{}),function(n){"use strict";var e=a["Control.Category"],t=function(n){return n.bimap};n.bimap=t,n.Bifunctor=function(n){this.bimap=n},n.rmap=function(n){return t(n)(e.identity(e.categoryFn))}}(a["Data.Bifunctor"]=a["Data.Bifunctor"]||{}),function(n){"use strict";a["Control.Alt"],a["Data.Functor"];n.Plus=function(n,e){this.Alt0=n,this.empty=e},n.empty=function(n){return n.empty}}(a["Control.Plus"]=a["Control.Plus"]||{}),function(n){"use strict";a["Data.Boolean"],a["Data.Eq"],a["Data.EuclideanRing"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Symbol"],a["Data.Unit"],a["Record.Unsafe"],a["Type.Data.RowList"];n.mempty=function(n){return n.mempty}}(a["Data.Monoid"]=a["Data.Monoid"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"];var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Bind"],u=a["Control.Category"],o=(a["Control.Extend"],a["Control.Monad"],a["Control.MonadZero"],a["Control.Plus"],a["Data.Bounded"],a["Data.Eq"],a["Data.Function"]),i=a["Data.Functor"],l=(a["Data.Functor.Invariant"],a["Data.Monoid"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Show"],a["Data.Unit"],a.Prelude,function(){function n(){}return n.value=new n,n}()),f=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),c=function(n){return function(e){return function(t){if(t instanceof l)return n;if(t instanceof f)return e(t.value0);throw new Error("Failed pattern match at Data.Maybe line 218, column 1 - line 218, column 51: "+[n.constructor.name,e.constructor.name,t.constructor.name])}}},s=c(!0)(o.const(!1)),v=c(!1)(o.const(!0)),d=new i.Functor(function(n){return function(e){return e instanceof f?new f(n(e.value0)):l.value}}),p=new t.Apply(function(){return d},function(n){return function(e){if(n instanceof f)return i.map(d)(n.value0)(e);if(n instanceof l)return l.value;throw new Error("Failed pattern match at Data.Maybe line 67, column 1 - line 67, column 35: "+[n.constructor.name,e.constructor.name])}}),m=new r.Bind(function(){return p},function(n){return function(e){if(n instanceof f)return e(n.value0);if(n instanceof l)return l.value;throw new Error("Failed pattern match at Data.Maybe line 126, column 1 - line 126, column 33: "+[n.constructor.name,e.constructor.name])}}),D=new e.Applicative(function(){return p},f.create);n.Nothing=l,n.Just=f,n.maybe=c,n.fromMaybe=function(n){return c(n)(u.identity(u.categoryFn))},n.isJust=v,n.isNothing=s,n.functorMaybe=d,n.applyMaybe=p,n.applicativeMaybe=D,n.bindMaybe=m}(a["Data.Maybe"]=a["Data.Maybe"]||{}),function(n){"use strict";a["Control.Semigroupoid"],a["Data.Function"],a["Data.Functor"],a["Data.Monoid.Additive"],a["Data.Monoid.Conj"],a["Data.Monoid.Disj"],a["Data.Monoid.Dual"],a["Data.Monoid.Endo"],a["Data.Monoid.Multiplicative"],a["Data.Semigroup.First"],a["Data.Semigroup.Last"],a.Prelude;n.unwrap=function(n){return n.unwrap},n.wrap=function(n){return n.wrap},n.Newtype=function(n,e){this.unwrap=n,this.wrap=e}}(a["Data.Newtype"]=a["Data.Newtype"]||{}),function(n){"use strict";a["Data.Foldable"],a["Control.Alt"];var e=a["Control.Applicative"],t=a["Control.Apply"],r=(a["Control.Bind"],a["Control.Category"]),u=(a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Function"]),o=(a["Data.Functor"],a["Data.HeytingAlgebra"],a["Data.Maybe"]),i=(a["Data.Maybe.First"],a["Data.Maybe.Last"],a["Data.Monoid"]),l=(a["Data.Monoid.Additive"],a["Data.Monoid.Conj"],a["Data.Monoid.Disj"],a["Data.Monoid.Dual"],a["Data.Monoid.Endo"],a["Data.Monoid.Multiplicative"],a["Data.Newtype"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Unit"]),f=(a.Prelude,function(n,e,t){this.foldMap=n,this.foldl=e,this.foldr=t}),c=function(n){return n.foldr},s=function(n){return function(r){return function(a){return c(r)(function(e){return t.applySecond(n.Apply0())(a(e))})(e.pure(n)(l.unit))}}},v=new f(function(n){return function(e){return function(t){if(t instanceof o.Nothing)return i.mempty(n);if(t instanceof o.Just)return e(t.value0);throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: "+[e.constructor.name,t.constructor.name])}}},function(n){return function(e){return function(t){if(t instanceof o.Nothing)return e;if(t instanceof o.Just)return n(e)(t.value0);throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: "+[n.constructor.name,e.constructor.name,t.constructor.name])}}},function(n){return function(e){return function(t){if(t instanceof o.Nothing)return e;if(t instanceof o.Just)return n(t.value0)(e);throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: "+[n.constructor.name,e.constructor.name,t.constructor.name])}}});n.Foldable=f,n.foldr=c,n.foldl=function(n){return n.foldl},n.foldMap=function(n){return n.foldMap},n.traverse_=s,n.for_=function(n){return function(e){return u.flip(s(n)(e))}},n.sequence_=function(n){return function(e){return s(n)(e)(r.identity(r.categoryFn))}},n.foldableMaybe=v}(a["Data.Foldable"]=a["Data.Foldable"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Applicative"];var e=a["Control.Apply"],t=(a["Control.Bind"],a["Control.Extend"],a["Control.Monad"],a["Control.Semigroupoid"],a["Data.Bifoldable"],a["Data.Bifunctor"]),r=(a["Data.Bitraversable"],a["Data.Bounded"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"],a["Data.Functor"]),u=(a["Data.Functor.Invariant"],a["Data.Maybe"],a["Data.Monoid"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Show"],a["Data.Traversable"],a.Prelude,function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}()),o=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),i=new r.Functor(function(n){return function(e){if(e instanceof u)return new u(e.value0);if(e instanceof o)return new o(n(e.value0));throw new Error("Failed pattern match at Data.Either line 35, column 8 - line 35, column 52: "+[e.constructor.name])}}),l=new t.Bifunctor(function(n){return function(e){return function(t){if(t instanceof u)return new u(n(t.value0));if(t instanceof o)return new o(e(t.value0));throw new Error("Failed pattern match at Data.Either line 40, column 1 - line 40, column 45: "+[n.constructor.name,e.constructor.name,t.constructor.name])}}}),f=new e.Apply(function(){return i},function(n){return function(e){if(n instanceof u)return new u(n.value0);if(n instanceof o)return r.map(i)(n.value0)(e);throw new Error("Failed pattern match at Data.Either line 76, column 1 - line 76, column 41: "+[n.constructor.name,e.constructor.name])}});n.Left=u,n.Right=o,n.either=function(n){return function(e){return function(t){if(t instanceof u)return n(t.value0);if(t instanceof o)return e(t.value0);throw new Error("Failed pattern match at Data.Either line 220, column 1 - line 220, column 64: "+[n.constructor.name,e.constructor.name,t.constructor.name])}}},n.functorEither=i,n.bifunctorEither=l,n.applyEither=f}(a["Data.Either"]=a["Data.Either"]||{}),function(n){"use strict";a["Control.Alt"];var e=a["Control.Applicative"],t=a["Control.Apply"],r=(a["Control.Bind"],a["Control.Comonad"],a["Control.Extend"],a["Control.Lazy"],a["Control.Monad"],a["Data.BooleanAlgebra"],a["Data.Bounded"],a["Data.CommutativeRing"],a["Data.Eq"],a["Data.EuclideanRing"],a["Data.Foldable"],a["Data.Functor"]),u=(a["Data.Functor.Invariant"],a["Data.HeytingAlgebra"],a["Data.Monoid"],a["Data.Newtype"]),o=(a["Data.Ord"],a["Data.Ring"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a.Prelude,function(n){return n}),i=new u.Newtype(function(n){return n},o),l=new r.Functor(function(n){return function(e){return n(e)}}),f=new t.Apply(function(){return l},function(n){return function(e){return n(e)}}),c=new e.Applicative(function(){return f},o);n.Identity=o,n.newtypeIdentity=i,n.functorIdentity=l,n.applyIdentity=f,n.applicativeIdentity=c}(a["Data.Identity"]=a["Data.Identity"]||{}),function(n){"use strict";n.pureE=function(n){return function(){return n}},n.bindE=function(n){return function(e){return function(){return e(n())()}}},n.foreachE=function(n){return function(e){return function(){for(var t=0,r=n.length;t<r;t++)e(n[t])()}}}}(a.Effect=a.Effect||{}),function(n){"use strict";var e=a.Effect,t=a["Control.Applicative"],r=a["Control.Apply"],u=a["Control.Bind"],o=a["Control.Monad"],i=a["Data.Functor"],l=(a["Data.Monoid"],a["Data.Semigroup"],a.Prelude,new o.Monad(function(){return s},function(){return f})),f=new u.Bind(function(){return c},e.bindE),c=new r.Apply(function(){return v},o.ap(l)),s=new t.Applicative(function(){return c},e.pureE),v=new i.Functor(t.liftA1(s));n.functorEffect=v,n.applyEffect=c,n.applicativeEffect=s,n.bindEffect=f,n.monadEffect=l,n.foreachE=e.foreachE}(a.Effect=a.Effect||{}),function(n){"use strict";n.new=function(n){return function(){return{value:n}}},n.read=function(n){return function(){return n.value}},n["modify'"]=function(n){return function(e){return function(){var t=n(e.value);return e.value=t.state,t.value}}},n.write=function(n){return function(e){return function(){return e.value=n,{}}}}}(a["Effect.Ref"]=a["Effect.Ref"]||{}),function(n){"use strict";var e=a["Effect.Ref"],t=(a["Data.Function"],a["Data.Functor"]),r=a.Effect,u=(a.Prelude,function(n){return e["modify'"](function(e){var t=n(e);return{state:t,value:t}})});n.modify=u,n.modify_=function(n){return function(e){return t.void(r.functorEffect)(u(n)(e))}},n.new=e.new,n.read=e.read,n["modify'"]=e["modify'"],n.write=e.write}(a["Effect.Ref"]=a["Effect.Ref"]||{}),function(n){"use strict";(a["Partial.Unsafe"]=a["Partial.Unsafe"]||{}).unsafePartial=function(n){return n()}}(),function(n){"use strict";(a["Partial"]=a["Partial"]||{}).crashWith=function(){return function(n){throw new Error(n)}}}(),function(n){"use strict";var e=a.Partial;n.crashWith=e.crashWith}(a.Partial=a.Partial||{}),function(n){"use strict";var e=a["Partial.Unsafe"],t=a.Partial;n.unsafeCrashWith=function(n){return e.unsafePartial(function(e){return t.crashWith(e)(n)})}}(a["Partial.Unsafe"]=a["Partial.Unsafe"]||{}),function(n){"use strict";a["Control.Applicative"];var e=a["Control.Bind"],t=(a["Control.Monad"],a["Control.Semigroupoid"],a["Data.Bifunctor"],a["Data.Either"],a["Data.Functor"]),r=(a["Data.Identity"],a["Data.Maybe"],a["Data.Unit"],a.Effect),u=a["Effect.Ref"],o=(a["Partial.Unsafe"],a.Prelude,function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}()),i=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),l=function(n,e){this.Monad0=n,this.tailRecM=e},f=new l(function(){return r.monadEffect},function(n){return function(a){var l=function(n){return function(){if(n instanceof i)return n.value0;throw new Error("Failed pattern match at Control.Monad.Rec.Class line 111, column 30 - line 111, column 44: "+[n.constructor.name])}()};return function(){var f=e.bindFlipped(r.bindEffect)(u.new)(n(a))();return function(){for(;!function(){var e=u.read(f)();if(e instanceof o){var t=n(e.value0)();u.write(t)(f)();return!1}if(e instanceof i)return!0;throw new Error("Failed pattern match at Control.Monad.Rec.Class line 102, column 22 - line 107, column 28: "+[e.constructor.name])}(););}(),t.map(r.functorEffect)(l)(u.read(f))()}}});n.Loop=o,n.Done=i,n.MonadRec=l,n.tailRecM=function(n){return n.tailRecM},n.monadRecEffect=f}(a["Control.Monad.Rec.Class"]=a["Control.Monad.Rec.Class"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Apply"],a["Control.Biapplicative"],a["Control.Biapply"],a["Control.Bind"],a["Control.Comonad"],a["Control.Extend"],a["Control.Lazy"],a["Control.Monad"],a["Control.Semigroupoid"],a["Data.Bifoldable"],a["Data.Bifunctor"],a["Data.Bitraversable"],a["Data.BooleanAlgebra"],a["Data.Bounded"],a["Data.CommutativeRing"],a["Data.Distributive"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"];var e=a["Data.Functor"],t=(a["Data.Functor.Invariant"],a["Data.HeytingAlgebra"],a["Data.Maybe"],a["Data.Maybe.First"],a["Data.Monoid"],a["Data.Newtype"],a["Data.Ord"],a["Data.Ordering"],a["Data.Ring"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.Unit"],a.Prelude,a["Type.Equality"],function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}()),r=new e.Functor(function(n){return function(e){return new t(e.value0,n(e.value1))}});n.Tuple=t,n.fst=function(n){return n.value0},n.snd=function(n){return n.value1},n.functorTuple=r}(a["Data.Tuple"]=a["Data.Tuple"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Category"];var e=a["Control.Plus"],t=(a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Foldable"],a["Data.FoldableWithIndex"],a["Data.Function"],a["Data.Functor"],a["Data.FunctorWithIndex"],a["Data.HeytingAlgebra"],a["Data.Maybe"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Semigroup.Foldable"],a["Data.Show"],a["Data.Traversable"],a["Data.TraversableWithIndex"],a["Data.Tuple"],a["Data.Unfoldable"],a["Data.Unfoldable1"],a.Prelude,function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}());n.NonEmpty=t,n.singleton=function(n){return function(r){return new t(r,e.empty(n))}}}(a["Data.NonEmpty"]=a["Data.NonEmpty"]||{}),function(n){"use strict";var e=a["Control.Alt"],t=(a["Control.Alternative"],a["Control.Applicative"]),r=a["Control.Apply"],u=(a["Control.Bind"],a["Control.Category"],a["Control.Comonad"],a["Control.Extend"],a["Control.Monad"],a["Control.MonadPlus"],a["Control.MonadZero"],a["Control.Plus"]),o=(a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Foldable"]),i=(a["Data.FoldableWithIndex"],a["Data.Function"]),l=a["Data.Functor"],f=(a["Data.FunctorWithIndex"],a["Data.HeytingAlgebra"],a["Data.Maybe"],a["Data.Monoid"]),c=(a["Data.Newtype"],a["Data.NonEmpty"],a["Data.Ord"],a["Data.Ordering"],a["Data.Ring"],a["Data.Semigroup"]),s=(a["Data.Semigroup.Foldable"],a["Data.Semigroup.Traversable"],a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.TraversableWithIndex"],a["Data.Tuple"],a["Data.Unfoldable"],a["Data.Unfoldable1"],a.Prelude,function(){function n(){}return n.value=new n,n}()),v=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),d=new o.Foldable(function(n){return function(e){return o.foldl(d)(function(t){return function(r){return c.append(n.Semigroup0())(t)(e(r))}})(f.mempty(n))}},function(n){return function(e){return function(t){var r,a=e,u=!1;function o(e,r){if(r instanceof s)return u=!0,e;if(r instanceof v)return a=n(e)(r.value0),void(t=r.value1);throw new Error("Failed pattern match at Data.List.Types line 81, column 12 - line 83, column 30: "+[r.constructor.name])}for(;!u;)r=o(a,t);return r}}},function(n){return function(e){var t=o.foldl(d)(i.flip(v.create))(s.value);return function(r){return o.foldl(d)(i.flip(n))(e)(t(r))}}}),p=new l.Functor(function(n){return o.foldr(d)(function(e){return function(t){return new v(n(e),t)}})(s.value)}),m=new c.Semigroup(function(n){return function(e){return o.foldr(d)(v.create)(e)(n)}}),D=new r.Apply(function(){return p},function(n){return function(e){if(n instanceof s)return s.value;if(n instanceof v)return c.append(m)(l.map(p)(n.value0)(e))(r.apply(D)(n.value1)(e));throw new Error("Failed pattern match at Data.List.Types line 127, column 1 - line 127, column 33: "+[n.constructor.name,e.constructor.name])}}),b=new t.Applicative(function(){return D},function(n){return new v(n,s.value)}),E=new e.Alt(function(){return p},c.append(m)),M=new u.Plus(function(){return E},s.value);n.Nil=s,n.Cons=v,n.NonEmptyList=function(n){return n},n.semigroupList=m,n.functorList=p,n.foldableList=d,n.applyList=D,n.applicativeList=b,n.altList=E,n.plusList=M}(a["Data.List.Types"]=a["Data.List.Types"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Category"],a["Control.Lazy"],a["Control.Monad.Rec.Class"],a["Control.Semigroupoid"],a["Data.Bifunctor"],a["Data.Boolean"],a["Data.Eq"];var e,t=a["Data.Foldable"],r=(a["Data.Function"],a["Data.Functor"],a["Data.FunctorWithIndex"],a["Data.HeytingAlgebra"],a["Data.List.Types"]),u=(a["Data.Maybe"],a["Data.Newtype"],a["Data.NonEmpty"],a["Data.Ord"],a["Data.Ordering"],a["Data.Ring"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.Tuple"],a["Data.Unfoldable"],a["Data.Unit"],a.Prelude,e=r.Nil.value,function(n){var t,a=e,u=!1;function o(e,t){if(t instanceof r.Nil)return u=!0,e;if(t instanceof r.Cons)return a=new r.Cons(t.value0,e),void(n=t.value1);throw new Error("Failed pattern match at Data.List line 368, column 3 - line 368, column 19: "+[e.constructor.name,t.constructor.name])}for(;!u;)t=o(a,n);return t});n.fromFoldable=function(n){return t.foldr(n)(r.Cons.create)(r.Nil.value)},n.null=function(n){return n instanceof r.Nil},n.reverse=u}(a["Data.List"]=a["Data.List"]||{}),function(n){"use strict";a["Control.Bind"],a["Control.Category"],a["Control.Semigroupoid"],a["Data.Boolean"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"],a["Data.Functor"],a["Data.List"];var e=a["Data.List.Types"],t=(a["Data.Maybe"],a["Data.NonEmpty"]);a["Data.Ord"],a["Data.Ring"],a["Data.Semigroup"],a["Data.Semigroup.Foldable"],a["Data.Semigroup.Traversable"],a["Data.Semiring"],a["Data.Traversable"],a["Data.Tuple"],a["Data.Unfoldable"],a["Partial.Unsafe"],a.Prelude;n.singleton=function(n){return e.NonEmptyList(t.singleton(e.plusList)(n))},n.cons=function(n){return function(r){return new t.NonEmpty(n,new e.Cons(r.value0,r.value1))}}}(a["Data.List.NonEmpty"]=a["Data.List.NonEmpty"]||{}),function(n){"use strict";(a["Unsafe.Coerce"]=a["Unsafe.Coerce"]||{}).unsafeCoerce=function(n){return n}}(),function(n){"use strict";var e=a["Unsafe.Coerce"];n.unsafeCoerce=e.unsafeCoerce}(a["Unsafe.Coerce"]=a["Unsafe.Coerce"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Category"],u=(a["Control.Semigroupoid"],a["Data.Const"],a["Data.Either"]),o=(a["Data.Eq"],a["Data.Function"],a["Data.Functor"]),i=(a["Data.List"],a["Data.List.NonEmpty"]),l=a["Data.List.Types"],f=(a["Data.Newtype"],a["Data.NonEmpty"]),c=(a["Data.Ring"],a["Data.Semiring"],a["Data.Tuple"]),s=(a.Prelude,a["Unsafe.Coerce"],function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}()),v=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),d=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),p=function(n){return function(e){return new d(n,e)}},m=v.create,D=function(n){return function(t){return function(r){return function(a){return function(u){return function(o){var f,p=n,m=t,D=r,b=a,E=u,M=!1;function w(n,t,r,a,u,f){if(u instanceof s)return M=!0,new c.Tuple(new l.Cons({func:e.pure(n)(u.value0),count:f},t),r);if(u instanceof v)return M=!0,new c.Tuple(new l.Cons({func:a(u.value0),count:f},t),r);if(u instanceof d)return p=n,m=t,D=i.cons(u.value1)(r),b=a,E=u.value0,void(o=f+1|0);throw new Error("Failed pattern match at Control.Applicative.Free line 102, column 41 - line 105, column 81: "+[u.constructor.name])}for(;!M;)f=w(p,m,D,b,E,o);return f}}}}}},b=function(n){return function(e){return function(r){return function(a){var o,i=n,s=e,v=r,d=!1;function p(n,e,r,o){if(e instanceof l.Nil)return d=!0,new u.Left(o);if(e instanceof l.Cons){var p=t.apply(n.Apply0())(e.value0.func)(o);if(1===e.value0.count)return e.value1 instanceof l.Nil?(d=!0,new u.Left(p)):(i=n,s=e.value1,v=r,void(a=p));if(r instanceof l.Nil)return d=!0,new u.Left(p);if(r instanceof l.Cons)return d=!0,u.Right.create(new c.Tuple(new l.Cons({func:p,count:e.value0.count-1|0},e.value1),new f.NonEmpty(r.value0,r.value1)));throw new Error("Failed pattern match at Control.Applicative.Free line 83, column 11 - line 88, column 50: "+[r.constructor.name])}throw new Error("Failed pattern match at Control.Applicative.Free line 72, column 3 - line 88, column 50: "+[e.constructor.name])}for(;!d;)o=p(i,s,v,a);return o}}}},E=new o.Functor(function(n){return function(e){return p(new s(n))(e)}}),M=function(n){return function(t){return function(r){return function(r){var a,o=!1;function i(a){if(a.value1.value0 instanceof s){if((i=b(n)(a.value0)(a.value1.value1)(e.pure(n)(a.value1.value0.value0)))instanceof u.Left)return o=!0,i.value0;if(i instanceof u.Right)return void(r=i.value0);throw new Error("Failed pattern match at Control.Applicative.Free line 54, column 17 - line 56, column 24: "+[i.constructor.name])}if(a.value1.value0 instanceof v){var i;if((i=b(n)(a.value0)(a.value1.value1)(t(a.value1.value0.value0)))instanceof u.Left)return o=!0,i.value0;if(i instanceof u.Right)return void(r=i.value0);throw new Error("Failed pattern match at Control.Applicative.Free line 57, column 17 - line 59, column 24: "+[i.constructor.name])}if(!(a.value1.value0 instanceof d))throw new Error("Failed pattern match at Control.Applicative.Free line 53, column 5 - line 64, column 1: "+[a.value1.value0.constructor.name]);var l=new f.NonEmpty(a.value1.value0.value1,a.value1.value1);r=D(n)(a.value0)(l)(t)(a.value1.value0.value0)(1)}for(;!o;)a=i(r);return a}(new c.Tuple(l.Nil.value,i.singleton(r)))}}},w=new t.Apply(function(){return E},function(n){return function(e){return p(n)(e)}}),C=new e.Applicative(function(){return w},s.create);n.liftFreeAp=m,n.retractFreeAp=function(n){return M(n)(r.identity(r.categoryFn))},n.foldFreeAp=M,n.hoistFreeAp=function(n){return M(C)(function(e){return m(n(e))})},n.functorFreeAp=E,n.applyFreeAp=w,n.applicativeFreeAp=C}(a["Control.Applicative.Free"]=a["Control.Applicative.Free"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=(a["Control.Bind"],a["Control.Semigroupoid"],a["Data.Either"]),r=(a["Data.Function"],a["Data.Functor"]),u=(a["Data.Maybe"],a["Data.Unit"],a.Prelude,function(n){return n.catchError});n.catchError=u,n.throwError=function(n){return n.throwError},n.MonadThrow=function(n,e){this.Monad0=n,this.throwError=e},n.MonadError=function(n,e){this.MonadThrow0=n,this.catchError=e},n.try=function(n){return function(a){return u(n)(r.map(n.MonadThrow0().Monad0().Bind1().Apply0().Functor0())(t.Right.create)(a))(function(r){return e.pure(n.MonadThrow0().Monad0().Applicative0())(t.Left.create(r))})}}}(a["Control.Monad.Error.Class"]=a["Control.Monad.Error.Class"]||{}),function(n){"use strict";var e=a["Data.Tuple"],t=a["Data.Unit"],r=(a.Prelude,function(n){return n.state});n.state=r,n.MonadState=function(n,e){this.Monad0=n,this.state=e},n.gets=function(n){return function(t){return r(n)(function(n){return new e.Tuple(t(n),n)})}},n.modify_=function(n){return function(a){return r(n)(function(n){return new e.Tuple(t.unit,a(n))})}}}(a["Control.Monad.State.Class"]=a["Control.Monad.State.Class"]||{}),function(n){"use strict";a.Prelude;n.lift=function(n){return n.lift},n.MonadTrans=function(n){this.lift=n}}(a["Control.Monad.Trans.Class"]=a["Control.Monad.Trans.Class"]||{}),function(n){"use strict";a["Control.Category"],a["Control.Monad"],a.Effect;n.liftEffect=function(n){return n.liftEffect},n.MonadEffect=function(n,e){this.Monad0=n,this.liftEffect=e}}(a["Effect.Class"]=a["Effect.Class"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"];var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Bind"],u=(a["Control.Category"],a["Control.Monad"]),o=(a["Control.Monad.Cont.Class"],a["Control.Monad.Error.Class"]),i=(a["Control.Monad.Reader.Class"],a["Control.Monad.Rec.Class"],a["Control.Monad.State.Class"],a["Control.Monad.Trans.Class"]),l=(a["Control.Monad.Writer.Class"],a["Control.MonadPlus"],a["Control.MonadZero"],a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Either"]),f=(a["Data.Function"],a["Data.Functor"]),c=(a["Data.Monoid"],a["Data.Newtype"],a["Data.Semigroup"],a["Data.Tuple"],a["Effect.Class"],a.Prelude,function(n){return n}),s=new i.MonadTrans(function(n){return function(t){return r.bind(n.Bind1())(t)(function(t){return e.pure(n.Applicative0())(new l.Right(t))})}}),v=function(n){return function(e){return n(e)}},d=function(n){return new f.Functor(function(e){return v(f.map(n)(f.map(l.functorEither)(e)))})},p=function(n){return new u.Monad(function(){return b(n)},function(){return m(n)})},m=function(n){return new r.Bind(function(){return D(n)},function(t){return function(a){return r.bind(n.Bind1())(t)(l.either(function(t){return e.pure(n.Applicative0())(l.Left.create(t))})(function(n){return a(n)}))}})},D=function(n){return new t.Apply(function(){return d(n.Bind1().Apply0().Functor0())},u.ap(p(n)))},b=function(n){return new e.Applicative(function(){return D(n)},function(t){return c(e.pure(n.Applicative0())(l.Right.create(t)))})};n.ExceptT=c,n.runExceptT=function(n){return n},n.mapExceptT=v,n.functorExceptT=d,n.applyExceptT=D,n.applicativeExceptT=b,n.bindExceptT=m,n.monadExceptT=p,n.monadTransExceptT=s,n.monadThrowExceptT=function(n){return new o.MonadThrow(function(){return p(n)},function(t){return c(e.pure(n.Applicative0())(l.Left.create(t)))})}}(a["Control.Monad.Except.Trans"]=a["Control.Monad.Except.Trans"]||{}),function(n){"use strict";var e=a["Unsafe.Coerce"],t=e.unsafeCoerce,r=e.unsafeCoerce;n.mkExists=r,n.runExists=t}(a["Data.Exists"]=a["Data.Exists"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Bind"],u=(a["Control.Category"],a["Control.Monad"]),o=(a["Control.Monad.Error.Class"],a["Control.Monad.Reader.Class"],a["Control.Monad.Rec.Class"]),i=(a["Control.Monad.State.Class"],a["Control.Monad.Trans.Class"]),l=(a["Control.Monad.Writer.Class"],a["Control.Semigroupoid"],a["Data.Bifunctor"]),f=a["Data.Either"],c=a["Data.Exists"],s=a["Data.Functor"],v=(a["Data.Monoid"],a["Data.Semigroup"],a["Data.Unit"]),d=(a["Effect.Class"],a.Prelude,function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}()),p=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),m=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),D=p.create,b=function(n){return function(e){return new m(c.mkExists(new d(n,e)))}},E=function n(e){return function(t){return new s.Functor(function(r){return function(a){if(a instanceof p)return new p(function(u){return s.map(t)(l.bimap(f.bifunctorEither)(r)(s.map(e)(s.map(n(e)(t))(r))))(a.value0(v.unit))});if(a instanceof m)return c.runExists(function(a){return b(a.value0)(function(u){return s.map(n(e)(t))(r)(a.value1(u))})})(a.value0);throw new Error("Failed pattern match at Control.Monad.Free.Trans line 57, column 1 - line 57, column 71: "+[r.constructor.name,a.constructor.name])}})}},M=function(n){return function(e){return new u.Monad(function(){return h(n)(e)},function(){return w(n)(e)})}},w=function(n){return function(e){return new r.Bind(function(){return C(n)(e)},function(n){return function(e){return n instanceof m?c.runExists(function(n){return b(n.value0)(function(t){return b(function(e){return n.value1(t)})(e)})})(n.value0):b(function(e){return n})(e)}})}},C=function(n){return function(e){return new t.Apply(function(){return E(n)(e.Bind1().Apply0().Functor0())},u.ap(M(n)(e)))}},h=function(n){return function(t){return new e.Applicative(function(){return C(n)(t)},function(n){return new p(function(r){return e.pure(t.Applicative0())(new f.Left(n))})})}},g=function(n){return function(t){return o.tailRecM(t)(function(a){if(a instanceof p)return s.map(t.Monad0().Bind1().Apply0().Functor0())(o.Done.create)(a.value0(v.unit));if(a instanceof m)return c.runExists(function(a){var u=a.value0(v.unit);if(u instanceof p)return r.bind(t.Monad0().Bind1())(u.value0(v.unit))(function(u){if(u instanceof f.Left)return e.pure(t.Monad0().Applicative0())(new o.Loop(a.value1(u.value0)));if(u instanceof f.Right)return e.pure(t.Monad0().Applicative0())(new o.Done(new f.Right(s.map(n)(function(e){return r.bind(w(n)(t.Monad0()))(e)(a.value1)})(u.value0))));throw new Error("Failed pattern match at Control.Monad.Free.Trans line 52, column 20 - line 54, column 67: "+[u.constructor.name])});if(u instanceof m)return c.runExists(function(u){return e.pure(t.Monad0().Applicative0())(new o.Loop(r.bind(w(n)(t.Monad0()))(u.value0(v.unit))(function(e){return r.bind(w(n)(t.Monad0()))(u.value1(e))(a.value1)})))})(u.value0);throw new Error("Failed pattern match at Control.Monad.Free.Trans line 50, column 5 - line 55, column 98: "+[u.constructor.name])})(a.value0);throw new Error("Failed pattern match at Control.Monad.Free.Trans line 47, column 3 - line 47, column 75: "+[a.constructor.name])})}};n.freeT=D,n.liftFreeT=function(n){return function(t){return function(r){return new p(function(a){return e.pure(t.Applicative0())(new f.Right(s.map(n)(e.pure(h(n)(t)))(r)))})}}},n.resume=g,n.runFreeT=function(n){return function(t){return function(a){return o.tailRecM(t)(r.composeKleisliFlipped(t.Monad0().Bind1())(function(n){if(n instanceof f.Left)return e.pure(t.Monad0().Applicative0())(new o.Done(n.value0));if(n instanceof f.Right)return s.map(t.Monad0().Bind1().Apply0().Functor0())(o.Loop.create)(a(n.value0));throw new Error("Failed pattern match at Control.Monad.Free.Trans line 126, column 3 - line 126, column 63: "+[n.constructor.name])})(g(n)(t)))}}},n.functorFreeT=E,n.applyFreeT=C,n.applicativeFreeT=h,n.bindFreeT=w,n.monadFreeT=M,n.monadTransFreeT=function(n){return new i.MonadTrans(function(n){return function(e){return new p(function(t){return s.map(n.Bind1().Apply0().Functor0())(f.Left.create)(e)})}})},n.monadRecFreeT=function(n){return function(t){return new o.MonadRec(function(){return M(n)(t)},function(a){return function u(i){return r.bind(w(n)(t))(a(i))(function(r){if(r instanceof o.Loop)return u(r.value0);if(r instanceof o.Done)return e.pure(h(n)(t))(r.value0);throw new Error("Failed pattern match at Control.Monad.Free.Trans line 80, column 15 - line 82, column 25: "+[r.constructor.name])})}})}}}(a["Control.Monad.Free.Trans"]=a["Control.Monad.Free.Trans"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Monad.Cont.Trans"],a["Control.Monad.Except.Trans"],a["Control.Monad.Maybe.Trans"],a["Control.Monad.Reader.Trans"],a["Control.Monad.Writer.Trans"],a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Either"],a["Data.Function"],a["Data.Functor"],a["Data.Functor.Compose"],a["Data.Maybe"],a["Data.Newtype"],a["Data.Unit"],a["Effect.Class"],a["Effect.Ref"],a.Prelude;n.parallel=function(n){return n.parallel},n.sequential=function(n){return n.sequential},n.Parallel=function(n,e,t,r){this.Applicative1=n,this.Monad0=e,this.parallel=t,this.sequential=r}}(a["Control.Parallel.Class"]=a["Control.Parallel.Class"]||{}),function(n){"use strict";a["Control.Alternative"],a["Control.Apply"];var e=a["Control.Category"],t=a["Control.Parallel.Class"],r=(a["Control.Semigroupoid"],a["Data.Foldable"]),u=(a["Data.Traversable"],a.Prelude,function(n){return function(e){return function(a){return function(u){return t.sequential(n)(r.traverse_(n.Applicative1())(e)(function(e){return t.parallel(n)(a(e))})(u))}}}});n.parTraverse_=u,n.parSequence_=function(n){return function(t){return u(n)(t)(e.identity(e.categoryFn))}}}(a["Control.Parallel"]=a["Control.Parallel"]||{}),function(n){"use strict";var e=a["Control.Category"],t=(a["Control.Semigroupoid"],a["Data.Newtype"],a.Prelude,function(n){this.dimap=n}),r=new t(function(n){return function(e){return function(t){return function(r){return e(t(n(r)))}}}}),u=function(n){return n.dimap};n.dimap=u,n.Profunctor=t,n.rmap=function(n){return function(t){return u(n)(e.identity(e.categoryFn))(t)}},n.profunctorFn=r}(a["Data.Profunctor"]=a["Data.Profunctor"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Bind"],u=a["Control.Category"],o=(a["Control.Monad.Except"],a["Control.Monad.Except.Trans"]),i=a["Control.Monad.Free.Trans"],l=a["Control.Monad.Rec.Class"],f=a["Control.Monad.Trans.Class"],c=(a["Control.Parallel"],a["Control.Parallel.Class"]),s=(a["Control.Semigroupoid"],a["Data.Bifunctor"]),v=a["Data.Either"],d=(a["Data.Function"],a["Data.Functor"]),p=a["Data.Identity"],m=a["Data.Maybe"],D=a["Data.Newtype"],b=a["Data.Profunctor"],E=a["Data.Tuple"],M=a["Data.Unit"],w=(a.Prelude,function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}()),C=new b.Profunctor(function(n){return function(e){return function(t){return b.dimap(b.profunctorFn)(n)(e)(t)}}}),h=function(n){return function(e){return function(t){return l.tailRecM(i.monadRecFreeT(n)(e))(function(r){return d.map(i.functorFreeT(n)(e.Bind1().Apply0().Functor0()))(m.maybe(new l.Loop(M.unit))(l.Done.create))(t)})(M.unit)}}},g=function(n){return function(t){return function(a){return function(u){return function(l){return function(f){return function(c){return i.freeT(function(s){return function f(c){return o.runExceptT(r.bind(o.bindExceptT(u.Monad0()))(o.ExceptT(i.resume(n)(u)(c.value0)))(function(n){return r.bind(o.bindExceptT(u.Monad0()))(o.ExceptT(i.resume(t)(u)(c.value1)))(function(t){return e.pure(o.applicativeExceptT(u.Monad0()))(d.map(a)(function(n){return i.freeT(function(e){return f(n)})})(l(E.Tuple.create)(n)(t)))})}))}(new E.Tuple(f,c))})}}}}}}},y=function(n){return function(a){return function(u){return function(o){return function(l){return function(f){return function(s){return function(p){return i.freeT(function(m){return function s(p){return r.bind(o.Monad0().Bind1())(c.sequential(l)(t.apply(l.Applicative1().Apply0())(d.map(l.Applicative1().Apply0().Functor0())(t.lift2(v.applyEither)(f(E.Tuple.create)))(c.parallel(l)(i.resume(n)(o)(p.value0))))(c.parallel(l)(i.resume(a)(o)(p.value1)))))(function(n){if(n instanceof v.Left)return e.pure(o.Monad0().Applicative0())(new v.Left(n.value0));if(n instanceof v.Right)return e.pure(o.Monad0().Applicative0())(new v.Right(d.map(u)(function(n){return i.freeT(function(e){return s(n)})})(n.value0)));throw new Error("Failed pattern match at Control.Coroutine line 79, column 5 - line 81, column 63: "+[n.constructor.name])})}(new E.Tuple(s,p))})}}}}}}}},T=new d.Functor(b.rmap(C)),F=new s.Bifunctor(function(n){return function(e){return function(t){return new w(n(t.value0),e(t.value1))}}}),A=new d.Functor(s.rmap(F)),H=function(n){return function(e){return i.liftFreeT(A)(n)(new w(e,M.unit))}};n.loop=h,n.runProcess=function(n){return i.runFreeT(p.functorIdentity)(n)(function(t){return e.pure(n.Monad0().Applicative0())(D.unwrap(p.newtypeIdentity)(t))})},n.fuseWith=y,n.fuseWithL=g,n.Emit=w,n.emit=H,n.producer=function(n){return function(t){return h(A)(n)(r.bind(i.bindFreeT(A)(n))(f.lift(i.monadTransFreeT(A))(n)(t))(function(t){if(t instanceof v.Left)return d.voidLeft(i.functorFreeT(A)(n.Bind1().Apply0().Functor0()))(H(n)(t.value0))(m.Nothing.value);if(t instanceof v.Right)return e.pure(i.applicativeFreeT(A)(n))(new m.Just(t.value0));throw new Error("Failed pattern match at Control.Coroutine line 125, column 3 - line 127, column 29: "+[t.constructor.name])}))}},n.await=function(n){return i.liftFreeT(T)(n)(u.identity(u.categoryFn))},n.connect=function(n){return function(e){return y(A)(T)(p.functorIdentity)(n)(e)(function(n){return function(e){return function(t){return n(e.value1)(t(e.value0))}}})}},n.pullFrom=function(n){return g(T)(A)(p.functorIdentity)(n)(function(n){return function(t){return function(r){return e.pure(p.applicativeIdentity)(n(t(r.value0))(r.value1))}}})},n.bifunctorEmit=F,n.functorEmit=A,n.profunctorAwait=C,n.functorAwait=T}(a["Control.Coroutine"]=a["Control.Coroutine"]||{}),function(n){"use strict";var e=function(){var n={},e="Pure",t="Throw",r="Catch",a="Sync",u="Async",o="Bind",i="Bracket",l="Fork",f="Sequential",c="Map",s="Apply",v="Alt",d="Cons",p="Resume",m="Release",D="Finalizer",b="Finalized",E="Forked";function M(n,e,t,r){this.tag=n,this._1=e,this._2=t,this._3=r}function w(n){var e=function(e,t,r){return new M(n,e,t,r)};return e.tag=n,e}function C(n){return new M(e,void 0)}function h(n){try{n()}catch(n){setTimeout(function(){throw n},0)}}function g(n,e,t){try{return e(t())}catch(e){return n(e)}}function y(n,e,t){try{return e(t)()}catch(e){return t(n(e))(),C}}var T=function(){var n=1024,e=0,t=0,r=new Array(n),a=!1;function u(){var u;for(a=!0;0!==e;)e--,u=r[t],r[t]=void 0,t=(t+1)%n,u();a=!1}return{isDraining:function(){return a},enqueue:function(o){var i;e===n&&(i=a,u(),a=i),r[(t+e)%n]=o,e++,a||u()}}}();var F=0,A=1,H=2,L=3,S=4,W=5,O=6;function I(n,c,s){var v=0,E=F,w=s,C=null,P=null,N=null,U=null,_=null,R=0,k=0,B=null,q=!0;function V(s){for(var k,Q,j;;)switch(k=null,Q=null,j=null,null,E){case H:E=A,w=N(w),null===U?N=null:(N=U._1,U=U._2);break;case L:n.isLeft(w)?(E=W,C=w,w=null):null===N?E=W:(E=H,w=n.fromRight(w));break;case A:switch(w.tag){case o:N&&(U=new M(d,N,U)),N=w._2,E=A,w=w._1;break;case e:null===N?(E=W,w=n.right(w._1)):(E=H,w=w._1);break;case a:E=L,w=g(n.left,n.right,w._1);break;case u:return E=S,void(w=y(n.left,w._1,function(n){return function(){v===s&&(v++,T.enqueue(function(){E=L,w=n,V(v)}))}}));case t:E=W,C=n.left(w._1),w=null;break;case r:_=new M(d,w,null===N?_:new M(d,new M(p,N,U),_,P),P),N=null,U=null,E=A,w=w._1;break;case i:R++,_=new M(d,w,null===N?_:new M(d,new M(p,N,U),_,P),P),N=null,U=null,E=A,w=w._1;break;case l:E=L,k=I(n,c,w._2),c&&c.register(k),w._1&&k.run(),w=n.right(k);break;case f:E=A,w=x(n,c,w._1)}break;case W:if(N=null,U=null,null===_)E=O,w=P||C||w;else switch(k=_._3,j=_._1,_=_._2,j.tag){case r:P&&P!==k?E=W:C&&(E=A,w=j._2(n.fromLeft(C)),C=null);break;case p:P&&P!==k||C?E=W:(N=j._1,U=j._2,E=H,w=n.fromRight(w));break;case i:R--,null===C&&(Q=n.fromRight(w),_=new M(d,new M(m,j._2,Q),_,k),(P===k||R>0)&&(E=A,w=j._3(Q)));break;case m:R++,_=new M(d,new M(b,w),_,P),E=A,w=P&&P!==k?j._1.killed(n.fromLeft(P))(j._2):C?j._1.failed(n.fromLeft(C))(j._2):j._1.completed(n.fromRight(w))(j._2);break;case D:R++,_=new M(d,new M(b,w),_,P),E=A,w=j._1;break;case b:R--,E=W,w=j._1}break;case O:for(var J in B)B.hasOwnProperty(J)&&(q=q&&B[J].rethrow,h(B[J].handler(w)));return B=null,void(P&&C?setTimeout(function(){throw n.fromLeft(C)},0):n.isLeft(w)&&q&&setTimeout(function(){if(q)throw n.fromLeft(w)},0));case F:E=A;break;case S:return}}function Q(n){return function(){if(E===O)return q=q&&n.rethrow,n.handler(w)(),function(){};var e=k++;return(B=B||{})[e]=n,function(){null!==B&&delete B[e]}}}return{kill:function(e,t){return function(){if(E===O)return t(n.right(void 0))(),function(){};var r=Q({rethrow:!1,handler:function(){return t(n.right(void 0))}})();switch(E){case F:P=n.left(e),E=O,w=P,V(v);break;case S:null===P&&(P=n.left(e)),0===R&&(E===S&&(_=new M(d,new M(D,w(e)),_,P)),E=W,w=null,C=null,V(++v));break;default:null===P&&(P=n.left(e)),0===R&&(E=W,w=null,C=null)}return r}},join:function(n){return function(){var e=Q({rethrow:!1,handler:n})();return E===F&&V(v),e}},onComplete:Q,isSuspended:function(){return E===F},run:function(){E===F&&(T.isDraining()?V(v):T.enqueue(function(){V(v)}))}}}function P(e,t,r,a){var o=0,i={},l=0,f={},p=new Error("[ParAff] Early exit"),m=null,D=n;function b(t,r,a){var u,o,l=r,f=null,p=null,m=0,D={};n:for(;;)switch(u=null,l.tag){case E:if(l._3===n&&(u=i[l._1],D[m++]=u.kill(t,function(n){return function(){0===--m&&a(n)()}})),null===f)break n;l=f._2,null===p?f=null:(f=p._1,p=p._2);break;case c:l=l._2;break;case s:case v:f&&(p=new M(d,f,p)),f=l,l=l._1}if(0===m)a(e.right(void 0))();else for(o=0,u=m;o<u;o++)D[o]=D[o]();return D}function w(t){return function(r){return function(){delete i[t._1],t._3=r,function t(r,u,o){var i,d,D,E,M,w;for(e.isLeft(r)?(i=r,d=null):(d=r,i=null);;){if(D=null,E=null,M=null,w=null,null!==m)return;if(null===u)return void a(i||d)();if(u._3!==n)return;switch(u.tag){case c:null===i?(u._3=e.right(u._1(e.fromRight(d))),d=u._3):u._3=i;break;case s:if(D=u._1._3,E=u._2._3,i){if(u._3=i,M=!0,w=l++,f[w]=b(p,i===D?u._2:u._1,function(){return function(){delete f[w],M?M=!1:null===o?t(d,null,null):t(d,o._1,o._2)}}),M)return void(M=!1)}else{if(D===n||E===n)return;d=e.right(e.fromRight(D)(e.fromRight(E))),u._3=d}break;case v:if(D=u._1._3,E=u._2._3,D===n&&e.isLeft(E)||E===n&&e.isLeft(D))return;if(D!==n&&e.isLeft(D)&&E!==n&&e.isLeft(E))i=d===D?E:D,d=null,u._3=i;else if(u._3=d,M=!0,w=l++,f[w]=b(p,d===D?u._2:u._1,function(){return function(){delete f[w],M?M=!1:null===o?t(d,null,null):t(d,o._1,o._2)}}),M)return void(M=!1)}null===o?u=null:(u=o._1,o=o._2)}}(r,t._2._1,t._2._2)}}}return function(){var a,u,l=A,f=r,p=null,m=null;n:for(;;)switch(a=null,u=null,l){case A:switch(f.tag){case c:p&&(m=new M(d,p,m)),p=new M(c,f._1,n,n),f=f._2;break;case s:p&&(m=new M(d,p,m)),p=new M(s,n,f._2,n),f=f._1;break;case v:p&&(m=new M(d,p,m)),p=new M(v,n,f._2,n),f=f._1;break;default:u=o++,l=W,a=f,f=new M(E,u,new M(d,p,m),n),(a=I(e,t,a)).onComplete({rethrow:!1,handler:w(f)})(),i[u]=a,t&&t.register(a)}break;case W:if(null===p)break n;p._1===n?(p._1=f,l=A,f=p._2,p._2=n):(p._2=f,f=p,null===m?p=null:(p=m._1,m=m._2))}for(D=f,u=0;u<o;u++)i[u].run()}(),function(n){return new M(u,function(t){return function(){return function(n,t){var r;for(var a in m=e.left(n),f)if(f.hasOwnProperty(a))for(a in r=f[a])r.hasOwnProperty(a)&&r[a]();f=null;var o=b(n,D,t);return function(n){return new M(u,function(n){return function(){for(var n in o)o.hasOwnProperty(n)&&o[n]();return C}})}}(n,t)}})}}function x(n,e,t){return new M(u,function(r){return function(){return P(n,e,t,r)}})}return M.EMPTY=n,M.Pure=w(e),M.Throw=w(t),M.Catch=w(r),M.Sync=w(a),M.Async=w(u),M.Bind=w(o),M.Bracket=w(i),M.Fork=w(l),M.Seq=w(f),M.ParMap=w(c),M.ParApply=w(s),M.ParAlt=w(v),M.Fiber=I,M.Supervisor=function(n){var e={},t=0,r=0;return{register:function(n){var a=t++;n.onComplete({rethrow:!0,handler:function(n){return function(){r--,delete e[a]}}}),e[a]=n,r++},isEmpty:function(){return 0===r},killAll:function(u,o){return function(){var i=0,l={};function f(t){l[t]=e[t].kill(u,function(e){return function(){delete l[t],i--,n.isLeft(e)&&n.fromLeft(e)&&setTimeout(function(){throw n.fromLeft(e)},0),0===i&&o()}})()}for(var c in e)e.hasOwnProperty(c)&&(i++,f(c));return e={},t=0,r=0,function(n){return new M(a,function(){for(var n in l)l.hasOwnProperty(n)&&l[n]()})}}}}},M.Scheduler=T,M.nonCanceler=C,M}();n._pure=e.Pure,n._throwError=e.Throw,n._catchError=function(n){return function(t){return e.Catch(n,t)}},n._map=function(n){return function(t){return t.tag===e.Pure.tag?e.Pure(n(t._1)):e.Bind(t,function(t){return e.Pure(n(t))})}},n._bind=function(n){return function(t){return e.Bind(n,t)}},n._fork=function(n){return function(t){return e.Fork(n,t)}},n._liftEffect=e.Sync,n._parAffMap=function(n){return function(t){return e.ParMap(n,t)}},n._parAffApply=function(n){return function(t){return e.ParApply(n,t)}},n.makeAff=e.Async,n._makeFiber=function(n,t){return function(){return e.Fiber(n,null,t)}},n._sequential=e.Seq}(a["Effect.Aff"]=a["Effect.Aff"]||{}),function(n){"use strict";(a["Data.Function.Uncurried"]=a["Data.Function.Uncurried"]||{}).runFn4=function(n){return function(e){return function(t){return function(r){return function(a){return n(e,t,r,a)}}}}}}(),function(n){"use strict";var e=a["Data.Function.Uncurried"];a["Data.Unit"];n.runFn4=e.runFn4}(a["Data.Function.Uncurried"]=a["Data.Function.Uncurried"]||{}),function(n){"use strict";n.error=function(n){return new Error(n)},n.throwException=function(n){return function(){throw n}}}(a["Effect.Exception"]=a["Effect.Exception"]||{}),function(n){"use strict";var e=a["Effect.Exception"];a["Control.Applicative"],a["Control.Semigroupoid"],a["Data.Either"],a["Data.Functor"],a["Data.Maybe"],a["Data.Show"],a.Effect,a.Prelude;n.throw=function(n){return e.throwException(e.error(n))},n.error=e.error,n.throwException=e.throwException}(a["Effect.Exception"]=a["Effect.Exception"]||{}),function(n){"use strict";(a["Effect.Unsafe"]=a["Effect.Unsafe"]||{}).unsafePerformEffect=function(n){return n()}}(),function(n){"use strict";var e=a["Effect.Unsafe"];a.Effect;n.unsafePerformEffect=e.unsafePerformEffect}(a["Effect.Unsafe"]=a["Effect.Unsafe"]||{}),function(n){"use strict";var e=a["Effect.Aff"],t=(a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"]),r=a["Control.Apply"],u=a["Control.Bind"],o=(a["Control.Lazy"],a["Control.Monad"]),i=a["Control.Monad.Error.Class"],l=a["Control.Monad.Rec.Class"],f=(a["Control.Parallel"],a["Control.Parallel.Class"]),c=(a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Either"]),s=(a["Data.Foldable"],a["Data.Function"]),v=(a["Data.Function.Uncurried"],a["Data.Functor"]),d=(a["Data.Monoid"],a["Data.Newtype"],a["Data.Semigroup"],a["Data.Time.Duration"],a["Data.Unit"]),p=a.Effect,m=a["Effect.Class"],D=(a["Effect.Exception"],a["Effect.Unsafe"]),b=a["Partial.Unsafe"],E=(a.Prelude,a["Unsafe.Coerce"]),M=function(n){return n},w=e._fork(!1),C=new v.Functor(e._parAffMap),h=new v.Functor(e._map),g=e._fork(!0),y={isLeft:function(n){if(n instanceof c.Left)return!0;if(n instanceof c.Right)return!1;throw new Error("Failed pattern match at Effect.Aff line 385, column 12 - line 387, column 20: "+[n.constructor.name])},fromLeft:function(n){if(n instanceof c.Left)return n.value0;if(n instanceof c.Right)return b.unsafeCrashWith("unsafeFromLeft: Right");throw new Error("Failed pattern match at Effect.Aff line 390, column 20 - line 394, column 3: "+[n.constructor.name])},fromRight:function(n){if(n instanceof c.Right)return n.value0;if(n instanceof c.Left)return b.unsafeCrashWith("unsafeFromRight: Left");throw new Error("Failed pattern match at Effect.Aff line 395, column 21 - line 397, column 31: "+[n.constructor.name])},left:c.Left.create,right:c.Right.create},T=function(n){return e._makeFiber(y,n)},F=function(n){return function(){var e=T(n)();return e.run(),e}},A=new r.Apply(function(){return C},e._parAffApply),H=new o.Monad(function(){return W},function(){return L}),L=new u.Bind(function(){return S},e._bind),S=new r.Apply(function(){return h},o.ap(H)),W=new t.Applicative(function(){return S},e._pure),O=new m.MonadEffect(function(){return H},e._liftEffect),I=function(n){return M(s.const(m.liftEffect(O)(n)))},P=function(n){return e.makeAff(function(e){return v.map(p.functorEffect)(I)(n.join(e))})},x=new v.Functor(function(n){return function(e){return D.unsafePerformEffect(T(v.map(h)(n)(P(e))))}}),N=new i.MonadThrow(function(){return H},e._throwError),U=new i.MonadError(function(){return N},e._catchError),_=function(n){return function(e){return F(u.bindFlipped(L)(function(e){return m.liftEffect(O)(n(e))})(i.try(U)(e)))}},R=new f.Parallel(function(){return k},function(){return H},E.unsafeCoerce,e._sequential),k=new t.Applicative(function(){return A},function(n){return f.parallel(R)(t.pure(W)(n))}),B=new l.MonadRec(function(){return H},function(n){return function e(r){return u.bind(L)(n(r))(function(n){if(n instanceof l.Done)return t.pure(W)(n.value0);if(n instanceof l.Loop)return e(n.value0);throw new Error("Failed pattern match at Effect.Aff line 99, column 7 - line 101, column 22: "+[n.constructor.name])})}}),q=s.const(t.pure(W)(d.unit));n.Canceler=M,n.launchAff=F,n.runAff=_,n.runAff_=function(n){return function(e){return v.void(p.functorEffect)(_(n)(e))}},n.forkAff=g,n.suspendAff=w,n.killFiber=function(n){return function(r){return u.bind(L)(m.liftEffect(O)(r.isSuspended))(function(a){return a?m.liftEffect(O)(v.void(p.functorEffect)(r.kill(n,s.const(t.pure(p.applicativeEffect)(d.unit))))):e.makeAff(function(e){return v.map(p.functorEffect)(I)(r.kill(n,e))})})}},n.joinFiber=P,n.nonCanceler=q,n.effectCanceler=I,n.functorAff=h,n.applyAff=S,n.applicativeAff=W,n.bindAff=L,n.monadAff=H,n.monadRecAff=B,n.monadThrowAff=N,n.monadErrorAff=U,n.monadEffectAff=O,n.functorParAff=C,n.applyParAff=A,n.applicativeParAff=k,n.parallelAff=R,n.functorFiber=x,n.makeAff=e.makeAff}(a["Effect.Aff"]=a["Effect.Aff"]||{}),function(n){"use strict";a["Control.Monad.Error.Class"],a["Control.Monad.Reader.Trans"],a["Control.Monad.Trans.Class"],a["Control.Semigroupoid"];var e=a["Effect.Aff"],t=(a.Prelude,function(n,e,t,r,a){this.Functor1=n,this.Monad0=e,this.fork=t,this.join=r,this.suspend=a}),r=new t(function(){return e.functorFiber},function(){return e.monadAff},e.forkAff,e.joinFiber,e.suspendAff);n.fork=function(n){return n.fork},n.join=function(n){return n.join},n.suspend=function(n){return n.suspend},n.MonadFork=t,n.monadForkAff=r}(a["Control.Monad.Fork.Class"]=a["Control.Monad.Fork.Class"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Monad"],a["Control.MonadPlus"],a["Control.MonadZero"],a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"],a["Data.Functor"];var e=a["Data.List"],t=a["Data.List.Types"],r=a["Data.Maybe"],u=(a["Data.Monoid"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.Tuple"]),o=(a["Data.Unfoldable"],a["Data.Unfoldable1"],a.Prelude,function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}()),i=new o(t.Nil.value,t.Nil.value);n.CatQueue=o,n.empty=i,n.null=function(n){return n.value0 instanceof t.Nil&&n.value1 instanceof t.Nil},n.snoc=function(n){return function(e){return new o(n.value0,new t.Cons(e,n.value1))}},n.uncons=function(n){var a,i=!1;function l(a){if(a.value0 instanceof t.Nil&&a.value1 instanceof t.Nil)return i=!0,r.Nothing.value;if(!(a.value0 instanceof t.Nil)){if(a.value0 instanceof t.Cons)return i=!0,new r.Just(new u.Tuple(a.value0.value0,new o(a.value0.value1,a.value1)));throw new Error("Failed pattern match at Data.CatQueue line 83, column 1 - line 83, column 63: "+[a.constructor.name])}n=new o(e.reverse(a.value1),t.Nil.value)}for(;!i;)a=l(n);return a}}(a["Data.CatQueue"]=a["Data.CatQueue"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Monad"],a["Control.MonadPlus"],a["Control.MonadZero"],a["Control.Plus"];var e=a["Data.CatQueue"],t=(a["Data.Foldable"],a["Data.Function"],a["Data.Functor"],a["Data.List"],a["Data.List.Types"]),r=a["Data.Maybe"],u=(a["Data.Monoid"],a["Data.Semigroup"]),o=(a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.Tuple"]),i=(a["Data.Unfoldable"],a["Data.Unfoldable1"],a.Prelude,function(){function n(){}return n.value=new n,n}()),l=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),f=function(n){return function(t){if(n instanceof i)return t;if(n instanceof l)return new l(n.value0,e.snoc(n.value1)(t));throw new Error("Failed pattern match at Data.CatList line 111, column 1 - line 111, column 54: "+[n.constructor.name,t.constructor.name])}},c=i.value,s=function(n){return function(e){return e instanceof i?n:n instanceof i?e:f(n)(e)}},v=new u.Semigroup(s);n.CatNil=i,n.CatCons=l,n.empty=c,n.append=s,n.snoc=function(n){return function(t){return s(n)(new l(t,e.empty))}},n.uncons=function(n){if(n instanceof i)return r.Nothing.value;if(n instanceof l)return new r.Just(new o.Tuple(n.value0,e.null(n.value1)?i.value:(a=f,function(n){return function(u){var o,i=function(n){return function(e){return function(r){var a,u=n,o=e,i=!1;function l(n,e,a){if(a instanceof t.Nil)return i=!0,e;if(a instanceof t.Cons)return u=n,o=n(e)(a.value0),void(r=a.value1);throw new Error("Failed pattern match at Data.CatList line 126, column 3 - line 126, column 59: "+[n.constructor.name,e.constructor.name,a.constructor.name])}for(;!i;)a=l(u,o,r);return a}}};return(o=u,function(u){var l,f=o,c=!1;function s(o,l){var s=e.uncons(o);if(s instanceof r.Nothing)return c=!0,i(function(n){return function(e){return e(n)}})(n)(l);if(s instanceof r.Just)return f=s.value0.value1,void(u=new t.Cons(a(s.value0.value0),l));throw new Error("Failed pattern match at Data.CatList line 122, column 14 - line 124, column 67: "+[s.constructor.name])}for(;!c;)l=s(f,u);return l})(t.Nil.value)}})(i.value)(n.value1)));var a;throw new Error("Failed pattern match at Data.CatList line 102, column 1 - line 102, column 61: "+[n.constructor.name])},n.semigroupCatList=v}(a["Data.CatList"]=a["Data.CatList"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Apply"],r=a["Control.Bind"],u=(a["Control.Category"],a["Control.Monad"]),o=a["Control.Monad.Rec.Class"],i=(a["Control.Monad.Trans.Class"],a["Control.Semigroupoid"],a["Data.CatList"]),l=(a["Data.Either"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"],a["Data.Functor"]),f=a["Data.Maybe"],c=(a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"]),s=(a["Data.Traversable"],a["Data.Tuple"],a.Prelude,a["Unsafe.Coerce"],function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}()),v=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),d=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),p=function(n){return new s(n,i.empty)},m=new u.Monad(function(){return M},function(){return b}),D=new l.Functor(function(n){return function(t){return r.bindFlipped(b)(function(t){return e.pure(M)(n(t))})(t)}}),b=new r.Bind(function(){return E},function(n){return function(e){return new s(n.value0,i.snoc(n.value1)(e))}}),E=new t.Apply(function(){return D},u.ap(m)),M=new e.Applicative(function(){return E},function(n){return p(v.create(n))});n.liftF=function(n){return p(new d(n,function(n){return e.pure(M)(n)}))},n.foldFree=function(n){return function(t){return o.tailRecM(n)(function(r){var a=function(n){var e,t=!1;function r(e){var r=function(n){return function(e){return new s(n.value0,c.append(i.semigroupCatList)(n.value1)(e))}};if(e.value0 instanceof v){var a=i.uncons(e.value1);if(a instanceof f.Nothing)return t=!0,new v(e.value0.value0);if(a instanceof f.Just)return void(n=r(function(n){return n}(a.value0.value0)(e.value0.value0))(a.value0.value1));throw new Error("Failed pattern match at Control.Monad.Free line 220, column 7 - line 224, column 64: "+[a.constructor.name])}if(e.value0 instanceof d)return t=!0,new d(e.value0.value0,function(n){return r(e.value0.value1(n))(e.value1)});throw new Error("Failed pattern match at Control.Monad.Free line 218, column 3 - line 226, column 56: "+[e.value0.constructor.name])}for(;!t;)e=r(n);return e}(r);if(a instanceof v)return l.map(n.Monad0().Bind1().Apply0().Functor0())(o.Done.create)(e.pure(n.Monad0().Applicative0())(a.value0));if(a instanceof d)return l.map(n.Monad0().Bind1().Apply0().Functor0())(function(n){return o.Loop.create(a.value1(n))})(t(a.value0));throw new Error("Failed pattern match at Control.Monad.Free line 151, column 10 - line 153, column 37: "+[a.constructor.name])})}},n.freeFunctor=D,n.freeBind=b,n.freeApplicative=M,n.freeApply=E,n.freeMonad=m}(a["Control.Monad.Free"]=a["Control.Monad.Free"]||{}),function(n){"use strict";var e=function(){function n(){}return n.value=new n,n}(),t=function(){function n(){}return n.value=new n,n}(),r=function(){function n(){}return n.value=new n,n}(),a=function(){function n(){}return n.value=new n,n}(),u=function(){function n(){}return n.value=new n,n}(),o=function(){function n(){}return n.value=new n,n}(),i=function(){function n(){}return n.value=new n,n}(),l=function(){function n(){}return n.value=new n,n}(),f=function(){function n(){}return n.value=new n,n}(),c=function(){function n(){}return n.value=new n,n}(),s=function(){function n(){}return n.value=new n,n}(),v=function(){function n(){}return n.value=new n,n}(),d=function(){function n(){}return n.value=new n,n}(),p=function(){function n(){}return n.value=new n,n}(),m=function(){function n(){}return n.value=new n,n}(),D=function(){function n(){}return n.value=new n,n}(),b=function(){function n(){}return n.value=new n,n}(),E=function(){function n(){}return n.value=new n,n}(),M=function(){function n(){}return n.value=new n,n}(),w=function(){function n(){}return n.value=new n,n}(),C=function(){function n(){}return n.value=new n,n}(),h=function(){function n(){}return n.value=new n,n}();n.InputButton=e,n.InputCheckbox=t,n.InputColor=r,n.InputDate=a,n.InputDatetimeLocal=u,n.InputEmail=o,n.InputFile=i,n.InputHidden=l,n.InputImage=f,n.InputMonth=c,n.InputNumber=s,n.InputPassword=v,n.InputRadio=d,n.InputRange=p,n.InputReset=m,n.InputSearch=D,n.InputSubmit=b,n.InputTel=E,n.InputText=M,n.InputTime=w,n.InputUrl=C,n.InputWeek=h,n.renderInputType=function(n){if(n instanceof e)return"button";if(n instanceof t)return"checkbox";if(n instanceof r)return"color";if(n instanceof a)return"date";if(n instanceof u)return"datetime-local";if(n instanceof o)return"email";if(n instanceof i)return"file";if(n instanceof l)return"hidden";if(n instanceof f)return"image";if(n instanceof c)return"month";if(n instanceof s)return"number";if(n instanceof v)return"password";if(n instanceof d)return"radio";if(n instanceof p)return"range";if(n instanceof m)return"reset";if(n instanceof D)return"search";if(n instanceof b)return"submit";if(n instanceof E)return"tel";if(n instanceof M)return"text";if(n instanceof w)return"time";if(n instanceof C)return"url";if(n instanceof h)return"week";throw new Error("Failed pattern match at DOM.HTML.Indexed.InputType line 28, column 19 - line 50, column 16: "+[n.constructor.name])}}(a["DOM.HTML.Indexed.InputType"]=a["DOM.HTML.Indexed.InputType"]||{}),function(n){"use strict";(a["Data.Array"]=a["Data.Array"]||{}).length=function(n){return n.length}}(),function(n){"use strict";var e=a["Data.Array"];a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Category"],a["Control.Lazy"],a["Control.Monad.Rec.Class"],a["Control.Monad.ST"],a["Control.Monad.ST.Internal"],a["Control.Semigroupoid"],a["Data.Array.NonEmpty.Internal"],a["Data.Array.ST"],a["Data.Array.ST.Iterator"],a["Data.Boolean"],a["Data.Eq"],a["Data.Foldable"],a["Data.Function"],a["Data.Functor"],a["Data.HeytingAlgebra"],a["Data.Maybe"],a["Data.Ord"],a["Data.Ordering"],a["Data.Ring"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Traversable"],a["Data.Tuple"],a["Data.Unfoldable"],a["Partial.Unsafe"],a.Prelude,a["Unsafe.Coerce"];n.length=e.length}(a["Data.Array"]=a["Data.Array"]||{}),function(n){"use strict";a["Control.Alt"],a["Control.Alternative"],a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Category"],a["Control.Comonad"],a["Control.Extend"],a["Control.Monad"],a["Control.Monad.Trans.Class"],a["Control.MonadPlus"],a["Control.MonadZero"],a["Control.Plus"],a["Control.Semigroupoid"],a["Data.Distributive"],a["Data.Eq"];var e=a["Data.Exists"];a["Data.Foldable"],a["Data.Function"],a["Data.Functor"],a["Data.Functor.Invariant"],a["Data.Ord"],a["Data.Semigroup.Foldable"],a["Data.Semigroup.Traversable"],a["Data.Traversable"],a.Prelude;n.unCoyoneda=function(n){return function(t){return e.runExists(function(e){return n(e.value0)(e.value1)})(t)}}}(a["Data.Coyoneda"]=a["Data.Coyoneda"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=(a["Control.Apply"],a["Control.Category"],a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Foldable"]),r=(a["Data.FoldableWithIndex"],a["Data.Function"],a["Data.Functor"]),u=(a["Data.FunctorWithIndex"],a["Data.HeytingAlgebra"],a["Data.List"],a["Data.List.Lazy"],a["Data.List.Lazy.Types"],a["Data.List.Types"]),o=a["Data.Maybe"],i=(a["Data.Monoid"],a["Data.Ord"]),l=a["Data.Ordering"],f=a["Data.Semigroup"],c=(a["Data.Semiring"],a["Data.Show"],a["Data.Traversable"],a["Data.TraversableWithIndex"],a["Data.Tuple"]),s=(a["Data.Unfoldable"],a["Partial.Unsafe"],a.Prelude,function(){function n(){}return n.value=new n,n}()),v=function(){function n(n,e,t,r){this.value0=n,this.value1=e,this.value2=t,this.value3=r}return n.create=function(e){return function(t){return function(r){return function(a){return new n(e,t,r,a)}}}},n}(),d=function(){function n(n,e,t,r,a,u,o){this.value0=n,this.value1=e,this.value2=t,this.value3=r,this.value4=a,this.value5=u,this.value6=o}return n.create=function(e){return function(t){return function(r){return function(a){return function(u){return function(o){return function(i){return new n(e,t,r,a,u,o,i)}}}}}}},n}(),p=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),m=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),D=function(){function n(n,e,t,r,a,u){this.value0=n,this.value1=e,this.value2=t,this.value3=r,this.value4=a,this.value5=u}return n.create=function(e){return function(t){return function(r){return function(a){return function(u){return function(o){return new n(e,t,r,a,u,o)}}}}}},n}(),b=function(){function n(n,e,t,r,a,u){this.value0=n,this.value1=e,this.value2=t,this.value3=r,this.value4=a,this.value5=u}return n.create=function(e){return function(t){return function(r){return function(a){return function(u){return function(o){return new n(e,t,r,a,u,o)}}}}}},n}(),E=function(){function n(n,e,t,r,a,u){this.value0=n,this.value1=e,this.value2=t,this.value3=r,this.value4=a,this.value5=u}return n.create=function(e){return function(t){return function(r){return function(a){return function(u){return function(o){return new n(e,t,r,a,u,o)}}}}}},n}(),M=function(){function n(n,e,t,r){this.value0=n,this.value1=e,this.value2=t,this.value3=r}return n.create=function(e){return function(t){return function(r){return function(a){return new n(e,t,r,a)}}}},n}(),w=function n(t){if(t instanceof s)return u.Nil.value;if(t instanceof v)return f.append(u.semigroupList)(n(t.value0))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value2))(n(t.value3)));if(t instanceof d)return f.append(u.semigroupList)(n(t.value0))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value2))(f.append(u.semigroupList)(n(t.value3))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value5))(n(t.value6)))));throw new Error("Failed pattern match at Data.Map.Internal line 594, column 1 - line 594, column 40: "+[t.constructor.name])},C=function(n){return function(e){var t=i.compare(n);return function(n){var r,a=!1;function u(r){if(r instanceof s)return a=!0,o.Nothing.value;if(r instanceof v){var u=t(e)(r.value1);return u instanceof l.EQ?(a=!0,new o.Just(r.value2)):u instanceof l.LT?void(n=r.value0):void(n=r.value3)}if(r instanceof d){var i=t(e)(r.value1);if(i instanceof l.EQ)return a=!0,new o.Just(r.value2);var f=t(e)(r.value4);return f instanceof l.EQ?(a=!0,new o.Just(r.value5)):i instanceof l.LT?void(n=r.value0):f instanceof l.GT?void(n=r.value6):void(n=r.value3)}throw new Error("Failed pattern match at Data.Map.Internal line 193, column 5 - line 193, column 22: "+[r.constructor.name])}for(;!a;)r=u(n);return r}}},h=new r.Functor(function(n){return function(e){if(e instanceof s)return s.value;if(e instanceof v)return new v(r.map(h)(n)(e.value0),e.value1,n(e.value2),r.map(h)(n)(e.value3));if(e instanceof d)return new d(r.map(h)(n)(e.value0),e.value1,n(e.value2),r.map(h)(n)(e.value3),e.value4,n(e.value5),r.map(h)(n)(e.value6));throw new Error("Failed pattern match at Data.Map.Internal line 89, column 1 - line 89, column 39: "+[n.constructor.name,e.constructor.name])}}),g=function(n){return function(e){return function(t){var r,a=n,o=e,i=!1;function l(n,e,r){if(e instanceof u.Nil)return i=!0,r;if(e instanceof u.Cons){if(e.value0 instanceof p)return a=n,o=e.value1,void(t=new v(r,e.value0.value0,e.value0.value1,e.value0.value2));if(e.value0 instanceof m)return a=n,o=e.value1,void(t=new v(e.value0.value0,e.value0.value1,e.value0.value2,r));if(e.value0 instanceof D)return a=n,o=e.value1,void(t=new d(r,e.value0.value0,e.value0.value1,e.value0.value2,e.value0.value3,e.value0.value4,e.value0.value5));if(e.value0 instanceof b)return a=n,o=e.value1,void(t=new d(e.value0.value0,e.value0.value1,e.value0.value2,r,e.value0.value3,e.value0.value4,e.value0.value5));if(e.value0 instanceof E)return a=n,o=e.value1,void(t=new d(e.value0.value0,e.value0.value1,e.value0.value2,e.value0.value3,e.value0.value4,e.value0.value5,r));throw new Error("Failed pattern match at Data.Map.Internal line 411, column 3 - line 416, column 88: "+[e.value0.constructor.name])}throw new Error("Failed pattern match at Data.Map.Internal line 408, column 1 - line 408, column 80: "+[e.constructor.name,r.constructor.name])}for(;!i;)r=l(a,o,t);return r}}},y=function(n){return function(e){return function(t){var r,a=function(e){return function(t){var r,a=e,o=!1;function i(e,r){if(e instanceof u.Nil)return o=!0,new v(r.value0,r.value1,r.value2,r.value3);if(e instanceof u.Cons){if(e.value0 instanceof p)return o=!0,g(n)(e.value1)(new d(r.value0,r.value1,r.value2,r.value3,e.value0.value0,e.value0.value1,e.value0.value2));if(e.value0 instanceof m)return o=!0,g(n)(e.value1)(new d(e.value0.value0,e.value0.value1,e.value0.value2,r.value0,r.value1,r.value2,r.value3));if(e.value0 instanceof D)return a=e.value1,void(t=new M(new v(r.value0,r.value1,r.value2,r.value3),e.value0.value0,e.value0.value1,new v(e.value0.value2,e.value0.value3,e.value0.value4,e.value0.value5)));if(e.value0 instanceof b)return a=e.value1,void(t=new M(new v(e.value0.value0,e.value0.value1,e.value0.value2,r.value0),r.value1,r.value2,new v(r.value3,e.value0.value3,e.value0.value4,e.value0.value5)));if(e.value0 instanceof E)return a=e.value1,void(t=new M(new v(e.value0.value0,e.value0.value1,e.value0.value2,e.value0.value3),e.value0.value4,e.value0.value5,new v(r.value0,r.value1,r.value2,r.value3)));throw new Error("Failed pattern match at Data.Map.Internal line 447, column 5 - line 452, column 108: "+[e.value0.constructor.name,r.constructor.name])}throw new Error("Failed pattern match at Data.Map.Internal line 444, column 3 - line 444, column 56: "+[e.constructor.name,r.constructor.name])}for(;!o;)r=i(a,t);return r}},o=i.compare(n);return r=u.Nil.value,function(i){var f,c=r,w=!1;function C(r,f){if(f instanceof s)return w=!0,a(r)(new M(s.value,e,t,s.value));if(f instanceof v){var C=o(e)(f.value1);return C instanceof l.EQ?(w=!0,g(n)(r)(new v(f.value0,e,t,f.value3))):C instanceof l.LT?(c=new u.Cons(new p(f.value1,f.value2,f.value3),r),void(i=f.value0)):(c=new u.Cons(new m(f.value0,f.value1,f.value2),r),void(i=f.value3))}if(f instanceof d){var h=o(e)(f.value1);if(h instanceof l.EQ)return w=!0,g(n)(r)(new d(f.value0,e,t,f.value3,f.value4,f.value5,f.value6));var y=o(e)(f.value4);return y instanceof l.EQ?(w=!0,g(n)(r)(new d(f.value0,f.value1,f.value2,f.value3,e,t,f.value6))):h instanceof l.LT?(c=new u.Cons(new D(f.value1,f.value2,f.value3,f.value4,f.value5,f.value6),r),void(i=f.value0)):h instanceof l.GT&&y instanceof l.LT?(c=new u.Cons(new b(f.value0,f.value1,f.value2,f.value4,f.value5,f.value6),r),void(i=f.value3)):(c=new u.Cons(new E(f.value0,f.value1,f.value2,f.value3,f.value4,f.value5),r),void(i=f.value6))}throw new Error("Failed pattern match at Data.Map.Internal line 427, column 3 - line 427, column 55: "+[r.constructor.name,f.constructor.name])}for(;!w;)f=C(c,i);return f}}}},T=function(n){return function(e){var t,r=function e(t){return function(r){if(t instanceof u.Nil)return r;if(t instanceof u.Cons){return function(){if(t.value0 instanceof p&&t.value0.value2 instanceof s&&r instanceof s)return g(n)(t.value1)(new v(s.value,t.value0.value0,t.value0.value1,s.value));if(t.value0 instanceof m&&t.value0.value0 instanceof s&&r instanceof s)return g(n)(t.value1)(new v(s.value,t.value0.value1,t.value0.value2,s.value));if(t.value0 instanceof p&&t.value0.value2 instanceof v)return e(t.value1)(new d(r,t.value0.value0,t.value0.value1,t.value0.value2.value0,t.value0.value2.value1,t.value0.value2.value2,t.value0.value2.value3));if(t.value0 instanceof m&&t.value0.value0 instanceof v)return e(t.value1)(new d(t.value0.value0.value0,t.value0.value0.value1,t.value0.value0.value2,t.value0.value0.value3,t.value0.value1,t.value0.value2,r));if(t.value0 instanceof p&&t.value0.value2 instanceof d)return g(n)(t.value1)(new v(new v(r,t.value0.value0,t.value0.value1,t.value0.value2.value0),t.value0.value2.value1,t.value0.value2.value2,new v(t.value0.value2.value3,t.value0.value2.value4,t.value0.value2.value5,t.value0.value2.value6)));if(t.value0 instanceof m&&t.value0.value0 instanceof d)return g(n)(t.value1)(new v(new v(t.value0.value0.value0,t.value0.value0.value1,t.value0.value0.value2,t.value0.value0.value3),t.value0.value0.value4,t.value0.value0.value5,new v(t.value0.value0.value6,t.value0.value1,t.value0.value2,r)));if(t.value0 instanceof D&&t.value0.value2 instanceof s&&t.value0.value5 instanceof s&&r instanceof s)return g(n)(t.value1)(new d(s.value,t.value0.value0,t.value0.value1,s.value,t.value0.value3,t.value0.value4,s.value));if(t.value0 instanceof b&&t.value0.value0 instanceof s&&t.value0.value5 instanceof s&&r instanceof s)return g(n)(t.value1)(new d(s.value,t.value0.value1,t.value0.value2,s.value,t.value0.value3,t.value0.value4,s.value));if(t.value0 instanceof E&&t.value0.value0 instanceof s&&t.value0.value3 instanceof s&&r instanceof s)return g(n)(t.value1)(new d(s.value,t.value0.value1,t.value0.value2,s.value,t.value0.value4,t.value0.value5,s.value));if(t.value0 instanceof D&&t.value0.value2 instanceof v)return g(n)(t.value1)(new v(new d(r,t.value0.value0,t.value0.value1,t.value0.value2.value0,t.value0.value2.value1,t.value0.value2.value2,t.value0.value2.value3),t.value0.value3,t.value0.value4,t.value0.value5));if(t.value0 instanceof b&&t.value0.value0 instanceof v)return g(n)(t.value1)(new v(new d(t.value0.value0.value0,t.value0.value0.value1,t.value0.value0.value2,t.value0.value0.value3,t.value0.value1,t.value0.value2,r),t.value0.value3,t.value0.value4,t.value0.value5));if(t.value0 instanceof b&&t.value0.value5 instanceof v)return g(n)(t.value1)(new v(t.value0.value0,t.value0.value1,t.value0.value2,new d(r,t.value0.value3,t.value0.value4,t.value0.value5.value0,t.value0.value5.value1,t.value0.value5.value2,t.value0.value5.value3)));if(t.value0 instanceof E&&t.value0.value3 instanceof v)return g(n)(t.value1)(new v(t.value0.value0,t.value0.value1,t.value0.value2,new d(t.value0.value3.value0,t.value0.value3.value1,t.value0.value3.value2,t.value0.value3.value3,t.value0.value4,t.value0.value5,r)));if(t.value0 instanceof D&&t.value0.value2 instanceof d)return g(n)(t.value1)(new d(new v(r,t.value0.value0,t.value0.value1,t.value0.value2.value0),t.value0.value2.value1,t.value0.value2.value2,new v(t.value0.value2.value3,t.value0.value2.value4,t.value0.value2.value5,t.value0.value2.value6),t.value0.value3,t.value0.value4,t.value0.value5));if(t.value0 instanceof b&&t.value0.value0 instanceof d)return g(n)(t.value1)(new d(new v(t.value0.value0.value0,t.value0.value0.value1,t.value0.value0.value2,t.value0.value0.value3),t.value0.value0.value4,t.value0.value0.value5,new v(t.value0.value0.value6,t.value0.value1,t.value0.value2,r),t.value0.value3,t.value0.value4,t.value0.value5));if(t.value0 instanceof b&&t.value0.value5 instanceof d)return g(n)(t.value1)(new d(t.value0.value0,t.value0.value1,t.value0.value2,new v(r,t.value0.value3,t.value0.value4,t.value0.value5.value0),t.value0.value5.value1,t.value0.value5.value2,new v(t.value0.value5.value3,t.value0.value5.value4,t.value0.value5.value5,t.value0.value5.value6)));if(t.value0 instanceof E&&t.value0.value3 instanceof d)return g(n)(t.value1)(new d(t.value0.value0,t.value0.value1,t.value0.value2,new v(t.value0.value3.value0,t.value0.value3.value1,t.value0.value3.value2,t.value0.value3.value3),t.value0.value3.value4,t.value0.value3.value5,new v(t.value0.value3.value6,t.value0.value4,t.value0.value5,r)));throw new Error("Failed pattern match at Data.Map.Internal line 497, column 9 - line 514, column 136: "+[t.value0.constructor.name,r.constructor.name])}()}throw new Error("Failed pattern match at Data.Map.Internal line 494, column 5 - line 514, column 136: "+[t.constructor.name])}},a=function n(e){return function(t){return function(){if(t instanceof v&&t.value0 instanceof s&&t.value3 instanceof s)return r(e)(s.value);if(t instanceof v)return n(new u.Cons(new m(t.value0,t.value1,t.value2),e))(t.value3);if(t instanceof d&&t.value0 instanceof s&&t.value3 instanceof s&&t.value6 instanceof s)return r(new u.Cons(new m(s.value,t.value1,t.value2),e))(s.value);if(t instanceof d)return n(new u.Cons(new E(t.value0,t.value1,t.value2,t.value3,t.value4,t.value5),e))(t.value6);throw new Error("Failed pattern match at Data.Map.Internal line 526, column 5 - line 530, column 107: "+[t.constructor.name])}()}},f=function n(e){return function(){if(e instanceof v&&e.value3 instanceof s)return{key:e.value1,value:e.value2};if(e instanceof v)return n(e.value3);if(e instanceof d&&e.value6 instanceof s)return{key:e.value4,value:e.value5};if(e instanceof d)return n(e.value6);throw new Error("Failed pattern match at Data.Map.Internal line 517, column 33 - line 521, column 45: "+[e.constructor.name])}()},M=i.compare(n);return t=u.Nil.value,function(i){var w,C=t,h=!1;function y(t,w){if(w instanceof s)return h=!0,o.Nothing.value;if(w instanceof v){var y=M(e)(w.value1);if(w.value3 instanceof s&&y instanceof l.EQ)return h=!0,new o.Just(new c.Tuple(w.value2,r(t)(s.value)));if(y instanceof l.EQ){var T=f(w.value0);return h=!0,new o.Just(new c.Tuple(w.value2,a(new u.Cons(new p(T.key,T.value,w.value3),t))(w.value0)))}return y instanceof l.LT?(C=new u.Cons(new p(w.value1,w.value2,w.value3),t),void(i=w.value0)):(C=new u.Cons(new m(w.value0,w.value1,w.value2),t),void(i=w.value3))}if(w instanceof d){var F=w.value0 instanceof s&&w.value3 instanceof s&&w.value6 instanceof s,A=(y=M(e)(w.value4),M(e)(w.value1));return F&&A instanceof l.EQ?(h=!0,new o.Just(new c.Tuple(w.value2,g(n)(t)(new v(s.value,w.value4,w.value5,s.value))))):F&&y instanceof l.EQ?(h=!0,new o.Just(new c.Tuple(w.value5,g(n)(t)(new v(s.value,w.value1,w.value2,s.value))))):A instanceof l.EQ?(T=f(w.value0),h=!0,new o.Just(new c.Tuple(w.value2,a(new u.Cons(new D(T.key,T.value,w.value3,w.value4,w.value5,w.value6),t))(w.value0)))):y instanceof l.EQ?(T=f(w.value3),h=!0,new o.Just(new c.Tuple(w.value5,a(new u.Cons(new b(w.value0,w.value1,w.value2,T.key,T.value,w.value6),t))(w.value3)))):A instanceof l.LT?(C=new u.Cons(new D(w.value1,w.value2,w.value3,w.value4,w.value5,w.value6),t),void(i=w.value0)):A instanceof l.GT&&y instanceof l.LT?(C=new u.Cons(new b(w.value0,w.value1,w.value2,w.value4,w.value5,w.value6),t),void(i=w.value3)):(C=new u.Cons(new E(w.value0,w.value1,w.value2,w.value3,w.value4,w.value5),t),void(i=w.value6))}throw new Error("Failed pattern match at Data.Map.Internal line 467, column 34 - line 490, column 80: "+[w.constructor.name])}for(;!h;)w=y(C,i);return w}}},F=new t.Foldable(function(n){return function(e){return function(r){return t.foldMap(u.foldableList)(n)(e)(w(r))}}},function(n){return function(e){return function(r){return t.foldl(u.foldableList)(n)(e)(w(r))}}},function(n){return function(e){return function(r){return t.foldr(u.foldableList)(n)(e)(w(r))}}}),A=s.value,H=function(n){return function(e){return function(t){return o.maybe(t)(c.snd)(T(n)(e)(t))}}};n.empty=A,n.insert=y,n.lookup=C,n.delete=H,n.pop=T,n.member=function(n){return function(e){return function(t){return o.isJust(C(n)(e)(t))}}},n.alter=function(n){return function(e){return function(t){return function(r){var a=e(C(n)(t)(r));if(a instanceof o.Nothing)return H(n)(t)(r);if(a instanceof o.Just)return y(n)(t)(a.value0)(r);throw new Error("Failed pattern match at Data.Map.Internal line 535, column 15 - line 537, column 25: "+[a.constructor.name])}}}},n.keys=function n(t){if(t instanceof s)return u.Nil.value;if(t instanceof v)return f.append(u.semigroupList)(n(t.value0))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value1))(n(t.value3)));if(t instanceof d)return f.append(u.semigroupList)(n(t.value0))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value1))(f.append(u.semigroupList)(n(t.value3))(f.append(u.semigroupList)(e.pure(u.applicativeList)(t.value4))(n(t.value6)))));throw new Error("Failed pattern match at Data.Map.Internal line 588, column 1 - line 588, column 38: "+[t.constructor.name])},n.values=w,n.functorMap=h,n.foldableMap=F}(a["Data.Map.Internal"]=a["Data.Map.Internal"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"],a["Control.Monad.Rec.Class"],a["Control.Monad.ST"],a["Control.Monad.ST.Internal"],a["Control.Semigroupoid"],a["Data.Array"],a["Data.Array.ST"],a["Data.Eq"];var e=a["Data.Foldable"],t=(a["Data.Function"],a["Data.Functor"],a["Data.HeytingAlgebra"],a["Data.List"],a["Data.List.Types"]),r=a["Data.Map.Internal"],u=(a["Data.Maybe"],a["Data.Monoid"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Show"],a["Data.Unfoldable"],a["Data.Unit"],a["Partial.Unsafe"],a.Prelude,function(n){return r.keys(n)}),o=new e.Foldable(function(n){return function(r){return function(a){return e.foldMap(t.foldableList)(n)(r)(u(a))}}},function(n){return function(r){return function(a){return e.foldl(t.foldableList)(n)(r)(u(a))}}},function(n){return function(r){return function(a){return e.foldr(t.foldableList)(n)(r)(u(a))}}});n.foldableSet=o}(a["Data.Set"]=a["Data.Set"]||{}),function(n){"use strict";a["Control.Semigroupoid"];var e=a["Data.Functor"],t=a["Data.Map.Internal"];a["Data.Set"],a.Prelude,a["Unsafe.Coerce"];n.keys=function(n){return e.void(t.functorMap)(n)}}(a["Data.Map"]=a["Data.Map"]||{}),function(n){"use strict";n.null=null,n.nullable=function(n,e,t){return null==n?e:t(n)},n.notNull=function(n){return n}}(a["Data.Nullable"]=a["Data.Nullable"]||{}),function(n){"use strict";var e=a["Data.Nullable"],t=(a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Function"],a["Data.Function.Uncurried"],a["Data.Maybe"]),r=(a["Data.Ord"],a["Data.Show"],a.Prelude,t.maybe(e.null)(e.notNull));n.toMaybe=function(n){return e.nullable(n,t.Nothing.value,t.Just.create)},n.toNullable=r}(a["Data.Nullable"]=a["Data.Nullable"]||{}),function(n){"use strict";var e=function(){function n(){this.head=null,this.last=null,this.size=0}function e(n,e){this.queue=n,this.value=e,this.next=null,this.prev=null}function t(e){this.draining=!1,this.error=null,this.value=e,this.takes=new n,this.reads=new n,this.puts=new n}var r={};function a(n){try{n()}catch(n){setTimeout(function(){throw n},0)}}function u(n){var e;switch(n.size){case 0:return null;case 1:e=n.head,n.head=null;break;case 2:e=n.last,n.head.next=null,n.last=null;break;default:e=n.last,n.last=e.prev,n.last.next=null}return e.prev=null,e.queue=null,n.size--,e.value}function o(n){var e;switch(n.size){case 0:return null;case 1:e=n.head,n.head=null;break;case 2:e=n.head,n.last.prev=null,n.head=n.last,n.last=null;break;default:e=n.head,n.head=e.next,n.head.prev=null}return e.next=null,e.queue=null,n.size--,e.value}return t.EMPTY=r,t.putLast=function(n,t){var r=new e(n,t);switch(n.size){case 0:n.head=r;break;case 1:r.prev=n.head,n.head.next=r,n.last=r;break;default:r.prev=n.last,n.last.next=r,n.last=r}return n.size++,r},t.takeLast=u,t.takeHead=o,t.deleteCell=function(n){null!==n.queue&&(n.queue.last!==n?n.queue.head!==n?(n.prev&&(n.prev.next=n.next),n.next&&(n.next.prev=n.prev),n.queue.size--,n.queue=null,n.value=null,n.next=null,n.prev=null):o(n.queue):u(n.queue))},t.drainVar=function(n,e){if(!e.draining){var t,u,i,l,f,c=e.puts,s=e.takes,v=e.reads;for(e.draining=!0;;){if(t=null,u=null,i=null,l=e.value,f=v.size,null!==e.error){for(l=n.left(e.error);t=o(c);)a(t.cb(l));for(;u=o(v);)a(u(l));for(;i=o(s);)a(i(l));break}if(l===r&&(t=o(c))&&(e.value=l=t.value),l!==r){for(i=o(s);f--&&(u=o(v));)a(u(n.right(l)));null!==i&&(e.value=r,a(i(n.right(l))))}if(null!==t&&a(t.cb(n.right(void 0))),e.value===r&&0===c.size||e.value!==r&&0===s.size)break}e.draining=!1}},t}();n.empty=function(){return new e(e.EMPTY)},n._killVar=function(n,t,r){return function(){null===r.error&&(r.error=t,r.value=e.EMPTY,e.drainVar(n,r))}},n._putVar=function(n,t,r,a){return function(){var u=e.putLast(r.puts,{cb:a,value:t});return e.drainVar(n,r),function(){e.deleteCell(u)}}},n._takeVar=function(n,t,r){return function(){var a=e.putLast(t.takes,r);return e.drainVar(n,t),function(){e.deleteCell(a)}}}}(a["Effect.AVar"]=a["Effect.AVar"]||{}),function(n){"use strict";var e=a["Effect.AVar"],t=a["Data.Either"],r=(a["Data.Function.Uncurried"],a["Data.Maybe"]),u=(a.Effect,a["Effect.Exception"],a.Prelude,function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}()),o=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),i=function(){function n(){}return n.value=new n,n}(),l={left:t.Left.create,right:t.Right.create,nothing:r.Nothing.value,just:r.Just.create,killed:u.create,filled:o.create,empty:i.value};n.Killed=u,n.Filled=o,n.Empty=i,n.take=function(n){return function(t){return e._takeVar(l,n,t)}},n.put=function(n){return function(t){return function(r){return e._putVar(l,n,t,r)}}},n.kill=function(n){return function(t){return e._killVar(l,n,t)}},n.empty=e.empty}(a["Effect.AVar"]=a["Effect.AVar"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"],a["Control.Semigroupoid"],a["Data.Maybe"],a.Effect;var e=a["Effect.AVar"],t=a["Effect.Aff"],r=a["Effect.Class"],u=(a["Effect.Exception"],a.Prelude,r.liftEffect(t.monadEffectAff)(e.empty));n.empty=u,n.take=function(n){return t.makeAff(function(r){return function(){var a=e.take(n)(r)();return t.effectCanceler(a)}})},n.put=function(n){return function(r){return t.makeAff(function(a){return function(){var u=e.put(n)(r)(a)();return t.effectCanceler(u)}})}},n.kill=function(n){return function(a){return r.liftEffect(t.monadEffectAff)(e.kill(n)(a))}}}(a["Effect.Aff.AVar"]=a["Effect.Aff.AVar"]||{}),function(n){"use strict";var e=a["Control.Category"],t=(a["Control.Monad.Cont.Trans"],a["Control.Monad.Except.Trans"],a["Control.Monad.List.Trans"],a["Control.Monad.Maybe.Trans"],a["Control.Monad.RWS.Trans"],a["Control.Monad.Reader.Trans"],a["Control.Monad.State.Trans"],a["Control.Monad.Trans.Class"],a["Control.Monad.Writer.Trans"],a["Control.Semigroupoid"],a["Effect.Aff"]),r=(a["Effect.Class"],a.Prelude,function(n,e){this.MonadEffect0=n,this.liftAff=e}),u=new r(function(){return t.monadEffectAff},e.identity(e.categoryFn));n.liftAff=function(n){return n.liftAff},n.MonadAff=r,n.monadAffAff=u}(a["Effect.Aff.Class"]=a["Effect.Aff.Class"]||{}),function(n){"use strict";n.log=function(n){return function(){return console.log(n),{}}},n.warn=function(n){return function(){return console.warn(n),{}}}}(a["Effect.Console"]=a["Effect.Console"]||{}),function(n){"use strict";var e=a["Effect.Console"];a["Data.Show"],a["Data.Unit"],a.Effect;n.log=e.log,n.warn=e.warn}(a["Effect.Console"]=a["Effect.Console"]||{}),function(n){"use strict";a["Control.Semigroupoid"],a["Data.Function"],a["Data.Show"],a["Data.Unit"];var e=a["Effect.Class"],t=a["Effect.Console"];n.log=function(n){return function(r){return e.liftEffect(n)(t.log(r))}}}(a["Effect.Class.Console"]=a["Effect.Class.Console"]||{}),function(e){"use strict";(a["Foreign"]=a["Foreign"]||{}).typeOf=function(e){return void 0===e?"undefined":n(e)}}(),function(n){"use strict";var e=a.Foreign;a["Control.Applicative"],a["Control.Monad.Error.Class"],a["Control.Monad.Except"],a["Control.Monad.Except.Trans"],a["Control.Semigroupoid"],a["Data.Boolean"],a["Data.Either"],a["Data.Eq"],a["Data.Function"],a["Data.HeytingAlgebra"],a["Data.Identity"],a["Data.Int"],a["Data.List.NonEmpty"],a["Data.Maybe"],a["Data.Ord"],a["Data.Ordering"],a["Data.Semigroup"],a["Data.Show"],a["Data.String.CodeUnits"],a.Prelude;n.typeOf=e.typeOf}(a.Foreign=a.Foreign||{}),function(n){"use strict";(a["Foreign.Object"]=a["Foreign.Object"]||{})._lookup=function(n,e,t,r){return t in r?e(r[t]):n}}(),function(n){"use strict";(a["Foreign.Object.ST"]=a["Foreign.Object.ST"]||{}).new=function(){return{}}}(),function(n){"use strict";var e=a["Foreign.Object.ST"];a["Control.Monad.ST"],a["Data.Maybe"];n.new=e.new}(a["Foreign.Object.ST"]=a["Foreign.Object.ST"]||{}),function(n){"use strict";var e=a["Foreign.Object"],t=(a["Control.Applicative"],a["Control.Apply"],a["Control.Bind"],a["Control.Category"],a["Control.Monad.ST"],a["Control.Monad.ST.Internal"],a["Control.Semigroupoid"],a["Data.Array"],a["Data.Eq"],a["Data.Foldable"],a["Data.FoldableWithIndex"],a["Data.Function"],a["Data.Function.Uncurried"]),r=(a["Data.Functor"],a["Data.FunctorWithIndex"],a["Data.HeytingAlgebra"],a["Data.Maybe"]),u=(a["Data.Monoid"],a["Data.Ord"],a["Data.Semigroup"],a["Data.Show"],a["Data.Traversable"],a["Data.TraversableWithIndex"],a["Data.Tuple"],a["Data.Unfoldable"],a["Foreign.Object.ST"],a.Prelude,t.runFn4(e._lookup)(r.Nothing.value)(r.Just.create));n.lookup=u}(a["Foreign.Object"]=a["Foreign.Object"]||{}),function(n){"use strict";var e=a["Data.Eq"],t=a["Data.Ord"],r=(a.Prelude,function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}()),u=new e.Eq(function(n){return function(e){return n.value0(n.value2)(e.value2)}}),o=new t.Ord(function(){return u},function(n){return function(e){return n.value1(n.value2)(e.value2)}});n.mkOrdBox=function(n){return r.create(e.eq(n.Eq0()))(t.compare(n))},n.unOrdBox=function(n){return n.value2},n.eqOrdBox=u,n.ordOrdBox=o}(a["Halogen.Data.OrdBox"]=a["Halogen.Data.OrdBox"]||{}),function(n){"use strict";var e=a["Data.Bifunctor"],t=(a["Data.Eq"],a["Data.Functor"]),r=(a["Data.Maybe"],a["Data.Newtype"]),u=(a["Data.Ord"],a.Prelude,a["Web.DOM"],function(n){return n}),o=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),i=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),l=new r.Newtype(function(n){return n},u),f=new e.Bifunctor(function(n){return function(e){return function(t){if(t instanceof o)return new o(t.value0,t.value1,n(t.value2));if(t instanceof i)return new i(e(t.value0));throw new Error("Failed pattern match at Halogen.Query.InputF line 21, column 15 - line 23, column 27: "+[t.constructor.name])}}}),c=new t.Functor(e.rmap(f));n.RefLabel=u,n.RefUpdate=o,n.Query=i,n.newtypeRefLabel=l,n.bifunctorInputF=f,n.functorInputF=c}(a["Halogen.Query.InputF"]=a["Halogen.Query.InputF"]||{}),function(n){"use strict";a.Effect,a["Effect.Uncurried"],a.Prelude;var e=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}();n.Step=e,n.extract=function(n){return n.value0},n.step=function(n){return n.value1},n.halt=function(n){return n.value2}}(a["Halogen.VDom.Machine"]=a["Halogen.VDom.Machine"]||{}),function(n){"use strict";a["Control.Category"],a["Control.Semigroupoid"];var e=a["Data.Bifunctor"],t=(a["Data.Eq"],a["Data.Functor"]),r=(a["Data.HeytingAlgebra"],a["Data.Maybe"],a["Data.Newtype"],a["Data.Ord"],a["Data.Ordering"],a["Data.Tuple"]),u=(a.Prelude,a["Unsafe.Coerce"]),o=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),i=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),l=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),f=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),c=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),s=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),v=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),d=function(n){return function(e){return n(e)}},p=u.unsafeCoerce,m=new t.Functor(function(n){return function(e){return new o(e.value0,e.value1,n(e.value2))}}),D=new e.Bifunctor(function(n){return function(e){return d(function(t){return p(new v(function(e){return n(t.value0(e))},function(n){return e(t.value1(n))},t.value2))})}}),b=new e.Bifunctor(function(n){return function(t){return function(r){return r instanceof i?new i(r.value0):new s(r instanceof s?e.bimap(D)(n)(t)(r.value0):p(new v(n,t,r)))}}}),E=d(function(n){return function a(u){if(u instanceof i)return new i(u.value0);if(u instanceof l)return new l(t.map(m)(n.value0)(u.value0),t.map(t.functorArray)(a)(u.value1));if(u instanceof f)return new f(t.map(m)(n.value0)(u.value0),t.map(t.functorArray)(t.map(r.functorTuple)(a))(u.value1));if(u instanceof c)return new c(n.value1(u.value0));if(u instanceof s)return new s(e.bimap(D)(n.value0)(n.value1)(u.value0));throw new Error("Failed pattern match at Halogen.VDom.Types line 74, column 7 - line 74, column 27: "+[u.constructor.name])}(n.value2)});n.Text=i,n.Elem=l,n.Keyed=f,n.Widget=c,n.Grafted=s,n.Graft=v,n.graft=p,n.unGraft=d,n.runGraft=E,n.ElemSpec=o,n.bifunctorVDom=b,n.bifunctorGraft=D,n.functorElemSpec=m}(a["Halogen.VDom.Types"]=a["Halogen.VDom.Types"]||{}),function(n){"use strict";n.unsafeGetAny=function(n,e){return e[n]},n.unsafeHasAny=function(n,e){return e.hasOwnProperty(n)},n.unsafeSetAny=function(n,e,t){t[n]=e},n.forE=function(n,e){for(var t=[],r=0;r<n.length;r++)t.push(e(r,n[r]));return t},n.forInE=function(n,e){for(var t=Object.keys(n),r=0;r<t.length;r++){var a=t[r];e(a,n[a])}},n.diffWithIxE=function(n,e,t,r,a){for(var u=[],o=n.length,i=e.length,l=0;;){if(l<o)l<i?u.push(t(l,n[l],e[l])):r(l,n[l]);else{if(!(l<i))break;u.push(a(l,e[l]))}l++}return u},n.strMapWithIxE=function(n,e,t){for(var r={},a=0;a<n.length;a++){var u=n[a],o=e(u);r[o]=t(o,a,u)}return r},n.diffWithKeyAndIxE=function(n,e,t,r,a,u){for(var o={},i=0;i<e.length;i++){var l=e[i],f=t(l);n.hasOwnProperty(f)?o[f]=r(f,i,n[f],l):o[f]=u(f,i,l)}for(var f in n)f in o||a(f,n[f]);return o},n.refEq=function(n,e){return n===e},n.createTextNode=function(n,e){return e.createTextNode(n)},n.setTextContent=function(n,e){e.textContent=n},n.createElement=function(n,e,t){return null!=n?t.createElementNS(n,e):t.createElement(e)},n.insertChildIx=function(n,e,t){var r=t.childNodes.item(n)||null;r!==e&&t.insertBefore(e,r)},n.removeChild=function(n,e){e&&n.parentNode===e&&e.removeChild(n)},n.parentNode=function(n){return n.parentNode},n.setAttribute=function(n,e,t,r){null!=n?r.setAttributeNS(n,e,t):r.setAttribute(e,t)},n.removeAttribute=function(n,e,t){null!=n?t.removeAttributeNS(n,e):t.removeAttribute(e)},n.addEventListener=function(n,e,t){t.addEventListener(n,e,!1)},n.removeEventListener=function(n,e,t){t.removeEventListener(n,e,!1)},n.jsUndefined=void 0}(a["Halogen.VDom.Util"]=a["Halogen.VDom.Util"]||{}),function(n){"use strict";(a["Web.DOM.ParentNode"]=a["Web.DOM.ParentNode"]||{})._querySelector=function(n){return function(e){return function(){return e.querySelector(n)}}}}(),function(n){"use strict";var e=a["Web.DOM.ParentNode"],t=(a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Functor"]),r=(a["Data.Maybe"],a["Data.Newtype"],a["Data.Nullable"]),u=(a["Data.Ord"],a.Effect);a.Prelude,a["Web.DOM.HTMLCollection"],a["Web.DOM.Internal.Types"],a["Web.DOM.NodeList"];n.querySelector=function(n){return function(a){return t.map(u.functorEffect)(r.toMaybe)(e._querySelector(n)(a))}}}(a["Web.DOM.ParentNode"]=a["Web.DOM.ParentNode"]||{}),function(n){"use strict";n.eventListener=function(n){return function(){return function(e){return n(e)()}}},n.addEventListener=function(n){return function(e){return function(t){return function(r){return function(){return r.addEventListener(n,e,t)}}}}},n.removeEventListener=function(n){return function(e){return function(t){return function(r){return function(){return r.removeEventListener(n,e,t)}}}}}}(a["Web.Event.EventTarget"]=a["Web.Event.EventTarget"]||{}),function(n){"use strict";var e=a["Web.Event.EventTarget"];a.Effect,a.Prelude,a["Web.Event.Event"],a["Web.Event.Internal.Types"];n.eventListener=e.eventListener,n.addEventListener=e.addEventListener,n.removeEventListener=e.removeEventListener}(a["Web.Event.EventTarget"]=a["Web.Event.EventTarget"]||{}),function(n){"use strict";(a["Web.Internal.FFI"]=a["Web.Internal.FFI"]||{})._unsafeReadProtoTagged=function(n,e,t,r){for(var a=r;null!=a;){var u=Object.getPrototypeOf(a),o=u.constructor.name;if(o===t)return e(r);if("Object"===o)return n;a=u}return n}}(),function(n){"use strict";var e=a["Web.Internal.FFI"],t=(a["Data.Function.Uncurried"],a["Data.Maybe"]);n.unsafeReadProtoTagged=function(n){return function(r){return e._unsafeReadProtoTagged(t.Nothing.value,t.Just.create,n,r)}}}(a["Web.Internal.FFI"]=a["Web.Internal.FFI"]||{}),function(n){"use strict";a["Web.DOM.Element"],a["Control.Semigroupoid"],a["Data.Functor"],a["Data.Maybe"],a["Data.Nullable"],a.Effect,a.Prelude;var e=a["Unsafe.Coerce"],t=(a["Web.DOM.ChildNode"],a["Web.DOM.Internal.Types"],a["Web.DOM.NonDocumentTypeChildNode"],a["Web.DOM.ParentNode"],a["Web.Event.EventTarget"],a["Web.Internal.FFI"],e.unsafeCoerce);n.toNode=t}(a["Web.DOM.Element"]=a["Web.DOM.Element"]||{}),function(n){"use strict";var e=function(n){return function(e){return function(){return e[n]}}};n._parentNode=e("parentNode"),n._nextSibling=e("nextSibling"),n.insertBefore=function(n){return function(e){return function(t){return function(){return t.insertBefore(n,e)}}}},n.appendChild=function(n){return function(e){return function(){return e.appendChild(n)}}},n.removeChild=function(n){return function(e){return function(){return e.removeChild(n)}}}}(a["Web.DOM.Node"]=a["Web.DOM.Node"]||{}),function(n){"use strict";var e=a["Web.DOM.Node"],t=(a["Control.Semigroupoid"],a["Data.Enum"],a["Data.Functor"]),r=(a["Data.Maybe"],a["Data.Nullable"]),u=a.Effect;a.Prelude,a["Unsafe.Coerce"],a["Web.DOM.Document"],a["Web.DOM.Element"],a["Web.DOM.Internal.Types"],a["Web.DOM.NodeType"],a["Web.Event.EventTarget"],a["Web.Internal.FFI"];n.parentNode=function(n){return t.map(u.functorEffect)(r.toMaybe)(e._parentNode(n))},n.nextSibling=function(n){return t.map(u.functorEffect)(r.toMaybe)(e._nextSibling(n))},n.insertBefore=e.insertBefore,n.appendChild=e.appendChild,n.removeChild=e.removeChild}(a["Web.DOM.Node"]=a["Web.DOM.Node"]||{}),function(n){"use strict";var e=a["Halogen.VDom.Util"],t=a["Control.Applicative"],r=(a["Data.Function.Uncurried"],a["Data.Nullable"],a["Data.Unit"]),u=a.Effect,o=(a["Effect.Uncurried"],a["Foreign.Object"],a["Foreign.Object.ST"]),i=(a["Halogen.VDom.Types"],a.Prelude,a["Unsafe.Coerce"]),l=(a["Web.DOM.Document"],a["Web.DOM.Element"],a["Web.DOM.Node"],a["Web.Event.EventTarget"],e.unsafeGetAny),f=i.unsafeCoerce,c=e.unsafeSetAny,s=o.new,v=t.pure(u.applicativeEffect)(r.unit);n.effectUnit=v,n.newMutMap=s,n.pokeMutMap=c,n.unsafeFreeze=f,n.unsafeLookup=l,n.unsafeGetAny=e.unsafeGetAny,n.unsafeHasAny=e.unsafeHasAny,n.unsafeSetAny=e.unsafeSetAny,n.forE=e.forE,n.forInE=e.forInE,n.diffWithIxE=e.diffWithIxE,n.diffWithKeyAndIxE=e.diffWithKeyAndIxE,n.strMapWithIxE=e.strMapWithIxE,n.refEq=e.refEq,n.createTextNode=e.createTextNode,n.setTextContent=e.setTextContent,n.createElement=e.createElement,n.insertChildIx=e.insertChildIx,n.removeChild=e.removeChild,n.parentNode=e.parentNode,n.setAttribute=e.setAttribute,n.removeAttribute=e.removeAttribute,n.addEventListener=e.addEventListener,n.removeEventListener=e.removeEventListener,n.jsUndefined=e.jsUndefined}(a["Halogen.VDom.Util"]=a["Halogen.VDom.Util"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"],a["Data.Eq"],a["Data.Function.Uncurried"];var e=a["Data.Functor"],t=a["Data.Maybe"],r=a["Data.Nullable"],u=(a["Data.Semigroup"],a["Data.Tuple"]),o=a["Data.Unit"],i=(a.Effect,a["Effect.Ref"]),l=(a["Effect.Uncurried"],a.Foreign),f=a["Foreign.Object"],c=(a["Halogen.VDom"],a["Halogen.VDom.Machine"]),s=(a["Halogen.VDom.Types"],a["Halogen.VDom.Util"]),v=(a.Prelude,a["Unsafe.Coerce"]),d=(a["Web.DOM.Element"],a["Web.Event.Event"],a["Web.Event.EventTarget"]),p=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),m=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),D=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),b=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),E=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),M=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),w=s.unsafeGetAny,C=s.unsafeSetAny,h=function(n){if(n instanceof D&&n.value0 instanceof t.Just)return"attr/"+n.value0.value0+":"+n.value1;if(n instanceof D)return"attr/:"+n.value1;if(n instanceof b)return"prop/"+n.value0;if(n instanceof E)return"handler/"+n.value0;if(n instanceof M)return"ref";throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 178, column 16 - line 185, column 1: "+[n.constructor.name])},g=v.unsafeCoerce,y=v.unsafeCoerce,T=new e.Functor(function(n){return function(r){return r instanceof E?new E(r.value0,e.map(e.functorFn)(e.map(t.functorMaybe)(n))(r.value1)):r instanceof M?new M(e.map(e.functorFn)(e.map(t.functorMaybe)(n))(r.value0)):r}});n.Attribute=D,n.Property=b,n.Handler=E,n.Ref=M,n.Created=p,n.Removed=m,n.propFromString=g,n.propFromBoolean=y,n.buildProp=function(n){return function(e){var a=function(n){return function(t,a){if(a instanceof D)return s.removeAttribute(r.toNullable(a.value0),a.value1,e);if(a instanceof b)return function(n,e){return"string"===l.typeOf(s.unsafeGetAny(n,e))?s.unsafeSetAny(n,"",e):"rowSpan"===n?s.unsafeSetAny(n,1,e):"colSpan"===n?s.unsafeSetAny(n,1,e):s.unsafeSetAny(n,s.jsUndefined,e)}(a.value0,e);if(a instanceof E){var i=s.unsafeLookup(a.value0,n);return s.removeEventListener(a.value0,u.fst(i),e)}if(a instanceof M)return o.unit;throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 165, column 5 - line 175, column 18: "+[a.constructor.name])}},v=function(e){return e instanceof t.Just?n(e.value0)():o.unit},g=function(n){var r=f.lookup("ref")(n);return r instanceof t.Just&&r.value0 instanceof M?function(){return v(r.value0.value0(new m(e)))}:s.effectUnit},y=function(n){return function(t,a,o){if(o instanceof D)return s.setAttribute(r.toNullable(o.value0),o.value1,o.value2,e),o;if(o instanceof b)return C(o.value0,o.value1,e),o;if(o instanceof E){var l=s.unsafeGetAny(o.value0,n);if(s.unsafeHasAny(o.value0,n))return i.write(o.value1)(u.snd(l))(),o;var f=i.new(o.value1)(),c=d.eventListener(function(n){return function(){var e=i.read(f)();return v(e(n))}})();return s.pokeMutMap(o.value0,new u.Tuple(c,f),n),s.addEventListener(o.value0,c,e),o}if(o instanceof M)return v(o.value0(new p(e))),o;throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 109, column 5 - line 131, column 15: "+[o.constructor.name])}},T=function n(t,l){return function(f){var v=s.newMutMap(),d=a(t),p=function(n,t){return function(a,o,l,f){if(l instanceof D&&f instanceof D)return l.value2===f.value2?f:(s.setAttribute(r.toNullable(f.value0),f.value1,f.value2,e),f);if(l instanceof b&&f instanceof b){if(s.refEq(l.value1,f.value1))return f;if("value"===f.value0){var c=w("value",e);return s.refEq(c,f.value1)?f:(C(f.value0,f.value1,e),f)}return C(f.value0,f.value1,e),f}if(l instanceof E&&f instanceof E){var v=s.unsafeLookup(f.value0,n);return i.write(f.value1)(u.snd(v))(),s.pokeMutMap(f.value0,v,t),f}return f}}(t,v),m=y(v),M=s.diffWithKeyAndIxE(l,f,h,p,d,m);return new c.Step(o.unit,n(s.unsafeFreeze(v),M),g(M))}};return function(n){var e=s.newMutMap(),t=s.strMapWithIxE(n,h,y(e));return new c.Step(o.unit,T(s.unsafeFreeze(e),t),g(t))}}},n.functorProp=T}(a["Halogen.VDom.DOM.Prop"]=a["Halogen.VDom.DOM.Prop"]||{}),function(n){"use strict";a["Control.Semigroupoid"],a["DOM.HTML.Indexed.ButtonType"],a["DOM.HTML.Indexed.CrossOriginValue"],a["DOM.HTML.Indexed.DirValue"],a["DOM.HTML.Indexed.FormMethod"];var e=a["DOM.HTML.Indexed.InputType"],t=(a["DOM.HTML.Indexed.KindValue"],a["DOM.HTML.Indexed.MenuType"],a["DOM.HTML.Indexed.MenuitemType"],a["DOM.HTML.Indexed.OnOff"],a["DOM.HTML.Indexed.OrderedListType"],a["DOM.HTML.Indexed.PreloadValue"],a["DOM.HTML.Indexed.ScopeValue"],a["DOM.HTML.Indexed.StepValue"],a["DOM.HTML.Indexed.WrapValue"],a["Data.Bifunctor"]),r=(a["Data.Eq"],a["Data.Function"],a["Data.Functor"]),u=a["Data.Maybe"],o=(a["Data.MediaType"],a["Data.Newtype"]),i=(a["Data.Ord"],a["Data.Semigroup"],a["Data.Tuple"],a["Halogen.Query.InputF"]),l=(a["Halogen.VDom"],a["Halogen.VDom.DOM.Prop"]),f=a["Halogen.VDom.Types"],c=(a.Prelude,a["Unsafe.Coerce"],a["Web.DOM.Element"],a["Web.Event.Event"],function(n){return n}),s=function(n){return n},v=function(n){return n},d=function(n){this.toPropValue=n},p=function(n){return n.toPropValue},m=new d(l.propFromString),D=new o.Newtype(function(n){return n},c),b=new o.Newtype(function(n){return n},v),E=new d(function(n){return l.propFromString(e.renderInputType(n))}),M=l.Handler.create,w=new d(l.propFromBoolean),C=new t.Bifunctor(function(n){return function(e){return function(a){return t.bimap(f.bifunctorVDom)(r.map(r.functorArray)(r.map(l.functorProp)(r.map(i.functorInputF)(e))))(n)(a)}}});n.HTML=s,n.text=function(n){return s(f.Text.create(n))},n.element=function(n){return function(e){return function(t){return function(r){return new f.Elem(new f.ElemSpec(n,e,t),r)}}}},n.prop=function(n){return function(e){return function(t){return l.Property.create(e)(p(n)(t))}}},n.handler=M,n.ref=function(n){return l.Ref.create(function(e){return n(function(n){if(n instanceof l.Created)return new u.Just(n.value0);if(n instanceof l.Removed)return u.Nothing.value;throw new Error("Failed pattern match at Halogen.HTML.Core line 103, column 21 - line 105, column 23: "+[n.constructor.name])}(e))})},n.IsProp=d,n.toPropValue=p,n.PropName=c,n.ClassName=v,n.bifunctorHTML=C,n.stringIsProp=m,n.booleanIsProp=w,n.inputTypeIsProp=E,n.newtypePropName=D,n.newtypeClassName=b}(a["Halogen.HTML.Core"]=a["Halogen.HTML.Core"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"],a["Control.Coroutine"],a["Control.Monad.Free.Trans"],a["Control.Monad.Rec.Class"],a["Control.Monad.Trans.Class"],a["Control.Semigroupoid"],a["Data.Bifunctor"],a["Data.Either"];var e=a["Data.Eq"],t=(a["Data.Foldable"],a["Data.Function"],a["Data.Functor"],a["Data.Maybe"],a["Data.Ord"],a["Data.Ordering"],a["Data.Unit"],a.Effect,a["Effect.Aff"],a["Effect.Aff.AVar"],a["Effect.Aff.Class"],a["Effect.Class"],a["Effect.Exception"],a.Prelude,function(){function n(){}return n.value=new n,n}()),r=function(){function n(){}return n.value=new n,n}(),u=new e.Eq(function(n){return function(e){return n instanceof t&&e instanceof t||n instanceof r&&e instanceof r}});n.Listening=t,n.Done=r,n.unEventSource=function(n){return n},n.eqSubscribeStatus=u}(a["Halogen.Query.EventSource"]=a["Halogen.Query.EventSource"]||{}),function(n){"use strict";a["Control.Category"],a["Data.Function"],a["Data.Functor"],a["Effect.Aff"],a["Effect.Exception"],a.Prelude;var e=a["Unsafe.Coerce"].unsafeCoerce;n.unFork=e}(a["Halogen.Query.ForkF"]=a["Halogen.Query.ForkF"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=(a["Control.Applicative.Free"],a["Control.Apply"]),r=a["Control.Bind"],u=a["Control.Category"],o=a["Control.Monad"],i=a["Control.Monad.Free"],l=(a["Control.Monad.Reader.Class"],a["Control.Monad.Rec.Class"],a["Control.Monad.State.Class"]),f=(a["Control.Monad.Trans.Class"],a["Control.Monad.Writer.Class"],a["Control.Parallel.Class"],a["Control.Semigroupoid"],a["Data.Bifunctor"],a["Data.Coyoneda"],a["Data.Function"],a["Data.Functor"]),c=(a["Data.List"],a["Data.List.Types"],a["Data.Maybe"],a["Data.Newtype"],a["Data.Tuple"],a["Data.Unit"],a["Effect.Aff.Class"]),s=a["Effect.Class"],v=(a["Effect.Exception"],a["Halogen.Query.EventSource"],a["Halogen.Query.ForkF"],a["Halogen.Query.InputF"],a.Prelude,a["Web.DOM"],function(n){return n}),d=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),p=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),m=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),D=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),b=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),E=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),M=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),w=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),C=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),h=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),g=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),y=new f.Functor(function(n){return function(e){return f.map(i.freeFunctor)(n)(e)}}),T=new t.Apply(function(){return y},function(n){return function(e){return t.apply(i.freeApply)(n)(e)}}),F=new r.Bind(function(){return T},function(n){return function(e){return r.bind(i.freeBind)(n)(function(n){return e(n)})}}),A=new e.Applicative(function(){return T},function(n){return e.pure(i.freeApplicative)(n)}),H=new o.Monad(function(){return A},function(){return F}),L=function(n){return new s.MonadEffect(function(){return H},function(e){return v(i.liftF(m.create(s.liftEffect(n)(e))))})},S=new l.MonadState(function(){return H},function(n){return v(i.liftF(d.create(n)))});n.State=d,n.Subscribe=p,n.Lift=m,n.Halt=D,n.GetSlots=b,n.CheckSlot=E,n.ChildQuery=M,n.Raise=w,n.Par=C,n.Fork=h,n.GetRef=g,n.HalogenM=v,n.getRef=function(n){return v(i.liftF(new g(n,u.identity(u.categoryFn))))},n.functorHalogenM=y,n.applyHalogenM=T,n.applicativeHalogenM=A,n.bindHalogenM=F,n.monadHalogenM=H,n.monadEffectHalogenM=L,n.monadAffHalogenM=function(n){return new c.MonadAff(function(){return L(n.MonadEffect0())},function(e){return v(i.liftF(m.create(c.liftAff(n)(e))))})},n.monadStateHalogenM=S}(a["Halogen.Query.HalogenM"]=a["Halogen.Query.HalogenM"]||{}),function(n){"use strict";a["Control.Semigroupoid"],a["Data.Bifunctor"],a["Data.Const"],a["Data.Functor"];var e=a["Data.Maybe"],t=a["Data.Ord"],r=a["Halogen.Data.OrdBox"],u=(a["Halogen.HTML.Core"],a["Halogen.Query.HalogenM"],a.Prelude,a["Unsafe.Coerce"]),o=u.unsafeCoerce,i=u.unsafeCoerce,l=function(n){return function(n){return i({initialState:n.initialState,render:n.render,eval:n.eval,receiver:n.receiver,initializer:n.initializer,finalizer:n.finalizer,mkOrdBox:r.mkOrdBox(t.ordVoid)})}};n.mkComponent=i,n.unComponent=o,n.component=function(n){return function(n){return l()({initialState:n.initialState,render:n.render,eval:n.eval,receiver:n.receiver,initializer:e.Nothing.value,finalizer:e.Nothing.value})}},n.lifecycleComponent=l,n.unComponentSlot=function(n){return function(e){return n(e.value0)(e.value1)(e.value2)(e.value3)(e.value4)(e.value5)}}}(a["Halogen.Component"]=a["Halogen.Component"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"];var e=a["Data.Foldable"],t=(a["Data.Function"],a["Data.Functor"]),r=(a["Data.List"],a["Data.List.Types"]),u=(a["Data.Map"],a["Data.Map.Internal"]),o=a["Data.Maybe"],i=(a["Data.Traversable"],a.Effect,a["Effect.Aff"],a["Effect.Ref"]),l=(a["Halogen.Component"],a["Halogen.Data.OrdBox"],a.Prelude,a["Unsafe.Coerce"]),f=(a["Web.DOM"],l.unsafeCoerce),c=l.unsafeCoerce,s=l.unsafeCoerce;n.unDriverStateX=c,n.mkDriverStateXRef=s,n.renderStateX=function(n){return function(n){return c(function(e){return(e.prjQuery,l.unsafeCoerce)(n(e.rendering))})}},n.renderStateX_=function(n){return function(t){return c(function(r){return e.traverse_(n)(e.foldableMaybe)(t)(r.rendering)})}},n.unRenderStateX=f,n.initDriverState=function(n){return function(e){return function(a){return function(l){return function(f){return function(){var c=i.new({})(),v=i.new(u.empty)(),d=i.new(u.empty)(),p=i.new(t.voidLeft(o.functorMaybe)(n.initializer)(r.Nil.value))(),m=i.new(new o.Just(r.Nil.value))(),D=i.new(o.Nothing.value)(),b=i.new(0)(),E=i.new(new o.Just(u.empty))(),M={component:n,state:n.initialState(e),refs:u.empty,children:u.empty,childrenIn:v,childrenOut:d,selfRef:c,handler:a,pendingQueries:p,pendingOuts:m,pendingHandlers:D,rendering:o.Nothing.value,prjQuery:l,fresh:b,subscriptions:E,lifecycleHandlers:f};return i.write(M)(c)(),s(c)}}}}}}}(a["Halogen.Aff.Driver.State"]=a["Halogen.Aff.Driver.State"]||{}),function(n){"use strict";(a["Unsafe.Reference"]=a["Unsafe.Reference"]||{}).reallyUnsafeRefEq=function(n){return function(e){return n===e}}}(),function(n){"use strict";var e=a["Unsafe.Reference"].reallyUnsafeRefEq;n.unsafeRefEq=e}(a["Unsafe.Reference"]=a["Unsafe.Reference"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Applicative.Free"],r=a["Control.Bind"],u=a["Control.Coroutine"],o=a["Control.Monad.Error.Class"],i=a["Control.Monad.Fork.Class"],l=a["Control.Monad.Free"],f=a["Control.Monad.Free.Trans"],c=a["Control.Monad.Trans.Class"],s=a["Control.Parallel"],v=a["Control.Parallel.Class"],d=(a["Control.Semigroupoid"],a["Data.Boolean"]),p=a["Data.Coyoneda"],m=a["Data.Eq"],D=a["Data.Foldable"],b=a["Data.Function"],E=a["Data.Functor"],M=a["Data.List"],w=a["Data.List.Types"],C=a["Data.Map"],h=a["Data.Map.Internal"],g=a["Data.Maybe"],y=a["Data.Ord"],T=(a["Data.Semiring"],a["Data.Set"]),F=(a["Data.Tuple"],a.Effect,a["Effect.Aff"]),A=a["Effect.Class"],H=a["Effect.Exception"],L=a["Effect.Ref"],S=a["Halogen.Aff.Driver.State"],W=a["Halogen.Data.OrdBox"],O=a["Halogen.Query.EventSource"],I=a["Halogen.Query.ForkF"],P=a["Halogen.Query.HalogenM"],x=a["Halogen.Query.InputF"],N=(a.Prelude,a["Unsafe.Reference"]),U=function(n){return function(e){return function(t){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(e)))(function(r){if(r instanceof g.Nothing)return n(t);if(r instanceof g.Just)return A.liftEffect(F.monadEffectAff)(L.write(new g.Just(new w.Cons(n(t),r.value0)))(e));throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 171, column 3 - line 175, column 59: "+[r.constructor.name])})}}},_=function(n){return function(t){return r.discard(r.discardUnit)(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.write({initializers:w.Nil.value,finalizers:w.Nil.value})(n)))(function(){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(t))(function(t){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(n)))(function(n){return r.discard(r.discardUnit)(F.bindAff)(D.traverse_(F.applicativeAff)(w.foldableList)(i.fork(i.monadForkAff))(n.finalizers))(function(){return r.discard(r.discardUnit)(F.bindAff)(s.parSequence_(F.parallelAff)(w.foldableList)(n.initializers))(function(){return e.pure(F.applicativeAff)(t)})})})})})}};n.handleLifecycle=_,n.eval=function(n){return function(a){var s=function(a){return function(l){if(l instanceof P.State)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(t){var u=l.value0(t.state);if(N.unsafeRefEq(t.state)(u.value1))return e.pure(F.applicativeAff)(u.value0);if(d.otherwise)return r.discard(r.discardUnit)(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.write({component:t.component,state:u.value1,refs:t.refs,children:t.children,childrenIn:t.childrenIn,childrenOut:t.childrenOut,selfRef:t.selfRef,handler:t.handler,pendingQueries:t.pendingQueries,pendingOuts:t.pendingOuts,pendingHandlers:t.pendingHandlers,rendering:t.rendering,prjQuery:t.prjQuery,fresh:t.fresh,subscriptions:t.subscriptions,lifecycleHandlers:t.lifecycleHandlers})(a)))(function(){return r.discard(r.discardUnit)(F.bindAff)(_(t.lifecycleHandlers)(n(t.lifecycleHandlers)(a)))(function(){return e.pure(F.applicativeAff)(u.value0)})});throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 76, column 7 - line 82, column 21: "+[u.constructor.name])});if(l instanceof P.Subscribe)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(n){return r.bind(F.bindAff)(i.fork(i.monadForkAff)(r.bind(F.bindAff)(O.unEventSource(l.value0))(function(t){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L["modify'"](function(n){return{state:n+1|0,value:n}})(n.fresh)))(function(o){var i=r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(n.subscriptions)))(function(t){return e.when(F.applicativeAff)(g.maybe(!1)(h.member(y.ordInt)(o))(t))(A.liftEffect(F.monadEffectAff)(L.modify_(E.map(g.functorMaybe)(h.delete(y.ordInt)(o)))(n.subscriptions)))});return r.discard(r.discardUnit)(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.modify_(E.map(g.functorMaybe)(h.insert(y.ordInt)(o)(i)))(n.subscriptions)))(function(){var o=r.bind(f.bindFreeT(u.functorAwait)(F.monadAff))(u.await(F.monadAff))(function(t){return r.bind(f.bindFreeT(u.functorAwait)(F.monadAff))(c.lift(f.monadTransFreeT(u.functorAwait))(F.monadAff)(A.liftEffect(F.monadEffectAff)(L.read(n.subscriptions))))(function(n){return e.when(f.applicativeFreeT(u.functorAwait)(F.monadAff))(g.isJust(n))(r.bind(f.bindFreeT(u.functorAwait)(F.monadAff))(c.lift(f.monadTransFreeT(u.functorAwait))(F.monadAff)(R(a)(t)))(function(n){return e.when(f.applicativeFreeT(u.functorAwait)(F.monadAff))(m.eq(O.eqSubscribeStatus)(n)(O.Listening.value))(o)}))})});return r.discard(r.discardUnit)(F.bindAff)(u.runProcess(F.monadRecAff)(u.pullFrom(F.monadRecAff)(o)(t.producer)))(function(){return i})})})})))(function(n){return e.pure(F.applicativeAff)(l.value1)})});if(l instanceof P.Lift)return l.value0;if(l instanceof P.Halt)return o.throwError(F.monadThrowAff)(H.error(l.value0));if(l instanceof P.GetSlots)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(n){return e.pure(F.applicativeAff)(l.value0(E.map(w.functorList)(W.unOrdBox)(M.fromFoldable(T.foldableSet)(C.keys(n.children)))))});if(l instanceof P.CheckSlot)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(n){return e.pure(F.applicativeAff)(l.value1(h.member(W.ordOrdBox)(n.component.mkOrdBox(l.value0))(n.children)))});if(l instanceof P.ChildQuery)return k(a)(l.value0)(l.value1);if(l instanceof P.Raise)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(n){return r.discard(r.discardUnit)(F.bindAff)(U(n.handler)(n.pendingOuts)(l.value0))(function(){return e.pure(F.applicativeAff)(l.value1)})});if(l instanceof P.Par)return v.sequential(F.parallelAff)(t.retractFreeAp(F.applicativeParAff)(t.hoistFreeAp(function(n){return v.parallel(F.parallelAff)(D(a)(n))})(l.value0)));if(l instanceof P.Fork)return I.unFork(function(n){return r.bind(F.bindAff)(i.fork(i.monadForkAff)(D(a)(n.value0)))(function(t){return e.pure(F.applicativeAff)(n.value1(b.flip(F.killFiber)(t)))})})(l.value0);if(l instanceof P.GetRef)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(a)))(function(n){return e.pure(F.applicativeAff)(l.value1(h.lookup(y.ordString)(l.value0)(n.refs)))});throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 73, column 12 - line 128, column 33: "+[l.constructor.name])}},D=function(n){return function(e){return l.foldFree(F.monadRecAff)(s(n))(e)}},R=function(n){return function(e){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(n)))(function(t){var r=t.component.eval(e);return l.foldFree(F.monadRecAff)(s(n))(r)})}},k=function(n){return function(e){return p.unCoyoneda(function(t){return function(a){return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(n)))(function(n){var u=h.lookup(W.ordOrdBox)(n.component.mkOrdBox(e))(n.children);if(u instanceof g.Just)return r.bind(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.read(u.value0)))(function(n){return S.unDriverStateX(function(n){var e=n.prjQuery(a);if(e instanceof g.Just)return E.map(F.functorAff)(t)(R(n.selfRef)(e.value0));if(e instanceof g.Nothing)return o.throwError(F.monadThrowAff)(H.error("Query projection failed for child query"));throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 141, column 32 - line 143, column 82: "+[e.constructor.name])})(n)});if(u instanceof g.Nothing)return o.throwError(F.monadThrowAff)(H.error("Slot lookup failed for child query"));throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 138, column 5 - line 144, column 73: "+[u.constructor.name])})}})}};return function(n){if(n instanceof x.RefUpdate)return r.discard(r.discardUnit)(F.bindAff)(A.liftEffect(F.monadEffectAff)(L.modify_(function(e){return{component:e.component,state:e.state,refs:h.alter(y.ordString)(b.const(n.value1))(n.value0)(e.refs),children:e.children,childrenIn:e.childrenIn,childrenOut:e.childrenOut,selfRef:e.selfRef,handler:e.handler,pendingQueries:e.pendingQueries,pendingOuts:e.pendingOuts,pendingHandlers:e.pendingHandlers,rendering:e.rendering,prjQuery:e.prjQuery,fresh:e.fresh,subscriptions:e.subscriptions,lifecycleHandlers:e.lifecycleHandlers}})(a)))(function(){return e.pure(F.applicativeAff)(n.value2)});if(n instanceof x.Query)return R(a)(n.value0);throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 59, column 3 - line 64, column 25: "+[n.constructor.name])}}},n.queuingHandler=U}(a["Halogen.Aff.Driver.Eval"]=a["Halogen.Aff.Driver.Eval"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Bind"],r=a["Control.Coroutine"],u=a["Control.Monad.Fork.Class"],o=a["Control.Monad.Rec.Class"],i=a["Control.Parallel"],l=(a["Control.Semigroupoid"],a["Data.Either"]),f=a["Data.Foldable"],c=a["Data.Function"],s=a["Data.Functor"],v=a["Data.List"],d=a["Data.List.Types"],p=(a["Data.Map"],a["Data.Map.Internal"]),m=a["Data.Maybe"],D=a["Data.Ord"],b=(a["Data.Semiring"],a["Data.Traversable"],a["Data.Tuple"],a["Data.Unit"]),E=a.Effect,M=a["Effect.Aff"],w=a["Effect.Aff.AVar"],C=a["Effect.Class"],h=a["Effect.Console"],g=a["Effect.Exception"],y=a["Effect.Ref"],T=(a.Halogen,a["Halogen.Aff.Driver.Eval"]),F=a["Halogen.Aff.Driver.State"],A=a["Halogen.Component"],H=a["Halogen.Data.OrdBox"],L=a["Halogen.Query.InputF"],S=(a.Prelude,y.new({initializers:d.Nil.value,finalizers:d.Nil.value})),W=M.runAff_(l.either(g.throwException)(c.const(e.pure(E.applicativeEffect)(b.unit))));n.runUI=function(n){return function(a){return function(O){var I=function(n){return function(){var e=y.read(n)();return y.write(m.Nothing.value)(n)(),f.for_(E.applicativeEffect)(f.foldableMaybe)(e)(function(n){return W(f.traverse_(M.applicativeAff)(d.foldableList)(u.fork(u.monadForkAff))(v.reverse(n)))})()}},P=function(n){return function(e){return function(r){return function(a){return A.unComponent(function(u){return function(){var o=S(),l=F.initDriverState(u)(r)(e)(a)(o)(),c=y.read(n)();return y.write({initializers:d.Nil.value,finalizers:c.finalizers})(n)(),t.bindFlipped(E.bindEffect)(F.unDriverStateX(function(e){return x(n)(e.selfRef)}))(y.read(l))(),t.bindFlipped(E.bindEffect)(function(n){return function(e){return F.unDriverStateX(function(r){var a=s.map(m.functorMaybe)(function(n){return U(r.selfRef)(L.Query.create(n))})(r.component.initializer);return y.modify_(function(n){return{initializers:new d.Cons(t.discard(t.discardUnit)(M.bindAff)(i.parSequence_(M.parallelAff)(d.foldableList)(v.reverse(n.initializers)))(function(){return t.discard(t.discardUnit)(M.bindAff)(f.sequence_(M.applicativeAff)(f.foldableMaybe)(a))(function(){return C.liftEffect(M.monadEffectAff)(function(){return I(r.pendingQueries)(),I(r.pendingOuts)()})})}),e),finalizers:n.finalizers}})(n)})}}(n)(c.initializers))(y.read(l))(),l}})}}}},x=function(r){return function(a){return function(){var i=y.read(a)(),l=s.map(E.functorEffect)(m.isNothing)(y.read(i.pendingHandlers))();e.when(E.applicativeEffect)(l)(y.write(new m.Just(d.Nil.value))(i.pendingHandlers))(),y.write(p.empty)(i.childrenOut)(),y.write(i.children)(i.childrenIn)();var D=T.queuingHandler(function(n){return s.void(M.functorAff)(U(i.selfRef)(n))})(i.pendingHandlers),w=T.queuingHandler(function(n){return D(L.Query.create(n))})(i.pendingQueries),C=n.render(function(n){return W(D(n))})(function(r){return function(a){return function(u){return function(o){return function(i){return A.unComponentSlot(function(l){return function(c){return function(v){return function(d){return function(D){return function(w){var C=u(l);return function(){var u=y.read(o)(),l=function(){var n=p.pop(H.ordOrdBox)(C)(u);if(n instanceof m.Just)return y.write(n.value0.value1)(o)(),f.for_(E.applicativeEffect)(f.foldableMaybe)(d(v))(function(e){return function(){var t=y.read(n.value0.value0)();return F.unDriverStateX(function(n){return f.for_(E.applicativeEffect)(f.foldableMaybe)(n.prjQuery(e))(function(e){return W(U(n.selfRef)(L.Query.create(e)))})})(t)()}})(),n.value0.value0;if(n instanceof m.Nothing)return P(r)(function(n){return m.maybe(e.pure(M.applicativeAff)(b.unit))(a)(D(n))})(v)(w)(c)();throw new Error("Failed pattern match at Halogen.Aff.Driver line 258, column 14 - line 266, column 92: "+[n.constructor.name])}(),T=s.map(E.functorEffect)(p.member(H.ordOrdBox)(C))(y.read(i))();return e.when(E.applicativeEffect)(T)(h.warn("Halogen: Duplicate slot address was detected during rendering, unexpected results may occur"))(),y.modify_(p.insert(H.ordOrdBox)(C)(l))(i)(),t.bind(E.bindEffect)(y.read(l))(F.renderStateX(E.functorEffect)(function(t){if(t instanceof m.Nothing)return g.throw("Halogen internal error: child was not initialized in renderChild");if(t instanceof m.Just)return e.pure(E.applicativeEffect)(n.renderChild(t.value0));throw new Error("Failed pattern match at Halogen.Aff.Driver line 271, column 37 - line 273, column 50: "+[t.constructor.name])}))()}}}}}}})}}}}}(r)(w)(i.component.mkOrdBox)(i.childrenIn)(i.childrenOut))(i.component.render(i.state))(i.rendering)(),S=y.read(i.childrenOut)();return t.bind(E.bindEffect)(y.read(i.childrenIn))(f.traverse_(E.applicativeEffect)(p.foldableMap)(function(e){return function(){var t=y.read(e)();return F.renderStateX_(E.applicativeEffect)(n.removeChild)(t)(),N(r)(t)()}}))(),y.modify_(function(n){return{rendering:new m.Just(C),children:S,component:n.component,state:n.state,refs:n.refs,childrenIn:n.childrenIn,childrenOut:n.childrenOut,selfRef:n.selfRef,handler:n.handler,pendingQueries:n.pendingQueries,pendingOuts:n.pendingOuts,pendingHandlers:n.pendingHandlers,prjQuery:n.prjQuery,fresh:n.fresh,subscriptions:n.subscriptions,lifecycleHandlers:n.lifecycleHandlers}})(i.selfRef)(),e.when(E.applicativeEffect)(l)(c.flip(o.tailRecM(o.monadRecEffect))(b.unit)(function(n){return function(){var n=y.read(i.pendingHandlers)();y.write(new m.Just(d.Nil.value))(i.pendingHandlers)(),f.traverse_(E.applicativeEffect)(f.foldableMaybe)(function(n){return W(f.traverse_(M.applicativeAff)(d.foldableList)(u.fork(u.monadForkAff))(v.reverse(n)))})(n)();var e=y.read(i.pendingHandlers)();return m.maybe(!1)(v.null)(e)?s.voidLeft(E.functorEffect)(y.write(m.Nothing.value)(i.pendingHandlers))(new o.Done(b.unit))():new o.Loop(b.unit)}}))()}}},N=function n(e){return F.unDriverStateX(function(r){return function(){var a;return(a=r,function(){return t.bindFlipped(E.bindEffect)(f.traverse_(E.applicativeEffect)(f.foldableMaybe)(function(n){return W(f.traverse_(M.applicativeAff)(p.foldableMap)(u.fork(u.monadForkAff))(n))}))(y.read(a.subscriptions))(),y.write(m.Nothing.value)(a.subscriptions)()})(),f.for_(E.applicativeEffect)(f.foldableMaybe)(s.map(m.functorMaybe)(function(n){return U(r.selfRef)(L.Query.create(n))})(r.component.finalizer))(function(n){return y.modify_(function(e){return{initializers:e.initializers,finalizers:new d.Cons(n,e.finalizers)}})(e)})(),f.for_(E.applicativeEffect)(p.foldableMap)(r.children)(t.composeKleisliFlipped(E.bindEffect)(n(e))(y.read))()}})},U=function(n){return T.eval(x)(n)};return t.bind(M.bindAff)(C.liftEffect(M.monadEffectAff)(S))(function(n){return t.bind(M.bindAff)(C.liftEffect(M.monadEffectAff)(y.new(0)))(function(o){return T.handleLifecycle(n)(function(){var i,c=y.new(p.empty)();return t.bind(E.bindEffect)(t.bind(E.bindEffect)(P(n)((i=c,function(n){return t.bind(M.bindAff)(C.liftEffect(M.monadEffectAff)(y.read(i)))(function(e){return f.traverse_(M.applicativeAff)(p.foldableMap)(u.fork(u.monadForkAff))(s.map(p.functorMap)(w.put(n))(e))})}))(O)(m.Just.create)(a))(y.read))(F.unDriverStateX(function(n){return e.pure(E.applicativeEffect)({query:(i=n.selfRef,function(n){return function(e){var t=n(e);if(t instanceof m.Just)return U(i)(new L.Query(t.value0));if(t instanceof m.Nothing)return C.liftEffect(M.monadEffectAff)(g.throwException(g.error("Halogen internal error: query projection failed in runUI'")));throw new Error("Failed pattern match at Halogen.Aff.Driver line 136, column 5 - line 138, column 113: "+[t.constructor.name])}})(n.prjQuery),subscribe:(a=o,function(n){return function(e){return t.bind(M.bindAff)(w.empty)(function(o){return t.bind(M.bindAff)(C.liftEffect(M.monadEffectAff)(function(){var e=y.read(a)();return y.modify_(function(n){return n+1|0})(a)(),y.modify_(p.insert(D.ordInt)(e)(o))(n)(),e}))(function(a){var i=r.producer(M.monadAff)(s.map(M.functorAff)(l.Left.create)(w.take(o)));return s.void(M.functorAff)(u.fork(u.monadForkAff)(t.discard(t.discardUnit)(M.bindAff)(r.runProcess(M.monadRecAff)(r.connect(M.monadRecAff)(M.parallelAff)(i)(e)))(function(){return t.discard(t.discardUnit)(M.bindAff)(C.liftEffect(M.monadEffectAff)(y.modify_(p.delete(D.ordInt)(a))(n)))(function(){return w.kill(g.error("ended"))(o)})})))})})}})(c)});var a,i}))()})})})}}}}(a["Halogen.Aff.Driver"]=a["Halogen.Aff.Driver"]||{}),function(n){"use strict";(a["Web.HTML"]=a["Web.HTML"]||{}).window=function(){return window}}(),function(n){"use strict";(a["Web.HTML.HTMLElement"]=a["Web.HTML.HTMLElement"]||{})._read=function(n,e,t){var r=Object.prototype.toString.call(t);return 0===r.indexOf("[object HTML")&&r.indexOf("Element]")===r.length-8?e(t):n}}(),function(n){"use strict";var e=a["Web.HTML.HTMLElement"],t=(a["Control.Semigroupoid"],a["Data.Function.Uncurried"],a["Data.Functor"],a["Data.Maybe"]),r=(a["Data.Nullable"],a.Effect,a.Prelude,a["Unsafe.Coerce"]),u=(a["Web.DOM"],a["Web.DOM.DOMTokenList"],a["Web.DOM.Element"],a["Web.DOM.Internal.Types"],a["Web.DOM.NonDocumentTypeChildNode"],a["Web.DOM.ParentNode"],a["Web.Event.EventTarget"],r.unsafeCoerce);n.fromElement=function(n){return e._read(t.Nothing.value,t.Just.create,n)},n.toNode=u}(a["Web.HTML.HTMLElement"]=a["Web.HTML.HTMLElement"]||{}),function(n){"use strict";n.currentTime=function(n){return function(){return n.currentTime}},n.setCurrentTime=function(n){return function(e){return function(){e.currentTime=n}}},n.playbackRate=function(n){return function(){return n.playbackRate}},n.setPlaybackRate=function(n){return function(e){return function(){e.playbackRate=n}}}}(a["Web.HTML.HTMLMediaElement"]=a["Web.HTML.HTMLMediaElement"]||{}),function(n){"use strict";var e=a["Web.HTML.HTMLMediaElement"];a["Control.Semigroupoid"],a["Data.Enum"],a["Data.Function"],a["Data.Functor"],a["Data.JSDate"],a["Data.Maybe"],a.Effect,a["Effect.Uncurried"],a.Prelude,a["Unsafe.Coerce"],a["Web.DOM"],a["Web.Event.EventTarget"],a["Web.HTML.HTMLElement"],a["Web.HTML.HTMLMediaElement.CanPlayType"],a["Web.HTML.HTMLMediaElement.NetworkState"],a["Web.HTML.HTMLMediaElement.ReadyState"],a["Web.Internal.FFI"];n.currentTime=e.currentTime,n.setCurrentTime=e.setCurrentTime,n.setPlaybackRate=e.setPlaybackRate}(a["Web.HTML.HTMLMediaElement"]=a["Web.HTML.HTMLMediaElement"]||{}),function(n){"use strict";a["Data.Maybe"];var e=a["Unsafe.Coerce"],t=(a["Web.DOM"],a["Web.Event.EventTarget"],a["Web.HTML.HTMLElement"],a["Web.HTML.HTMLMediaElement"],a["Web.Internal.FFI"]),r=e.unsafeCoerce,u=t.unsafeReadProtoTagged("HTMLAudioElement");n.fromHTMLElement=u,n.toHTMLMediaElement=r}(a["Web.HTML.HTMLAudioElement"]=a["Web.HTML.HTMLAudioElement"]||{}),function(n){"use strict";(a["Web.HTML.HTMLDocument"]=a["Web.HTML.HTMLDocument"]||{})._readyState=function(n){return function(){return n.readyState}}}(),function(n){"use strict";a["Data.Eq"];var e=a["Data.Maybe"],t=(a["Data.Ord"],a["Data.Ordering"],a["Data.Show"],a.Prelude,function(){function n(){}return n.value=new n,n}()),r=function(){function n(){}return n.value=new n,n}(),u=function(){function n(){}return n.value=new n,n}();n.Loading=t,n.Interactive=r,n.Complete=u,n.parse=function(n){return"loading"===n?new e.Just(t.value):"interactive"===n?new e.Just(r.value):"complete"===n?new e.Just(u.value):e.Nothing.value}}(a["Web.HTML.HTMLDocument.ReadyState"]=a["Web.HTML.HTMLDocument.ReadyState"]||{}),function(n){"use strict";var e=a["Web.HTML.HTMLDocument"],t=(a["Control.Semigroupoid"],a["Data.Functor"]),r=a["Data.Maybe"],u=(a["Data.Nullable"],a.Effect),o=(a.Prelude,a["Unsafe.Coerce"]),i=(a["Web.DOM.Document"],a["Web.DOM.Internal.Types"],a["Web.DOM.NonElementParentNode"],a["Web.DOM.ParentNode"],a["Web.Event.EventTarget"],a["Web.HTML.HTMLDocument.ReadyState"]),l=(a["Web.HTML.HTMLElement"],a["Web.Internal.FFI"],o.unsafeCoerce),f=o.unsafeCoerce;n.toDocument=f,n.toParentNode=l,n.readyState=function(n){return t.map(u.functorEffect)(function(n){return r.fromMaybe(i.Loading.value)(i.parse(n))})(e._readyState(n))}}(a["Web.HTML.HTMLDocument"]=a["Web.HTML.HTMLDocument"]||{}),function(n){"use strict";(a["Web.HTML.HTMLInputElement"]=a["Web.HTML.HTMLInputElement"]||{})._files=function(n){return function(){return n.files}}}(),function(n){"use strict";(a["Web.File.FileList"]=a["Web.File.FileList"]||{})._item=function(n){return function(e){return e.item(n)}}}(),function(n){"use strict";(a["Web.File.File"]=a["Web.File.File"]||{}).name=function(n){return n.name}}(),function(n){"use strict";var e=a["Web.File.File"];a["Control.Semigroupoid"],a["Data.Maybe"],a["Data.MediaType"],a.Prelude,a["Unsafe.Coerce"],a["Web.File.Blob"];n.name=e.name}(a["Web.File.File"]=a["Web.File.File"]||{}),function(n){"use strict";var e=a["Web.File.FileList"],t=(a["Control.Semigroupoid"],a["Data.Maybe"],a["Data.Nullable"]);a.Prelude,a["Web.File.File"];n.item=function(n){return function(r){return t.toMaybe(e._item(n)(r))}}}(a["Web.File.FileList"]=a["Web.File.FileList"]||{}),function(n){"use strict";var e=a["Web.HTML.HTMLInputElement"],t=(a["Control.Semigroupoid"],a["Data.Functor"]),r=(a["Data.JSDate"],a["Data.Maybe"],a["Data.Nullable"]),u=a.Effect,o=(a["Effect.Uncurried"],a.Prelude,a["Unsafe.Coerce"],a["Web.DOM"],a["Web.DOM.NodeList"],a["Web.Event.EventTarget"],a["Web.File.FileList"],a["Web.HTML.HTMLElement"],a["Web.HTML.HTMLFormElement"],a["Web.HTML.SelectionMode"],a["Web.HTML.ValidityState"],a["Web.Internal.FFI"].unsafeReadProtoTagged("HTMLInputElement"));n.fromHTMLElement=o,n.files=function(n){return t.map(u.functorEffect)(r.toMaybe)(e._files(n))}}(a["Web.HTML.HTMLInputElement"]=a["Web.HTML.HTMLInputElement"]||{}),function(n){"use strict";(a["Web.HTML.Window"]=a["Web.HTML.Window"]||{}).document=function(n){return function(){return n.document}}}(),function(n){"use strict";var e=a["Web.HTML.Window"],t=(a["Control.Semigroupoid"],a["Data.Eq"],a["Data.Functor"],a["Data.Maybe"],a["Data.Newtype"],a["Data.Nullable"],a["Data.Ord"],a.Effect,a.Prelude,a["Unsafe.Coerce"]),r=(a["Web.Event.EventTarget"],a["Web.HTML.HTMLDocument"],a["Web.HTML.History"],a["Web.HTML.Location"],a["Web.HTML.Navigator"],a["Web.Storage.Storage"],t.unsafeCoerce);n.toEventTarget=r,n.document=e.document}(a["Web.HTML.Window"]=a["Web.HTML.Window"]||{}),function(n){"use strict";var e=a["Web.HTML"];a.Effect,a["Web.HTML.HTMLAnchorElement"],a["Web.HTML.HTMLAreaElement"],a["Web.HTML.HTMLAudioElement"],a["Web.HTML.HTMLBRElement"],a["Web.HTML.HTMLBaseElement"],a["Web.HTML.HTMLBodyElement"],a["Web.HTML.HTMLButtonElement"],a["Web.HTML.HTMLCanvasElement"],a["Web.HTML.HTMLDListElement"],a["Web.HTML.HTMLDataElement"],a["Web.HTML.HTMLDataListElement"],a["Web.HTML.HTMLDivElement"],a["Web.HTML.HTMLDocument"],a["Web.HTML.HTMLElement"],a["Web.HTML.HTMLEmbedElement"],a["Web.HTML.HTMLFieldSetElement"],a["Web.HTML.HTMLFormElement"],a["Web.HTML.HTMLHRElement"],a["Web.HTML.HTMLHeadElement"],a["Web.HTML.HTMLHeadingElement"],a["Web.HTML.HTMLIFrameElement"],a["Web.HTML.HTMLImageElement"],a["Web.HTML.HTMLInputElement"],a["Web.HTML.HTMLKeygenElement"],a["Web.HTML.HTMLLIElement"],a["Web.HTML.HTMLLabelElement"],a["Web.HTML.HTMLLegendElement"],a["Web.HTML.HTMLLinkElement"],a["Web.HTML.HTMLMapElement"],a["Web.HTML.HTMLMediaElement"],a["Web.HTML.HTMLMetaElement"],a["Web.HTML.HTMLMeterElement"],a["Web.HTML.HTMLModElement"],a["Web.HTML.HTMLOListElement"],a["Web.HTML.HTMLObjectElement"],a["Web.HTML.HTMLOptGroupElement"],a["Web.HTML.HTMLOptionElement"],a["Web.HTML.HTMLOutputElement"],a["Web.HTML.HTMLParagraphElement"],a["Web.HTML.HTMLParamElement"],a["Web.HTML.HTMLPreElement"],a["Web.HTML.HTMLProgressElement"],a["Web.HTML.HTMLQuoteElement"],a["Web.HTML.HTMLScriptElement"],a["Web.HTML.HTMLSelectElement"],a["Web.HTML.HTMLSourceElement"],a["Web.HTML.HTMLSpanElement"],a["Web.HTML.HTMLStyleElement"],a["Web.HTML.HTMLTableCaptionElement"],a["Web.HTML.HTMLTableCellElement"],a["Web.HTML.HTMLTableColElement"],a["Web.HTML.HTMLTableDataCellElement"],a["Web.HTML.HTMLTableElement"],a["Web.HTML.HTMLTableHeaderCellElement"],a["Web.HTML.HTMLTableRowElement"],a["Web.HTML.HTMLTableSectionElement"],a["Web.HTML.HTMLTemplateElement"],a["Web.HTML.HTMLTextAreaElement"],a["Web.HTML.HTMLTimeElement"],a["Web.HTML.HTMLTitleElement"],a["Web.HTML.HTMLTrackElement"],a["Web.HTML.HTMLUListElement"],a["Web.HTML.HTMLVideoElement"],a["Web.HTML.History"],a["Web.HTML.Location"],a["Web.HTML.Navigator"],a["Web.HTML.Window"];n.window=e.window}(a["Web.HTML"]=a["Web.HTML"]||{}),function(n){"use strict";a["Web.Event.Event"];n.change="change",n.domcontentloaded="DOMContentLoaded"}(a["Web.HTML.Event.EventTypes"]=a["Web.HTML.Event.EventTypes"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Bind"],r=a["Control.Monad.Error.Class"],u=(a["Control.Semigroupoid"],a["Data.Either"]),o=a["Data.Function"],i=a["Data.Functor"],l=a["Data.Maybe"],f=a["Data.Unit"],c=a.Effect,s=a["Effect.Aff"],v=a["Effect.Class"],d=a["Effect.Exception"],p=(a.Prelude,a["Web.DOM.ParentNode"]),m=a["Web.Event.EventTarget"],D=a["Web.HTML"],b=a["Web.HTML.Event.EventTypes"],E=a["Web.HTML.HTMLDocument"],M=a["Web.HTML.HTMLDocument.ReadyState"],w=a["Web.HTML.HTMLElement"],C=a["Web.HTML.Window"],h=function(n){return t.bind(s.bindAff)(v.liftEffect(s.monadEffectAff)(t.bindFlipped(c.bindEffect)(t.composeKleisliFlipped(c.bindEffect)(function(e){return p.querySelector(n)(E.toParentNode(e))})(C.document))(D.window)))(function(n){return e.pure(s.applicativeAff)(t.bindFlipped(l.bindMaybe)(w.fromElement)(n))})},g=s.runAff_(u.either(d.throwException)(o.const(e.pure(c.applicativeEffect)(f.unit)))),y=s.makeAff(function(n){return function(){if(t.bindFlipped(c.bindEffect)(E.readyState)(t.bindFlipped(c.bindEffect)(C.document)(D.window))()instanceof M.Loading){var e=i.map(c.functorEffect)(C.toEventTarget)(D.window)(),r=m.eventListener(function(e){return n(new u.Right(f.unit))})();return m.addEventListener(b.domcontentloaded)(r)(!1)(e)(),s.effectCanceler(m.removeEventListener(b.domcontentloaded)(r)(!1)(e))}return n(new u.Right(f.unit))(),s.nonCanceler}}),T=t.discard(t.discardUnit)(s.bindAff)(y)(function(){return t.bind(s.bindAff)(h("body"))(function(n){return l.maybe(r.throwError(s.monadThrowAff)(d.error("Could not find body")))(e.pure(s.applicativeAff))(n)})});n.awaitLoad=y,n.awaitBody=T,n.selectElement=h,n.runHalogenAff=g}(a["Halogen.Aff.Util"]=a["Halogen.Aff.Util"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Semigroupoid"],a["DOM.HTML.Indexed"],a["DOM.HTML.Indexed.ButtonType"],a["DOM.HTML.Indexed.FormMethod"],a["DOM.HTML.Indexed.InputType"],a["DOM.HTML.Indexed.MenuType"],a["DOM.HTML.Indexed.MenuitemType"],a["DOM.HTML.Indexed.OnOff"],a["DOM.HTML.Indexed.OrderedListType"],a["DOM.HTML.Indexed.PreloadValue"],a["DOM.HTML.Indexed.StepValue"],a["Data.Function"],a["Data.Functor"],a["Data.HeytingAlgebra"];var e=a["Data.Maybe"],t=(a["Data.MediaType"],a["Data.Newtype"]),r=(a["Data.String"],a["Data.String.Common"],a["Data.Unit"]),u=a["Halogen.HTML.Core"],o=a["Halogen.Query.InputF"],i=(a["Halogen.VDom.DOM.Prop"],a.Prelude,a["Unsafe.Coerce"],a["Web.DOM.Element"],function(n){return u.ref((t=n,function(n){return new e.Just(new o.RefUpdate(t,n,r.unit))}));var t}),l=function(n){return u.prop(n)},f=l(u.stringIsProp)("src"),c=l(u.booleanIsProp)("controls"),s=l(u.booleanIsProp)("autoplay");n.prop=l,n.ref=i,n.class_=function(n){return l(u.stringIsProp)("className")(t.unwrap(u.newtypeClassName)(n))},n.src=f,n.type_=function(n){return l(n)("type")},n.autoplay=s,n.controls=c}(a["Halogen.HTML.Properties"]=a["Halogen.HTML.Properties"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Semigroupoid"],a["DOM.HTML.Indexed"],a["Data.Function"];var e=a["Data.Maybe"],t=(a["Data.Tuple"],a["Halogen.HTML.Core"]),r=(a["Halogen.HTML.Properties"],a["Halogen.Query.InputF"],a["Halogen.VDom"],a["Halogen.VDom.Types"],a.Prelude,a["Unsafe.Coerce"],t.element(e.Nothing.value)),u=r("h1"),o=u([]),i=r("label"),l=i([]),f=r("div"),c=f([]),s=r("button"),v=r("audio");n.element=r,n.audio=v,n.button=s,n.div=f,n.div_=c,n.h1=u,n.h1_=o,n.input=function(n){return r("input")(n)([])},n.label=i,n.label_=l}(a["Halogen.HTML.Elements"]=a["Halogen.HTML.Elements"]||{}),function(n){"use strict";a["Control.Applicative"];var e=a["Control.Bind"],t=(a["Control.Category"],a["Control.Monad.State.Class"],a["Control.Monad.Trans.Class"],a["Control.Parallel"],a["Control.Semigroupoid"],a["Data.Functor"]),r=(a["Data.List"],a["Data.List.Types"],a["Data.Map"],a["Data.Map.Internal"],a["Data.Maybe"]),u=(a["Data.Tuple"],a["Data.Unit"]),o=(a["Effect.Aff.Class"],a["Effect.Class"],a["Halogen.Component.ChildPath"],a["Halogen.Query.EventSource"],a["Halogen.Query.HalogenM"]),i=(a["Halogen.Query.InputF"],a.Prelude,a["Web.HTML.HTMLElement"]);n.action=function(n){return n(u.unit)},n.getHTMLElementRef=function(n){return t.map(o.functorHalogenM)(function(n){return e.bindFlipped(r.bindMaybe)(i.fromElement)(n)})(o.getRef(n))}}(a["Halogen.Query"]=a["Halogen.Query"]||{}),function(n){"use strict";a["Web.Event.Event"];n.click="click"}(a["Web.UIEvent.MouseEvent.EventTypes"]=a["Web.UIEvent.MouseEvent.EventTypes"]||{}),function(n){"use strict";a["Control.Bind"],a["Control.Monad.Except"],a["Control.Monad.Except.Trans"],a["Control.Semigroupoid"],a["Data.Either"],a["Data.Function"];var e=a["Data.Functor"],t=(a["Data.Identity"],a["Data.Maybe"]),r=(a.Foreign,a["Foreign.Index"],a["Halogen.HTML.Core"]),u=(a["Halogen.HTML.Properties"],a["Halogen.Query"]),o=a["Halogen.Query.InputF"],i=(a.Prelude,a["Unsafe.Coerce"]),l=(a["Web.Clipboard.ClipboardEvent"],a["Web.Clipboard.ClipboardEvent.EventTypes"],a["Web.Event.Event"],a["Web.HTML.Event.DragEvent"],a["Web.HTML.Event.DragEvent.EventTypes"],a["Web.HTML.Event.EventTypes"]),f=(a["Web.TouchEvent.TouchEvent"],a["Web.UIEvent.FocusEvent"],a["Web.UIEvent.FocusEvent.EventTypes"],a["Web.UIEvent.KeyboardEvent"],a["Web.UIEvent.KeyboardEvent.EventTypes"],a["Web.UIEvent.MouseEvent"],a["Web.UIEvent.MouseEvent.EventTypes"]),c=(a["Web.UIEvent.WheelEvent"],a["Web.UIEvent.WheelEvent.EventTypes"],i.unsafeCoerce),s=function(n){return function(a){return r.handler(n)(e.map(e.functorFn)(e.map(t.functorMaybe)(o.Query.create))(a))}},v=s(l.change);n.input_=function(n){return function(e){return t.Just.create(u.action(n))}},n.handler=s,n.onChange=v,n.onClick=function(n){return s(f.click)(c(n))}}(a["Halogen.HTML.Events"]=a["Halogen.HTML.Events"]||{}),function(n){"use strict";a["Control.Applicative"],a["Control.Bind"];var e,t=a["Data.Array"],r=(a["Data.Eq"],a["Data.Function.Uncurried"],a["Data.Maybe"]),u=a["Data.Nullable"],o=a["Data.Tuple"],i=a.Effect,l=(a["Effect.Uncurried"],a["Halogen.VDom.Machine"]),f=a["Halogen.VDom.Types"],c=a["Halogen.VDom.Util"],s=(a.Prelude,a["Web.DOM.Document"],a["Web.DOM.Element"]),v=(a["Web.DOM.Node"],function(n,e){return n.value1===e.value1&&(n.value0 instanceof r.Just&&e.value0 instanceof r.Just&&n.value0.value0===e.value0.value0||n.value0 instanceof r.Nothing&&e.value0 instanceof r.Nothing)}),d=function(n,e,t){var r=n.buildWidget(n)(t);return new l.Step(r.value0,function n(e,t){return function(r){if(r instanceof f.Grafted)return n(e,t)(f.runGraft(r.value0));if(r instanceof f.Widget){var a=t.value1(r.value0);return new l.Step(a.value0,n(e,a),a.value2)}return t.value2(),e(r)}}(e,r),r.value2)},p=function(n,e,t){var r,a=c.createTextNode(t,n.document),u=(r=a,function(){var n=c.parentNode(r);return c.removeChild(r,n)});return new l.Step(a,function n(e,t,r,a){return function(u){if(u instanceof f.Grafted)return n(e,t,r,a)(f.runGraft(u.value0));if(u instanceof f.Text){var o=new l.Step(r,n(e,t,r,u.value0),t);return a===u.value0?o:(c.setTextContent(u.value0,r),o)}return t(),e(u)}}(e,u,a,t),u)},m=(e=function(n,e,t){return function(){var r=c.parentNode(n);return c.removeChild(n,r),c.forInE(t,function(n,e){return e.value2()}),l.halt(e)()}},function(n,r,a,i){var d=c.createElement(u.toNullable(a.value0),a.value1,n.document),p=s.toNode(d),m=c.strMapWithIxE(i,o.fst,function(n,e,t){var a=r(t.value1);return c.insertChildIx(e,a.value0,p),a}),D=n.buildAttributes(d)(a.value2),b=e(p,D,m);return new l.Step(p,function n(r,a,u,i,s,d,p){return function(m){if(m instanceof f.Grafted)return n(r,a,u,i,s,d,p)(f.runGraft(m.value0));if(m instanceof f.Keyed&&v(s,m.value0)){var D=t.length(m.value1);if(0===p&&0===D){var b=l.step(i)(m.value0.value2),E=e(u,b,d);return new l.Step(u,n(r,E,u,b,m.value0,d,0),E)}b=c.diffWithKeyAndIxE(d,m.value1,o.fst,function(n,e,t,r){var a=t.value1(r.value1);return c.insertChildIx(e,a.value0,u),a},function(n,e){return e.value2()},function(n,e,t){var a=r(t.value1);return c.insertChildIx(e,a.value0,u),a});var M=l.step(i)(m.value0.value2);return E=e(u,M,b),new l.Step(u,n(r,E,u,M,m.value0,b,D),E)}return a(),r(m)}}(r,b,p,D,a,m,t.length(i)),b)}),D=function(){var n=function(n,e,t){return function(){var r=c.parentNode(n);return c.removeChild(n,r),i.foreachE(t)(l.halt)(),l.halt(e)()}};return function(e,r,a,o){var i=c.createElement(u.toNullable(a.value0),a.value1,e.document),d=s.toNode(i),p=c.forE(o,function(n,e){var t=r(e);return c.insertChildIx(n,t.value0,d),t}),m=e.buildAttributes(i)(a.value2),D=n(d,m,p);return new l.Step(d,function e(r,a,u,o,i,s){return function(d){if(d instanceof f.Grafted)return e(r,a,u,o,i,s)(f.runGraft(d.value0));if(d instanceof f.Elem&&v(i,d.value0)){var p=t.length(d.value1);if(0===t.length(s)&&0===p){var m=l.step(o)(d.value0.value2),D=n(u,m,s);return new l.Step(u,e(r,D,u,m,d.value0,s),D)}m=c.diffWithIxE(s,d.value1,function(n,e,t){var r=e.value1(t);return c.insertChildIx(n,r.value0,u),r},function(n,e){return e.value2()},function(n,e){var t=r(e);return c.insertChildIx(n,t.value0,u),t});var b=l.step(o)(d.value0.value2);return D=n(u,b,m),new l.Step(u,e(r,D,u,b,d.value0,m),D)}return a(),r(d)}}(r,D,d,m,a,p),D)}}();n.buildVDom=function(n){return function e(t){if(t instanceof f.Text)return p(n,e,t.value0);if(t instanceof f.Elem)return D(n,e,t.value0,t.value1);if(t instanceof f.Keyed)return m(n,e,t.value0,t.value1);if(t instanceof f.Widget)return d(n,e,t.value0);if(t instanceof f.Grafted)return e(f.runGraft(t.value0));throw new Error("Failed pattern match at Halogen.VDom.DOM line 58, column 27 - line 63, column 52: "+[t.constructor.name])}},n.buildText=p,n.buildElem=D,n.buildKeyed=m,n.buildWidget=d}(a["Halogen.VDom.DOM"]=a["Halogen.VDom.DOM"]||{}),function(n){"use strict";var e=a["Control.Applicative"],t=a["Control.Bind"],r=a["Control.Category"],u=a["Data.Foldable"],o=(a["Data.Function"],a["Data.Functor"]),i=a["Data.HeytingAlgebra"],l=a["Data.Maybe"],f=a["Data.Unit"],c=a.Effect,s=a["Effect.Aff"],v=a["Effect.Class"],d=a["Effect.Ref"],p=(a["Effect.Uncurried"],a["Halogen.Aff.Driver"]),m=a["Halogen.Aff.Driver.State"],D=(a["Halogen.Component"],a["Halogen.HTML.Core"],a["Halogen.Query.InputF"],a["Halogen.VDom"],a["Halogen.VDom.DOM"]),b=a["Halogen.VDom.DOM.Prop"],E=a["Halogen.VDom.Machine"],M=(a.Prelude,a["Unsafe.Reference"]),w=(a["Web.DOM.Document"],a["Web.DOM.Element"],a["Web.DOM.Node"]),C=a["Web.HTML"],h=a["Web.HTML.HTMLDocument"],g=a["Web.HTML.HTMLElement"],y=a["Web.HTML.Window"],T=function(n){return function(){var e=w.parentNode(n.node)();return u.traverse_(c.applicativeEffect)(u.foldableMaybe)(function(e){return w.removeChild(n.node)(e)})(e)()}},F=function(n){return function(t){return{render:function(r){return function(a){return function(u){return function(s){if(s instanceof l.Nothing)return function(){var i=d.new(a)(),l=function(n){return function(t){return function(r){var a=m.unRenderStateX(function(n){return n.node}),u=e.pure(c.applicativeEffect)(f.unit),o=function n(e){var r=d.read(t)()(e)(),o=a(r);return new E.Step(o,n,u)};return{buildWidget:function(n){return function(n){var e=d.read(t)()(n)(),r=a(e);return new E.Step(r,o,u)}},buildAttributes:b.buildProp(n),document:r}}}}(r)(i)(n),s=D.buildVDom(l)(u),v=E.extract(s);return o.void(c.functorEffect)(w.appendChild(v)(g.toNode(t)))(),{machine:s,node:v,renderChildRef:i}};if(s instanceof l.Just)return function(){d.write(a)(s.value0.renderChildRef)();var n=w.parentNode(s.value0.node)(),t=w.nextSibling(s.value0.node)(),r=E.step(s.value0.machine)(u),v=E.extract(r);return e.when(c.applicativeEffect)(i.not(i.heytingAlgebraFunction(i.heytingAlgebraFunction(i.heytingAlgebraBoolean)))(M.unsafeRefEq)(s.value0.node)(v))(function(n){return function(t){return function(r){return t instanceof l.Just&&r instanceof l.Just?o.void(c.functorEffect)(w.insertBefore(n)(t.value0)(r.value0)):t instanceof l.Nothing&&r instanceof l.Just?o.void(c.functorEffect)(w.appendChild(n)(r.value0)):e.pure(c.applicativeEffect)(f.unit)}}}(v)(t)(n))(),{machine:r,node:v,renderChildRef:s.value0.renderChildRef}};throw new Error("Failed pattern match at Halogen.VDom.Driver line 118, column 5 - line 134, column 80: "+[s.constructor.name])}}}},renderChild:r.identity(r.categoryFn),removeChild:T}}};n.runUI=function(n){return function(e){return function(r){return t.bind(s.bindAff)(v.liftEffect(s.monadEffectAff)(o.map(c.functorEffect)(h.toDocument)(t.bindFlipped(c.bindEffect)(y.document)(C.window))))(function(t){return p.runUI(F(t)(r))(n)(e)})}}}}(a["Halogen.VDom.Driver"]=a["Halogen.VDom.Driver"]||{}),function(n){n.createObjectURL=function(n){return function(){return URL.createObjectURL(n)}},n.revokeObjectURL=function(n){return function(){return URL.revokeObjectURL(n)}}}(a.Main=a.Main||{}),function(n){"use strict";var e,t,r=a.Main,u=a["Control.Applicative"],o=a["Control.Bind"],i=a["Control.Monad.Error.Class"],l=(a["Control.Monad.Except"],a["Control.Monad.Except.Trans"]),f=a["Control.Monad.State.Class"],c=a["Control.Monad.Trans.Class"],s=(a["Control.Semigroupoid"],a["DOM.HTML.Indexed.InputType"]),v=a["Data.Either"],d=a["Data.Function"],p=a["Data.Functor"],m=a["Data.Maybe"],D=a["Data.Newtype"],b=(a["Data.Ring"],a["Data.Semigroup"],a["Data.Semiring"],a["Data.Unit"]),E=(a.Effect,a["Effect.Aff"]),M=a["Effect.Aff.Class"],w=a["Effect.Class"],C=a["Effect.Class.Console"],h=(a.Halogen,a["Halogen.Aff"],a["Halogen.Aff.Util"]),g=a["Halogen.Component"],y=(a["Halogen.HTML"],a["Halogen.HTML.Core"]),T=a["Halogen.HTML.Elements"],F=a["Halogen.HTML.Events"],A=a["Halogen.HTML.Properties"],H=a["Halogen.Query"],L=a["Halogen.Query.HalogenM"],S=a["Halogen.Query.InputF"],W=a["Halogen.VDom.Driver"],O=(a.Prelude,a["Web.File.File"]),I=a["Web.File.FileList"],P=a["Web.HTML.HTMLAudioElement"],x=a["Web.HTML.HTMLInputElement"],N=a["Web.HTML.HTMLMediaElement"],U=function(){function n(){}return n.value=new n,n}(),_=function(){function n(){}return n.value=new n,n}(),R=function(){function n(){}return n.value=new n,n}(),k=function(){function n(){}return n.value=new n,n}(),B=function(){function n(){}return n.value=new n,n}(),q=function(){function n(){}return n.value=new n,n}(),V=function(){function n(){}return n.value=new n,n}(),Q=function(){function n(){}return n.value=new n,n}(),j=function(){function n(n){this.value0=n}return n.create=function(e){return new n(e)},n}(),J=function(){function n(n,e,t){this.value0=n,this.value1=e,this.value2=t}return n.create=function(e){return function(t){return function(r){return new n(e,t,r)}}},n}(),z=function(){function n(n,e){this.value0=n,this.value1=e}return n.create=function(e){return function(t){return new n(e,t)}},n}(),G=function(n){return n},K=new D.Newtype(function(n){return n},G),X=(e=function(n){return M.liftAff(L.monadAffHalogenM(M.monadAffAff))(C.log(E.monadEffectAff)(n))},t={file:m.Nothing.value},g.component(y.bifunctorHTML)({initialState:d.const(t),render:function(n){return T.div([A.class_(D.wrap(y.newtypeClassName)("container"))])([T.div([A.class_(D.wrap(y.newtypeClassName)("root"))])([T.h1_([y.text(function(){var e=p.map(m.functorMaybe)(function(n){return n.name})(n.file);if(e instanceof m.Nothing)return"nothing playing currently";if(e instanceof m.Just)return"now playing: "+e.value0;throw new Error("Failed pattern match at Main line 68, column 23 - line 70, column 55: "+[e.constructor.name])}())]),T.div_([T.input([A.ref(D.wrap(S.newtypeRefLabel)("input")),A.type_(y.inputTypeIsProp)(s.InputFile.value),A.prop(y.stringIsProp)(D.wrap(y.newtypePropName)("accept"))("audio/*"),F.onChange(F.input_(j.create))])]),T.div_([T.audio([A.ref(D.wrap(S.newtypeRefLabel)("audio")),A.src(m.fromMaybe("")(p.map(m.functorMaybe)(function(n){return D.unwrap(K)(n.url)})(n.file))),A.controls(!0),A.autoplay(!0)])([])]),T.div([A.class_(D.wrap(y.newtypeClassName)("buttons"))])([T.button([F.onClick(F.input_(J.create(V.value)(q.value)))])([T.label_([y.text("<<<")])]),T.button([F.onClick(F.input_(J.create(V.value)(B.value)))])([T.label_([y.text("<<")])]),T.button([F.onClick(F.input_(J.create(V.value)(k.value)))])([T.label_([y.text("<")])]),T.button([F.onClick(F.input_(J.create(Q.value)(k.value)))])([T.label_([y.text(">")])]),T.button([F.onClick(F.input_(J.create(Q.value)(B.value)))])([T.label_([y.text(">>")])]),T.button([F.onClick(F.input_(J.create(Q.value)(q.value)))])([T.label_([y.text(">>>")])])]),T.div([A.class_(D.wrap(y.newtypeClassName)("speed"))])([T.button([F.onClick(F.input_(z.create(U.value)))])([T.label_([y.text("1x")])]),T.button([F.onClick(F.input_(z.create(_.value)))])([T.label_([y.text("1.5x")])]),T.button([F.onClick(F.input_(z.create(R.value)))])([T.label_([y.text("2x")])])])])])},eval:function(n){if(n instanceof j){var t=function(n){return function(e){return m.maybe(i.throwError(l.monadThrowExceptT(n))(e))(u.pure(l.applicativeExceptT(n)))}};return o.bind(L.bindHalogenM)(l.runExceptT(o.bind(l.bindExceptT(L.monadHalogenM))(o.bindFlipped(l.bindExceptT(L.monadHalogenM))(t(L.monadHalogenM)("no input found"))(c.lift(l.monadTransExceptT)(L.monadHalogenM)(H.getHTMLElementRef(D.wrap(S.newtypeRefLabel)("input")))))(function(n){return o.bind(l.bindExceptT(L.monadHalogenM))(t(L.monadHalogenM)("conversion failed")(x.fromHTMLElement(n)))(function(n){return o.bind(l.bindExceptT(L.monadHalogenM))(o.bindFlipped(l.bindExceptT(L.monadHalogenM))(t(L.monadHalogenM)("no file found"))(c.lift(l.monadTransExceptT)(L.monadHalogenM)(w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(x.files(n)))))(function(n){return t(L.monadHalogenM)("files was empty")(I.item(0)(n))})})})))(function(t){return o.discard(o.discardUnit)(L.bindHalogenM)(function(){if(t instanceof v.Left)return e(t.value0);if(t instanceof v.Right)return o.bind(L.bindHalogenM)(w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(r.createObjectURL(t.value0)))(function(n){return o.bind(L.bindHalogenM)(f.gets(L.monadStateHalogenM)(function(n){return n.file}))(function(e){return o.discard(o.discardUnit)(L.bindHalogenM)(e instanceof m.Just?w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(r.revokeObjectURL(e.value0.url)):u.pure(L.applicativeHalogenM)(b.unit))(function(){return o.discard(o.discardUnit)(L.bindHalogenM)(f.modify_(L.monadStateHalogenM)(function(e){var r={};for(var a in e)({}).hasOwnProperty.call(e,a)&&(r[a]=e[a]);return r.file=u.pure(m.applicativeMaybe)({url:n,name:O.name(t.value0)}),r}))(function(){return u.pure(L.applicativeHalogenM)(b.unit)})})})});throw new Error("Failed pattern match at Main line 116, column 7 - line 126, column 20: "+[t.constructor.name])}())(function(){return u.pure(L.applicativeHalogenM)(n.value0)})})}if(n instanceof J){var a=function(){if(n.value1 instanceof q)return 30;if(n.value1 instanceof B)return 10;if(n.value1 instanceof k)return 5;throw new Error("Failed pattern match at Main line 141, column 16 - line 145, column 9: "+[n.value1.constructor.name])}()*(n.value0 instanceof V?-1:1);return o.bind(L.bindHalogenM)(H.getHTMLElementRef(D.wrap(S.newtypeRefLabel)("audio")))(function(t){return o.discard(o.discardUnit)(L.bindHalogenM)((r=p.map(m.functorMaybe)(P.toHTMLMediaElement)(o.bindFlipped(m.bindMaybe)(P.fromHTMLElement)(t)))instanceof m.Just?o.bind(L.bindHalogenM)(w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(N.currentTime(r.value0)))(function(n){return w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(N.setCurrentTime(n+a)(r.value0))}):e("No audio ref found"))(function(){return u.pure(L.applicativeHalogenM)(n.value2)});var r})}if(n instanceof z){var s=function(){if(n.value0 instanceof U)return 1;if(n.value0 instanceof _)return 1.5;if(n.value0 instanceof R)return 2;throw new Error("Failed pattern match at Main line 156, column 16 - line 161, column 1: "+[n.value0.constructor.name])}();return o.bind(L.bindHalogenM)(H.getHTMLElementRef(D.wrap(S.newtypeRefLabel)("audio")))(function(t){return o.discard(o.discardUnit)(L.bindHalogenM)((r=p.map(m.functorMaybe)(P.toHTMLMediaElement)(o.bindFlipped(m.bindMaybe)(P.fromHTMLElement)(t)))instanceof m.Just?w.liftEffect(L.monadEffectHalogenM(E.monadEffectAff))(N.setPlaybackRate(s)(r.value0)):e("No audio ref found"))(function(){return u.pure(L.applicativeHalogenM)(n.value1)});var r})}throw new Error("Failed pattern match at Main line 109, column 5 - line 109, column 57: "+[n.constructor.name])},receiver:d.const(m.Nothing.value)})),Z=h.runHalogenAff(o.bind(E.bindAff)(h.awaitBody)(function(n){return o.bind(E.bindAff)(W.runUI(X)(b.unit)(n))(function(n){return C.log(E.monadEffectAff)("Running")})}));n.ObjectURL=G,n.Bck=V,n.Fwd=Q,n.Sm=k,n.Md=B,n.Lg=q,n.One=U,n.OneHalf=_,n.Two=R,n.FileSet=j,n.Skip=J,n.SetSpeed=z,n.ui=X,n.main=Z,n.newtypeFilePath=K,n.createObjectURL=r.createObjectURL,n.revokeObjectURL=r.revokeObjectURL}(a.Main=a.Main||{}),a.Main.main()},{}]},{},[1]);
-},{}]},{},[1], null)
-//# sourceMappingURL=/app.map
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+// Generated by purs bundle 0.12.0
+var PS = {};
+(function(exports) {
+    "use strict";
+
+  exports.arrayMap = function (f) {
+    return function (arr) {
+      var l = arr.length;
+      var result = new Array(l);
+      for (var i = 0; i < l; i++) {
+        result[i] = f(arr[i]);
+      }
+      return result;
+    };
+  };
+})(PS["Data.Functor"] = PS["Data.Functor"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Semigroupoid = function (compose) {
+      this.compose = compose;
+  };
+  var semigroupoidFn = new Semigroupoid(function (f) {
+      return function (g) {
+          return function (x) {
+              return f(g(x));
+          };
+      };
+  });
+  var compose = function (dict) {
+      return dict.compose;
+  };
+  exports["compose"] = compose;
+  exports["Semigroupoid"] = Semigroupoid;
+  exports["semigroupoidFn"] = semigroupoidFn;
+})(PS["Control.Semigroupoid"] = PS["Control.Semigroupoid"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];                 
+  var Category = function (Semigroupoid0, identity) {
+      this.Semigroupoid0 = Semigroupoid0;
+      this.identity = identity;
+  };
+  var identity = function (dict) {
+      return dict.identity;
+  };
+  var categoryFn = new Category(function () {
+      return Control_Semigroupoid.semigroupoidFn;
+  }, function (x) {
+      return x;
+  });
+  exports["Category"] = Category;
+  exports["identity"] = identity;
+  exports["categoryFn"] = categoryFn;
+})(PS["Control.Category"] = PS["Control.Category"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var otherwise = true;
+  exports["otherwise"] = otherwise;
+})(PS["Data.Boolean"] = PS["Data.Boolean"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.refEq = function (r1) {
+    return function (r2) {
+      return r1 === r2;
+    };
+  };
+})(PS["Data.Eq"] = PS["Data.Eq"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.boolConj = function (b1) {
+    return function (b2) {
+      return b1 && b2;
+    };
+  };
+
+  exports.boolDisj = function (b1) {
+    return function (b2) {
+      return b1 || b2;
+    };
+  };
+
+  exports.boolNot = function (b) {
+    return !b;
+  };
+})(PS["Data.HeytingAlgebra"] = PS["Data.HeytingAlgebra"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Symbol"];      
+  var SProxy = (function () {
+      function SProxy() {
+
+      };
+      SProxy.value = new SProxy();
+      return SProxy;
+  })();
+  var IsSymbol = function (reflectSymbol) {
+      this.reflectSymbol = reflectSymbol;
+  };
+  var reflectSymbol = function (dict) {
+      return dict.reflectSymbol;
+  };
+  exports["IsSymbol"] = IsSymbol;
+  exports["reflectSymbol"] = reflectSymbol;
+  exports["SProxy"] = SProxy;
+})(PS["Data.Symbol"] = PS["Data.Symbol"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.unit = {};
+})(PS["Data.Unit"] = PS["Data.Unit"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Show"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Record_Unsafe = PS["Record.Unsafe"];
+  var Type_Data_RowList = PS["Type.Data.RowList"];                 
+  var Show = function (show) {
+      this.show = show;
+  }; 
+  var show = function (dict) {
+      return dict.show;
+  };
+  exports["Show"] = Show;
+  exports["show"] = show;
+})(PS["Data.Show"] = PS["Data.Show"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Unit"];
+  var Data_Show = PS["Data.Show"];
+  exports["unit"] = $foreign.unit;
+})(PS["Data.Unit"] = PS["Data.Unit"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.HeytingAlgebra"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Data_Unit = PS["Data.Unit"];
+  var Record_Unsafe = PS["Record.Unsafe"];
+  var Type_Data_Row = PS["Type.Data.Row"];
+  var Type_Data_RowList = PS["Type.Data.RowList"];                 
+  var HeytingAlgebra = function (conj, disj, ff, implies, not, tt) {
+      this.conj = conj;
+      this.disj = disj;
+      this.ff = ff;
+      this.implies = implies;
+      this.not = not;
+      this.tt = tt;
+  };
+  var tt = function (dict) {
+      return dict.tt;
+  };
+  var not = function (dict) {
+      return dict.not;
+  };
+  var implies = function (dict) {
+      return dict.implies;
+  };
+  var ff = function (dict) {
+      return dict.ff;
+  };
+  var disj = function (dict) {
+      return dict.disj;
+  };
+  var heytingAlgebraBoolean = new HeytingAlgebra($foreign.boolConj, $foreign.boolDisj, false, function (a) {
+      return function (b) {
+          return disj(heytingAlgebraBoolean)(not(heytingAlgebraBoolean)(a))(b);
+      };
+  }, $foreign.boolNot, true);
+  var conj = function (dict) {
+      return dict.conj;
+  };
+  var heytingAlgebraFunction = function (dictHeytingAlgebra) {
+      return new HeytingAlgebra(function (f) {
+          return function (g) {
+              return function (a) {
+                  return conj(dictHeytingAlgebra)(f(a))(g(a));
+              };
+          };
+      }, function (f) {
+          return function (g) {
+              return function (a) {
+                  return disj(dictHeytingAlgebra)(f(a))(g(a));
+              };
+          };
+      }, function (v) {
+          return ff(dictHeytingAlgebra);
+      }, function (f) {
+          return function (g) {
+              return function (a) {
+                  return implies(dictHeytingAlgebra)(f(a))(g(a));
+              };
+          };
+      }, function (f) {
+          return function (a) {
+              return not(dictHeytingAlgebra)(f(a));
+          };
+      }, function (v) {
+          return tt(dictHeytingAlgebra);
+      });
+  };
+  exports["HeytingAlgebra"] = HeytingAlgebra;
+  exports["tt"] = tt;
+  exports["ff"] = ff;
+  exports["implies"] = implies;
+  exports["conj"] = conj;
+  exports["disj"] = disj;
+  exports["not"] = not;
+  exports["heytingAlgebraBoolean"] = heytingAlgebraBoolean;
+  exports["heytingAlgebraFunction"] = heytingAlgebraFunction;
+})(PS["Data.HeytingAlgebra"] = PS["Data.HeytingAlgebra"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Eq"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Data_Unit = PS["Data.Unit"];
+  var Data_Void = PS["Data.Void"];
+  var Record_Unsafe = PS["Record.Unsafe"];
+  var Type_Data_RowList = PS["Type.Data.RowList"];                 
+  var Eq = function (eq) {
+      this.eq = eq;
+  };
+  var eqVoid = new Eq(function (v) {
+      return function (v1) {
+          return true;
+      };
+  });
+  var eqString = new Eq($foreign.refEq);
+  var eqInt = new Eq($foreign.refEq);
+  var eq = function (dict) {
+      return dict.eq;
+  };
+  exports["Eq"] = Eq;
+  exports["eq"] = eq;
+  exports["eqInt"] = eqInt;
+  exports["eqString"] = eqString;
+  exports["eqVoid"] = eqVoid;
+})(PS["Data.Eq"] = PS["Data.Eq"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.unsafeCompareImpl = function (lt) {
+    return function (eq) {
+      return function (gt) {
+        return function (x) {
+          return function (y) {
+            return x < y ? lt : x === y ? eq : gt;
+          };
+        };
+      };
+    };
+  };
+})(PS["Data.Ord.Unsafe"] = PS["Data.Ord.Unsafe"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.concatString = function (s1) {
+    return function (s2) {
+      return s1 + s2;
+    };
+  };
+
+  exports.concatArray = function (xs) {
+    return function (ys) {
+      if (xs.length === 0) return ys;
+      if (ys.length === 0) return xs;
+      return xs.concat(ys);
+    };
+  };
+})(PS["Data.Semigroup"] = PS["Data.Semigroup"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Semigroup"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Data_Unit = PS["Data.Unit"];
+  var Data_Void = PS["Data.Void"];
+  var Record_Unsafe = PS["Record.Unsafe"];
+  var Type_Data_RowList = PS["Type.Data.RowList"];                 
+  var Semigroup = function (append) {
+      this.append = append;
+  }; 
+  var semigroupString = new Semigroup($foreign.concatString);
+  var semigroupArray = new Semigroup($foreign.concatArray);
+  var append = function (dict) {
+      return dict.append;
+  };
+  exports["Semigroup"] = Semigroup;
+  exports["append"] = append;
+  exports["semigroupString"] = semigroupString;
+  exports["semigroupArray"] = semigroupArray;
+})(PS["Data.Semigroup"] = PS["Data.Semigroup"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];                 
+  var LT = (function () {
+      function LT() {
+
+      };
+      LT.value = new LT();
+      return LT;
+  })();
+  var GT = (function () {
+      function GT() {
+
+      };
+      GT.value = new GT();
+      return GT;
+  })();
+  var EQ = (function () {
+      function EQ() {
+
+      };
+      EQ.value = new EQ();
+      return EQ;
+  })();
+  exports["LT"] = LT;
+  exports["GT"] = GT;
+  exports["EQ"] = EQ;
+})(PS["Data.Ordering"] = PS["Data.Ordering"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Ord.Unsafe"];
+  var Data_Ordering = PS["Data.Ordering"];                 
+  var unsafeCompare = $foreign.unsafeCompareImpl(Data_Ordering.LT.value)(Data_Ordering.EQ.value)(Data_Ordering.GT.value);
+  exports["unsafeCompare"] = unsafeCompare;
+})(PS["Data.Ord.Unsafe"] = PS["Data.Ord.Unsafe"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Ord"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Ord_Unsafe = PS["Data.Ord.Unsafe"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Unit = PS["Data.Unit"];
+  var Data_Void = PS["Data.Void"];                 
+  var Ord = function (Eq0, compare) {
+      this.Eq0 = Eq0;
+      this.compare = compare;
+  };
+  var ordVoid = new Ord(function () {
+      return Data_Eq.eqVoid;
+  }, function (v) {
+      return function (v1) {
+          return Data_Ordering.EQ.value;
+      };
+  });
+  var ordString = new Ord(function () {
+      return Data_Eq.eqString;
+  }, Data_Ord_Unsafe.unsafeCompare);
+  var ordInt = new Ord(function () {
+      return Data_Eq.eqInt;
+  }, Data_Ord_Unsafe.unsafeCompare);
+  var compare = function (dict) {
+      return dict.compare;
+  };
+  exports["Ord"] = Ord;
+  exports["compare"] = compare;
+  exports["ordInt"] = ordInt;
+  exports["ordString"] = ordString;
+  exports["ordVoid"] = ordVoid;
+})(PS["Data.Ord"] = PS["Data.Ord"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ring = PS["Data.Ring"];
+  var flip = function (f) {
+      return function (b) {
+          return function (a) {
+              return f(a)(b);
+          };
+      };
+  };
+  var $$const = function (a) {
+      return function (v) {
+          return a;
+      };
+  };
+  exports["flip"] = flip;
+  exports["const"] = $$const;
+})(PS["Data.Function"] = PS["Data.Function"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Functor"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Unit = PS["Data.Unit"];                 
+  var Functor = function (map) {
+      this.map = map;
+  };
+  var map = function (dict) {
+      return dict.map;
+  };
+  var mapFlipped = function (dictFunctor) {
+      return function (fa) {
+          return function (f) {
+              return map(dictFunctor)(f)(fa);
+          };
+      };
+  };
+  var $$void = function (dictFunctor) {
+      return map(dictFunctor)(Data_Function["const"](Data_Unit.unit));
+  };
+  var voidLeft = function (dictFunctor) {
+      return function (f) {
+          return function (x) {
+              return map(dictFunctor)(Data_Function["const"](x))(f);
+          };
+      };
+  };
+  var functorFn = new Functor(Control_Semigroupoid.compose(Control_Semigroupoid.semigroupoidFn));
+  var functorArray = new Functor($foreign.arrayMap);
+  exports["Functor"] = Functor;
+  exports["map"] = map;
+  exports["mapFlipped"] = mapFlipped;
+  exports["void"] = $$void;
+  exports["voidLeft"] = voidLeft;
+  exports["functorFn"] = functorFn;
+  exports["functorArray"] = functorArray;
+})(PS["Data.Functor"] = PS["Data.Functor"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Semigroup = PS["Data.Semigroup"];                 
+  var Alt = function (Functor0, alt) {
+      this.Functor0 = Functor0;
+      this.alt = alt;
+  };                                                       
+  var alt = function (dict) {
+      return dict.alt;
+  };
+  exports["Alt"] = Alt;
+  exports["alt"] = alt;
+})(PS["Control.Alt"] = PS["Control.Alt"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];                 
+  var Apply = function (Functor0, apply) {
+      this.Functor0 = Functor0;
+      this.apply = apply;
+  };                      
+  var apply = function (dict) {
+      return dict.apply;
+  };
+  var applySecond = function (dictApply) {
+      return function (a) {
+          return function (b) {
+              return apply(dictApply)(Data_Functor.map(dictApply.Functor0())(Data_Function["const"](Control_Category.identity(Control_Category.categoryFn)))(a))(b);
+          };
+      };
+  };
+  var lift2 = function (dictApply) {
+      return function (f) {
+          return function (a) {
+              return function (b) {
+                  return apply(dictApply)(Data_Functor.map(dictApply.Functor0())(f)(a))(b);
+              };
+          };
+      };
+  };
+  exports["Apply"] = Apply;
+  exports["apply"] = apply;
+  exports["applySecond"] = applySecond;
+  exports["lift2"] = lift2;
+})(PS["Control.Apply"] = PS["Control.Apply"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Apply = PS["Control.Apply"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Unit = PS["Data.Unit"];                 
+  var Applicative = function (Apply0, pure) {
+      this.Apply0 = Apply0;
+      this.pure = pure;
+  };
+  var pure = function (dict) {
+      return dict.pure;
+  };
+  var when = function (dictApplicative) {
+      return function (v) {
+          return function (v1) {
+              if (v) {
+                  return v1;
+              };
+              if (!v) {
+                  return pure(dictApplicative)(Data_Unit.unit);
+              };
+              throw new Error("Failed pattern match at Control.Applicative line 57, column 1 - line 57, column 63: " + [ v.constructor.name, v1.constructor.name ]);
+          };
+      };
+  };
+  var liftA1 = function (dictApplicative) {
+      return function (f) {
+          return function (a) {
+              return Control_Apply.apply(dictApplicative.Apply0())(pure(dictApplicative)(f))(a);
+          };
+      };
+  };
+  exports["Applicative"] = Applicative;
+  exports["pure"] = pure;
+  exports["liftA1"] = liftA1;
+  exports["when"] = when;
+})(PS["Control.Applicative"] = PS["Control.Applicative"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Control.Bind"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Unit = PS["Data.Unit"];                 
+  var Bind = function (Apply0, bind) {
+      this.Apply0 = Apply0;
+      this.bind = bind;
+  };
+  var Discard = function (discard) {
+      this.discard = discard;
+  };
+  var discard = function (dict) {
+      return dict.discard;
+  };                     
+  var bind = function (dict) {
+      return dict.bind;
+  };
+  var bindFlipped = function (dictBind) {
+      return Data_Function.flip(bind(dictBind));
+  };
+  var composeKleisliFlipped = function (dictBind) {
+      return function (f) {
+          return function (g) {
+              return function (a) {
+                  return bindFlipped(dictBind)(f)(g(a));
+              };
+          };
+      };
+  };
+  var discardUnit = new Discard(function (dictBind) {
+      return bind(dictBind);
+  });
+  exports["Bind"] = Bind;
+  exports["bind"] = bind;
+  exports["bindFlipped"] = bindFlipped;
+  exports["Discard"] = Discard;
+  exports["discard"] = discard;
+  exports["composeKleisliFlipped"] = composeKleisliFlipped;
+  exports["discardUnit"] = discardUnit;
+})(PS["Control.Bind"] = PS["Control.Bind"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Unit = PS["Data.Unit"];                 
+  var Monad = function (Applicative0, Bind1) {
+      this.Applicative0 = Applicative0;
+      this.Bind1 = Bind1;
+  };
+  var ap = function (dictMonad) {
+      return function (f) {
+          return function (a) {
+              return Control_Bind.bind(dictMonad.Bind1())(f)(function (v) {
+                  return Control_Bind.bind(dictMonad.Bind1())(a)(function (v1) {
+                      return Control_Applicative.pure(dictMonad.Applicative0())(v(v1));
+                  });
+              });
+          };
+      };
+  };
+  exports["Monad"] = Monad;
+  exports["ap"] = ap;
+})(PS["Control.Monad"] = PS["Control.Monad"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];                 
+  var Bifunctor = function (bimap) {
+      this.bimap = bimap;
+  };
+  var bimap = function (dict) {
+      return dict.bimap;
+  };
+  var rmap = function (dictBifunctor) {
+      return bimap(dictBifunctor)(Control_Category.identity(Control_Category.categoryFn));
+  };
+  exports["bimap"] = bimap;
+  exports["Bifunctor"] = Bifunctor;
+  exports["rmap"] = rmap;
+})(PS["Data.Bifunctor"] = PS["Data.Bifunctor"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.foldrArray = function (f) {
+    return function (init) {
+      return function (xs) {
+        var acc = init;
+        var len = xs.length;
+        for (var i = len - 1; i >= 0; i--) {
+          acc = f(xs[i])(acc);
+        }
+        return acc;
+      };
+    };
+  };
+
+  exports.foldlArray = function (f) {
+    return function (init) {
+      return function (xs) {
+        var acc = init;
+        var len = xs.length;
+        for (var i = 0; i < len; i++) {
+          acc = f(acc)(xs[i]);
+        }
+        return acc;
+      };
+    };
+  };
+})(PS["Data.Foldable"] = PS["Data.Foldable"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Data_Functor = PS["Data.Functor"];                 
+  var Plus = function (Alt0, empty) {
+      this.Alt0 = Alt0;
+      this.empty = empty;
+  };       
+  var empty = function (dict) {
+      return dict.empty;
+  };
+  exports["Plus"] = Plus;
+  exports["empty"] = empty;
+})(PS["Control.Plus"] = PS["Control.Plus"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_EuclideanRing = PS["Data.EuclideanRing"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Data_Unit = PS["Data.Unit"];
+  var Record_Unsafe = PS["Record.Unsafe"];
+  var Type_Data_RowList = PS["Type.Data.RowList"];                 
+  var Monoid = function (Semigroup0, mempty) {
+      this.Semigroup0 = Semigroup0;
+      this.mempty = mempty;
+  };                 
+  var monoidString = new Monoid(function () {
+      return Data_Semigroup.semigroupString;
+  }, "");
+  var mempty = function (dict) {
+      return dict.mempty;
+  };
+  exports["Monoid"] = Monoid;
+  exports["mempty"] = mempty;
+  exports["monoidString"] = monoidString;
+})(PS["Data.Monoid"] = PS["Data.Monoid"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Data_Bounded = PS["Data.Bounded"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Invariant = PS["Data.Functor.Invariant"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];                 
+  var Nothing = (function () {
+      function Nothing() {
+
+      };
+      Nothing.value = new Nothing();
+      return Nothing;
+  })();
+  var Just = (function () {
+      function Just(value0) {
+          this.value0 = value0;
+      };
+      Just.create = function (value0) {
+          return new Just(value0);
+      };
+      return Just;
+  })();
+  var maybe = function (v) {
+      return function (v1) {
+          return function (v2) {
+              if (v2 instanceof Nothing) {
+                  return v;
+              };
+              if (v2 instanceof Just) {
+                  return v1(v2.value0);
+              };
+              throw new Error("Failed pattern match at Data.Maybe line 218, column 1 - line 218, column 51: " + [ v.constructor.name, v1.constructor.name, v2.constructor.name ]);
+          };
+      };
+  };
+  var isNothing = maybe(true)(Data_Function["const"](false));
+  var isJust = maybe(false)(Data_Function["const"](true));
+  var functorMaybe = new Data_Functor.Functor(function (v) {
+      return function (v1) {
+          if (v1 instanceof Just) {
+              return new Just(v(v1.value0));
+          };
+          return Nothing.value;
+      };
+  });
+  var fromMaybe = function (a) {
+      return maybe(a)(Control_Category.identity(Control_Category.categoryFn));
+  };
+  var fromJust = function (dictPartial) {
+      return function (v) {
+          var $__unused = function (dictPartial1) {
+              return function ($dollar35) {
+                  return $dollar35;
+              };
+          };
+          return $__unused(dictPartial)((function () {
+              if (v instanceof Just) {
+                  return v.value0;
+              };
+              throw new Error("Failed pattern match at Data.Maybe line 269, column 1 - line 269, column 46: " + [ v.constructor.name ]);
+          })());
+      };
+  };
+  var applyMaybe = new Control_Apply.Apply(function () {
+      return functorMaybe;
+  }, function (v) {
+      return function (v1) {
+          if (v instanceof Just) {
+              return Data_Functor.map(functorMaybe)(v.value0)(v1);
+          };
+          if (v instanceof Nothing) {
+              return Nothing.value;
+          };
+          throw new Error("Failed pattern match at Data.Maybe line 67, column 1 - line 67, column 35: " + [ v.constructor.name, v1.constructor.name ]);
+      };
+  });
+  var bindMaybe = new Control_Bind.Bind(function () {
+      return applyMaybe;
+  }, function (v) {
+      return function (v1) {
+          if (v instanceof Just) {
+              return v1(v.value0);
+          };
+          if (v instanceof Nothing) {
+              return Nothing.value;
+          };
+          throw new Error("Failed pattern match at Data.Maybe line 126, column 1 - line 126, column 33: " + [ v.constructor.name, v1.constructor.name ]);
+      };
+  });
+  exports["Nothing"] = Nothing;
+  exports["Just"] = Just;
+  exports["maybe"] = maybe;
+  exports["fromMaybe"] = fromMaybe;
+  exports["isJust"] = isJust;
+  exports["isNothing"] = isNothing;
+  exports["fromJust"] = fromJust;
+  exports["functorMaybe"] = functorMaybe;
+  exports["applyMaybe"] = applyMaybe;
+  exports["bindMaybe"] = bindMaybe;
+})(PS["Data.Maybe"] = PS["Data.Maybe"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Monoid_Additive = PS["Data.Monoid.Additive"];
+  var Data_Monoid_Conj = PS["Data.Monoid.Conj"];
+  var Data_Monoid_Disj = PS["Data.Monoid.Disj"];
+  var Data_Monoid_Dual = PS["Data.Monoid.Dual"];
+  var Data_Monoid_Endo = PS["Data.Monoid.Endo"];
+  var Data_Monoid_Multiplicative = PS["Data.Monoid.Multiplicative"];
+  var Data_Semigroup_First = PS["Data.Semigroup.First"];
+  var Data_Semigroup_Last = PS["Data.Semigroup.Last"];
+  var Prelude = PS["Prelude"];                 
+  var Newtype = function (unwrap, wrap) {
+      this.unwrap = unwrap;
+      this.wrap = wrap;
+  };
+  var wrap = function (dict) {
+      return dict.wrap;
+  };
+  var unwrap = function (dict) {
+      return dict.unwrap;
+  };
+  exports["unwrap"] = unwrap;
+  exports["wrap"] = wrap;
+  exports["Newtype"] = Newtype;
+})(PS["Data.Newtype"] = PS["Data.Newtype"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Foldable"];
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Maybe_First = PS["Data.Maybe.First"];
+  var Data_Maybe_Last = PS["Data.Maybe.Last"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Monoid_Additive = PS["Data.Monoid.Additive"];
+  var Data_Monoid_Conj = PS["Data.Monoid.Conj"];
+  var Data_Monoid_Disj = PS["Data.Monoid.Disj"];
+  var Data_Monoid_Dual = PS["Data.Monoid.Dual"];
+  var Data_Monoid_Endo = PS["Data.Monoid.Endo"];
+  var Data_Monoid_Multiplicative = PS["Data.Monoid.Multiplicative"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];                 
+  var Foldable = function (foldMap, foldl, foldr) {
+      this.foldMap = foldMap;
+      this.foldl = foldl;
+      this.foldr = foldr;
+  };
+  var foldr = function (dict) {
+      return dict.foldr;
+  };
+  var traverse_ = function (dictApplicative) {
+      return function (dictFoldable) {
+          return function (f) {
+              return foldr(dictFoldable)(function ($195) {
+                  return Control_Apply.applySecond(dictApplicative.Apply0())(f($195));
+              })(Control_Applicative.pure(dictApplicative)(Data_Unit.unit));
+          };
+      };
+  };
+  var for_ = function (dictApplicative) {
+      return function (dictFoldable) {
+          return Data_Function.flip(traverse_(dictApplicative)(dictFoldable));
+      };
+  };
+  var sequence_ = function (dictApplicative) {
+      return function (dictFoldable) {
+          return traverse_(dictApplicative)(dictFoldable)(Control_Category.identity(Control_Category.categoryFn));
+      };
+  };
+  var foldl = function (dict) {
+      return dict.foldl;
+  };
+  var intercalate = function (dictFoldable) {
+      return function (dictMonoid) {
+          return function (sep) {
+              return function (xs) {
+                  var go = function (v) {
+                      return function (x) {
+                          if (v.init) {
+                              return {
+                                  init: false,
+                                  acc: x
+                              };
+                          };
+                          return {
+                              init: false,
+                              acc: Data_Semigroup.append(dictMonoid.Semigroup0())(v.acc)(Data_Semigroup.append(dictMonoid.Semigroup0())(sep)(x))
+                          };
+                      };
+                  };
+                  return (foldl(dictFoldable)(go)({
+                      init: true,
+                      acc: Data_Monoid.mempty(dictMonoid)
+                  })(xs)).acc;
+              };
+          };
+      };
+  }; 
+  var foldableMaybe = new Foldable(function (dictMonoid) {
+      return function (f) {
+          return function (v) {
+              if (v instanceof Data_Maybe.Nothing) {
+                  return Data_Monoid.mempty(dictMonoid);
+              };
+              if (v instanceof Data_Maybe.Just) {
+                  return f(v.value0);
+              };
+              throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: " + [ f.constructor.name, v.constructor.name ]);
+          };
+      };
+  }, function (v) {
+      return function (z) {
+          return function (v1) {
+              if (v1 instanceof Data_Maybe.Nothing) {
+                  return z;
+              };
+              if (v1 instanceof Data_Maybe.Just) {
+                  return v(z)(v1.value0);
+              };
+              throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: " + [ v.constructor.name, z.constructor.name, v1.constructor.name ]);
+          };
+      };
+  }, function (v) {
+      return function (z) {
+          return function (v1) {
+              if (v1 instanceof Data_Maybe.Nothing) {
+                  return z;
+              };
+              if (v1 instanceof Data_Maybe.Just) {
+                  return v(v1.value0)(z);
+              };
+              throw new Error("Failed pattern match at Data.Foldable line 129, column 1 - line 129, column 41: " + [ v.constructor.name, z.constructor.name, v1.constructor.name ]);
+          };
+      };
+  });
+  var foldMapDefaultR = function (dictFoldable) {
+      return function (dictMonoid) {
+          return function (f) {
+              return foldr(dictFoldable)(function (x) {
+                  return function (acc) {
+                      return Data_Semigroup.append(dictMonoid.Semigroup0())(f(x))(acc);
+                  };
+              })(Data_Monoid.mempty(dictMonoid));
+          };
+      };
+  };
+  var foldableArray = new Foldable(function (dictMonoid) {
+      return foldMapDefaultR(foldableArray)(dictMonoid);
+  }, $foreign.foldlArray, $foreign.foldrArray);
+  var foldMap = function (dict) {
+      return dict.foldMap;
+  };
+  exports["Foldable"] = Foldable;
+  exports["foldr"] = foldr;
+  exports["foldl"] = foldl;
+  exports["foldMap"] = foldMap;
+  exports["foldMapDefaultR"] = foldMapDefaultR;
+  exports["traverse_"] = traverse_;
+  exports["for_"] = for_;
+  exports["sequence_"] = sequence_;
+  exports["intercalate"] = intercalate;
+  exports["foldableArray"] = foldableArray;
+  exports["foldableMaybe"] = foldableMaybe;
+})(PS["Data.Foldable"] = PS["Data.Foldable"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifoldable = PS["Data.Bifoldable"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Bitraversable = PS["Data.Bitraversable"];
+  var Data_Bounded = PS["Data.Bounded"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Invariant = PS["Data.Functor.Invariant"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Prelude = PS["Prelude"];                 
+  var Left = (function () {
+      function Left(value0) {
+          this.value0 = value0;
+      };
+      Left.create = function (value0) {
+          return new Left(value0);
+      };
+      return Left;
+  })();
+  var Right = (function () {
+      function Right(value0) {
+          this.value0 = value0;
+      };
+      Right.create = function (value0) {
+          return new Right(value0);
+      };
+      return Right;
+  })();
+  var functorEither = new Data_Functor.Functor(function (f) {
+      return function (m) {
+          if (m instanceof Left) {
+              return new Left(m.value0);
+          };
+          if (m instanceof Right) {
+              return new Right(f(m.value0));
+          };
+          throw new Error("Failed pattern match at Data.Either line 35, column 8 - line 35, column 52: " + [ m.constructor.name ]);
+      };
+  });
+  var either = function (v) {
+      return function (v1) {
+          return function (v2) {
+              if (v2 instanceof Left) {
+                  return v(v2.value0);
+              };
+              if (v2 instanceof Right) {
+                  return v1(v2.value0);
+              };
+              throw new Error("Failed pattern match at Data.Either line 220, column 1 - line 220, column 64: " + [ v.constructor.name, v1.constructor.name, v2.constructor.name ]);
+          };
+      };
+  };
+  var bifunctorEither = new Data_Bifunctor.Bifunctor(function (v) {
+      return function (v1) {
+          return function (v2) {
+              if (v2 instanceof Left) {
+                  return new Left(v(v2.value0));
+              };
+              if (v2 instanceof Right) {
+                  return new Right(v1(v2.value0));
+              };
+              throw new Error("Failed pattern match at Data.Either line 40, column 1 - line 40, column 45: " + [ v.constructor.name, v1.constructor.name, v2.constructor.name ]);
+          };
+      };
+  });
+  var applyEither = new Control_Apply.Apply(function () {
+      return functorEither;
+  }, function (v) {
+      return function (v1) {
+          if (v instanceof Left) {
+              return new Left(v.value0);
+          };
+          if (v instanceof Right) {
+              return Data_Functor.map(functorEither)(v.value0)(v1);
+          };
+          throw new Error("Failed pattern match at Data.Either line 76, column 1 - line 76, column 41: " + [ v.constructor.name, v1.constructor.name ]);
+      };
+  });
+  exports["Left"] = Left;
+  exports["Right"] = Right;
+  exports["either"] = either;
+  exports["functorEither"] = functorEither;
+  exports["bifunctorEither"] = bifunctorEither;
+  exports["applyEither"] = applyEither;
+})(PS["Data.Either"] = PS["Data.Either"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Comonad = PS["Control.Comonad"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad = PS["Control.Monad"];
+  var Data_BooleanAlgebra = PS["Data.BooleanAlgebra"];
+  var Data_Bounded = PS["Data.Bounded"];
+  var Data_CommutativeRing = PS["Data.CommutativeRing"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_EuclideanRing = PS["Data.EuclideanRing"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Invariant = PS["Data.Functor.Invariant"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Prelude = PS["Prelude"];                 
+  var Identity = function (x) {
+      return x;
+  };
+  var newtypeIdentity = new Data_Newtype.Newtype(function (n) {
+      return n;
+  }, Identity);
+  var functorIdentity = new Data_Functor.Functor(function (f) {
+      return function (m) {
+          return f(m);
+      };
+  });
+  var applyIdentity = new Control_Apply.Apply(function () {
+      return functorIdentity;
+  }, function (v) {
+      return function (v1) {
+          return v(v1);
+      };
+  });
+  var applicativeIdentity = new Control_Applicative.Applicative(function () {
+      return applyIdentity;
+  }, Identity);
+  exports["Identity"] = Identity;
+  exports["newtypeIdentity"] = newtypeIdentity;
+  exports["functorIdentity"] = functorIdentity;
+  exports["applyIdentity"] = applyIdentity;
+  exports["applicativeIdentity"] = applicativeIdentity;
+})(PS["Data.Identity"] = PS["Data.Identity"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.pureE = function (a) {
+    return function () {
+      return a;
+    };
+  };
+
+  exports.bindE = function (a) {
+    return function (f) {
+      return function () {
+        return f(a())();
+      };
+    };
+  };
+
+  exports.foreachE = function (as) {
+    return function (f) {
+      return function () {
+        for (var i = 0, l = as.length; i < l; i++) {
+          f(as[i])();
+        }
+      };
+    };
+  };
+})(PS["Effect"] = PS["Effect"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad = PS["Control.Monad"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Prelude = PS["Prelude"];                 
+  var monadEffect = new Control_Monad.Monad(function () {
+      return applicativeEffect;
+  }, function () {
+      return bindEffect;
+  });
+  var bindEffect = new Control_Bind.Bind(function () {
+      return applyEffect;
+  }, $foreign.bindE);
+  var applyEffect = new Control_Apply.Apply(function () {
+      return functorEffect;
+  }, Control_Monad.ap(monadEffect));
+  var applicativeEffect = new Control_Applicative.Applicative(function () {
+      return applyEffect;
+  }, $foreign.pureE);
+  var functorEffect = new Data_Functor.Functor(Control_Applicative.liftA1(applicativeEffect));
+  exports["functorEffect"] = functorEffect;
+  exports["applyEffect"] = applyEffect;
+  exports["applicativeEffect"] = applicativeEffect;
+  exports["bindEffect"] = bindEffect;
+  exports["monadEffect"] = monadEffect;
+  exports["foreachE"] = $foreign.foreachE;
+})(PS["Effect"] = PS["Effect"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.new = function (val) {
+    return function () {
+      return { value: val };
+    };
+  };
+
+  exports.read = function (ref) {
+    return function () {
+      return ref.value;
+    };
+  };
+
+  exports["modify'"] = function (f) {
+    return function (ref) {
+      return function () {
+        var t = f(ref.value);
+        ref.value = t.state;
+        return t.value;
+      };
+    };
+  };
+
+  exports.write = function (val) {
+    return function (ref) {
+      return function () {
+        ref.value = val;
+        return {};
+      };
+    };
+  };
+})(PS["Effect.Ref"] = PS["Effect.Ref"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.Ref"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];                 
+  var modify = function (f) {
+      return $foreign["modify'"](function (s) {
+          var s$prime = f(s);
+          return {
+              state: s$prime,
+              value: s$prime
+          };
+      });
+  };
+  var modify_ = function (f) {
+      return function (s) {
+          return Data_Functor["void"](Effect.functorEffect)(modify(f)(s));
+      };
+  };
+  exports["modify"] = modify;
+  exports["modify_"] = modify_;
+  exports["new"] = $foreign["new"];
+  exports["read"] = $foreign.read;
+  exports["modify'"] = $foreign["modify'"];
+  exports["write"] = $foreign.write;
+})(PS["Effect.Ref"] = PS["Effect.Ref"] || {});
+(function(exports) {
+    "use strict";
+
+  // module Partial.Unsafe
+
+  exports.unsafePartial = function (f) {
+    return f();
+  };
+})(PS["Partial.Unsafe"] = PS["Partial.Unsafe"] || {});
+(function(exports) {
+    "use strict";
+
+  // module Partial
+
+  exports.crashWith = function () {
+    return function (msg) {
+      throw new Error(msg);
+    };
+  };
+})(PS["Partial"] = PS["Partial"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Partial"];
+  exports["crashWith"] = $foreign.crashWith;
+})(PS["Partial"] = PS["Partial"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Partial.Unsafe"];
+  var Partial = PS["Partial"];
+  var unsafeCrashWith = function (msg) {
+      return $foreign.unsafePartial(function (dictPartial) {
+          return Partial.crashWith(dictPartial)(msg);
+      });
+  };
+  exports["unsafeCrashWith"] = unsafeCrashWith;
+})(PS["Partial.Unsafe"] = PS["Partial.Unsafe"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Identity = PS["Data.Identity"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];                 
+  var Loop = (function () {
+      function Loop(value0) {
+          this.value0 = value0;
+      };
+      Loop.create = function (value0) {
+          return new Loop(value0);
+      };
+      return Loop;
+  })();
+  var Done = (function () {
+      function Done(value0) {
+          this.value0 = value0;
+      };
+      Done.create = function (value0) {
+          return new Done(value0);
+      };
+      return Done;
+  })();
+  var MonadRec = function (Monad0, tailRecM) {
+      this.Monad0 = Monad0;
+      this.tailRecM = tailRecM;
+  };
+  var tailRecM = function (dict) {
+      return dict.tailRecM;
+  }; 
+  var monadRecEffect = new MonadRec(function () {
+      return Effect.monadEffect;
+  }, function (f) {
+      return function (a) {
+          var fromDone = function (v) {
+              var $__unused = function (dictPartial1) {
+                  return function ($dollar19) {
+                      return $dollar19;
+                  };
+              };
+              return $__unused()((function () {
+                  if (v instanceof Done) {
+                      return v.value0;
+                  };
+                  throw new Error("Failed pattern match at Control.Monad.Rec.Class line 111, column 30 - line 111, column 44: " + [ v.constructor.name ]);
+              })());
+          };
+          return function __do() {
+              var v = Control_Bind.bindFlipped(Effect.bindEffect)(Effect_Ref["new"])(f(a))();
+              (function () {
+                  while (!(function __do() {
+                      var v1 = Effect_Ref.read(v)();
+                      if (v1 instanceof Loop) {
+                          var v2 = f(v1.value0)();
+                          var v3 = Effect_Ref.write(v2)(v)();
+                          return false;
+                      };
+                      if (v1 instanceof Done) {
+                          return true;
+                      };
+                      throw new Error("Failed pattern match at Control.Monad.Rec.Class line 102, column 22 - line 107, column 28: " + [ v1.constructor.name ]);
+                  })()) {
+
+                  };
+                  return {};
+              })();
+              return Data_Functor.map(Effect.functorEffect)(fromDone)(Effect_Ref.read(v))();
+          };
+      };
+  });
+  exports["Loop"] = Loop;
+  exports["Done"] = Done;
+  exports["MonadRec"] = MonadRec;
+  exports["tailRecM"] = tailRecM;
+  exports["monadRecEffect"] = monadRecEffect;
+})(PS["Control.Monad.Rec.Class"] = PS["Control.Monad.Rec.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Biapplicative = PS["Control.Biapplicative"];
+  var Control_Biapply = PS["Control.Biapply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Comonad = PS["Control.Comonad"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifoldable = PS["Data.Bifoldable"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Bitraversable = PS["Data.Bitraversable"];
+  var Data_BooleanAlgebra = PS["Data.BooleanAlgebra"];
+  var Data_Bounded = PS["Data.Bounded"];
+  var Data_CommutativeRing = PS["Data.CommutativeRing"];
+  var Data_Distributive = PS["Data.Distributive"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Invariant = PS["Data.Functor.Invariant"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Maybe_First = PS["Data.Maybe.First"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];
+  var Type_Equality = PS["Type.Equality"];                 
+  var Tuple = (function () {
+      function Tuple(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Tuple.create = function (value0) {
+          return function (value1) {
+              return new Tuple(value0, value1);
+          };
+      };
+      return Tuple;
+  })();
+  var snd = function (v) {
+      return v.value1;
+  };
+  var functorTuple = new Data_Functor.Functor(function (f) {
+      return function (m) {
+          return new Tuple(m.value0, f(m.value1));
+      };
+  });                                                                                                   
+  var fst = function (v) {
+      return v.value0;
+  };
+  exports["Tuple"] = Tuple;
+  exports["fst"] = fst;
+  exports["snd"] = snd;
+  exports["functorTuple"] = functorTuple;
+})(PS["Data.Tuple"] = PS["Data.Tuple"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_FoldableWithIndex = PS["Data.FoldableWithIndex"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_TraversableWithIndex = PS["Data.TraversableWithIndex"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Prelude = PS["Prelude"];                 
+  var NonEmpty = (function () {
+      function NonEmpty(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      NonEmpty.create = function (value0) {
+          return function (value1) {
+              return new NonEmpty(value0, value1);
+          };
+      };
+      return NonEmpty;
+  })();
+  var singleton = function (dictPlus) {
+      return function (a) {
+          return new NonEmpty(a, Control_Plus.empty(dictPlus));
+      };
+  };
+  exports["NonEmpty"] = NonEmpty;
+  exports["singleton"] = singleton;
+})(PS["Data.NonEmpty"] = PS["Data.NonEmpty"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Comonad = PS["Control.Comonad"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_MonadPlus = PS["Control.MonadPlus"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_FoldableWithIndex = PS["Data.FoldableWithIndex"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_NonEmpty = PS["Data.NonEmpty"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Semigroup_Traversable = PS["Data.Semigroup.Traversable"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_TraversableWithIndex = PS["Data.TraversableWithIndex"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Prelude = PS["Prelude"];                 
+  var Nil = (function () {
+      function Nil() {
+
+      };
+      Nil.value = new Nil();
+      return Nil;
+  })();
+  var Cons = (function () {
+      function Cons(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Cons.create = function (value0) {
+          return function (value1) {
+              return new Cons(value0, value1);
+          };
+      };
+      return Cons;
+  })();
+  var NonEmptyList = function (x) {
+      return x;
+  };
+  var foldableList = new Data_Foldable.Foldable(function (dictMonoid) {
+      return function (f) {
+          return Data_Foldable.foldl(foldableList)(function (acc) {
+              return function ($155) {
+                  return Data_Semigroup.append(dictMonoid.Semigroup0())(acc)(f($155));
+              };
+          })(Data_Monoid.mempty(dictMonoid));
+      };
+  }, function (f) {
+      var go = function ($copy_b) {
+          return function ($copy_v) {
+              var $tco_var_b = $copy_b;
+              var $tco_done = false;
+              var $tco_result;
+              function $tco_loop(b, v) {
+                  if (v instanceof Nil) {
+                      $tco_done = true;
+                      return b;
+                  };
+                  if (v instanceof Cons) {
+                      $tco_var_b = f(b)(v.value0);
+                      $copy_v = v.value1;
+                      return;
+                  };
+                  throw new Error("Failed pattern match at Data.List.Types line 81, column 12 - line 83, column 30: " + [ v.constructor.name ]);
+              };
+              while (!$tco_done) {
+                  $tco_result = $tco_loop($tco_var_b, $copy_v);
+              };
+              return $tco_result;
+          };
+      };
+      return go;
+  }, function (f) {
+      return function (b) {
+          var rev = Data_Foldable.foldl(foldableList)(Data_Function.flip(Cons.create))(Nil.value);
+          return function ($156) {
+              return Data_Foldable.foldl(foldableList)(Data_Function.flip(f))(b)(rev($156));
+          };
+      };
+  });
+  var functorList = new Data_Functor.Functor(function (f) {
+      return Data_Foldable.foldr(foldableList)(function (x) {
+          return function (acc) {
+              return new Cons(f(x), acc);
+          };
+      })(Nil.value);
+  });
+  var semigroupList = new Data_Semigroup.Semigroup(function (xs) {
+      return function (ys) {
+          return Data_Foldable.foldr(foldableList)(Cons.create)(ys)(xs);
+      };
+  });
+  var applyList = new Control_Apply.Apply(function () {
+      return functorList;
+  }, function (v) {
+      return function (v1) {
+          if (v instanceof Nil) {
+              return Nil.value;
+          };
+          if (v instanceof Cons) {
+              return Data_Semigroup.append(semigroupList)(Data_Functor.map(functorList)(v.value0)(v1))(Control_Apply.apply(applyList)(v.value1)(v1));
+          };
+          throw new Error("Failed pattern match at Data.List.Types line 127, column 1 - line 127, column 33: " + [ v.constructor.name, v1.constructor.name ]);
+      };
+  });
+  var applicativeList = new Control_Applicative.Applicative(function () {
+      return applyList;
+  }, function (a) {
+      return new Cons(a, Nil.value);
+  });                                              
+  var altList = new Control_Alt.Alt(function () {
+      return functorList;
+  }, Data_Semigroup.append(semigroupList));
+  var plusList = new Control_Plus.Plus(function () {
+      return altList;
+  }, Nil.value);
+  exports["Nil"] = Nil;
+  exports["Cons"] = Cons;
+  exports["NonEmptyList"] = NonEmptyList;
+  exports["semigroupList"] = semigroupList;
+  exports["functorList"] = functorList;
+  exports["foldableList"] = foldableList;
+  exports["applyList"] = applyList;
+  exports["applicativeList"] = applicativeList;
+  exports["altList"] = altList;
+  exports["plusList"] = plusList;
+})(PS["Data.List.Types"] = PS["Data.List.Types"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_NonEmpty = PS["Data.NonEmpty"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];
+  var reverse = (function () {
+      var go = function ($copy_acc) {
+          return function ($copy_v) {
+              var $tco_var_acc = $copy_acc;
+              var $tco_done = false;
+              var $tco_result;
+              function $tco_loop(acc, v) {
+                  if (v instanceof Data_List_Types.Nil) {
+                      $tco_done = true;
+                      return acc;
+                  };
+                  if (v instanceof Data_List_Types.Cons) {
+                      $tco_var_acc = new Data_List_Types.Cons(v.value0, acc);
+                      $copy_v = v.value1;
+                      return;
+                  };
+                  throw new Error("Failed pattern match at Data.List line 368, column 3 - line 368, column 19: " + [ acc.constructor.name, v.constructor.name ]);
+              };
+              while (!$tco_done) {
+                  $tco_result = $tco_loop($tco_var_acc, $copy_v);
+              };
+              return $tco_result;
+          };
+      };
+      return go(Data_List_Types.Nil.value);
+  })();
+  var $$null = function (v) {
+      if (v instanceof Data_List_Types.Nil) {
+          return true;
+      };
+      return false;
+  };
+  var fromFoldable = function (dictFoldable) {
+      return Data_Foldable.foldr(dictFoldable)(Data_List_Types.Cons.create)(Data_List_Types.Nil.value);
+  };
+  exports["fromFoldable"] = fromFoldable;
+  exports["null"] = $$null;
+  exports["reverse"] = reverse;
+})(PS["Data.List"] = PS["Data.List"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_NonEmpty = PS["Data.NonEmpty"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Semigroup_Traversable = PS["Data.Semigroup.Traversable"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var singleton = function ($160) {
+      return Data_List_Types.NonEmptyList(Data_NonEmpty.singleton(Data_List_Types.plusList)($160));
+  };
+  var cons = function (y) {
+      return function (v) {
+          return new Data_NonEmpty.NonEmpty(y, new Data_List_Types.Cons(v.value0, v.value1));
+      };
+  };
+  exports["singleton"] = singleton;
+  exports["cons"] = cons;
+})(PS["Data.List.NonEmpty"] = PS["Data.List.NonEmpty"] || {});
+(function(exports) {
+    "use strict";
+
+  // module Unsafe.Coerce
+
+  exports.unsafeCoerce = function (x) {
+    return x;
+  };
+})(PS["Unsafe.Coerce"] = PS["Unsafe.Coerce"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Unsafe.Coerce"];
+  exports["unsafeCoerce"] = $foreign.unsafeCoerce;
+})(PS["Unsafe.Coerce"] = PS["Unsafe.Coerce"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Const = PS["Data.Const"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_NonEmpty = PS["Data.List.NonEmpty"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_NonEmpty = PS["Data.NonEmpty"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];                 
+  var Pure = (function () {
+      function Pure(value0) {
+          this.value0 = value0;
+      };
+      Pure.create = function (value0) {
+          return new Pure(value0);
+      };
+      return Pure;
+  })();
+  var Lift = (function () {
+      function Lift(value0) {
+          this.value0 = value0;
+      };
+      Lift.create = function (value0) {
+          return new Lift(value0);
+      };
+      return Lift;
+  })();
+  var Ap = (function () {
+      function Ap(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Ap.create = function (value0) {
+          return function (value1) {
+              return new Ap(value0, value1);
+          };
+      };
+      return Ap;
+  })();
+  var mkAp = function (fba) {
+      return function (fb) {
+          return new Ap(fba, fb);
+      };
+  };
+  var liftFreeAp = Lift.create;
+  var goLeft = function ($copy_dictApplicative) {
+      return function ($copy_fStack) {
+          return function ($copy_valStack) {
+              return function ($copy_nat) {
+                  return function ($copy_func) {
+                      return function ($copy_count) {
+                          var $tco_var_dictApplicative = $copy_dictApplicative;
+                          var $tco_var_fStack = $copy_fStack;
+                          var $tco_var_valStack = $copy_valStack;
+                          var $tco_var_nat = $copy_nat;
+                          var $tco_var_func = $copy_func;
+                          var $tco_done = false;
+                          var $tco_result;
+                          function $tco_loop(dictApplicative, fStack, valStack, nat, func, count) {
+                              if (func instanceof Pure) {
+                                  $tco_done = true;
+                                  return new Data_Tuple.Tuple(new Data_List_Types.Cons({
+                                      func: Control_Applicative.pure(dictApplicative)(func.value0),
+                                      count: count
+                                  }, fStack), valStack);
+                              };
+                              if (func instanceof Lift) {
+                                  $tco_done = true;
+                                  return new Data_Tuple.Tuple(new Data_List_Types.Cons({
+                                      func: nat(func.value0),
+                                      count: count
+                                  }, fStack), valStack);
+                              };
+                              if (func instanceof Ap) {
+                                  $tco_var_dictApplicative = dictApplicative;
+                                  $tco_var_fStack = fStack;
+                                  $tco_var_valStack = Data_List_NonEmpty.cons(func.value1)(valStack);
+                                  $tco_var_nat = nat;
+                                  $tco_var_func = func.value0;
+                                  $copy_count = count + 1 | 0;
+                                  return;
+                              };
+                              throw new Error("Failed pattern match at Control.Applicative.Free line 102, column 41 - line 105, column 81: " + [ func.constructor.name ]);
+                          };
+                          while (!$tco_done) {
+                              $tco_result = $tco_loop($tco_var_dictApplicative, $tco_var_fStack, $tco_var_valStack, $tco_var_nat, $tco_var_func, $copy_count);
+                          };
+                          return $tco_result;
+                      };
+                  };
+              };
+          };
+      };
+  };
+  var goApply = function ($copy_dictApplicative) {
+      return function ($copy_fStack) {
+          return function ($copy_vals) {
+              return function ($copy_gVal) {
+                  var $tco_var_dictApplicative = $copy_dictApplicative;
+                  var $tco_var_fStack = $copy_fStack;
+                  var $tco_var_vals = $copy_vals;
+                  var $tco_done = false;
+                  var $tco_result;
+                  function $tco_loop(dictApplicative, fStack, vals, gVal) {
+                      if (fStack instanceof Data_List_Types.Nil) {
+                          $tco_done = true;
+                          return new Data_Either.Left(gVal);
+                      };
+                      if (fStack instanceof Data_List_Types.Cons) {
+                          var gRes = Control_Apply.apply(dictApplicative.Apply0())(fStack.value0.func)(gVal);
+                          var $14 = fStack.value0.count === 1;
+                          if ($14) {
+                              if (fStack.value1 instanceof Data_List_Types.Nil) {
+                                  $tco_done = true;
+                                  return new Data_Either.Left(gRes);
+                              };
+                              $tco_var_dictApplicative = dictApplicative;
+                              $tco_var_fStack = fStack.value1;
+                              $tco_var_vals = vals;
+                              $copy_gVal = gRes;
+                              return;
+                          };
+                          if (vals instanceof Data_List_Types.Nil) {
+                              $tco_done = true;
+                              return new Data_Either.Left(gRes);
+                          };
+                          if (vals instanceof Data_List_Types.Cons) {
+                              $tco_done = true;
+                              return Data_Either.Right.create(new Data_Tuple.Tuple(new Data_List_Types.Cons({
+                                  func: gRes,
+                                  count: fStack.value0.count - 1 | 0
+                              }, fStack.value1), new Data_NonEmpty.NonEmpty(vals.value0, vals.value1)));
+                          };
+                          throw new Error("Failed pattern match at Control.Applicative.Free line 83, column 11 - line 88, column 50: " + [ vals.constructor.name ]);
+                      };
+                      throw new Error("Failed pattern match at Control.Applicative.Free line 72, column 3 - line 88, column 50: " + [ fStack.constructor.name ]);
+                  };
+                  while (!$tco_done) {
+                      $tco_result = $tco_loop($tco_var_dictApplicative, $tco_var_fStack, $tco_var_vals, $copy_gVal);
+                  };
+                  return $tco_result;
+              };
+          };
+      };
+  };
+  var functorFreeAp = new Data_Functor.Functor(function (f) {
+      return function (x) {
+          return mkAp(new Pure(f))(x);
+      };
+  });
+  var foldFreeAp = function (dictApplicative) {
+      return function (nat) {
+          return function (z) {
+              var go = function ($copy_v) {
+                  var $tco_done = false;
+                  var $tco_result;
+                  function $tco_loop(v) {
+                      if (v.value1.value0 instanceof Pure) {
+                          var v1 = goApply(dictApplicative)(v.value0)(v.value1.value1)(Control_Applicative.pure(dictApplicative)(v.value1.value0.value0));
+                          if (v1 instanceof Data_Either.Left) {
+                              $tco_done = true;
+                              return v1.value0;
+                          };
+                          if (v1 instanceof Data_Either.Right) {
+                              $copy_v = v1.value0;
+                              return;
+                          };
+                          throw new Error("Failed pattern match at Control.Applicative.Free line 54, column 17 - line 56, column 24: " + [ v1.constructor.name ]);
+                      };
+                      if (v.value1.value0 instanceof Lift) {
+                          var v1 = goApply(dictApplicative)(v.value0)(v.value1.value1)(nat(v.value1.value0.value0));
+                          if (v1 instanceof Data_Either.Left) {
+                              $tco_done = true;
+                              return v1.value0;
+                          };
+                          if (v1 instanceof Data_Either.Right) {
+                              $copy_v = v1.value0;
+                              return;
+                          };
+                          throw new Error("Failed pattern match at Control.Applicative.Free line 57, column 17 - line 59, column 24: " + [ v1.constructor.name ]);
+                      };
+                      if (v.value1.value0 instanceof Ap) {
+                          var nextVals = new Data_NonEmpty.NonEmpty(v.value1.value0.value1, v.value1.value1);
+                          $copy_v = goLeft(dictApplicative)(v.value0)(nextVals)(nat)(v.value1.value0.value0)(1);
+                          return;
+                      };
+                      throw new Error("Failed pattern match at Control.Applicative.Free line 53, column 5 - line 64, column 1: " + [ v.value1.value0.constructor.name ]);
+                  };
+                  while (!$tco_done) {
+                      $tco_result = $tco_loop($copy_v);
+                  };
+                  return $tco_result;
+              };
+              return go(new Data_Tuple.Tuple(Data_List_Types.Nil.value, Data_List_NonEmpty.singleton(z)));
+          };
+      };
+  };
+  var retractFreeAp = function (dictApplicative) {
+      return foldFreeAp(dictApplicative)(Control_Category.identity(Control_Category.categoryFn));
+  };
+  var applyFreeAp = new Control_Apply.Apply(function () {
+      return functorFreeAp;
+  }, function (fba) {
+      return function (fb) {
+          return mkAp(fba)(fb);
+      };
+  });
+  var applicativeFreeAp = new Control_Applicative.Applicative(function () {
+      return applyFreeAp;
+  }, Pure.create);
+  var hoistFreeAp = function (f) {
+      return foldFreeAp(applicativeFreeAp)(function ($37) {
+          return liftFreeAp(f($37));
+      });
+  };
+  exports["liftFreeAp"] = liftFreeAp;
+  exports["retractFreeAp"] = retractFreeAp;
+  exports["foldFreeAp"] = foldFreeAp;
+  exports["hoistFreeAp"] = hoistFreeAp;
+  exports["functorFreeAp"] = functorFreeAp;
+  exports["applyFreeAp"] = applyFreeAp;
+  exports["applicativeFreeAp"] = applicativeFreeAp;
+})(PS["Control.Applicative.Free"] = PS["Control.Applicative.Free"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];                 
+  var MonadThrow = function (Monad0, throwError) {
+      this.Monad0 = Monad0;
+      this.throwError = throwError;
+  };
+  var MonadError = function (MonadThrow0, catchError) {
+      this.MonadThrow0 = MonadThrow0;
+      this.catchError = catchError;
+  };
+  var throwError = function (dict) {
+      return dict.throwError;
+  }; 
+  var catchError = function (dict) {
+      return dict.catchError;
+  };
+  var $$try = function (dictMonadError) {
+      return function (a) {
+          return catchError(dictMonadError)(Data_Functor.map(((((dictMonadError.MonadThrow0()).Monad0()).Bind1()).Apply0()).Functor0())(Data_Either.Right.create)(a))(function ($21) {
+              return Control_Applicative.pure(((dictMonadError.MonadThrow0()).Monad0()).Applicative0())(Data_Either.Left.create($21));
+          });
+      };
+  };
+  exports["catchError"] = catchError;
+  exports["throwError"] = throwError;
+  exports["MonadThrow"] = MonadThrow;
+  exports["MonadError"] = MonadError;
+  exports["try"] = $$try;
+})(PS["Control.Monad.Error.Class"] = PS["Control.Monad.Error.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];                 
+  var MonadState = function (Monad0, state) {
+      this.Monad0 = Monad0;
+      this.state = state;
+  };
+  var state = function (dict) {
+      return dict.state;
+  };
+  var modify = function (dictMonadState) {
+      return function (f) {
+          return state(dictMonadState)(function (s) {
+              var s$prime = f(s);
+              return new Data_Tuple.Tuple(s$prime, s$prime);
+          });
+      };
+  };
+  exports["state"] = state;
+  exports["MonadState"] = MonadState;
+  exports["modify"] = modify;
+})(PS["Control.Monad.State.Class"] = PS["Control.Monad.State.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Prelude = PS["Prelude"];                 
+  var MonadTrans = function (lift) {
+      this.lift = lift;
+  };
+  var lift = function (dict) {
+      return dict.lift;
+  };
+  exports["lift"] = lift;
+  exports["MonadTrans"] = MonadTrans;
+})(PS["Control.Monad.Trans.Class"] = PS["Control.Monad.Trans.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad = PS["Control.Monad"];
+  var Effect = PS["Effect"];                 
+  var MonadEffect = function (Monad0, liftEffect) {
+      this.Monad0 = Monad0;
+      this.liftEffect = liftEffect;
+  };                                                         
+  var liftEffect = function (dict) {
+      return dict.liftEffect;
+  };
+  exports["liftEffect"] = liftEffect;
+  exports["MonadEffect"] = MonadEffect;
+})(PS["Effect.Class"] = PS["Effect.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Cont_Class = PS["Control.Monad.Cont.Class"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Reader_Class = PS["Control.Monad.Reader.Class"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_State_Class = PS["Control.Monad.State.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Monad_Writer_Class = PS["Control.Monad.Writer.Class"];
+  var Control_MonadPlus = PS["Control.MonadPlus"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Effect_Class = PS["Effect.Class"];
+  var Prelude = PS["Prelude"];                 
+  var ExceptT = function (x) {
+      return x;
+  };
+  var runExceptT = function (v) {
+      return v;
+  }; 
+  var mapExceptT = function (f) {
+      return function (v) {
+          return f(v);
+      };
+  };
+  var functorExceptT = function (dictFunctor) {
+      return new Data_Functor.Functor(function (f) {
+          return mapExceptT(Data_Functor.map(dictFunctor)(Data_Functor.map(Data_Either.functorEither)(f)));
+      });
+  };
+  var monadExceptT = function (dictMonad) {
+      return new Control_Monad.Monad(function () {
+          return applicativeExceptT(dictMonad);
+      }, function () {
+          return bindExceptT(dictMonad);
+      });
+  };
+  var bindExceptT = function (dictMonad) {
+      return new Control_Bind.Bind(function () {
+          return applyExceptT(dictMonad);
+      }, function (v) {
+          return function (k) {
+              return Control_Bind.bind(dictMonad.Bind1())(v)(Data_Either.either(function ($97) {
+                  return Control_Applicative.pure(dictMonad.Applicative0())(Data_Either.Left.create($97));
+              })(function (a) {
+                  var v1 = k(a);
+                  return v1;
+              }));
+          };
+      });
+  };
+  var applyExceptT = function (dictMonad) {
+      return new Control_Apply.Apply(function () {
+          return functorExceptT(((dictMonad.Bind1()).Apply0()).Functor0());
+      }, Control_Monad.ap(monadExceptT(dictMonad)));
+  };
+  var applicativeExceptT = function (dictMonad) {
+      return new Control_Applicative.Applicative(function () {
+          return applyExceptT(dictMonad);
+      }, function ($98) {
+          return ExceptT(Control_Applicative.pure(dictMonad.Applicative0())(Data_Either.Right.create($98)));
+      });
+  };
+  exports["ExceptT"] = ExceptT;
+  exports["runExceptT"] = runExceptT;
+  exports["mapExceptT"] = mapExceptT;
+  exports["functorExceptT"] = functorExceptT;
+  exports["applyExceptT"] = applyExceptT;
+  exports["applicativeExceptT"] = applicativeExceptT;
+  exports["bindExceptT"] = bindExceptT;
+  exports["monadExceptT"] = monadExceptT;
+})(PS["Control.Monad.Except.Trans"] = PS["Control.Monad.Except.Trans"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];                 
+  var runExists = Unsafe_Coerce.unsafeCoerce;
+  var mkExists = Unsafe_Coerce.unsafeCoerce;
+  exports["mkExists"] = mkExists;
+  exports["runExists"] = runExists;
+})(PS["Data.Exists"] = PS["Data.Exists"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Reader_Class = PS["Control.Monad.Reader.Class"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_State_Class = PS["Control.Monad.State.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Monad_Writer_Class = PS["Control.Monad.Writer.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Exists = PS["Data.Exists"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect_Class = PS["Effect.Class"];
+  var Prelude = PS["Prelude"];                 
+  var Bound = (function () {
+      function Bound(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Bound.create = function (value0) {
+          return function (value1) {
+              return new Bound(value0, value1);
+          };
+      };
+      return Bound;
+  })();
+  var FreeT = (function () {
+      function FreeT(value0) {
+          this.value0 = value0;
+      };
+      FreeT.create = function (value0) {
+          return new FreeT(value0);
+      };
+      return FreeT;
+  })();
+  var Bind = (function () {
+      function Bind(value0) {
+          this.value0 = value0;
+      };
+      Bind.create = function (value0) {
+          return new Bind(value0);
+      };
+      return Bind;
+  })();
+  var monadTransFreeT = function (dictFunctor) {
+      return new Control_Monad_Trans_Class.MonadTrans(function (dictMonad) {
+          return function (ma) {
+              return new FreeT(function (v) {
+                  return Data_Functor.map(((dictMonad.Bind1()).Apply0()).Functor0())(Data_Either.Left.create)(ma);
+              });
+          };
+      });
+  };
+  var freeT = FreeT.create;
+  var bound = function (m) {
+      return function (f) {
+          return new Bind(Data_Exists.mkExists(new Bound(m, f)));
+      };
+  };
+  var functorFreeT = function (dictFunctor) {
+      return function (dictFunctor1) {
+          return new Data_Functor.Functor(function (f) {
+              return function (v) {
+                  if (v instanceof FreeT) {
+                      return new FreeT(function (v1) {
+                          return Data_Functor.map(dictFunctor1)(Data_Bifunctor.bimap(Data_Either.bifunctorEither)(f)(Data_Functor.map(dictFunctor)(Data_Functor.map(functorFreeT(dictFunctor)(dictFunctor1))(f))))(v.value0(Data_Unit.unit));
+                      });
+                  };
+                  if (v instanceof Bind) {
+                      return Data_Exists.runExists(function (v1) {
+                          return bound(v1.value0)(function ($104) {
+                              return Data_Functor.map(functorFreeT(dictFunctor)(dictFunctor1))(f)(v1.value1($104));
+                          });
+                      })(v.value0);
+                  };
+                  throw new Error("Failed pattern match at Control.Monad.Free.Trans line 57, column 1 - line 57, column 71: " + [ f.constructor.name, v.constructor.name ]);
+              };
+          });
+      };
+  };
+  var monadFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return new Control_Monad.Monad(function () {
+              return applicativeFreeT(dictFunctor)(dictMonad);
+          }, function () {
+              return bindFreeT(dictFunctor)(dictMonad);
+          });
+      };
+  };
+  var bindFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return new Control_Bind.Bind(function () {
+              return applyFreeT(dictFunctor)(dictMonad);
+          }, function (v) {
+              return function (f) {
+                  if (v instanceof Bind) {
+                      return Data_Exists.runExists(function (v1) {
+                          return bound(v1.value0)(function (x) {
+                              return bound(function (v2) {
+                                  return v1.value1(x);
+                              })(f);
+                          });
+                      })(v.value0);
+                  };
+                  return bound(function (v1) {
+                      return v;
+                  })(f);
+              };
+          });
+      };
+  };
+  var applyFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return new Control_Apply.Apply(function () {
+              return functorFreeT(dictFunctor)(((dictMonad.Bind1()).Apply0()).Functor0());
+          }, Control_Monad.ap(monadFreeT(dictFunctor)(dictMonad)));
+      };
+  };
+  var applicativeFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return new Control_Applicative.Applicative(function () {
+              return applyFreeT(dictFunctor)(dictMonad);
+          }, function (a) {
+              return new FreeT(function (v) {
+                  return Control_Applicative.pure(dictMonad.Applicative0())(new Data_Either.Left(a));
+              });
+          });
+      };
+  };
+  var liftFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return function (fa) {
+              return new FreeT(function (v) {
+                  return Control_Applicative.pure(dictMonad.Applicative0())(new Data_Either.Right(Data_Functor.map(dictFunctor)(Control_Applicative.pure(applicativeFreeT(dictFunctor)(dictMonad)))(fa)));
+              });
+          };
+      };
+  };
+  var resume = function (dictFunctor) {
+      return function (dictMonadRec) {
+          var go = function (v) {
+              if (v instanceof FreeT) {
+                  return Data_Functor.map((((dictMonadRec.Monad0()).Bind1()).Apply0()).Functor0())(Control_Monad_Rec_Class.Done.create)(v.value0(Data_Unit.unit));
+              };
+              if (v instanceof Bind) {
+                  return Data_Exists.runExists(function (v1) {
+                      var v2 = v1.value0(Data_Unit.unit);
+                      if (v2 instanceof FreeT) {
+                          return Control_Bind.bind((dictMonadRec.Monad0()).Bind1())(v2.value0(Data_Unit.unit))(function (v3) {
+                              if (v3 instanceof Data_Either.Left) {
+                                  return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Control_Monad_Rec_Class.Loop(v1.value1(v3.value0)));
+                              };
+                              if (v3 instanceof Data_Either.Right) {
+                                  return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Control_Monad_Rec_Class.Done(new Data_Either.Right(Data_Functor.map(dictFunctor)(function (h) {
+                                      return Control_Bind.bind(bindFreeT(dictFunctor)(dictMonadRec.Monad0()))(h)(v1.value1);
+                                  })(v3.value0))));
+                              };
+                              throw new Error("Failed pattern match at Control.Monad.Free.Trans line 52, column 20 - line 54, column 67: " + [ v3.constructor.name ]);
+                          });
+                      };
+                      if (v2 instanceof Bind) {
+                          return Data_Exists.runExists(function (v3) {
+                              return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Control_Monad_Rec_Class.Loop(Control_Bind.bind(bindFreeT(dictFunctor)(dictMonadRec.Monad0()))(v3.value0(Data_Unit.unit))(function (z) {
+                                  return Control_Bind.bind(bindFreeT(dictFunctor)(dictMonadRec.Monad0()))(v3.value1(z))(v1.value1);
+                              })));
+                          })(v2.value0);
+                      };
+                      throw new Error("Failed pattern match at Control.Monad.Free.Trans line 50, column 5 - line 55, column 98: " + [ v2.constructor.name ]);
+                  })(v.value0);
+              };
+              throw new Error("Failed pattern match at Control.Monad.Free.Trans line 47, column 3 - line 47, column 75: " + [ v.constructor.name ]);
+          };
+          return Control_Monad_Rec_Class.tailRecM(dictMonadRec)(go);
+      };
+  };
+  var runFreeT = function (dictFunctor) {
+      return function (dictMonadRec) {
+          return function (interp) {
+              var go = function (v) {
+                  if (v instanceof Data_Either.Left) {
+                      return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Control_Monad_Rec_Class.Done(v.value0));
+                  };
+                  if (v instanceof Data_Either.Right) {
+                      return Data_Functor.map((((dictMonadRec.Monad0()).Bind1()).Apply0()).Functor0())(Control_Monad_Rec_Class.Loop.create)(interp(v.value0));
+                  };
+                  throw new Error("Failed pattern match at Control.Monad.Free.Trans line 126, column 3 - line 126, column 63: " + [ v.constructor.name ]);
+              };
+              return Control_Monad_Rec_Class.tailRecM(dictMonadRec)(Control_Bind.composeKleisliFlipped((dictMonadRec.Monad0()).Bind1())(go)(resume(dictFunctor)(dictMonadRec)));
+          };
+      };
+  };
+  var monadRecFreeT = function (dictFunctor) {
+      return function (dictMonad) {
+          return new Control_Monad_Rec_Class.MonadRec(function () {
+              return monadFreeT(dictFunctor)(dictMonad);
+          }, function (f) {
+              var go = function (s) {
+                  return Control_Bind.bind(bindFreeT(dictFunctor)(dictMonad))(f(s))(function (v) {
+                      if (v instanceof Control_Monad_Rec_Class.Loop) {
+                          return go(v.value0);
+                      };
+                      if (v instanceof Control_Monad_Rec_Class.Done) {
+                          return Control_Applicative.pure(applicativeFreeT(dictFunctor)(dictMonad))(v.value0);
+                      };
+                      throw new Error("Failed pattern match at Control.Monad.Free.Trans line 80, column 15 - line 82, column 25: " + [ v.constructor.name ]);
+                  });
+              };
+              return go;
+          });
+      };
+  };
+  exports["freeT"] = freeT;
+  exports["liftFreeT"] = liftFreeT;
+  exports["resume"] = resume;
+  exports["runFreeT"] = runFreeT;
+  exports["functorFreeT"] = functorFreeT;
+  exports["applyFreeT"] = applyFreeT;
+  exports["applicativeFreeT"] = applicativeFreeT;
+  exports["bindFreeT"] = bindFreeT;
+  exports["monadFreeT"] = monadFreeT;
+  exports["monadTransFreeT"] = monadTransFreeT;
+  exports["monadRecFreeT"] = monadRecFreeT;
+})(PS["Control.Monad.Free.Trans"] = PS["Control.Monad.Free.Trans"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad_Cont_Trans = PS["Control.Monad.Cont.Trans"];
+  var Control_Monad_Except_Trans = PS["Control.Monad.Except.Trans"];
+  var Control_Monad_Maybe_Trans = PS["Control.Monad.Maybe.Trans"];
+  var Control_Monad_Reader_Trans = PS["Control.Monad.Reader.Trans"];
+  var Control_Monad_Writer_Trans = PS["Control.Monad.Writer.Trans"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Compose = PS["Data.Functor.Compose"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Prelude = PS["Prelude"];
+  var Parallel = function (Applicative1, Monad0, parallel, sequential) {
+      this.Applicative1 = Applicative1;
+      this.Monad0 = Monad0;
+      this.parallel = parallel;
+      this.sequential = sequential;
+  };
+  var sequential = function (dict) {
+      return dict.sequential;
+  };
+  var parallel = function (dict) {
+      return dict.parallel;
+  };
+  exports["parallel"] = parallel;
+  exports["sequential"] = sequential;
+  exports["Parallel"] = Parallel;
+})(PS["Control.Parallel.Class"] = PS["Control.Parallel.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Parallel_Class = PS["Control.Parallel.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Prelude = PS["Prelude"];                 
+  var parTraverse_ = function (dictParallel) {
+      return function (dictFoldable) {
+          return function (f) {
+              return function ($17) {
+                  return Control_Parallel_Class.sequential(dictParallel)(Data_Foldable.traverse_(dictParallel.Applicative1())(dictFoldable)(function ($18) {
+                      return Control_Parallel_Class.parallel(dictParallel)(f($18));
+                  })($17));
+              };
+          };
+      };
+  };
+  var parSequence_ = function (dictParallel) {
+      return function (dictFoldable) {
+          return parTraverse_(dictParallel)(dictFoldable)(Control_Category.identity(Control_Category.categoryFn));
+      };
+  };
+  exports["parTraverse_"] = parTraverse_;
+  exports["parSequence_"] = parSequence_;
+})(PS["Control.Parallel"] = PS["Control.Parallel"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Prelude = PS["Prelude"];                 
+  var Profunctor = function (dimap) {
+      this.dimap = dimap;
+  };
+  var profunctorFn = new Profunctor(function (a2b) {
+      return function (c2d) {
+          return function (b2c) {
+              return function ($9) {
+                  return c2d(b2c(a2b($9)));
+              };
+          };
+      };
+  });
+  var dimap = function (dict) {
+      return dict.dimap;
+  };
+  var rmap = function (dictProfunctor) {
+      return function (b2c) {
+          return dimap(dictProfunctor)(Control_Category.identity(Control_Category.categoryFn))(b2c);
+      };
+  };
+  exports["dimap"] = dimap;
+  exports["Profunctor"] = Profunctor;
+  exports["rmap"] = rmap;
+  exports["profunctorFn"] = profunctorFn;
+})(PS["Data.Profunctor"] = PS["Data.Profunctor"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad_Except = PS["Control.Monad.Except"];
+  var Control_Monad_Except_Trans = PS["Control.Monad.Except.Trans"];
+  var Control_Monad_Free_Trans = PS["Control.Monad.Free.Trans"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Parallel = PS["Control.Parallel"];
+  var Control_Parallel_Class = PS["Control.Parallel.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Identity = PS["Data.Identity"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Profunctor = PS["Data.Profunctor"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Prelude = PS["Prelude"];
+  var Emit = (function () {
+      function Emit(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Emit.create = function (value0) {
+          return function (value1) {
+              return new Emit(value0, value1);
+          };
+      };
+      return Emit;
+  })();
+  var runProcess = function (dictMonadRec) {
+      return Control_Monad_Free_Trans.runFreeT(Data_Identity.functorIdentity)(dictMonadRec)(function ($186) {
+          return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(Data_Newtype.unwrap(Data_Identity.newtypeIdentity)($186));
+      });
+  };
+  var profunctorAwait = new Data_Profunctor.Profunctor(function (f) {
+      return function (g) {
+          return function (v) {
+              return Data_Profunctor.dimap(Data_Profunctor.profunctorFn)(f)(g)(v);
+          };
+      };
+  });
+  var loop = function (dictFunctor) {
+      return function (dictMonad) {
+          return function (me) {
+              return Control_Monad_Rec_Class.tailRecM(Control_Monad_Free_Trans.monadRecFreeT(dictFunctor)(dictMonad))(function (v) {
+                  return Data_Functor.map(Control_Monad_Free_Trans.functorFreeT(dictFunctor)(((dictMonad.Bind1()).Apply0()).Functor0()))(Data_Maybe.maybe(new Control_Monad_Rec_Class.Loop(Data_Unit.unit))(Control_Monad_Rec_Class.Done.create))(me);
+              })(Data_Unit.unit);
+          };
+      };
+  };
+  var fuseWithL = function (dictFunctor) {
+      return function (dictFunctor1) {
+          return function (dictFunctor2) {
+              return function (dictMonadRec) {
+                  return function (zap) {
+                      return function (fs) {
+                          return function (gs) {
+                              var go = function (v) {
+                                  return Control_Monad_Except_Trans.runExceptT(Control_Bind.bind(Control_Monad_Except_Trans.bindExceptT(dictMonadRec.Monad0()))(Control_Monad_Except_Trans.ExceptT(Control_Monad_Free_Trans.resume(dictFunctor)(dictMonadRec)(v.value0)))(function (v1) {
+                                      return Control_Bind.bind(Control_Monad_Except_Trans.bindExceptT(dictMonadRec.Monad0()))(Control_Monad_Except_Trans.ExceptT(Control_Monad_Free_Trans.resume(dictFunctor1)(dictMonadRec)(v.value1)))(function (v2) {
+                                          return Control_Applicative.pure(Control_Monad_Except_Trans.applicativeExceptT(dictMonadRec.Monad0()))(Data_Functor.map(dictFunctor2)(function (t) {
+                                              return Control_Monad_Free_Trans.freeT(function (v3) {
+                                                  return go(t);
+                                              });
+                                          })(zap(Data_Tuple.Tuple.create)(v1)(v2)));
+                                      });
+                                  }));
+                              };
+                              return Control_Monad_Free_Trans.freeT(function (v) {
+                                  return go(new Data_Tuple.Tuple(fs, gs));
+                              });
+                          };
+                      };
+                  };
+              };
+          };
+      };
+  };
+  var fuseWith = function (dictFunctor) {
+      return function (dictFunctor1) {
+          return function (dictFunctor2) {
+              return function (dictMonadRec) {
+                  return function (dictParallel) {
+                      return function (zap) {
+                          return function (fs) {
+                              return function (gs) {
+                                  var go = function (v) {
+                                      return Control_Bind.bind((dictMonadRec.Monad0()).Bind1())(Control_Parallel_Class.sequential(dictParallel)(Control_Apply.apply((dictParallel.Applicative1()).Apply0())(Data_Functor.map(((dictParallel.Applicative1()).Apply0()).Functor0())(Control_Apply.lift2(Data_Either.applyEither)(zap(Data_Tuple.Tuple.create)))(Control_Parallel_Class.parallel(dictParallel)(Control_Monad_Free_Trans.resume(dictFunctor)(dictMonadRec)(v.value0))))(Control_Parallel_Class.parallel(dictParallel)(Control_Monad_Free_Trans.resume(dictFunctor1)(dictMonadRec)(v.value1)))))(function (v1) {
+                                          if (v1 instanceof Data_Either.Left) {
+                                              return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Data_Either.Left(v1.value0));
+                                          };
+                                          if (v1 instanceof Data_Either.Right) {
+                                              return Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(new Data_Either.Right(Data_Functor.map(dictFunctor2)(function (t) {
+                                                  return Control_Monad_Free_Trans.freeT(function (v2) {
+                                                      return go(t);
+                                                  });
+                                              })(v1.value0)));
+                                          };
+                                          throw new Error("Failed pattern match at Control.Coroutine line 79, column 5 - line 81, column 63: " + [ v1.constructor.name ]);
+                                      });
+                                  };
+                                  return Control_Monad_Free_Trans.freeT(function (v) {
+                                      return go(new Data_Tuple.Tuple(fs, gs));
+                                  });
+                              };
+                          };
+                      };
+                  };
+              };
+          };
+      };
+  };
+  var functorAwait = new Data_Functor.Functor(Data_Profunctor.rmap(profunctorAwait));
+  var bifunctorEmit = new Data_Bifunctor.Bifunctor(function (f) {
+      return function (g) {
+          return function (v) {
+              return new Emit(f(v.value0), g(v.value1));
+          };
+      };
+  });
+  var functorEmit = new Data_Functor.Functor(Data_Bifunctor.rmap(bifunctorEmit));
+  var connect = function (dictMonadRec) {
+      return function (dictParallel) {
+          return fuseWith(functorEmit)(functorAwait)(Data_Identity.functorIdentity)(dictMonadRec)(dictParallel)(function (f) {
+              return function (v) {
+                  return function (v1) {
+                      return f(v.value1)(v1(v.value0));
+                  };
+              };
+          });
+      };
+  };
+  var emit = function (dictMonad) {
+      return function (o) {
+          return Control_Monad_Free_Trans.liftFreeT(functorEmit)(dictMonad)(new Emit(o, Data_Unit.unit));
+      };
+  };
+  var producer = function (dictMonad) {
+      return function (recv) {
+          return loop(functorEmit)(dictMonad)(Control_Bind.bind(Control_Monad_Free_Trans.bindFreeT(functorEmit)(dictMonad))(Control_Monad_Trans_Class.lift(Control_Monad_Free_Trans.monadTransFreeT(functorEmit))(dictMonad)(recv))(function (v) {
+              if (v instanceof Data_Either.Left) {
+                  return Data_Functor.voidLeft(Control_Monad_Free_Trans.functorFreeT(functorEmit)(((dictMonad.Bind1()).Apply0()).Functor0()))(emit(dictMonad)(v.value0))(Data_Maybe.Nothing.value);
+              };
+              if (v instanceof Data_Either.Right) {
+                  return Control_Applicative.pure(Control_Monad_Free_Trans.applicativeFreeT(functorEmit)(dictMonad))(new Data_Maybe.Just(v.value0));
+              };
+              throw new Error("Failed pattern match at Control.Coroutine line 125, column 3 - line 127, column 29: " + [ v.constructor.name ]);
+          }));
+      };
+  };
+  var pullFrom = function (dictMonadRec) {
+      return fuseWithL(functorAwait)(functorEmit)(Data_Identity.functorIdentity)(dictMonadRec)(function (f) {
+          return function (v) {
+              return function (v1) {
+                  return Control_Applicative.pure(Data_Identity.applicativeIdentity)(f(v(v1.value0))(v1.value1));
+              };
+          };
+      });
+  };
+  var $$await = function (dictMonad) {
+      return Control_Monad_Free_Trans.liftFreeT(functorAwait)(dictMonad)(Control_Category.identity(Control_Category.categoryFn));
+  };
+  exports["loop"] = loop;
+  exports["runProcess"] = runProcess;
+  exports["fuseWith"] = fuseWith;
+  exports["fuseWithL"] = fuseWithL;
+  exports["Emit"] = Emit;
+  exports["emit"] = emit;
+  exports["producer"] = producer;
+  exports["await"] = $$await;
+  exports["connect"] = connect;
+  exports["pullFrom"] = pullFrom;
+  exports["bifunctorEmit"] = bifunctorEmit;
+  exports["functorEmit"] = functorEmit;
+  exports["profunctorAwait"] = profunctorAwait;
+  exports["functorAwait"] = functorAwait;
+})(PS["Control.Coroutine"] = PS["Control.Coroutine"] || {});
+(function(exports) {
+  /* globals setImmediate, clearImmediate, setTimeout, clearTimeout */
+  /* jshint -W083, -W098, -W003 */
+  "use strict";
+
+  var Aff = function () {
+    // A unique value for empty.
+    var EMPTY = {};
+
+    /*
+
+  An awkward approximation. We elide evidence we would otherwise need in PS for
+  efficiency sake.
+
+  data Aff eff a
+    = Pure a
+    | Throw Error
+    | Catch (Aff eff a) (Error -> Aff eff a)
+    | Sync (Eff eff a)
+    | Async ((Either Error a -> Eff eff Unit) -> Eff eff (Canceler eff))
+    | forall b. Bind (Aff eff b) (b -> Aff eff a)
+    | forall b. Bracket (Aff eff b) (BracketConditions eff b) (b -> Aff eff a)
+    | forall b. Fork Boolean (Aff eff b) ?(Fiber eff b -> a)
+    | Sequential (ParAff aff a)
+
+  */  
+    var PURE    = "Pure";
+    var THROW   = "Throw";
+    var CATCH   = "Catch";
+    var SYNC    = "Sync";
+    var ASYNC   = "Async";
+    var BIND    = "Bind";
+    var BRACKET = "Bracket";
+    var FORK    = "Fork";
+    var SEQ     = "Sequential";
+
+    /*
+
+  data ParAff eff a
+    = forall b. Map (b -> a) (ParAff eff b)
+    | forall b. Apply (ParAff eff (b -> a)) (ParAff eff b)
+    | Alt (ParAff eff a) (ParAff eff a)
+    | ?Par (Aff eff a)
+
+  */  
+    var MAP   = "Map";
+    var APPLY = "Apply";
+    var ALT   = "Alt";
+
+    // Various constructors used in interpretation
+    var CONS      = "Cons";      // Cons-list, for stacks
+    var RESUME    = "Resume";    // Continue indiscriminately
+    var RELEASE   = "Release";   // Continue with bracket finalizers
+    var FINALIZER = "Finalizer"; // A non-interruptible effect
+    var FINALIZED = "Finalized"; // Marker for finalization
+    var FORKED    = "Forked";    // Reference to a forked fiber, with resumption stack
+    var FIBER     = "Fiber";     // Actual fiber reference
+    var THUNK     = "Thunk";     // Primed effect, ready to invoke
+
+    function Aff(tag, _1, _2, _3) {
+      this.tag = tag;
+      this._1  = _1;
+      this._2  = _2;
+      this._3  = _3;
+    }
+
+    function AffCtr(tag) {
+      var fn = function (_1, _2, _3) {
+        return new Aff(tag, _1, _2, _3);
+      };
+      fn.tag = tag;
+      return fn;
+    }
+
+    function nonCanceler(error) {
+      return new Aff(PURE, void 0);
+    }
+
+    function runEff(eff) {
+      try {
+        eff();
+      } catch (error) {
+        setTimeout(function () {
+          throw error;
+        }, 0);
+      }
+    }
+
+    function runSync(left, right, eff) {
+      try {
+        return right(eff());
+      } catch (error) {
+        return left(error);
+      }
+    }
+
+    function runAsync(left, eff, k) {
+      try {
+        return eff(k)();
+      } catch (error) {
+        k(left(error))();
+        return nonCanceler;
+      }
+    }
+
+    var Scheduler = function () {
+      var limit    = 1024;
+      var size     = 0;
+      var ix       = 0;
+      var queue    = new Array(limit);
+      var draining = false;
+
+      function drain() {
+        var thunk;
+        draining = true;
+        while (size !== 0) {
+          size--;
+          thunk     = queue[ix];
+          queue[ix] = void 0;
+          ix        = (ix + 1) % limit;
+          thunk();
+        }
+        draining = false;
+      }
+
+      return {
+        isDraining: function () {
+          return draining;
+        },
+        enqueue: function (cb) {
+          var i, tmp;
+          if (size === limit) {
+            tmp = draining;
+            drain();
+            draining = tmp;
+          }
+
+          queue[(ix + size) % limit] = cb;
+          size++;
+
+          if (!draining) {
+            drain();
+          }
+        }
+      };
+    }();
+
+    function Supervisor(util) {
+      var fibers  = {};
+      var fiberId = 0;
+      var count   = 0;
+
+      return {
+        register: function (fiber) {
+          var fid = fiberId++;
+          fiber.onComplete({
+            rethrow: true,
+            handler: function (result) {
+              return function () {
+                count--;
+                delete fibers[fid];
+              };
+            }
+          });
+          fibers[fid] = fiber;
+          count++;
+        },
+        isEmpty: function () {
+          return count === 0;
+        },
+        killAll: function (killError, cb) {
+          return function () {
+            var killCount = 0;
+            var kills     = {};
+
+            function kill(fid) {
+              kills[fid] = fibers[fid].kill(killError, function (result) {
+                return function () {
+                  delete kills[fid];
+                  killCount--;
+                  if (util.isLeft(result) && util.fromLeft(result)) {
+                    setTimeout(function () {
+                      throw util.fromLeft(result);
+                    }, 0);
+                  }
+                  if (killCount === 0) {
+                    cb();
+                  }
+                };
+              })();
+            }
+
+            for (var k in fibers) {
+              if (fibers.hasOwnProperty(k)) {
+                killCount++;
+                kill(k);
+              }
+            }
+
+            fibers  = {};
+            fiberId = 0;
+            count   = 0;
+
+            return function (error) {
+              return new Aff(SYNC, function () {
+                for (var k in kills) {
+                  if (kills.hasOwnProperty(k)) {
+                    kills[k]();
+                  }
+                }
+              });
+            };
+          };
+        }
+      };
+    }
+
+    // Fiber state machine
+    var SUSPENDED   = 0; // Suspended, pending a join.
+    var CONTINUE    = 1; // Interpret the next instruction.
+    var STEP_BIND   = 2; // Apply the next bind.
+    var STEP_RESULT = 3; // Handle potential failure from a result.
+    var PENDING     = 4; // An async effect is running.
+    var RETURN      = 5; // The current stack has returned.
+    var COMPLETED   = 6; // The entire fiber has completed.
+
+    function Fiber(util, supervisor, aff) {
+      // Monotonically increasing tick, increased on each asynchronous turn.
+      var runTick = 0;
+
+      // The current branch of the state machine.
+      var status = SUSPENDED;
+
+      // The current point of interest for the state machine branch.
+      var step      = aff;  // Successful step
+      var fail      = null; // Failure step
+      var interrupt = null; // Asynchronous interrupt
+
+      // Stack of continuations for the current fiber.
+      var bhead = null;
+      var btail = null;
+
+      // Stack of attempts and finalizers for error recovery. Every `Cons` is also
+      // tagged with current `interrupt` state. We use this to track which items
+      // should be ignored or evaluated as a result of a kill.
+      var attempts = null;
+
+      // A special state is needed for Bracket, because it cannot be killed. When
+      // we enter a bracket acquisition or finalizer, we increment the counter,
+      // and then decrement once complete.
+      var bracketCount = 0;
+
+      // Each join gets a new id so they can be revoked.
+      var joinId  = 0;
+      var joins   = null;
+      var rethrow = true;
+
+      // Each invocation of `run` requires a tick. When an asynchronous effect is
+      // resolved, we must check that the local tick coincides with the fiber
+      // tick before resuming. This prevents multiple async continuations from
+      // accidentally resuming the same fiber. A common example may be invoking
+      // the provided callback in `makeAff` more than once, but it may also be an
+      // async effect resuming after the fiber was already cancelled.
+      function run(localRunTick) {
+        var tmp, result, attempt, canceler;
+        while (true) {
+          tmp       = null;
+          result    = null;
+          attempt   = null;
+          canceler  = null;
+
+          switch (status) {
+          case STEP_BIND:
+            status = CONTINUE;
+            step   = bhead(step);
+            if (btail === null) {
+              bhead = null;
+            } else {
+              bhead = btail._1;
+              btail = btail._2;
+            }
+            break;
+
+          case STEP_RESULT:
+            if (util.isLeft(step)) {
+              status = RETURN;
+              fail   = step;
+              step   = null;
+            } else if (bhead === null) {
+              status = RETURN;
+            } else {
+              status = STEP_BIND;
+              step   = util.fromRight(step);
+            }
+            break;
+
+          case CONTINUE:
+            switch (step.tag) {
+            case BIND:
+              if (bhead) {
+                btail = new Aff(CONS, bhead, btail);
+              }
+              bhead  = step._2;
+              status = CONTINUE;
+              step   = step._1;
+              break;
+
+            case PURE:
+              if (bhead === null) {
+                status = RETURN;
+                step   = util.right(step._1);
+              } else {
+                status = STEP_BIND;
+                step   = step._1;
+              }
+              break;
+
+            case SYNC:
+              status = STEP_RESULT;
+              step   = runSync(util.left, util.right, step._1);
+              break;
+
+            case ASYNC:
+              status = PENDING;
+              step   = runAsync(util.left, step._1, function (result) {
+                return function () {
+                  if (runTick !== localRunTick) {
+                    return;
+                  }
+                  runTick++;
+                  Scheduler.enqueue(function () {
+                    status = STEP_RESULT;
+                    step   = result;
+                    run(runTick);
+                  });
+                };
+              });
+              return;
+
+            case THROW:
+              status = RETURN;
+              fail   = util.left(step._1);
+              step   = null;
+              break;
+
+            // Enqueue the Catch so that we can call the error handler later on
+            // in case of an exception.
+            case CATCH:
+              if (bhead === null) {
+                attempts = new Aff(CONS, step, attempts, interrupt);
+              } else {
+                attempts = new Aff(CONS, step, new Aff(CONS, new Aff(RESUME, bhead, btail), attempts, interrupt), interrupt);
+              }
+              bhead    = null;
+              btail    = null;
+              status   = CONTINUE;
+              step     = step._1;
+              break;
+
+            // Enqueue the Bracket so that we can call the appropriate handlers
+            // after resource acquisition.
+            case BRACKET:
+              bracketCount++;
+              if (bhead === null) {
+                attempts = new Aff(CONS, step, attempts, interrupt);
+              } else {
+                attempts = new Aff(CONS, step, new Aff(CONS, new Aff(RESUME, bhead, btail), attempts, interrupt), interrupt);
+              }
+              bhead  = null;
+              btail  = null;
+              status = CONTINUE;
+              step   = step._1;
+              break;
+
+            case FORK:
+              status = STEP_RESULT;
+              tmp    = Fiber(util, supervisor, step._2);
+              if (supervisor) {
+                supervisor.register(tmp);
+              }
+              if (step._1) {
+                tmp.run();
+              }
+              step = util.right(tmp);
+              break;
+
+            case SEQ:
+              status = CONTINUE;
+              step   = sequential(util, supervisor, step._1);
+              break;
+            }
+            break;
+
+          case RETURN:
+            bhead = null;
+            btail = null;
+            // If the current stack has returned, and we have no other stacks to
+            // resume or finalizers to run, the fiber has halted and we can
+            // invoke all join callbacks. Otherwise we need to resume.
+            if (attempts === null) {
+              status = COMPLETED;
+              step   = interrupt || fail || step;
+            } else {
+              // The interrupt status for the enqueued item.
+              tmp      = attempts._3;
+              attempt  = attempts._1;
+              attempts = attempts._2;
+
+              switch (attempt.tag) {
+              // We cannot recover from an interrupt. Otherwise we should
+              // continue stepping, or run the exception handler if an exception
+              // was raised.
+              case CATCH:
+                // We should compare the interrupt status as well because we
+                // only want it to apply if there has been an interrupt since
+                // enqueuing the catch.
+                if (interrupt && interrupt !== tmp) {
+                  status = RETURN;
+                } else if (fail) {
+                  status = CONTINUE;
+                  step   = attempt._2(util.fromLeft(fail));
+                  fail   = null;
+                }
+                break;
+
+              // We cannot resume from an interrupt or exception.
+              case RESUME:
+                // As with Catch, we only want to ignore in the case of an
+                // interrupt since enqueing the item.
+                if (interrupt && interrupt !== tmp || fail) {
+                  status = RETURN;
+                } else {
+                  bhead  = attempt._1;
+                  btail  = attempt._2;
+                  status = STEP_BIND;
+                  step   = util.fromRight(step);
+                }
+                break;
+
+              // If we have a bracket, we should enqueue the handlers,
+              // and continue with the success branch only if the fiber has
+              // not been interrupted. If the bracket acquisition failed, we
+              // should not run either.
+              case BRACKET:
+                bracketCount--;
+                if (fail === null) {
+                  result   = util.fromRight(step);
+                  // We need to enqueue the Release with the same interrupt
+                  // status as the Bracket that is initiating it.
+                  attempts = new Aff(CONS, new Aff(RELEASE, attempt._2, result), attempts, tmp);
+                  // We should only coninue as long as the interrupt status has not changed or
+                  // we are currently within a non-interruptable finalizer.
+                  if (interrupt === tmp || bracketCount > 0) {
+                    status = CONTINUE;
+                    step   = attempt._3(result);
+                  }
+                }
+                break;
+
+              // Enqueue the appropriate handler. We increase the bracket count
+              // because it should not be cancelled.
+              case RELEASE:
+                bracketCount++;
+                attempts = new Aff(CONS, new Aff(FINALIZED, step), attempts, interrupt);
+                status   = CONTINUE;
+                // It has only been killed if the interrupt status has changed
+                // since we enqueued the item.
+                if (interrupt && interrupt !== tmp) {
+                  step = attempt._1.killed(util.fromLeft(interrupt))(attempt._2);
+                } else if (fail) {
+                  step = attempt._1.failed(util.fromLeft(fail))(attempt._2);
+                } else {
+                  step = attempt._1.completed(util.fromRight(step))(attempt._2);
+                }
+                break;
+
+              case FINALIZER:
+                bracketCount++;
+                attempts = new Aff(CONS, new Aff(FINALIZED, step), attempts, interrupt);
+                status   = CONTINUE;
+                step     = attempt._1;
+                break;
+
+              case FINALIZED:
+                bracketCount--;
+                status = RETURN;
+                step   = attempt._1;
+                break;
+              }
+            }
+            break;
+
+          case COMPLETED:
+            for (var k in joins) {
+              if (joins.hasOwnProperty(k)) {
+                rethrow = rethrow && joins[k].rethrow;
+                runEff(joins[k].handler(step));
+              }
+            }
+            joins = null;
+            // If we have an interrupt and a fail, then the thread threw while
+            // running finalizers. This should always rethrow in a fresh stack.
+            if (interrupt && fail) {
+              setTimeout(function () {
+                throw util.fromLeft(fail);
+              }, 0);
+            // If we have an unhandled exception, and no other fiber has joined
+            // then we need to throw the exception in a fresh stack.
+            } else if (util.isLeft(step) && rethrow) {
+              setTimeout(function () {
+                // Guard on reathrow because a completely synchronous fiber can
+                // still have an observer which was added after-the-fact.
+                if (rethrow) {
+                  throw util.fromLeft(step);
+                }
+              }, 0);
+            }
+            return;
+          case SUSPENDED:
+            status = CONTINUE;
+            break;
+          case PENDING: return;
+          }
+        }
+      }
+
+      function onComplete(join) {
+        return function () {
+          if (status === COMPLETED) {
+            rethrow = rethrow && join.rethrow;
+            join.handler(step)();
+            return function () {};
+          }
+
+          var jid    = joinId++;
+          joins      = joins || {};
+          joins[jid] = join;
+
+          return function() {
+            if (joins !== null) {
+              delete joins[jid];
+            }
+          };
+        };
+      }
+
+      function kill(error, cb) {
+        return function () {
+          if (status === COMPLETED) {
+            cb(util.right(void 0))();
+            return function () {};
+          }
+
+          var canceler = onComplete({
+            rethrow: false,
+            handler: function (/* unused */) {
+              return cb(util.right(void 0));
+            }
+          })();
+
+          switch (status) {
+          case SUSPENDED:
+            interrupt = util.left(error);
+            status    = COMPLETED;
+            step      = interrupt;
+            run(runTick);
+            break;
+          case PENDING:
+            if (interrupt === null) {
+              interrupt = util.left(error);
+            }
+            if (bracketCount === 0) {
+              if (status === PENDING) {
+                attempts = new Aff(CONS, new Aff(FINALIZER, step(error)), attempts, interrupt);
+              }
+              status   = RETURN;
+              step     = null;
+              fail     = null;
+              run(++runTick);
+            }
+            break;
+          default:
+            if (interrupt === null) {
+              interrupt = util.left(error);
+            }
+            if (bracketCount === 0) {
+              status = RETURN;
+              step   = null;
+              fail   = null;
+            }
+          }
+
+          return canceler;
+        };
+      }
+
+      function join(cb) {
+        return function () {
+          var canceler = onComplete({
+            rethrow: false,
+            handler: cb
+          })();
+          if (status === SUSPENDED) {
+            run(runTick);
+          }
+          return canceler;
+        };
+      }
+
+      return {
+        kill: kill,
+        join: join,
+        onComplete: onComplete,
+        isSuspended: function () {
+          return status === SUSPENDED;
+        },
+        run: function () {
+          if (status === SUSPENDED) {
+            if (!Scheduler.isDraining()) {
+              Scheduler.enqueue(function () {
+                run(runTick);
+              });
+            } else {
+              run(runTick);
+            }
+          }
+        }
+      };
+    }
+
+    function runPar(util, supervisor, par, cb) {
+      // Table of all forked fibers.
+      var fiberId   = 0;
+      var fibers    = {};
+
+      // Table of currently running cancelers, as a product of `Alt` behavior.
+      var killId    = 0;
+      var kills     = {};
+
+      // Error used for early cancelation on Alt branches.
+      var early     = new Error("[ParAff] Early exit");
+
+      // Error used to kill the entire tree.
+      var interrupt = null;
+
+      // The root pointer of the tree.
+      var root      = EMPTY;
+
+      // Walks a tree, invoking all the cancelers. Returns the table of pending
+      // cancellation fibers.
+      function kill(error, par, cb) {
+        var step  = par;
+        var head  = null;
+        var tail  = null;
+        var count = 0;
+        var kills = {};
+        var tmp, kid;
+
+        loop: while (true) {
+          tmp = null;
+
+          switch (step.tag) {
+          case FORKED:
+            if (step._3 === EMPTY) {
+              tmp = fibers[step._1];
+              kills[count++] = tmp.kill(error, function (result) {
+                return function () {
+                  count--;
+                  if (count === 0) {
+                    cb(result)();
+                  }
+                };
+              });
+            }
+            // Terminal case.
+            if (head === null) {
+              break loop;
+            }
+            // Go down the right side of the tree.
+            step = head._2;
+            if (tail === null) {
+              head = null;
+            } else {
+              head = tail._1;
+              tail = tail._2;
+            }
+            break;
+          case MAP:
+            step = step._2;
+            break;
+          case APPLY:
+          case ALT:
+            if (head) {
+              tail = new Aff(CONS, head, tail);
+            }
+            head = step;
+            step = step._1;
+            break;
+          }
+        }
+
+        if (count === 0) {
+          cb(util.right(void 0))();
+        } else {
+          // Run the cancelation effects. We alias `count` because it's mutable.
+          kid = 0;
+          tmp = count;
+          for (; kid < tmp; kid++) {
+            kills[kid] = kills[kid]();
+          }
+        }
+
+        return kills;
+      }
+
+      // When a fiber resolves, we need to bubble back up the tree with the
+      // result, computing the applicative nodes.
+      function join(result, head, tail) {
+        var fail, step, lhs, rhs, tmp, kid;
+
+        if (util.isLeft(result)) {
+          fail = result;
+          step = null;
+        } else {
+          step = result;
+          fail = null;
+        }
+
+        loop: while (true) {
+          lhs = null;
+          rhs = null;
+          tmp = null;
+          kid = null;
+
+          // We should never continue if the entire tree has been interrupted.
+          if (interrupt !== null) {
+            return;
+          }
+
+          // We've made it all the way to the root of the tree, which means
+          // the tree has fully evaluated.
+          if (head === null) {
+            cb(fail || step)();
+            return;
+          }
+
+          // The tree has already been computed, so we shouldn't try to do it
+          // again. This should never happen.
+          // TODO: Remove this?
+          if (head._3 !== EMPTY) {
+            return;
+          }
+
+          switch (head.tag) {
+          case MAP:
+            if (fail === null) {
+              head._3 = util.right(head._1(util.fromRight(step)));
+              step    = head._3;
+            } else {
+              head._3 = fail;
+            }
+            break;
+          case APPLY:
+            lhs = head._1._3;
+            rhs = head._2._3;
+            // If we have a failure we should kill the other side because we
+            // can't possible yield a result anymore.
+            if (fail) {
+              head._3 = fail;
+              tmp     = true;
+              kid     = killId++;
+
+              kills[kid] = kill(early, fail === lhs ? head._2 : head._1, function (/* unused */) {
+                return function () {
+                  delete kills[kid];
+                  if (tmp) {
+                    tmp = false;
+                  } else if (tail === null) {
+                    join(step, null, null);
+                  } else {
+                    join(step, tail._1, tail._2);
+                  }
+                };
+              });
+
+              if (tmp) {
+                tmp = false;
+                return;
+              }
+            } else if (lhs === EMPTY || rhs === EMPTY) {
+              // We can only proceed if both sides have resolved.
+              return;
+            } else {
+              step    = util.right(util.fromRight(lhs)(util.fromRight(rhs)));
+              head._3 = step;
+            }
+            break;
+          case ALT:
+            lhs = head._1._3;
+            rhs = head._2._3;
+            // We can only proceed if both have resolved or we have a success
+            if (lhs === EMPTY && util.isLeft(rhs) || rhs === EMPTY && util.isLeft(lhs)) {
+              return;
+            }
+            // If both sides resolve with an error, we should continue with the
+            // first error
+            if (lhs !== EMPTY && util.isLeft(lhs) && rhs !== EMPTY && util.isLeft(rhs)) {
+              fail    = step === lhs ? rhs : lhs;
+              step    = null;
+              head._3 = fail;
+            } else {
+              head._3 = step;
+              tmp     = true;
+              kid     = killId++;
+              // Once a side has resolved, we need to cancel the side that is still
+              // pending before we can continue.
+              kills[kid] = kill(early, step === lhs ? head._2 : head._1, function (/* unused */) {
+                return function () {
+                  delete kills[kid];
+                  if (tmp) {
+                    tmp = false;
+                  } else if (tail === null) {
+                    join(step, null, null);
+                  } else {
+                    join(step, tail._1, tail._2);
+                  }
+                };
+              });
+
+              if (tmp) {
+                tmp = false;
+                return;
+              }
+            }
+            break;
+          }
+
+          if (tail === null) {
+            head = null;
+          } else {
+            head = tail._1;
+            tail = tail._2;
+          }
+        }
+      }
+
+      function resolve(fiber) {
+        return function (result) {
+          return function () {
+            delete fibers[fiber._1];
+            fiber._3 = result;
+            join(result, fiber._2._1, fiber._2._2);
+          };
+        };
+      }
+
+      // Walks the applicative tree, substituting non-applicative nodes with
+      // `FORKED` nodes. In this tree, all applicative nodes use the `_3` slot
+      // as a mutable slot for memoization. In an unresolved state, the `_3`
+      // slot is `EMPTY`. In the cases of `ALT` and `APPLY`, we always walk
+      // the left side first, because both operations are left-associative. As
+      // we `RETURN` from those branches, we then walk the right side.
+      function run() {
+        var status = CONTINUE;
+        var step   = par;
+        var head   = null;
+        var tail   = null;
+        var tmp, fid;
+
+        loop: while (true) {
+          tmp = null;
+          fid = null;
+
+          switch (status) {
+          case CONTINUE:
+            switch (step.tag) {
+            case MAP:
+              if (head) {
+                tail = new Aff(CONS, head, tail);
+              }
+              head = new Aff(MAP, step._1, EMPTY, EMPTY);
+              step = step._2;
+              break;
+            case APPLY:
+              if (head) {
+                tail = new Aff(CONS, head, tail);
+              }
+              head = new Aff(APPLY, EMPTY, step._2, EMPTY);
+              step = step._1;
+              break;
+            case ALT:
+              if (head) {
+                tail = new Aff(CONS, head, tail);
+              }
+              head = new Aff(ALT, EMPTY, step._2, EMPTY);
+              step = step._1;
+              break;
+            default:
+              // When we hit a leaf value, we suspend the stack in the `FORKED`.
+              // When the fiber resolves, it can bubble back up the tree.
+              fid    = fiberId++;
+              status = RETURN;
+              tmp    = step;
+              step   = new Aff(FORKED, fid, new Aff(CONS, head, tail), EMPTY);
+              tmp    = Fiber(util, supervisor, tmp);
+              tmp.onComplete({
+                rethrow: false,
+                handler: resolve(step)
+              })();
+              fibers[fid] = tmp;
+              if (supervisor) {
+                supervisor.register(tmp);
+              }
+            }
+            break;
+          case RETURN:
+            // Terminal case, we are back at the root.
+            if (head === null) {
+              break loop;
+            }
+            // If we are done with the right side, we need to continue down the
+            // left. Otherwise we should continue up the stack.
+            if (head._1 === EMPTY) {
+              head._1 = step;
+              status  = CONTINUE;
+              step    = head._2;
+              head._2 = EMPTY;
+            } else {
+              head._2 = step;
+              step    = head;
+              if (tail === null) {
+                head  = null;
+              } else {
+                head  = tail._1;
+                tail  = tail._2;
+              }
+            }
+          }
+        }
+
+        // Keep a reference to the tree root so it can be cancelled.
+        root = step;
+
+        for (fid = 0; fid < fiberId; fid++) {
+          fibers[fid].run();
+        }
+      }
+
+      // Cancels the entire tree. If there are already subtrees being canceled,
+      // we need to first cancel those joins. We will then add fresh joins for
+      // all pending branches including those that were in the process of being
+      // canceled.
+      function cancel(error, cb) {
+        interrupt = util.left(error);
+        var innerKills;
+        for (var kid in kills) {
+          if (kills.hasOwnProperty(kid)) {
+            innerKills = kills[kid];
+            for (kid in innerKills) {
+              if (innerKills.hasOwnProperty(kid)) {
+                innerKills[kid]();
+              }
+            }
+          }
+        }
+
+        kills = null;
+        var newKills = kill(error, root, cb);
+
+        return function (killError) {
+          return new Aff(ASYNC, function (killCb) {
+            return function () {
+              for (var kid in newKills) {
+                if (newKills.hasOwnProperty(kid)) {
+                  newKills[kid]();
+                }
+              }
+              return nonCanceler;
+            };
+          });
+        };
+      }
+
+      run();
+
+      return function (killError) {
+        return new Aff(ASYNC, function (killCb) {
+          return function () {
+            return cancel(killError, killCb);
+          };
+        });
+      };
+    }
+
+    function sequential(util, supervisor, par) {
+      return new Aff(ASYNC, function (cb) {
+        return function () {
+          return runPar(util, supervisor, par, cb);
+        };
+      });
+    }
+
+    Aff.EMPTY       = EMPTY;
+    Aff.Pure        = AffCtr(PURE);
+    Aff.Throw       = AffCtr(THROW);
+    Aff.Catch       = AffCtr(CATCH);
+    Aff.Sync        = AffCtr(SYNC);
+    Aff.Async       = AffCtr(ASYNC);
+    Aff.Bind        = AffCtr(BIND);
+    Aff.Bracket     = AffCtr(BRACKET);
+    Aff.Fork        = AffCtr(FORK);
+    Aff.Seq         = AffCtr(SEQ);
+    Aff.ParMap      = AffCtr(MAP);
+    Aff.ParApply    = AffCtr(APPLY);
+    Aff.ParAlt      = AffCtr(ALT);
+    Aff.Fiber       = Fiber;
+    Aff.Supervisor  = Supervisor;
+    Aff.Scheduler   = Scheduler;
+    Aff.nonCanceler = nonCanceler;
+
+    return Aff;
+  }();
+
+  exports._pure = Aff.Pure;
+
+  exports._throwError = Aff.Throw;
+
+  exports._catchError = function (aff) {
+    return function (k) {
+      return Aff.Catch(aff, k);
+    };
+  };
+
+  exports._map = function (f) {
+    return function (aff) {
+      if (aff.tag === Aff.Pure.tag) {
+        return Aff.Pure(f(aff._1));
+      } else {
+        return Aff.Bind(aff, function (value) {
+          return Aff.Pure(f(value));
+        });
+      }
+    };
+  };
+
+  exports._bind = function (aff) {
+    return function (k) {
+      return Aff.Bind(aff, k);
+    };
+  };
+
+  exports._fork = function (immediate) {
+    return function (aff) {
+      return Aff.Fork(immediate, aff);
+    };
+  };
+
+  exports._liftEffect = Aff.Sync;
+
+  exports._parAffMap = function (f) {
+    return function (aff) {
+      return Aff.ParMap(f, aff);
+    };
+  };
+
+  exports._parAffApply = function (aff1) {
+    return function (aff2) {
+      return Aff.ParApply(aff1, aff2);
+    };
+  };
+
+  exports.makeAff = Aff.Async;
+
+  exports._makeFiber = function (util, aff) {
+    return function () {
+      return Aff.Fiber(util, null, aff);
+    };
+  };  
+
+  exports._sequential = Aff.Seq;
+})(PS["Effect.Aff"] = PS["Effect.Aff"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.runFn4 = function (fn) {
+    return function (a) {
+      return function (b) {
+        return function (c) {
+          return function (d) {
+            return fn(a, b, c, d);
+          };
+        };
+      };
+    };
+  };
+})(PS["Data.Function.Uncurried"] = PS["Data.Function.Uncurried"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Function.Uncurried"];
+  var Data_Unit = PS["Data.Unit"];
+  exports["runFn4"] = $foreign.runFn4;
+})(PS["Data.Function.Uncurried"] = PS["Data.Function.Uncurried"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.error = function (msg) {
+    return new Error(msg);
+  };
+
+  exports.throwException = function (e) {
+    return function () {
+      throw e;
+    };
+  };
+})(PS["Effect.Exception"] = PS["Effect.Exception"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.Exception"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Show = PS["Data.Show"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var $$throw = function ($1) {
+      return $foreign.throwException($foreign.error($1));
+  };
+  exports["throw"] = $$throw;
+  exports["error"] = $foreign.error;
+  exports["throwException"] = $foreign.throwException;
+})(PS["Effect.Exception"] = PS["Effect.Exception"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.unsafePerformEffect = function (f) {
+    return f();
+  };
+})(PS["Effect.Unsafe"] = PS["Effect.Unsafe"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.Unsafe"];
+  var Effect = PS["Effect"];
+  exports["unsafePerformEffect"] = $foreign.unsafePerformEffect;
+})(PS["Effect.Unsafe"] = PS["Effect.Unsafe"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.Aff"];
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Parallel = PS["Control.Parallel"];
+  var Control_Parallel_Class = PS["Control.Parallel.Class"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Time_Duration = PS["Data.Time.Duration"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Effect_Unsafe = PS["Effect.Unsafe"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Canceler = function (x) {
+      return x;
+  };
+  var suspendAff = $foreign._fork(false);
+  var functorParAff = new Data_Functor.Functor($foreign._parAffMap);
+  var functorAff = new Data_Functor.Functor($foreign._map);
+  var forkAff = $foreign._fork(true);
+  var ffiUtil = (function () {
+      var unsafeFromRight = function (v) {
+          if (v instanceof Data_Either.Right) {
+              return v.value0;
+          };
+          if (v instanceof Data_Either.Left) {
+              return Partial_Unsafe.unsafeCrashWith("unsafeFromRight: Left");
+          };
+          throw new Error("Failed pattern match at Effect.Aff line 395, column 21 - line 397, column 31: " + [ v.constructor.name ]);
+      };
+      var unsafeFromLeft = function (v) {
+          if (v instanceof Data_Either.Left) {
+              return v.value0;
+          };
+          if (v instanceof Data_Either.Right) {
+              return Partial_Unsafe.unsafeCrashWith("unsafeFromLeft: Right");
+          };
+          throw new Error("Failed pattern match at Effect.Aff line 390, column 20 - line 394, column 3: " + [ v.constructor.name ]);
+      };
+      var isLeft = function (v) {
+          if (v instanceof Data_Either.Left) {
+              return true;
+          };
+          if (v instanceof Data_Either.Right) {
+              return false;
+          };
+          throw new Error("Failed pattern match at Effect.Aff line 385, column 12 - line 387, column 20: " + [ v.constructor.name ]);
+      };
+      return {
+          isLeft: isLeft,
+          fromLeft: unsafeFromLeft,
+          fromRight: unsafeFromRight,
+          left: Data_Either.Left.create,
+          right: Data_Either.Right.create
+      };
+  })();
+  var makeFiber = function (aff) {
+      return $foreign._makeFiber(ffiUtil, aff);
+  };
+  var launchAff = function (aff) {
+      return function __do() {
+          var v = makeFiber(aff)();
+          v.run();
+          return v;
+      };
+  };
+  var applyParAff = new Control_Apply.Apply(function () {
+      return functorParAff;
+  }, $foreign._parAffApply);
+  var monadAff = new Control_Monad.Monad(function () {
+      return applicativeAff;
+  }, function () {
+      return bindAff;
+  });
+  var bindAff = new Control_Bind.Bind(function () {
+      return applyAff;
+  }, $foreign._bind);
+  var applyAff = new Control_Apply.Apply(function () {
+      return functorAff;
+  }, Control_Monad.ap(monadAff));
+  var applicativeAff = new Control_Applicative.Applicative(function () {
+      return applyAff;
+  }, $foreign._pure);
+  var monadEffectAff = new Effect_Class.MonadEffect(function () {
+      return monadAff;
+  }, $foreign._liftEffect);
+  var effectCanceler = function ($50) {
+      return Canceler(Data_Function["const"](Effect_Class.liftEffect(monadEffectAff)($50)));
+  };
+  var joinFiber = function (v) {
+      return $foreign.makeAff(function (k) {
+          return Data_Functor.map(Effect.functorEffect)(effectCanceler)(v.join(k));
+      });
+  };
+  var functorFiber = new Data_Functor.Functor(function (f) {
+      return function (t) {
+          return Effect_Unsafe.unsafePerformEffect(makeFiber(Data_Functor.map(functorAff)(f)(joinFiber(t))));
+      };
+  });
+  var killFiber = function (e) {
+      return function (v) {
+          return Control_Bind.bind(bindAff)(Effect_Class.liftEffect(monadEffectAff)(v.isSuspended))(function (v1) {
+              if (v1) {
+                  return Effect_Class.liftEffect(monadEffectAff)(Data_Functor["void"](Effect.functorEffect)(v.kill(e, Data_Function["const"](Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit)))));
+              };
+              return $foreign.makeAff(function (k) {
+                  return Data_Functor.map(Effect.functorEffect)(effectCanceler)(v.kill(e, k));
+              });
+          });
+      };
+  };
+  var monadThrowAff = new Control_Monad_Error_Class.MonadThrow(function () {
+      return monadAff;
+  }, $foreign._throwError);
+  var monadErrorAff = new Control_Monad_Error_Class.MonadError(function () {
+      return monadThrowAff;
+  }, $foreign._catchError);                                     
+  var runAff = function (k) {
+      return function (aff) {
+          return launchAff(Control_Bind.bindFlipped(bindAff)(function ($51) {
+              return Effect_Class.liftEffect(monadEffectAff)(k($51));
+          })(Control_Monad_Error_Class["try"](monadErrorAff)(aff)));
+      };
+  };
+  var runAff_ = function (k) {
+      return function (aff) {
+          return Data_Functor["void"](Effect.functorEffect)(runAff(k)(aff));
+      };
+  };
+  var parallelAff = new Control_Parallel_Class.Parallel(function () {
+      return applicativeParAff;
+  }, function () {
+      return monadAff;
+  }, Unsafe_Coerce.unsafeCoerce, $foreign._sequential);
+  var applicativeParAff = new Control_Applicative.Applicative(function () {
+      return applyParAff;
+  }, function ($53) {
+      return Control_Parallel_Class.parallel(parallelAff)(Control_Applicative.pure(applicativeAff)($53));
+  });
+  var monadRecAff = new Control_Monad_Rec_Class.MonadRec(function () {
+      return monadAff;
+  }, function (k) {
+      var go = function (a) {
+          return Control_Bind.bind(bindAff)(k(a))(function (v) {
+              if (v instanceof Control_Monad_Rec_Class.Done) {
+                  return Control_Applicative.pure(applicativeAff)(v.value0);
+              };
+              if (v instanceof Control_Monad_Rec_Class.Loop) {
+                  return go(v.value0);
+              };
+              throw new Error("Failed pattern match at Effect.Aff line 99, column 7 - line 101, column 22: " + [ v.constructor.name ]);
+          });
+      };
+      return go;
+  });
+  var nonCanceler = Data_Function["const"](Control_Applicative.pure(applicativeAff)(Data_Unit.unit));
+  exports["Canceler"] = Canceler;
+  exports["launchAff"] = launchAff;
+  exports["runAff"] = runAff;
+  exports["runAff_"] = runAff_;
+  exports["forkAff"] = forkAff;
+  exports["suspendAff"] = suspendAff;
+  exports["killFiber"] = killFiber;
+  exports["joinFiber"] = joinFiber;
+  exports["nonCanceler"] = nonCanceler;
+  exports["effectCanceler"] = effectCanceler;
+  exports["functorAff"] = functorAff;
+  exports["applyAff"] = applyAff;
+  exports["applicativeAff"] = applicativeAff;
+  exports["bindAff"] = bindAff;
+  exports["monadAff"] = monadAff;
+  exports["monadRecAff"] = monadRecAff;
+  exports["monadThrowAff"] = monadThrowAff;
+  exports["monadErrorAff"] = monadErrorAff;
+  exports["monadEffectAff"] = monadEffectAff;
+  exports["functorParAff"] = functorParAff;
+  exports["applyParAff"] = applyParAff;
+  exports["applicativeParAff"] = applicativeParAff;
+  exports["parallelAff"] = parallelAff;
+  exports["functorFiber"] = functorFiber;
+  exports["makeAff"] = $foreign.makeAff;
+})(PS["Effect.Aff"] = PS["Effect.Aff"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Reader_Trans = PS["Control.Monad.Reader.Trans"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Prelude = PS["Prelude"];
+  var MonadFork = function (Functor1, Monad0, fork, join, suspend) {
+      this.Functor1 = Functor1;
+      this.Monad0 = Monad0;
+      this.fork = fork;
+      this.join = join;
+      this.suspend = suspend;
+  };
+  var suspend = function (dict) {
+      return dict.suspend;
+  };
+  var monadForkAff = new MonadFork(function () {
+      return Effect_Aff.functorFiber;
+  }, function () {
+      return Effect_Aff.monadAff;
+  }, Effect_Aff.forkAff, Effect_Aff.joinFiber, Effect_Aff.suspendAff);
+  var join = function (dict) {
+      return dict.join;
+  };
+  var fork = function (dict) {
+      return dict.fork;
+  };
+  exports["fork"] = fork;
+  exports["join"] = join;
+  exports["suspend"] = suspend;
+  exports["MonadFork"] = MonadFork;
+  exports["monadForkAff"] = monadForkAff;
+})(PS["Control.Monad.Fork.Class"] = PS["Control.Monad.Fork.Class"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_MonadPlus = PS["Control.MonadPlus"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Prelude = PS["Prelude"];                 
+  var CatQueue = (function () {
+      function CatQueue(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      CatQueue.create = function (value0) {
+          return function (value1) {
+              return new CatQueue(value0, value1);
+          };
+      };
+      return CatQueue;
+  })();
+  var uncons = function ($copy_v) {
+      var $tco_done = false;
+      var $tco_result;
+      function $tco_loop(v) {
+          if (v.value0 instanceof Data_List_Types.Nil && v.value1 instanceof Data_List_Types.Nil) {
+              $tco_done = true;
+              return Data_Maybe.Nothing.value;
+          };
+          if (v.value0 instanceof Data_List_Types.Nil) {
+              $copy_v = new CatQueue(Data_List.reverse(v.value1), Data_List_Types.Nil.value);
+              return;
+          };
+          if (v.value0 instanceof Data_List_Types.Cons) {
+              $tco_done = true;
+              return new Data_Maybe.Just(new Data_Tuple.Tuple(v.value0.value0, new CatQueue(v.value0.value1, v.value1)));
+          };
+          throw new Error("Failed pattern match at Data.CatQueue line 83, column 1 - line 83, column 63: " + [ v.constructor.name ]);
+      };
+      while (!$tco_done) {
+          $tco_result = $tco_loop($copy_v);
+      };
+      return $tco_result;
+  };
+  var snoc = function (v) {
+      return function (a) {
+          return new CatQueue(v.value0, new Data_List_Types.Cons(a, v.value1));
+      };
+  };
+  var $$null = function (v) {
+      if (v.value0 instanceof Data_List_Types.Nil && v.value1 instanceof Data_List_Types.Nil) {
+          return true;
+      };
+      return false;
+  };                                                                                                
+  var empty = new CatQueue(Data_List_Types.Nil.value, Data_List_Types.Nil.value);
+  exports["CatQueue"] = CatQueue;
+  exports["empty"] = empty;
+  exports["null"] = $$null;
+  exports["snoc"] = snoc;
+  exports["uncons"] = uncons;
+})(PS["Data.CatQueue"] = PS["Data.CatQueue"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_MonadPlus = PS["Control.MonadPlus"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Data_CatQueue = PS["Data.CatQueue"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Prelude = PS["Prelude"];                 
+  var CatNil = (function () {
+      function CatNil() {
+
+      };
+      CatNil.value = new CatNil();
+      return CatNil;
+  })();
+  var CatCons = (function () {
+      function CatCons(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      CatCons.create = function (value0) {
+          return function (value1) {
+              return new CatCons(value0, value1);
+          };
+      };
+      return CatCons;
+  })();
+  var link = function (v) {
+      return function (cat) {
+          if (v instanceof CatNil) {
+              return cat;
+          };
+          if (v instanceof CatCons) {
+              return new CatCons(v.value0, Data_CatQueue.snoc(v.value1)(cat));
+          };
+          throw new Error("Failed pattern match at Data.CatList line 111, column 1 - line 111, column 54: " + [ v.constructor.name, cat.constructor.name ]);
+      };
+  };
+  var foldr = function (k) {
+      return function (b) {
+          return function (q) {
+              var foldl = function ($copy_v) {
+                  return function ($copy_c) {
+                      return function ($copy_v1) {
+                          var $tco_var_v = $copy_v;
+                          var $tco_var_c = $copy_c;
+                          var $tco_done = false;
+                          var $tco_result;
+                          function $tco_loop(v, c, v1) {
+                              if (v1 instanceof Data_List_Types.Nil) {
+                                  $tco_done = true;
+                                  return c;
+                              };
+                              if (v1 instanceof Data_List_Types.Cons) {
+                                  $tco_var_v = v;
+                                  $tco_var_c = v(c)(v1.value0);
+                                  $copy_v1 = v1.value1;
+                                  return;
+                              };
+                              throw new Error("Failed pattern match at Data.CatList line 126, column 3 - line 126, column 59: " + [ v.constructor.name, c.constructor.name, v1.constructor.name ]);
+                          };
+                          while (!$tco_done) {
+                              $tco_result = $tco_loop($tco_var_v, $tco_var_c, $copy_v1);
+                          };
+                          return $tco_result;
+                      };
+                  };
+              };
+              var go = function ($copy_xs) {
+                  return function ($copy_ys) {
+                      var $tco_var_xs = $copy_xs;
+                      var $tco_done = false;
+                      var $tco_result;
+                      function $tco_loop(xs, ys) {
+                          var v = Data_CatQueue.uncons(xs);
+                          if (v instanceof Data_Maybe.Nothing) {
+                              $tco_done = true;
+                              return foldl(function (x) {
+                                  return function (i) {
+                                      return i(x);
+                                  };
+                              })(b)(ys);
+                          };
+                          if (v instanceof Data_Maybe.Just) {
+                              $tco_var_xs = v.value0.value1;
+                              $copy_ys = new Data_List_Types.Cons(k(v.value0.value0), ys);
+                              return;
+                          };
+                          throw new Error("Failed pattern match at Data.CatList line 122, column 14 - line 124, column 67: " + [ v.constructor.name ]);
+                      };
+                      while (!$tco_done) {
+                          $tco_result = $tco_loop($tco_var_xs, $copy_ys);
+                      };
+                      return $tco_result;
+                  };
+              };
+              return go(q)(Data_List_Types.Nil.value);
+          };
+      };
+  };
+  var uncons = function (v) {
+      if (v instanceof CatNil) {
+          return Data_Maybe.Nothing.value;
+      };
+      if (v instanceof CatCons) {
+          return new Data_Maybe.Just(new Data_Tuple.Tuple(v.value0, (function () {
+              var $45 = Data_CatQueue["null"](v.value1);
+              if ($45) {
+                  return CatNil.value;
+              };
+              return foldr(link)(CatNil.value)(v.value1);
+          })()));
+      };
+      throw new Error("Failed pattern match at Data.CatList line 102, column 1 - line 102, column 61: " + [ v.constructor.name ]);
+  };
+  var empty = CatNil.value;
+  var append = function (v) {
+      return function (v1) {
+          if (v1 instanceof CatNil) {
+              return v;
+          };
+          if (v instanceof CatNil) {
+              return v1;
+          };
+          return link(v)(v1);
+      };
+  }; 
+  var semigroupCatList = new Data_Semigroup.Semigroup(append);
+  var snoc = function (cat) {
+      return function (a) {
+          return append(cat)(new CatCons(a, Data_CatQueue.empty));
+      };
+  };
+  exports["CatNil"] = CatNil;
+  exports["CatCons"] = CatCons;
+  exports["empty"] = empty;
+  exports["append"] = append;
+  exports["snoc"] = snoc;
+  exports["uncons"] = uncons;
+  exports["semigroupCatList"] = semigroupCatList;
+})(PS["Data.CatList"] = PS["Data.CatList"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_CatList = PS["Data.CatList"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Free = (function () {
+      function Free(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Free.create = function (value0) {
+          return function (value1) {
+              return new Free(value0, value1);
+          };
+      };
+      return Free;
+  })();
+  var Return = (function () {
+      function Return(value0) {
+          this.value0 = value0;
+      };
+      Return.create = function (value0) {
+          return new Return(value0);
+      };
+      return Return;
+  })();
+  var Bind = (function () {
+      function Bind(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Bind.create = function (value0) {
+          return function (value1) {
+              return new Bind(value0, value1);
+          };
+      };
+      return Bind;
+  })();
+  var toView = function ($copy_v) {
+      var $tco_done = false;
+      var $tco_result;
+      function $tco_loop(v) {
+          var runExpF = function (v2) {
+              return v2;
+          };
+          var concatF = function (v2) {
+              return function (r) {
+                  return new Free(v2.value0, Data_Semigroup.append(Data_CatList.semigroupCatList)(v2.value1)(r));
+              };
+          };
+          if (v.value0 instanceof Return) {
+              var v2 = Data_CatList.uncons(v.value1);
+              if (v2 instanceof Data_Maybe.Nothing) {
+                  $tco_done = true;
+                  return new Return(v.value0.value0);
+              };
+              if (v2 instanceof Data_Maybe.Just) {
+                  $copy_v = concatF(runExpF(v2.value0.value0)(v.value0.value0))(v2.value0.value1);
+                  return;
+              };
+              throw new Error("Failed pattern match at Control.Monad.Free line 220, column 7 - line 224, column 64: " + [ v2.constructor.name ]);
+          };
+          if (v.value0 instanceof Bind) {
+              $tco_done = true;
+              return new Bind(v.value0.value0, function (a) {
+                  return concatF(v.value0.value1(a))(v.value1);
+              });
+          };
+          throw new Error("Failed pattern match at Control.Monad.Free line 218, column 3 - line 226, column 56: " + [ v.value0.constructor.name ]);
+      };
+      while (!$tco_done) {
+          $tco_result = $tco_loop($copy_v);
+      };
+      return $tco_result;
+  };
+  var fromView = function (f) {
+      return new Free(f, Data_CatList.empty);
+  };
+  var freeMonad = new Control_Monad.Monad(function () {
+      return freeApplicative;
+  }, function () {
+      return freeBind;
+  });
+  var freeFunctor = new Data_Functor.Functor(function (k) {
+      return function (f) {
+          return Control_Bind.bindFlipped(freeBind)(function ($118) {
+              return Control_Applicative.pure(freeApplicative)(k($118));
+          })(f);
+      };
+  });
+  var freeBind = new Control_Bind.Bind(function () {
+      return freeApply;
+  }, function (v) {
+      return function (k) {
+          return new Free(v.value0, Data_CatList.snoc(v.value1)(k));
+      };
+  });
+  var freeApply = new Control_Apply.Apply(function () {
+      return freeFunctor;
+  }, Control_Monad.ap(freeMonad));
+  var freeApplicative = new Control_Applicative.Applicative(function () {
+      return freeApply;
+  }, function ($119) {
+      return fromView(Return.create($119));
+  });
+  var liftF = function (f) {
+      return fromView(new Bind(f, function ($120) {
+          return Control_Applicative.pure(freeApplicative)($120);
+      }));
+  };
+  var foldFree = function (dictMonadRec) {
+      return function (k) {
+          var go = function (f) {
+              var v = toView(f);
+              if (v instanceof Return) {
+                  return Data_Functor.map((((dictMonadRec.Monad0()).Bind1()).Apply0()).Functor0())(Control_Monad_Rec_Class.Done.create)(Control_Applicative.pure((dictMonadRec.Monad0()).Applicative0())(v.value0));
+              };
+              if (v instanceof Bind) {
+                  return Data_Functor.map((((dictMonadRec.Monad0()).Bind1()).Apply0()).Functor0())(function ($127) {
+                      return Control_Monad_Rec_Class.Loop.create(v.value1($127));
+                  })(k(v.value0));
+              };
+              throw new Error("Failed pattern match at Control.Monad.Free line 151, column 10 - line 153, column 37: " + [ v.constructor.name ]);
+          };
+          return Control_Monad_Rec_Class.tailRecM(dictMonadRec)(go);
+      };
+  };
+  exports["liftF"] = liftF;
+  exports["foldFree"] = foldFree;
+  exports["freeFunctor"] = freeFunctor;
+  exports["freeBind"] = freeBind;
+  exports["freeApplicative"] = freeApplicative;
+  exports["freeApply"] = freeApply;
+  exports["freeMonad"] = freeMonad;
+})(PS["Control.Monad.Free"] = PS["Control.Monad.Free"] || {});
+(function(exports) {
+    "use strict";
+
+  //------------------------------------------------------------------------------
+  // Array size ------------------------------------------------------------------
+  //------------------------------------------------------------------------------
+
+  exports.length = function (xs) {
+    return xs.length;
+  };
+
+  //------------------------------------------------------------------------------
+  // Extending arrays ------------------------------------------------------------
+  //------------------------------------------------------------------------------
+
+  exports.cons = function (e) {
+    return function (l) {
+      return [e].concat(l);
+    };
+  };
+
+  //------------------------------------------------------------------------------
+  // Non-indexed reads -----------------------------------------------------------
+  //------------------------------------------------------------------------------
+
+  exports["uncons'"] = function (empty) {
+    return function (next) {
+      return function (xs) {
+        return xs.length === 0 ? empty({}) : next(xs[0])(xs.slice(1));
+      };
+    };
+  };
+
+  //------------------------------------------------------------------------------
+  // Indexed operations ----------------------------------------------------------
+  //------------------------------------------------------------------------------
+
+  exports.indexImpl = function (just) {
+    return function (nothing) {
+      return function (xs) {
+        return function (i) {
+          return i < 0 || i >= xs.length ? nothing :  just(xs[i]);
+        };
+      };
+    };
+  };
+
+  exports.concat = function (xss) {
+    if (xss.length <= 10000) {
+      // This method is faster, but it crashes on big arrays.
+      // So we use it when can and fallback to simple variant otherwise.
+      return Array.prototype.concat.apply([], xss);
+    }
+
+    var result = [];
+    for (var i = 0, l = xss.length; i < l; i++) {
+      var xs = xss[i];
+      for (var j = 0, m = xs.length; j < m; j++) {
+        result.push(xs[j]);
+      }
+    }
+    return result;
+  };
+
+  //------------------------------------------------------------------------------
+  // Subarrays -------------------------------------------------------------------
+  //------------------------------------------------------------------------------
+
+  exports.slice = function (s) {
+    return function (e) {
+      return function (l) {
+        return l.slice(s, e);
+      };
+    };
+  };
+})(PS["Data.Array"] = PS["Data.Array"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Array.NonEmpty.Internal"];
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad = PS["Control.Monad"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_FoldableWithIndex = PS["Data.FoldableWithIndex"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Semigroup_Traversable = PS["Data.Semigroup.Traversable"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_TraversableWithIndex = PS["Data.TraversableWithIndex"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Prelude = PS["Prelude"];
+  var semigroupNonEmptyArray = Data_Semigroup.semigroupArray;
+  exports["semigroupNonEmptyArray"] = semigroupNonEmptyArray;
+})(PS["Data.Array.NonEmpty.Internal"] = PS["Data.Array.NonEmpty.Internal"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Array"];
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_ST = PS["Control.Monad.ST"];
+  var Control_Monad_ST_Internal = PS["Control.Monad.ST.Internal"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Array_NonEmpty_Internal = PS["Data.Array.NonEmpty.Internal"];
+  var Data_Array_ST = PS["Data.Array.ST"];
+  var Data_Array_ST_Iterator = PS["Data.Array.ST.Iterator"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var uncons = $foreign["uncons'"](Data_Function["const"](Data_Maybe.Nothing.value))(function (x) {
+      return function (xs) {
+          return new Data_Maybe.Just({
+              head: x,
+              tail: xs
+          });
+      };
+  });
+  var tail = $foreign["uncons'"](Data_Function["const"](Data_Maybe.Nothing.value))(function (v) {
+      return function (xs) {
+          return new Data_Maybe.Just(xs);
+      };
+  });
+  var singleton = function (a) {
+      return [ a ];
+  };
+  var index = $foreign.indexImpl(Data_Maybe.Just.create)(Data_Maybe.Nothing.value);
+  var head = function (xs) {
+      return index(xs)(0);
+  };
+  exports["singleton"] = singleton;
+  exports["head"] = head;
+  exports["tail"] = tail;
+  exports["uncons"] = uncons;
+  exports["index"] = index;
+  exports["length"] = $foreign.length;
+  exports["cons"] = $foreign.cons;
+})(PS["Data.Array"] = PS["Data.Array"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Lazy = PS["Control.Lazy"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Array = PS["Data.Array"];
+  var Data_Array_NonEmpty_Internal = PS["Data.Array.NonEmpty.Internal"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_NonEmpty = PS["Data.NonEmpty"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ring = PS["Data.Ring"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unfoldable1 = PS["Data.Unfoldable1"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];          
+  var unsafeFromArray = Unsafe_Coerce.unsafeCoerce;
+  var toArray = Unsafe_Coerce.unsafeCoerce;
+  var singleton = function ($44) {
+      return unsafeFromArray(Data_Array.singleton($44));
+  };
+  var adaptMaybe = function (f) {
+      return function ($52) {
+          return Data_Maybe.fromJust()(f(toArray($52)));
+      };
+  };
+  var head = adaptMaybe(Data_Array.head);
+  var tail = adaptMaybe(Data_Array.tail);
+  exports["toArray"] = toArray;
+  exports["singleton"] = singleton;
+  exports["head"] = head;
+  exports["tail"] = tail;
+})(PS["Data.Array.NonEmpty"] = PS["Data.Array.NonEmpty"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Alt = PS["Control.Alt"];
+  var Control_Alternative = PS["Control.Alternative"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Comonad = PS["Control.Comonad"];
+  var Control_Extend = PS["Control.Extend"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_MonadPlus = PS["Control.MonadPlus"];
+  var Control_MonadZero = PS["Control.MonadZero"];
+  var Control_Plus = PS["Control.Plus"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Distributive = PS["Data.Distributive"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Exists = PS["Data.Exists"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Functor_Invariant = PS["Data.Functor.Invariant"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semigroup_Foldable = PS["Data.Semigroup.Foldable"];
+  var Data_Semigroup_Traversable = PS["Data.Semigroup.Traversable"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Prelude = PS["Prelude"];
+  var unCoyoneda = function (f) {
+      return function (v) {
+          return Data_Exists.runExists(function (v1) {
+              return f(v1.value0)(v1.value1);
+          })(v);
+      };
+  };
+  exports["unCoyoneda"] = unCoyoneda;
+})(PS["Data.Coyoneda"] = PS["Data.Coyoneda"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Maybe = PS["Data.Maybe"];                 
+  var Inl = (function () {
+      function Inl(value0) {
+          this.value0 = value0;
+      };
+      Inl.create = function (value0) {
+          return new Inl(value0);
+      };
+      return Inl;
+  })();
+  var Inr = (function () {
+      function Inr(value0) {
+          this.value0 = value0;
+      };
+      Inr.create = function (value0) {
+          return new Inr(value0);
+      };
+      return Inr;
+  })();
+  var NoArguments = (function () {
+      function NoArguments() {
+
+      };
+      NoArguments.value = new NoArguments();
+      return NoArguments;
+  })();
+  var Generic = function (from, to) {
+      this.from = from;
+      this.to = to;
+  };
+  var to = function (dict) {
+      return dict.to;
+  }; 
+  var from = function (dict) {
+      return dict.from;
+  };
+  exports["Generic"] = Generic;
+  exports["to"] = to;
+  exports["from"] = from;
+  exports["NoArguments"] = NoArguments;
+  exports["Inl"] = Inl;
+  exports["Inr"] = Inr;
+})(PS["Data.Generic.Rep"] = PS["Data.Generic.Rep"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Generic_Rep = PS["Data.Generic.Rep"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Prelude = PS["Prelude"];                 
+  var GenericShow = function (genericShow$prime) {
+      this["genericShow'"] = genericShow$prime;
+  };
+  var GenericShowArgs = function (genericShowArgs) {
+      this.genericShowArgs = genericShowArgs;
+  };
+  var genericShowArgsNoArguments = new GenericShowArgs(function (v) {
+      return [  ];
+  });
+  var genericShowArgs = function (dict) {
+      return dict.genericShowArgs;
+  };
+  var genericShowConstructor = function (dictGenericShowArgs) {
+      return function (dictIsSymbol) {
+          return new GenericShow(function (v) {
+              var ctor = Data_Symbol.reflectSymbol(dictIsSymbol)(Data_Symbol.SProxy.value);
+              var v1 = genericShowArgs(dictGenericShowArgs)(v);
+              if (v1.length === 0) {
+                  return ctor;
+              };
+              return "(" + (Data_Foldable.intercalate(Data_Foldable.foldableArray)(Data_Monoid.monoidString)(" ")(Data_Semigroup.append(Data_Semigroup.semigroupArray)([ ctor ])(v1)) + ")");
+          });
+      };
+  };
+  var genericShow$prime = function (dict) {
+      return dict["genericShow'"];
+  }; 
+  var genericShowSum = function (dictGenericShow) {
+      return function (dictGenericShow1) {
+          return new GenericShow(function (v) {
+              if (v instanceof Data_Generic_Rep.Inl) {
+                  return genericShow$prime(dictGenericShow)(v.value0);
+              };
+              if (v instanceof Data_Generic_Rep.Inr) {
+                  return genericShow$prime(dictGenericShow1)(v.value0);
+              };
+              throw new Error("Failed pattern match at Data.Generic.Rep.Show line 26, column 1 - line 26, column 83: " + [ v.constructor.name ]);
+          });
+      };
+  };
+  var genericShow = function (dictGeneric) {
+      return function (dictGenericShow) {
+          return function (x) {
+              return genericShow$prime(dictGenericShow)(Data_Generic_Rep.from(dictGeneric)(x));
+          };
+      };
+  };
+  exports["GenericShow"] = GenericShow;
+  exports["genericShow"] = genericShow;
+  exports["GenericShowArgs"] = GenericShowArgs;
+  exports["genericShowArgs"] = genericShowArgs;
+  exports["genericShowArgsNoArguments"] = genericShowArgsNoArguments;
+  exports["genericShowSum"] = genericShowSum;
+  exports["genericShowConstructor"] = genericShowConstructor;
+})(PS["Data.Generic.Rep.Show"] = PS["Data.Generic.Rep.Show"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_FoldableWithIndex = PS["Data.FoldableWithIndex"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Lazy = PS["Data.List.Lazy"];
+  var Data_List_Lazy_Types = PS["Data.List.Lazy.Types"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_TraversableWithIndex = PS["Data.TraversableWithIndex"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];                 
+  var Leaf = (function () {
+      function Leaf() {
+
+      };
+      Leaf.value = new Leaf();
+      return Leaf;
+  })();
+  var Two = (function () {
+      function Two(value0, value1, value2, value3) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+      };
+      Two.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return new Two(value0, value1, value2, value3);
+                  };
+              };
+          };
+      };
+      return Two;
+  })();
+  var Three = (function () {
+      function Three(value0, value1, value2, value3, value4, value5, value6) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+          this.value4 = value4;
+          this.value5 = value5;
+          this.value6 = value6;
+      };
+      Three.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return function (value4) {
+                          return function (value5) {
+                              return function (value6) {
+                                  return new Three(value0, value1, value2, value3, value4, value5, value6);
+                              };
+                          };
+                      };
+                  };
+              };
+          };
+      };
+      return Three;
+  })();
+  var TwoLeft = (function () {
+      function TwoLeft(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      TwoLeft.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new TwoLeft(value0, value1, value2);
+              };
+          };
+      };
+      return TwoLeft;
+  })();
+  var TwoRight = (function () {
+      function TwoRight(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      TwoRight.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new TwoRight(value0, value1, value2);
+              };
+          };
+      };
+      return TwoRight;
+  })();
+  var ThreeLeft = (function () {
+      function ThreeLeft(value0, value1, value2, value3, value4, value5) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+          this.value4 = value4;
+          this.value5 = value5;
+      };
+      ThreeLeft.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return function (value4) {
+                          return function (value5) {
+                              return new ThreeLeft(value0, value1, value2, value3, value4, value5);
+                          };
+                      };
+                  };
+              };
+          };
+      };
+      return ThreeLeft;
+  })();
+  var ThreeMiddle = (function () {
+      function ThreeMiddle(value0, value1, value2, value3, value4, value5) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+          this.value4 = value4;
+          this.value5 = value5;
+      };
+      ThreeMiddle.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return function (value4) {
+                          return function (value5) {
+                              return new ThreeMiddle(value0, value1, value2, value3, value4, value5);
+                          };
+                      };
+                  };
+              };
+          };
+      };
+      return ThreeMiddle;
+  })();
+  var ThreeRight = (function () {
+      function ThreeRight(value0, value1, value2, value3, value4, value5) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+          this.value4 = value4;
+          this.value5 = value5;
+      };
+      ThreeRight.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return function (value4) {
+                          return function (value5) {
+                              return new ThreeRight(value0, value1, value2, value3, value4, value5);
+                          };
+                      };
+                  };
+              };
+          };
+      };
+      return ThreeRight;
+  })();
+  var KickUp = (function () {
+      function KickUp(value0, value1, value2, value3) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+          this.value3 = value3;
+      };
+      KickUp.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return function (value3) {
+                      return new KickUp(value0, value1, value2, value3);
+                  };
+              };
+          };
+      };
+      return KickUp;
+  })();
+  var values = function (v) {
+      if (v instanceof Leaf) {
+          return Data_List_Types.Nil.value;
+      };
+      if (v instanceof Two) {
+          return Data_Semigroup.append(Data_List_Types.semigroupList)(values(v.value0))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value2))(values(v.value3)));
+      };
+      if (v instanceof Three) {
+          return Data_Semigroup.append(Data_List_Types.semigroupList)(values(v.value0))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value2))(Data_Semigroup.append(Data_List_Types.semigroupList)(values(v.value3))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value5))(values(v.value6)))));
+      };
+      throw new Error("Failed pattern match at Data.Map.Internal line 594, column 1 - line 594, column 40: " + [ v.constructor.name ]);
+  };
+  var lookup = function (dictOrd) {
+      return function (k) {
+          var comp = Data_Ord.compare(dictOrd);
+          var go = function ($copy_v) {
+              var $tco_done = false;
+              var $tco_result;
+              function $tco_loop(v) {
+                  if (v instanceof Leaf) {
+                      $tco_done = true;
+                      return Data_Maybe.Nothing.value;
+                  };
+                  if (v instanceof Two) {
+                      var v2 = comp(k)(v.value1);
+                      if (v2 instanceof Data_Ordering.EQ) {
+                          $tco_done = true;
+                          return new Data_Maybe.Just(v.value2);
+                      };
+                      if (v2 instanceof Data_Ordering.LT) {
+                          $copy_v = v.value0;
+                          return;
+                      };
+                      $copy_v = v.value3;
+                      return;
+                  };
+                  if (v instanceof Three) {
+                      var v3 = comp(k)(v.value1);
+                      if (v3 instanceof Data_Ordering.EQ) {
+                          $tco_done = true;
+                          return new Data_Maybe.Just(v.value2);
+                      };
+                      var v4 = comp(k)(v.value4);
+                      if (v4 instanceof Data_Ordering.EQ) {
+                          $tco_done = true;
+                          return new Data_Maybe.Just(v.value5);
+                      };
+                      if (v3 instanceof Data_Ordering.LT) {
+                          $copy_v = v.value0;
+                          return;
+                      };
+                      if (v4 instanceof Data_Ordering.GT) {
+                          $copy_v = v.value6;
+                          return;
+                      };
+                      $copy_v = v.value3;
+                      return;
+                  };
+                  throw new Error("Failed pattern match at Data.Map.Internal line 193, column 5 - line 193, column 22: " + [ v.constructor.name ]);
+              };
+              while (!$tco_done) {
+                  $tco_result = $tco_loop($copy_v);
+              };
+              return $tco_result;
+          };
+          return go;
+      };
+  };
+  var member = function (dictOrd) {
+      return function (k) {
+          return function (m) {
+              return Data_Maybe.isJust(lookup(dictOrd)(k)(m));
+          };
+      };
+  };
+  var keys = function (v) {
+      if (v instanceof Leaf) {
+          return Data_List_Types.Nil.value;
+      };
+      if (v instanceof Two) {
+          return Data_Semigroup.append(Data_List_Types.semigroupList)(keys(v.value0))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value1))(keys(v.value3)));
+      };
+      if (v instanceof Three) {
+          return Data_Semigroup.append(Data_List_Types.semigroupList)(keys(v.value0))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value1))(Data_Semigroup.append(Data_List_Types.semigroupList)(keys(v.value3))(Data_Semigroup.append(Data_List_Types.semigroupList)(Control_Applicative.pure(Data_List_Types.applicativeList)(v.value4))(keys(v.value6)))));
+      };
+      throw new Error("Failed pattern match at Data.Map.Internal line 588, column 1 - line 588, column 38: " + [ v.constructor.name ]);
+  };
+  var functorMap = new Data_Functor.Functor(function (v) {
+      return function (v1) {
+          if (v1 instanceof Leaf) {
+              return Leaf.value;
+          };
+          if (v1 instanceof Two) {
+              return new Two(Data_Functor.map(functorMap)(v)(v1.value0), v1.value1, v(v1.value2), Data_Functor.map(functorMap)(v)(v1.value3));
+          };
+          if (v1 instanceof Three) {
+              return new Three(Data_Functor.map(functorMap)(v)(v1.value0), v1.value1, v(v1.value2), Data_Functor.map(functorMap)(v)(v1.value3), v1.value4, v(v1.value5), Data_Functor.map(functorMap)(v)(v1.value6));
+          };
+          throw new Error("Failed pattern match at Data.Map.Internal line 89, column 1 - line 89, column 39: " + [ v.constructor.name, v1.constructor.name ]);
+      };
+  });
+  var fromZipper = function ($copy_dictOrd) {
+      return function ($copy_v) {
+          return function ($copy_tree) {
+              var $tco_var_dictOrd = $copy_dictOrd;
+              var $tco_var_v = $copy_v;
+              var $tco_done = false;
+              var $tco_result;
+              function $tco_loop(dictOrd, v, tree) {
+                  if (v instanceof Data_List_Types.Nil) {
+                      $tco_done = true;
+                      return tree;
+                  };
+                  if (v instanceof Data_List_Types.Cons) {
+                      if (v.value0 instanceof TwoLeft) {
+                          $tco_var_dictOrd = dictOrd;
+                          $tco_var_v = v.value1;
+                          $copy_tree = new Two(tree, v.value0.value0, v.value0.value1, v.value0.value2);
+                          return;
+                      };
+                      if (v.value0 instanceof TwoRight) {
+                          $tco_var_dictOrd = dictOrd;
+                          $tco_var_v = v.value1;
+                          $copy_tree = new Two(v.value0.value0, v.value0.value1, v.value0.value2, tree);
+                          return;
+                      };
+                      if (v.value0 instanceof ThreeLeft) {
+                          $tco_var_dictOrd = dictOrd;
+                          $tco_var_v = v.value1;
+                          $copy_tree = new Three(tree, v.value0.value0, v.value0.value1, v.value0.value2, v.value0.value3, v.value0.value4, v.value0.value5);
+                          return;
+                      };
+                      if (v.value0 instanceof ThreeMiddle) {
+                          $tco_var_dictOrd = dictOrd;
+                          $tco_var_v = v.value1;
+                          $copy_tree = new Three(v.value0.value0, v.value0.value1, v.value0.value2, tree, v.value0.value3, v.value0.value4, v.value0.value5);
+                          return;
+                      };
+                      if (v.value0 instanceof ThreeRight) {
+                          $tco_var_dictOrd = dictOrd;
+                          $tco_var_v = v.value1;
+                          $copy_tree = new Three(v.value0.value0, v.value0.value1, v.value0.value2, v.value0.value3, v.value0.value4, v.value0.value5, tree);
+                          return;
+                      };
+                      throw new Error("Failed pattern match at Data.Map.Internal line 411, column 3 - line 416, column 88: " + [ v.value0.constructor.name ]);
+                  };
+                  throw new Error("Failed pattern match at Data.Map.Internal line 408, column 1 - line 408, column 80: " + [ v.constructor.name, tree.constructor.name ]);
+              };
+              while (!$tco_done) {
+                  $tco_result = $tco_loop($tco_var_dictOrd, $tco_var_v, $copy_tree);
+              };
+              return $tco_result;
+          };
+      };
+  };
+  var insert = function (dictOrd) {
+      return function (k) {
+          return function (v) {
+              var up = function ($copy_v1) {
+                  return function ($copy_v2) {
+                      var $tco_var_v1 = $copy_v1;
+                      var $tco_done = false;
+                      var $tco_result;
+                      function $tco_loop(v1, v2) {
+                          if (v1 instanceof Data_List_Types.Nil) {
+                              $tco_done = true;
+                              return new Two(v2.value0, v2.value1, v2.value2, v2.value3);
+                          };
+                          if (v1 instanceof Data_List_Types.Cons) {
+                              if (v1.value0 instanceof TwoLeft) {
+                                  $tco_done = true;
+                                  return fromZipper(dictOrd)(v1.value1)(new Three(v2.value0, v2.value1, v2.value2, v2.value3, v1.value0.value0, v1.value0.value1, v1.value0.value2));
+                              };
+                              if (v1.value0 instanceof TwoRight) {
+                                  $tco_done = true;
+                                  return fromZipper(dictOrd)(v1.value1)(new Three(v1.value0.value0, v1.value0.value1, v1.value0.value2, v2.value0, v2.value1, v2.value2, v2.value3));
+                              };
+                              if (v1.value0 instanceof ThreeLeft) {
+                                  $tco_var_v1 = v1.value1;
+                                  $copy_v2 = new KickUp(new Two(v2.value0, v2.value1, v2.value2, v2.value3), v1.value0.value0, v1.value0.value1, new Two(v1.value0.value2, v1.value0.value3, v1.value0.value4, v1.value0.value5));
+                                  return;
+                              };
+                              if (v1.value0 instanceof ThreeMiddle) {
+                                  $tco_var_v1 = v1.value1;
+                                  $copy_v2 = new KickUp(new Two(v1.value0.value0, v1.value0.value1, v1.value0.value2, v2.value0), v2.value1, v2.value2, new Two(v2.value3, v1.value0.value3, v1.value0.value4, v1.value0.value5));
+                                  return;
+                              };
+                              if (v1.value0 instanceof ThreeRight) {
+                                  $tco_var_v1 = v1.value1;
+                                  $copy_v2 = new KickUp(new Two(v1.value0.value0, v1.value0.value1, v1.value0.value2, v1.value0.value3), v1.value0.value4, v1.value0.value5, new Two(v2.value0, v2.value1, v2.value2, v2.value3));
+                                  return;
+                              };
+                              throw new Error("Failed pattern match at Data.Map.Internal line 447, column 5 - line 452, column 108: " + [ v1.value0.constructor.name, v2.constructor.name ]);
+                          };
+                          throw new Error("Failed pattern match at Data.Map.Internal line 444, column 3 - line 444, column 56: " + [ v1.constructor.name, v2.constructor.name ]);
+                      };
+                      while (!$tco_done) {
+                          $tco_result = $tco_loop($tco_var_v1, $copy_v2);
+                      };
+                      return $tco_result;
+                  };
+              };
+              var comp = Data_Ord.compare(dictOrd);
+              var down = function ($copy_ctx) {
+                  return function ($copy_v1) {
+                      var $tco_var_ctx = $copy_ctx;
+                      var $tco_done = false;
+                      var $tco_result;
+                      function $tco_loop(ctx, v1) {
+                          if (v1 instanceof Leaf) {
+                              $tco_done = true;
+                              return up(ctx)(new KickUp(Leaf.value, k, v, Leaf.value));
+                          };
+                          if (v1 instanceof Two) {
+                              var v2 = comp(k)(v1.value1);
+                              if (v2 instanceof Data_Ordering.EQ) {
+                                  $tco_done = true;
+                                  return fromZipper(dictOrd)(ctx)(new Two(v1.value0, k, v, v1.value3));
+                              };
+                              if (v2 instanceof Data_Ordering.LT) {
+                                  $tco_var_ctx = new Data_List_Types.Cons(new TwoLeft(v1.value1, v1.value2, v1.value3), ctx);
+                                  $copy_v1 = v1.value0;
+                                  return;
+                              };
+                              $tco_var_ctx = new Data_List_Types.Cons(new TwoRight(v1.value0, v1.value1, v1.value2), ctx);
+                              $copy_v1 = v1.value3;
+                              return;
+                          };
+                          if (v1 instanceof Three) {
+                              var v3 = comp(k)(v1.value1);
+                              if (v3 instanceof Data_Ordering.EQ) {
+                                  $tco_done = true;
+                                  return fromZipper(dictOrd)(ctx)(new Three(v1.value0, k, v, v1.value3, v1.value4, v1.value5, v1.value6));
+                              };
+                              var v4 = comp(k)(v1.value4);
+                              if (v4 instanceof Data_Ordering.EQ) {
+                                  $tco_done = true;
+                                  return fromZipper(dictOrd)(ctx)(new Three(v1.value0, v1.value1, v1.value2, v1.value3, k, v, v1.value6));
+                              };
+                              if (v3 instanceof Data_Ordering.LT) {
+                                  $tco_var_ctx = new Data_List_Types.Cons(new ThreeLeft(v1.value1, v1.value2, v1.value3, v1.value4, v1.value5, v1.value6), ctx);
+                                  $copy_v1 = v1.value0;
+                                  return;
+                              };
+                              if (v3 instanceof Data_Ordering.GT && v4 instanceof Data_Ordering.LT) {
+                                  $tco_var_ctx = new Data_List_Types.Cons(new ThreeMiddle(v1.value0, v1.value1, v1.value2, v1.value4, v1.value5, v1.value6), ctx);
+                                  $copy_v1 = v1.value3;
+                                  return;
+                              };
+                              $tco_var_ctx = new Data_List_Types.Cons(new ThreeRight(v1.value0, v1.value1, v1.value2, v1.value3, v1.value4, v1.value5), ctx);
+                              $copy_v1 = v1.value6;
+                              return;
+                          };
+                          throw new Error("Failed pattern match at Data.Map.Internal line 427, column 3 - line 427, column 55: " + [ ctx.constructor.name, v1.constructor.name ]);
+                      };
+                      while (!$tco_done) {
+                          $tco_result = $tco_loop($tco_var_ctx, $copy_v1);
+                      };
+                      return $tco_result;
+                  };
+              };
+              return down(Data_List_Types.Nil.value);
+          };
+      };
+  };
+  var pop = function (dictOrd) {
+      return function (k) {
+          var up = function (ctxs) {
+              return function (tree) {
+                  if (ctxs instanceof Data_List_Types.Nil) {
+                      return tree;
+                  };
+                  if (ctxs instanceof Data_List_Types.Cons) {
+                      var $__unused = function (dictPartial1) {
+                          return function ($dollar55) {
+                              return $dollar55;
+                          };
+                      };
+                      return $__unused()((function () {
+                          if (ctxs.value0 instanceof TwoLeft && (ctxs.value0.value2 instanceof Leaf && tree instanceof Leaf)) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(Leaf.value, ctxs.value0.value0, ctxs.value0.value1, Leaf.value));
+                          };
+                          if (ctxs.value0 instanceof TwoRight && (ctxs.value0.value0 instanceof Leaf && tree instanceof Leaf)) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(Leaf.value, ctxs.value0.value1, ctxs.value0.value2, Leaf.value));
+                          };
+                          if (ctxs.value0 instanceof TwoLeft && ctxs.value0.value2 instanceof Two) {
+                              return up(ctxs.value1)(new Three(tree, ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2.value0, ctxs.value0.value2.value1, ctxs.value0.value2.value2, ctxs.value0.value2.value3));
+                          };
+                          if (ctxs.value0 instanceof TwoRight && ctxs.value0.value0 instanceof Two) {
+                              return up(ctxs.value1)(new Three(ctxs.value0.value0.value0, ctxs.value0.value0.value1, ctxs.value0.value0.value2, ctxs.value0.value0.value3, ctxs.value0.value1, ctxs.value0.value2, tree));
+                          };
+                          if (ctxs.value0 instanceof TwoLeft && ctxs.value0.value2 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(new Two(tree, ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2.value0), ctxs.value0.value2.value1, ctxs.value0.value2.value2, new Two(ctxs.value0.value2.value3, ctxs.value0.value2.value4, ctxs.value0.value2.value5, ctxs.value0.value2.value6)));
+                          };
+                          if (ctxs.value0 instanceof TwoRight && ctxs.value0.value0 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(new Two(ctxs.value0.value0.value0, ctxs.value0.value0.value1, ctxs.value0.value0.value2, ctxs.value0.value0.value3), ctxs.value0.value0.value4, ctxs.value0.value0.value5, new Two(ctxs.value0.value0.value6, ctxs.value0.value1, ctxs.value0.value2, tree)));
+                          };
+                          if (ctxs.value0 instanceof ThreeLeft && (ctxs.value0.value2 instanceof Leaf && (ctxs.value0.value5 instanceof Leaf && tree instanceof Leaf))) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(Leaf.value, ctxs.value0.value0, ctxs.value0.value1, Leaf.value, ctxs.value0.value3, ctxs.value0.value4, Leaf.value));
+                          };
+                          if (ctxs.value0 instanceof ThreeMiddle && (ctxs.value0.value0 instanceof Leaf && (ctxs.value0.value5 instanceof Leaf && tree instanceof Leaf))) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(Leaf.value, ctxs.value0.value1, ctxs.value0.value2, Leaf.value, ctxs.value0.value3, ctxs.value0.value4, Leaf.value));
+                          };
+                          if (ctxs.value0 instanceof ThreeRight && (ctxs.value0.value0 instanceof Leaf && (ctxs.value0.value3 instanceof Leaf && tree instanceof Leaf))) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(Leaf.value, ctxs.value0.value1, ctxs.value0.value2, Leaf.value, ctxs.value0.value4, ctxs.value0.value5, Leaf.value));
+                          };
+                          if (ctxs.value0 instanceof ThreeLeft && ctxs.value0.value2 instanceof Two) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(new Three(tree, ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2.value0, ctxs.value0.value2.value1, ctxs.value0.value2.value2, ctxs.value0.value2.value3), ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5));
+                          };
+                          if (ctxs.value0 instanceof ThreeMiddle && ctxs.value0.value0 instanceof Two) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(new Three(ctxs.value0.value0.value0, ctxs.value0.value0.value1, ctxs.value0.value0.value2, ctxs.value0.value0.value3, ctxs.value0.value1, ctxs.value0.value2, tree), ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5));
+                          };
+                          if (ctxs.value0 instanceof ThreeMiddle && ctxs.value0.value5 instanceof Two) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2, new Three(tree, ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5.value0, ctxs.value0.value5.value1, ctxs.value0.value5.value2, ctxs.value0.value5.value3)));
+                          };
+                          if (ctxs.value0 instanceof ThreeRight && ctxs.value0.value3 instanceof Two) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Two(ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2, new Three(ctxs.value0.value3.value0, ctxs.value0.value3.value1, ctxs.value0.value3.value2, ctxs.value0.value3.value3, ctxs.value0.value4, ctxs.value0.value5, tree)));
+                          };
+                          if (ctxs.value0 instanceof ThreeLeft && ctxs.value0.value2 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(new Two(tree, ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2.value0), ctxs.value0.value2.value1, ctxs.value0.value2.value2, new Two(ctxs.value0.value2.value3, ctxs.value0.value2.value4, ctxs.value0.value2.value5, ctxs.value0.value2.value6), ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5));
+                          };
+                          if (ctxs.value0 instanceof ThreeMiddle && ctxs.value0.value0 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(new Two(ctxs.value0.value0.value0, ctxs.value0.value0.value1, ctxs.value0.value0.value2, ctxs.value0.value0.value3), ctxs.value0.value0.value4, ctxs.value0.value0.value5, new Two(ctxs.value0.value0.value6, ctxs.value0.value1, ctxs.value0.value2, tree), ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5));
+                          };
+                          if (ctxs.value0 instanceof ThreeMiddle && ctxs.value0.value5 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2, new Two(tree, ctxs.value0.value3, ctxs.value0.value4, ctxs.value0.value5.value0), ctxs.value0.value5.value1, ctxs.value0.value5.value2, new Two(ctxs.value0.value5.value3, ctxs.value0.value5.value4, ctxs.value0.value5.value5, ctxs.value0.value5.value6)));
+                          };
+                          if (ctxs.value0 instanceof ThreeRight && ctxs.value0.value3 instanceof Three) {
+                              return fromZipper(dictOrd)(ctxs.value1)(new Three(ctxs.value0.value0, ctxs.value0.value1, ctxs.value0.value2, new Two(ctxs.value0.value3.value0, ctxs.value0.value3.value1, ctxs.value0.value3.value2, ctxs.value0.value3.value3), ctxs.value0.value3.value4, ctxs.value0.value3.value5, new Two(ctxs.value0.value3.value6, ctxs.value0.value4, ctxs.value0.value5, tree)));
+                          };
+                          throw new Error("Failed pattern match at Data.Map.Internal line 497, column 9 - line 514, column 136: " + [ ctxs.value0.constructor.name, tree.constructor.name ]);
+                      })());
+                  };
+                  throw new Error("Failed pattern match at Data.Map.Internal line 494, column 5 - line 514, column 136: " + [ ctxs.constructor.name ]);
+              };
+          };
+          var removeMaxNode = function (ctx) {
+              return function (m) {
+                  var $__unused = function (dictPartial1) {
+                      return function ($dollar57) {
+                          return $dollar57;
+                      };
+                  };
+                  return $__unused()((function () {
+                      if (m instanceof Two && (m.value0 instanceof Leaf && m.value3 instanceof Leaf)) {
+                          return up(ctx)(Leaf.value);
+                      };
+                      if (m instanceof Two) {
+                          return removeMaxNode(new Data_List_Types.Cons(new TwoRight(m.value0, m.value1, m.value2), ctx))(m.value3);
+                      };
+                      if (m instanceof Three && (m.value0 instanceof Leaf && (m.value3 instanceof Leaf && m.value6 instanceof Leaf))) {
+                          return up(new Data_List_Types.Cons(new TwoRight(Leaf.value, m.value1, m.value2), ctx))(Leaf.value);
+                      };
+                      if (m instanceof Three) {
+                          return removeMaxNode(new Data_List_Types.Cons(new ThreeRight(m.value0, m.value1, m.value2, m.value3, m.value4, m.value5), ctx))(m.value6);
+                      };
+                      throw new Error("Failed pattern match at Data.Map.Internal line 526, column 5 - line 530, column 107: " + [ m.constructor.name ]);
+                  })());
+              };
+          };
+          var maxNode = function (m) {
+              var $__unused = function (dictPartial1) {
+                  return function ($dollar59) {
+                      return $dollar59;
+                  };
+              };
+              return $__unused()((function () {
+                  if (m instanceof Two && m.value3 instanceof Leaf) {
+                      return {
+                          key: m.value1,
+                          value: m.value2
+                      };
+                  };
+                  if (m instanceof Two) {
+                      return maxNode(m.value3);
+                  };
+                  if (m instanceof Three && m.value6 instanceof Leaf) {
+                      return {
+                          key: m.value4,
+                          value: m.value5
+                      };
+                  };
+                  if (m instanceof Three) {
+                      return maxNode(m.value6);
+                  };
+                  throw new Error("Failed pattern match at Data.Map.Internal line 517, column 33 - line 521, column 45: " + [ m.constructor.name ]);
+              })());
+          };
+          var comp = Data_Ord.compare(dictOrd);
+          var down = function ($copy_ctx) {
+              return function ($copy_m) {
+                  var $tco_var_ctx = $copy_ctx;
+                  var $tco_done = false;
+                  var $tco_result;
+                  function $tco_loop(ctx, m) {
+                      if (m instanceof Leaf) {
+                          $tco_done = true;
+                          return Data_Maybe.Nothing.value;
+                      };
+                      if (m instanceof Two) {
+                          var v = comp(k)(m.value1);
+                          if (m.value3 instanceof Leaf && v instanceof Data_Ordering.EQ) {
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value2, up(ctx)(Leaf.value)));
+                          };
+                          if (v instanceof Data_Ordering.EQ) {
+                              var max = maxNode(m.value0);
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value2, removeMaxNode(new Data_List_Types.Cons(new TwoLeft(max.key, max.value, m.value3), ctx))(m.value0)));
+                          };
+                          if (v instanceof Data_Ordering.LT) {
+                              $tco_var_ctx = new Data_List_Types.Cons(new TwoLeft(m.value1, m.value2, m.value3), ctx);
+                              $copy_m = m.value0;
+                              return;
+                          };
+                          $tco_var_ctx = new Data_List_Types.Cons(new TwoRight(m.value0, m.value1, m.value2), ctx);
+                          $copy_m = m.value3;
+                          return;
+                      };
+                      if (m instanceof Three) {
+                          var leaves = (function () {
+                              if (m.value0 instanceof Leaf && (m.value3 instanceof Leaf && m.value6 instanceof Leaf)) {
+                                  return true;
+                              };
+                              return false;
+                          })();
+                          var v = comp(k)(m.value4);
+                          var v3 = comp(k)(m.value1);
+                          if (leaves && v3 instanceof Data_Ordering.EQ) {
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value2, fromZipper(dictOrd)(ctx)(new Two(Leaf.value, m.value4, m.value5, Leaf.value))));
+                          };
+                          if (leaves && v instanceof Data_Ordering.EQ) {
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value5, fromZipper(dictOrd)(ctx)(new Two(Leaf.value, m.value1, m.value2, Leaf.value))));
+                          };
+                          if (v3 instanceof Data_Ordering.EQ) {
+                              var max = maxNode(m.value0);
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value2, removeMaxNode(new Data_List_Types.Cons(new ThreeLeft(max.key, max.value, m.value3, m.value4, m.value5, m.value6), ctx))(m.value0)));
+                          };
+                          if (v instanceof Data_Ordering.EQ) {
+                              var max = maxNode(m.value3);
+                              $tco_done = true;
+                              return new Data_Maybe.Just(new Data_Tuple.Tuple(m.value5, removeMaxNode(new Data_List_Types.Cons(new ThreeMiddle(m.value0, m.value1, m.value2, max.key, max.value, m.value6), ctx))(m.value3)));
+                          };
+                          if (v3 instanceof Data_Ordering.LT) {
+                              $tco_var_ctx = new Data_List_Types.Cons(new ThreeLeft(m.value1, m.value2, m.value3, m.value4, m.value5, m.value6), ctx);
+                              $copy_m = m.value0;
+                              return;
+                          };
+                          if (v3 instanceof Data_Ordering.GT && v instanceof Data_Ordering.LT) {
+                              $tco_var_ctx = new Data_List_Types.Cons(new ThreeMiddle(m.value0, m.value1, m.value2, m.value4, m.value5, m.value6), ctx);
+                              $copy_m = m.value3;
+                              return;
+                          };
+                          $tco_var_ctx = new Data_List_Types.Cons(new ThreeRight(m.value0, m.value1, m.value2, m.value3, m.value4, m.value5), ctx);
+                          $copy_m = m.value6;
+                          return;
+                      };
+                      throw new Error("Failed pattern match at Data.Map.Internal line 467, column 34 - line 490, column 80: " + [ m.constructor.name ]);
+                  };
+                  while (!$tco_done) {
+                      $tco_result = $tco_loop($tco_var_ctx, $copy_m);
+                  };
+                  return $tco_result;
+              };
+          };
+          return down(Data_List_Types.Nil.value);
+      };
+  };
+  var foldableMap = new Data_Foldable.Foldable(function (dictMonoid) {
+      return function (f) {
+          return function (m) {
+              return Data_Foldable.foldMap(Data_List_Types.foldableList)(dictMonoid)(f)(values(m));
+          };
+      };
+  }, function (f) {
+      return function (z) {
+          return function (m) {
+              return Data_Foldable.foldl(Data_List_Types.foldableList)(f)(z)(values(m));
+          };
+      };
+  }, function (f) {
+      return function (z) {
+          return function (m) {
+              return Data_Foldable.foldr(Data_List_Types.foldableList)(f)(z)(values(m));
+          };
+      };
+  });
+  var empty = Leaf.value;
+  var $$delete = function (dictOrd) {
+      return function (k) {
+          return function (m) {
+              return Data_Maybe.maybe(m)(Data_Tuple.snd)(pop(dictOrd)(k)(m));
+          };
+      };
+  }; 
+  var alter = function (dictOrd) {
+      return function (f) {
+          return function (k) {
+              return function (m) {
+                  var v = f(lookup(dictOrd)(k)(m));
+                  if (v instanceof Data_Maybe.Nothing) {
+                      return $$delete(dictOrd)(k)(m);
+                  };
+                  if (v instanceof Data_Maybe.Just) {
+                      return insert(dictOrd)(k)(v.value0)(m);
+                  };
+                  throw new Error("Failed pattern match at Data.Map.Internal line 535, column 15 - line 537, column 25: " + [ v.constructor.name ]);
+              };
+          };
+      };
+  };
+  exports["empty"] = empty;
+  exports["insert"] = insert;
+  exports["lookup"] = lookup;
+  exports["delete"] = $$delete;
+  exports["pop"] = pop;
+  exports["member"] = member;
+  exports["alter"] = alter;
+  exports["keys"] = keys;
+  exports["values"] = values;
+  exports["functorMap"] = functorMap;
+  exports["foldableMap"] = foldableMap;
+})(PS["Data.Map.Internal"] = PS["Data.Map.Internal"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_ST = PS["Control.Monad.ST"];
+  var Control_Monad_ST_Internal = PS["Control.Monad.ST.Internal"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Array = PS["Data.Array"];
+  var Data_Array_ST = PS["Data.Array.ST"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Data_Unit = PS["Data.Unit"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var toList = function (v) {
+      return Data_Map_Internal.keys(v);
+  };
+  var foldableSet = new Data_Foldable.Foldable(function (dictMonoid) {
+      return function (f) {
+          return function ($59) {
+              return Data_Foldable.foldMap(Data_List_Types.foldableList)(dictMonoid)(f)(toList($59));
+          };
+      };
+  }, function (f) {
+      return function (x) {
+          return function ($60) {
+              return Data_Foldable.foldl(Data_List_Types.foldableList)(f)(x)(toList($60));
+          };
+      };
+  }, function (f) {
+      return function (x) {
+          return function ($61) {
+              return Data_Foldable.foldr(Data_List_Types.foldableList)(f)(x)(toList($61));
+          };
+      };
+  });
+  exports["foldableSet"] = foldableSet;
+})(PS["Data.Set"] = PS["Data.Set"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Set = PS["Data.Set"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];                 
+  var keys = function ($0) {
+      return Data_Functor["void"](Data_Map_Internal.functorMap)($0);
+  };
+  exports["keys"] = keys;
+})(PS["Data.Map"] = PS["Data.Map"] || {});
+(function(exports) {
+    "use strict";
+
+  exports["null"] = null;
+
+  exports.nullable = function (a, r, f) {
+    return a == null ? r : f(a);
+  };
+
+  exports.notNull = function (x) {
+    return x;
+  };
+})(PS["Data.Nullable"] = PS["Data.Nullable"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Data.Nullable"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Show = PS["Data.Show"];
+  var Prelude = PS["Prelude"];                 
+  var toNullable = Data_Maybe.maybe($foreign["null"])($foreign.notNull);
+  var toMaybe = function (n) {
+      return $foreign.nullable(n, Data_Maybe.Nothing.value, Data_Maybe.Just.create);
+  };
+  exports["toMaybe"] = toMaybe;
+  exports["toNullable"] = toNullable;
+})(PS["Data.Nullable"] = PS["Data.Nullable"] || {});
+(function(exports) {
+  /* globals exports, setTimeout */
+  "use strict";
+
+  var AVar = function () {
+
+    function MutableQueue () {
+      this.head = null;
+      this.last = null;
+      this.size = 0;
+    }
+
+    function MutableCell (queue, value) {
+      this.queue = queue;
+      this.value = value;
+      this.next  = null;
+      this.prev  = null;
+    }
+
+    function AVar (value) {
+      this.draining = false;
+      this.error    = null;
+      this.value    = value;
+      this.takes    = new MutableQueue();
+      this.reads    = new MutableQueue();
+      this.puts     = new MutableQueue();
+    }
+
+    var EMPTY = {};
+
+    function runEff(eff) {
+      try {
+        eff();
+      } catch (error) {
+        setTimeout(function () {
+          throw error;
+        }, 0);
+      }
+    }
+
+    function putLast (queue, value) {
+      var cell = new MutableCell(queue, value);
+      switch (queue.size) {
+      case 0:
+        queue.head = cell;
+        break;
+      case 1:
+        cell.prev = queue.head;
+        queue.head.next = cell;
+        queue.last = cell;
+        break;
+      default:
+        cell.prev = queue.last;
+        queue.last.next = cell;
+        queue.last = cell;
+      }
+      queue.size++;
+      return cell;
+    }
+
+    function takeLast (queue) {
+      var cell;
+      switch (queue.size) {
+      case 0:
+        return null;
+      case 1:
+        cell = queue.head;
+        queue.head = null;
+        break;
+      case 2:
+        cell = queue.last;
+        queue.head.next = null;
+        queue.last = null;
+        break;
+      default:
+        cell = queue.last;
+        queue.last = cell.prev;
+        queue.last.next = null;
+      }
+      cell.prev = null;
+      cell.queue = null;
+      queue.size--;
+      return cell.value;
+    }
+
+    function takeHead (queue) {
+      var cell;
+      switch (queue.size) {
+      case 0:
+        return null;
+      case 1:
+        cell = queue.head;
+        queue.head = null;
+        break;
+      case 2:
+        cell = queue.head;
+        queue.last.prev = null;
+        queue.head = queue.last;
+        queue.last = null;
+        break;
+      default:
+        cell = queue.head;
+        queue.head = cell.next;
+        queue.head.prev = null;
+      }
+      cell.next = null;
+      cell.queue = null;
+      queue.size--;
+      return cell.value;
+    }
+
+    function deleteCell (cell) {
+      if (cell.queue === null) {
+        return;
+      }
+      if (cell.queue.last === cell) {
+        takeLast(cell.queue);
+        return;
+      }
+      if (cell.queue.head === cell) {
+        takeHead(cell.queue);
+        return;
+      }
+      if (cell.prev) {
+        cell.prev.next = cell.next;
+      }
+      if (cell.next) {
+        cell.next.prev = cell.prev;
+      }
+      cell.queue.size--;
+      cell.queue = null;
+      cell.value = null;
+      cell.next  = null;
+      cell.prev  = null;
+    }
+
+    function drainVar (util, avar) {
+      if (avar.draining) {
+        return;
+      }
+
+      var ps = avar.puts;
+      var ts = avar.takes;
+      var rs = avar.reads;
+      var p, r, t, value, rsize;
+
+      avar.draining = true;
+
+      while (1) { // eslint-disable-line no-constant-condition
+        p = null;
+        r = null;
+        t = null;
+        value = avar.value;
+        rsize = rs.size;
+
+        if (avar.error !== null) {
+          value = util.left(avar.error);
+          while (p = takeHead(ps)) { // eslint-disable-line no-cond-assign
+            runEff(p.cb(value));
+          }
+          while (r = takeHead(rs)) { // eslint-disable-line no-cond-assign
+            runEff(r(value));
+          }
+          while (t = takeHead(ts)) { // eslint-disable-line no-cond-assign
+            runEff(t(value));
+          }
+          break;
+        }
+
+        // Process the next put. We do not immediately invoke the callback
+        // because we want to preserve ordering. If there are takes/reads
+        // we want to run those first.
+        if (value === EMPTY && (p = takeHead(ps))) {
+          avar.value = value = p.value;
+        }
+
+        if (value !== EMPTY) {
+          // We go ahead and queue up the next take for the same reasons as
+          // above. Invoking the read callbacks can affect the mutable queue.
+          t = takeHead(ts);
+          // We only want to process the reads queued up before running these
+          // callbacks so we guard on rsize.
+          while (rsize-- && (r = takeHead(rs))) {
+            runEff(r(util.right(value)));
+          }
+          if (t !== null) {
+            avar.value = EMPTY;
+            runEff(t(util.right(value)));
+          }
+        }
+
+        if (p !== null) {
+          runEff(p.cb(util.right(void 0)));
+        }
+
+        // Callbacks could have queued up more items so we need to guard on the
+        // actual mutable properties.
+        if (avar.value === EMPTY && ps.size === 0 || avar.value !== EMPTY && ts.size === 0) {
+          break;
+        }
+      }
+      avar.draining = false;
+    }
+
+    AVar.EMPTY      = EMPTY;
+    AVar.putLast    = putLast;
+    AVar.takeLast   = takeLast;
+    AVar.takeHead   = takeHead;
+    AVar.deleteCell = deleteCell;
+    AVar.drainVar   = drainVar;
+
+    return AVar;
+  }();
+
+  exports.empty = function () {
+    return new AVar(AVar.EMPTY);
+  };
+
+  exports._killVar = function (util, error, avar) {
+    return function () {
+      if (avar.error === null) {
+        avar.error = error;
+        avar.value = AVar.EMPTY;
+        AVar.drainVar(util, avar);
+      }
+    };
+  };
+
+  exports._putVar = function (util, value, avar, cb) {
+    return function () {
+      var cell = AVar.putLast(avar.puts, { cb: cb, value: value });
+      AVar.drainVar(util, avar);
+      return function () {
+        AVar.deleteCell(cell);
+      };
+    };
+  };
+
+  exports._takeVar = function (util, avar, cb) {
+    return function () {
+      var cell = AVar.putLast(avar.takes, cb);
+      AVar.drainVar(util, avar);
+      return function () {
+        AVar.deleteCell(cell);
+      };
+    };
+  };
+})(PS["Effect.AVar"] = PS["Effect.AVar"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.AVar"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Effect = PS["Effect"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Prelude = PS["Prelude"];                 
+  var Killed = (function () {
+      function Killed(value0) {
+          this.value0 = value0;
+      };
+      Killed.create = function (value0) {
+          return new Killed(value0);
+      };
+      return Killed;
+  })();
+  var Filled = (function () {
+      function Filled(value0) {
+          this.value0 = value0;
+      };
+      Filled.create = function (value0) {
+          return new Filled(value0);
+      };
+      return Filled;
+  })();
+  var Empty = (function () {
+      function Empty() {
+
+      };
+      Empty.value = new Empty();
+      return Empty;
+  })();
+  var ffiUtil = {
+      left: Data_Either.Left.create,
+      right: Data_Either.Right.create,
+      nothing: Data_Maybe.Nothing.value,
+      just: Data_Maybe.Just.create,
+      killed: Killed.create,
+      filled: Filled.create,
+      empty: Empty.value
+  };
+  var kill = function (err) {
+      return function (avar) {
+          return $foreign._killVar(ffiUtil, err, avar);
+      };
+  };
+  var put = function (value) {
+      return function (avar) {
+          return function (cb) {
+              return $foreign._putVar(ffiUtil, value, avar, cb);
+          };
+      };
+  };
+  var take = function (avar) {
+      return function (cb) {
+          return $foreign._takeVar(ffiUtil, avar, cb);
+      };
+  };
+  exports["Killed"] = Killed;
+  exports["Filled"] = Filled;
+  exports["Empty"] = Empty;
+  exports["take"] = take;
+  exports["put"] = put;
+  exports["kill"] = kill;
+  exports["empty"] = $foreign.empty;
+})(PS["Effect.AVar"] = PS["Effect.AVar"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Effect = PS["Effect"];
+  var Effect_AVar = PS["Effect.AVar"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Prelude = PS["Prelude"];
+  var take = function (avar) {
+      return Effect_Aff.makeAff(function (k) {
+          return function __do() {
+              var v = Effect_AVar.take(avar)(k)();
+              return Effect_Aff.effectCanceler(v);
+          };
+      });
+  };
+  var put = function (value) {
+      return function (avar) {
+          return Effect_Aff.makeAff(function (k) {
+              return function __do() {
+                  var v = Effect_AVar.put(value)(avar)(k)();
+                  return Effect_Aff.effectCanceler(v);
+              };
+          });
+      };
+  };
+  var kill = function (error) {
+      return function ($11) {
+          return Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_AVar.kill(error)($11));
+      };
+  };
+  var empty = Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_AVar.empty);
+  exports["empty"] = empty;
+  exports["take"] = take;
+  exports["put"] = put;
+  exports["kill"] = kill;
+})(PS["Effect.Aff.AVar"] = PS["Effect.Aff.AVar"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.log = function (s) {
+    return function () {
+      console.log(s);
+      return {};
+    };
+  };
+
+  exports.warn = function (s) {
+    return function () {
+      console.warn(s);
+      return {};
+    };
+  };
+})(PS["Effect.Console"] = PS["Effect.Console"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Effect.Console"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  exports["log"] = $foreign.log;
+  exports["warn"] = $foreign.warn;
+})(PS["Effect.Console"] = PS["Effect.Console"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Console = PS["Effect.Console"];
+  var log = function (dictMonadEffect) {
+      return function ($15) {
+          return Effect_Class.liftEffect(dictMonadEffect)(Effect_Console.log($15));
+      };
+  };
+  exports["log"] = log;
+})(PS["Effect.Class.Console"] = PS["Effect.Class.Console"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.typeOf = function (value) {
+    return typeof value;
+  };
+})(PS["Foreign"] = PS["Foreign"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Foreign"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Except = PS["Control.Monad.Except"];
+  var Control_Monad_Except_Trans = PS["Control.Monad.Except.Trans"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Identity = PS["Data.Identity"];
+  var Data_Int = PS["Data.Int"];
+  var Data_List_NonEmpty = PS["Data.List.NonEmpty"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_String_CodeUnits = PS["Data.String.CodeUnits"];
+  var Prelude = PS["Prelude"];
+  exports["typeOf"] = $foreign.typeOf;
+})(PS["Foreign"] = PS["Foreign"] || {});
+(function(exports) {
+    "use strict";
+
+  exports._lookup = function (no, yes, k, m) {
+    return k in m ? yes(m[k]) : no;
+  };
+
+  function toArrayWithKey(f) {
+    return function (m) {
+      var r = [];
+      for (var k in m) {
+        if (hasOwnProperty.call(m, k)) {
+          r.push(f(k)(m[k]));
+        }
+      }
+      return r;
+    };
+  }
+})(PS["Foreign.Object"] = PS["Foreign.Object"] || {});
+(function(exports) {
+    "use strict";
+
+  exports["new"] = function () {
+    return {};
+  };
+})(PS["Foreign.Object.ST"] = PS["Foreign.Object.ST"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Foreign.Object.ST"];
+  var Control_Monad_ST = PS["Control.Monad.ST"];
+  var Data_Maybe = PS["Data.Maybe"];
+  exports["new"] = $foreign["new"];
+})(PS["Foreign.Object.ST"] = PS["Foreign.Object.ST"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Foreign.Object"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad_ST = PS["Control.Monad.ST"];
+  var Control_Monad_ST_Internal = PS["Control.Monad.ST.Internal"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Array = PS["Data.Array"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_FoldableWithIndex = PS["Data.FoldableWithIndex"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_FunctorWithIndex = PS["Data.FunctorWithIndex"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Monoid = PS["Data.Monoid"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_TraversableWithIndex = PS["Data.TraversableWithIndex"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unfoldable = PS["Data.Unfoldable"];
+  var Foreign_Object_ST = PS["Foreign.Object.ST"];
+  var Prelude = PS["Prelude"];
+  var lookup = Data_Function_Uncurried.runFn4($foreign._lookup)(Data_Maybe.Nothing.value)(Data_Maybe.Just.create);
+  exports["lookup"] = lookup;
+})(PS["Foreign.Object"] = PS["Foreign.Object"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Ord = PS["Data.Ord"];
+  var Prelude = PS["Prelude"];                 
+  var OrdBox = (function () {
+      function OrdBox(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      OrdBox.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new OrdBox(value0, value1, value2);
+              };
+          };
+      };
+      return OrdBox;
+  })();
+  var unOrdBox = function (v) {
+      return v.value2;
+  };
+  var mkOrdBox = function (dictOrd) {
+      return OrdBox.create(Data_Eq.eq(dictOrd.Eq0()))(Data_Ord.compare(dictOrd));
+  };
+  var eqOrdBox = new Data_Eq.Eq(function (v) {
+      return function (v1) {
+          return v.value0(v.value2)(v1.value2);
+      };
+  });
+  var ordOrdBox = new Data_Ord.Ord(function () {
+      return eqOrdBox;
+  }, function (v) {
+      return function (v1) {
+          return v.value1(v.value2)(v1.value2);
+      };
+  });
+  exports["mkOrdBox"] = mkOrdBox;
+  exports["unOrdBox"] = unOrdBox;
+  exports["eqOrdBox"] = eqOrdBox;
+  exports["ordOrdBox"] = ordOrdBox;
+})(PS["Halogen.Data.OrdBox"] = PS["Halogen.Data.OrdBox"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Prelude = PS["Prelude"];
+  var Web_DOM = PS["Web.DOM"];
+  var RefUpdate = (function () {
+      function RefUpdate(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      RefUpdate.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new RefUpdate(value0, value1, value2);
+              };
+          };
+      };
+      return RefUpdate;
+  })();
+  var Query = (function () {
+      function Query(value0) {
+          this.value0 = value0;
+      };
+      Query.create = function (value0) {
+          return new Query(value0);
+      };
+      return Query;
+  })();                             
+  var bifunctorInputF = new Data_Bifunctor.Bifunctor(function (f) {
+      return function (g) {
+          return function (v) {
+              if (v instanceof RefUpdate) {
+                  return new RefUpdate(v.value0, v.value1, f(v.value2));
+              };
+              if (v instanceof Query) {
+                  return new Query(g(v.value0));
+              };
+              throw new Error("Failed pattern match at Halogen.Query.InputF line 21, column 15 - line 23, column 27: " + [ v.constructor.name ]);
+          };
+      };
+  });
+  var functorInputF = new Data_Functor.Functor(Data_Bifunctor.rmap(bifunctorInputF));
+  exports["RefUpdate"] = RefUpdate;
+  exports["Query"] = Query;
+  exports["bifunctorInputF"] = bifunctorInputF;
+  exports["functorInputF"] = functorInputF;
+})(PS["Halogen.Query.InputF"] = PS["Halogen.Query.InputF"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Effect = PS["Effect"];
+  var Effect_Uncurried = PS["Effect.Uncurried"];
+  var Prelude = PS["Prelude"];                 
+  var Step = (function () {
+      function Step(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      Step.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new Step(value0, value1, value2);
+              };
+          };
+      };
+      return Step;
+  })();
+  var step = function (v) {
+      return v.value1;
+  };
+  var halt = function (v) {
+      return v.value2;
+  };
+  var extract = function (v) {
+      return v.value0;
+  };
+  exports["Step"] = Step;
+  exports["extract"] = extract;
+  exports["step"] = step;
+  exports["halt"] = halt;
+})(PS["Halogen.VDom.Machine"] = PS["Halogen.VDom.Machine"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var ElemSpec = (function () {
+      function ElemSpec(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      ElemSpec.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new ElemSpec(value0, value1, value2);
+              };
+          };
+      };
+      return ElemSpec;
+  })();
+  var Text = (function () {
+      function Text(value0) {
+          this.value0 = value0;
+      };
+      Text.create = function (value0) {
+          return new Text(value0);
+      };
+      return Text;
+  })();
+  var Elem = (function () {
+      function Elem(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Elem.create = function (value0) {
+          return function (value1) {
+              return new Elem(value0, value1);
+          };
+      };
+      return Elem;
+  })();
+  var Keyed = (function () {
+      function Keyed(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Keyed.create = function (value0) {
+          return function (value1) {
+              return new Keyed(value0, value1);
+          };
+      };
+      return Keyed;
+  })();
+  var Widget = (function () {
+      function Widget(value0) {
+          this.value0 = value0;
+      };
+      Widget.create = function (value0) {
+          return new Widget(value0);
+      };
+      return Widget;
+  })();
+  var Grafted = (function () {
+      function Grafted(value0) {
+          this.value0 = value0;
+      };
+      Grafted.create = function (value0) {
+          return new Grafted(value0);
+      };
+      return Grafted;
+  })();
+  var Graft = (function () {
+      function Graft(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      Graft.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new Graft(value0, value1, value2);
+              };
+          };
+      };
+      return Graft;
+  })();
+  var unGraft = function (f) {
+      return function ($90) {
+          return f($90);
+      };
+  };           
+  var graft = Unsafe_Coerce.unsafeCoerce;
+  var functorElemSpec = new Data_Functor.Functor(function (f) {
+      return function (m) {
+          return new ElemSpec(m.value0, m.value1, f(m.value2));
+      };
+  });
+  var bifunctorGraft = new Data_Bifunctor.Bifunctor(function (f) {
+      return function (g) {
+          return unGraft(function (v) {
+              return graft(new Graft(function ($92) {
+                  return f(v.value0($92));
+              }, function ($93) {
+                  return g(v.value1($93));
+              }, v.value2));
+          });
+      };
+  });
+  var bifunctorVDom = new Data_Bifunctor.Bifunctor(function (f) {
+      return function (g) {
+          return function (v) {
+              if (v instanceof Text) {
+                  return new Text(v.value0);
+              };
+              if (v instanceof Grafted) {
+                  return new Grafted(Data_Bifunctor.bimap(bifunctorGraft)(f)(g)(v.value0));
+              };
+              return new Grafted(graft(new Graft(f, g, v)));
+          };
+      };
+  });
+  var runGraft = unGraft(function (v) {
+      var go = function (v2) {
+          if (v2 instanceof Text) {
+              return new Text(v2.value0);
+          };
+          if (v2 instanceof Elem) {
+              return new Elem(Data_Functor.map(functorElemSpec)(v.value0)(v2.value0), Data_Functor.map(Data_Functor.functorArray)(go)(v2.value1));
+          };
+          if (v2 instanceof Keyed) {
+              return new Keyed(Data_Functor.map(functorElemSpec)(v.value0)(v2.value0), Data_Functor.map(Data_Functor.functorArray)(Data_Functor.map(Data_Tuple.functorTuple)(go))(v2.value1));
+          };
+          if (v2 instanceof Widget) {
+              return new Widget(v.value1(v2.value0));
+          };
+          if (v2 instanceof Grafted) {
+              return new Grafted(Data_Bifunctor.bimap(bifunctorGraft)(v.value0)(v.value1)(v2.value0));
+          };
+          throw new Error("Failed pattern match at Halogen.VDom.Types line 74, column 7 - line 74, column 27: " + [ v2.constructor.name ]);
+      };
+      return go(v.value2);
+  });
+  exports["Text"] = Text;
+  exports["Elem"] = Elem;
+  exports["Keyed"] = Keyed;
+  exports["Widget"] = Widget;
+  exports["Grafted"] = Grafted;
+  exports["Graft"] = Graft;
+  exports["graft"] = graft;
+  exports["unGraft"] = unGraft;
+  exports["runGraft"] = runGraft;
+  exports["ElemSpec"] = ElemSpec;
+  exports["bifunctorVDom"] = bifunctorVDom;
+  exports["bifunctorGraft"] = bifunctorGraft;
+  exports["functorElemSpec"] = functorElemSpec;
+})(PS["Halogen.VDom.Types"] = PS["Halogen.VDom.Types"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.unsafeGetAny = function (key, obj) {
+    return obj[key];
+  };
+
+  exports.unsafeHasAny = function (key, obj) {
+    return obj.hasOwnProperty(key);
+  };
+
+  exports.unsafeSetAny = function (key, val, obj) {
+      obj[key] = val;
+  };
+
+  exports.forE = function (a, f) {
+      var b = [];
+      for (var i = 0; i < a.length; i++) {
+        b.push(f(i, a[i]));
+      }
+      return b;
+  };
+
+  exports.forInE = function (o, f) {
+    var ks = Object.keys(o);
+    for (var i = 0; i < ks.length; i++) {
+      var k = ks[i];
+      f(k, o[k]);
+    }
+  };
+
+  exports.diffWithIxE = function (a1, a2, f1, f2, f3) {
+    var a3 = [];
+    var l1 = a1.length;
+    var l2 = a2.length;
+    var i  = 0;
+    while (1) {
+      if (i < l1) {
+        if (i < l2) {
+          a3.push(f1(i, a1[i], a2[i]));
+        } else {
+          f2(i, a1[i]);
+        }
+      } else if (i < l2) {
+        a3.push(f3(i, a2[i]));
+      } else {
+        break;
+      }
+      i++;
+    }
+    return a3;
+  };
+
+  exports.strMapWithIxE = function (as, fk, f) {
+    var o = {};
+    for (var i = 0; i < as.length; i++) {
+      var a = as[i];
+      var k = fk(a);
+      o[k] = f(k, i, a);
+    }
+    return o;
+  };
+
+  exports.diffWithKeyAndIxE = function (o1, as, fk, f1, f2, f3) {
+    var o2 = {};
+    for (var i = 0; i < as.length; i++) {
+      var a = as[i];
+      var k = fk(a);
+      if (o1.hasOwnProperty(k)) {
+        o2[k] = f1(k, i, o1[k], a);
+      } else {
+        o2[k] = f3(k, i, a);
+      }
+    }
+    for (var k in o1) {
+      if (k in o2) {
+        continue;
+      }
+      f2(k, o1[k]);
+    }
+    return o2;
+  };
+
+  exports.refEq = function (a, b) {
+    return a === b;
+  };
+
+  exports.createTextNode = function (s, doc) {
+    return doc.createTextNode(s);
+  };
+
+  exports.setTextContent = function (s, n) {
+    n.textContent = s;
+  };
+
+  exports.createElement = function (ns, name, doc) {
+    if (ns != null) {
+      return doc.createElementNS(ns, name);
+    } else {
+      return doc.createElement(name)
+    }
+  };
+
+  exports.insertChildIx = function (i, a, b) {
+    var n = b.childNodes.item(i) || null;
+    if (n !== a) {
+      b.insertBefore(a, n);
+    }
+  };
+
+  exports.removeChild = function (a, b) {
+    if (b && a.parentNode === b) {
+      b.removeChild(a);
+    }
+  };
+
+  exports.parentNode = function (a) {
+    return a.parentNode;
+  };
+
+  exports.setAttribute = function (ns, attr, val, el) {
+    if (ns != null) {
+      el.setAttributeNS(ns, attr, val);
+    } else {
+      el.setAttribute(attr, val);
+    }
+  };
+
+  exports.removeAttribute = function (ns, attr, el) {
+    if (ns != null) {
+      el.removeAttributeNS(ns, attr);
+    } else {
+      el.removeAttribute(attr);
+    }
+  };
+
+  exports.addEventListener = function (ev, listener, el) {
+    el.addEventListener(ev, listener, false);
+  };
+
+  exports.removeEventListener = function (ev, listener, el) {
+    el.removeEventListener(ev, listener, false);
+  };
+
+  exports.jsUndefined = void 0;
+})(PS["Halogen.VDom.Util"] = PS["Halogen.VDom.Util"] || {});
+(function(exports) {
+    "use strict";                                             
+
+  exports._querySelector = function (selector) {
+    return function (node) {
+      return function () {
+        return node.querySelector(selector);
+      };
+    };
+  };
+})(PS["Web.DOM.ParentNode"] = PS["Web.DOM.ParentNode"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.DOM.ParentNode"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Data_Ord = PS["Data.Ord"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Web_DOM_HTMLCollection = PS["Web.DOM.HTMLCollection"];
+  var Web_DOM_Internal_Types = PS["Web.DOM.Internal.Types"];
+  var Web_DOM_NodeList = PS["Web.DOM.NodeList"];
+  var querySelector = function (qs) {
+      return function ($3) {
+          return Data_Functor.map(Effect.functorEffect)(Data_Nullable.toMaybe)($foreign._querySelector(qs)($3));
+      };
+  };
+  exports["querySelector"] = querySelector;
+})(PS["Web.DOM.ParentNode"] = PS["Web.DOM.ParentNode"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.eventListener = function (fn) {
+    return function () {
+      return function (event) {
+        return fn(event)();
+      };
+    };
+  };
+
+  exports.addEventListener = function (type) {
+    return function (listener) {
+      return function (useCapture) {
+        return function (target) {
+          return function () {
+            return target.addEventListener(type, listener, useCapture);
+          };
+        };
+      };
+    };
+  };
+
+  exports.removeEventListener = function (type) {
+    return function (listener) {
+      return function (useCapture) {
+        return function (target) {
+          return function () {
+            return target.removeEventListener(type, listener, useCapture);
+          };
+        };
+      };
+    };
+  };
+})(PS["Web.Event.EventTarget"] = PS["Web.Event.EventTarget"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.Event.EventTarget"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var Web_Event_Internal_Types = PS["Web.Event.Internal.Types"];
+  exports["eventListener"] = $foreign.eventListener;
+  exports["addEventListener"] = $foreign.addEventListener;
+  exports["removeEventListener"] = $foreign.removeEventListener;
+})(PS["Web.Event.EventTarget"] = PS["Web.Event.EventTarget"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.DOM.Element"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_ChildNode = PS["Web.DOM.ChildNode"];
+  var Web_DOM_Internal_Types = PS["Web.DOM.Internal.Types"];
+  var Web_DOM_NonDocumentTypeChildNode = PS["Web.DOM.NonDocumentTypeChildNode"];
+  var Web_DOM_ParentNode = PS["Web.DOM.ParentNode"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];
+  var Web_Internal_FFI = PS["Web.Internal.FFI"];              
+  var toNode = Unsafe_Coerce.unsafeCoerce;
+  exports["toNode"] = toNode;
+})(PS["Web.DOM.Element"] = PS["Web.DOM.Element"] || {});
+(function(exports) {
+    "use strict";
+
+  var getEffProp = function (name) {
+    return function (node) {
+      return function () {
+        return node[name];
+      };
+    };
+  };                                                   
+
+  exports._parentNode = getEffProp("parentNode");          
+
+  exports._nextSibling = getEffProp("nextSibling");
+
+  exports.insertBefore = function (node1) {
+    return function (node2) {
+      return function (parent) {
+        return function () {
+          return parent.insertBefore(node1, node2);
+        };
+      };
+    };
+  };
+
+  exports.appendChild = function (node) {
+    return function (parent) {
+      return function () {
+        return parent.appendChild(node);
+      };
+    };
+  };
+
+  exports.removeChild = function (node) {
+    return function (parent) {
+      return function () {
+        return parent.removeChild(node);
+      };
+    };
+  };
+})(PS["Web.DOM.Node"] = PS["Web.DOM.Node"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.DOM.Node"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Enum = PS["Data.Enum"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Document = PS["Web.DOM.Document"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_DOM_Internal_Types = PS["Web.DOM.Internal.Types"];
+  var Web_DOM_NodeType = PS["Web.DOM.NodeType"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];
+  var Web_Internal_FFI = PS["Web.Internal.FFI"];
+  var parentNode = function ($2) {
+      return Data_Functor.map(Effect.functorEffect)(Data_Nullable.toMaybe)($foreign._parentNode($2));
+  };
+  var nextSibling = function ($6) {
+      return Data_Functor.map(Effect.functorEffect)(Data_Nullable.toMaybe)($foreign._nextSibling($6));
+  };
+  exports["parentNode"] = parentNode;
+  exports["nextSibling"] = nextSibling;
+  exports["insertBefore"] = $foreign.insertBefore;
+  exports["appendChild"] = $foreign.appendChild;
+  exports["removeChild"] = $foreign.removeChild;
+})(PS["Web.DOM.Node"] = PS["Web.DOM.Node"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Halogen.VDom.Util"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Uncurried = PS["Effect.Uncurried"];
+  var Foreign_Object = PS["Foreign.Object"];
+  var Foreign_Object_ST = PS["Foreign.Object.ST"];
+  var Halogen_VDom_Types = PS["Halogen.VDom.Types"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Document = PS["Web.DOM.Document"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_DOM_Node = PS["Web.DOM.Node"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];                 
+  var unsafeLookup = $foreign.unsafeGetAny;
+  var unsafeFreeze = Unsafe_Coerce.unsafeCoerce;
+  var pokeMutMap = $foreign.unsafeSetAny;
+  var newMutMap = Foreign_Object_ST["new"];
+  var effectUnit = Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit);
+  exports["effectUnit"] = effectUnit;
+  exports["newMutMap"] = newMutMap;
+  exports["pokeMutMap"] = pokeMutMap;
+  exports["unsafeFreeze"] = unsafeFreeze;
+  exports["unsafeLookup"] = unsafeLookup;
+  exports["unsafeGetAny"] = $foreign.unsafeGetAny;
+  exports["unsafeHasAny"] = $foreign.unsafeHasAny;
+  exports["unsafeSetAny"] = $foreign.unsafeSetAny;
+  exports["forE"] = $foreign.forE;
+  exports["forInE"] = $foreign.forInE;
+  exports["diffWithIxE"] = $foreign.diffWithIxE;
+  exports["diffWithKeyAndIxE"] = $foreign.diffWithKeyAndIxE;
+  exports["strMapWithIxE"] = $foreign.strMapWithIxE;
+  exports["refEq"] = $foreign.refEq;
+  exports["createTextNode"] = $foreign.createTextNode;
+  exports["setTextContent"] = $foreign.setTextContent;
+  exports["createElement"] = $foreign.createElement;
+  exports["insertChildIx"] = $foreign.insertChildIx;
+  exports["removeChild"] = $foreign.removeChild;
+  exports["parentNode"] = $foreign.parentNode;
+  exports["setAttribute"] = $foreign.setAttribute;
+  exports["removeAttribute"] = $foreign.removeAttribute;
+  exports["addEventListener"] = $foreign.addEventListener;
+  exports["removeEventListener"] = $foreign.removeEventListener;
+  exports["jsUndefined"] = $foreign.jsUndefined;
+})(PS["Halogen.VDom.Util"] = PS["Halogen.VDom.Util"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Effect_Uncurried = PS["Effect.Uncurried"];
+  var Foreign = PS["Foreign"];
+  var Foreign_Object = PS["Foreign.Object"];
+  var Halogen_VDom = PS["Halogen.VDom"];
+  var Halogen_VDom_Machine = PS["Halogen.VDom.Machine"];
+  var Halogen_VDom_Types = PS["Halogen.VDom.Types"];
+  var Halogen_VDom_Util = PS["Halogen.VDom.Util"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];                 
+  var Created = (function () {
+      function Created(value0) {
+          this.value0 = value0;
+      };
+      Created.create = function (value0) {
+          return new Created(value0);
+      };
+      return Created;
+  })();
+  var Removed = (function () {
+      function Removed(value0) {
+          this.value0 = value0;
+      };
+      Removed.create = function (value0) {
+          return new Removed(value0);
+      };
+      return Removed;
+  })();
+  var Attribute = (function () {
+      function Attribute(value0, value1, value2) {
+          this.value0 = value0;
+          this.value1 = value1;
+          this.value2 = value2;
+      };
+      Attribute.create = function (value0) {
+          return function (value1) {
+              return function (value2) {
+                  return new Attribute(value0, value1, value2);
+              };
+          };
+      };
+      return Attribute;
+  })();
+  var Property = (function () {
+      function Property(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Property.create = function (value0) {
+          return function (value1) {
+              return new Property(value0, value1);
+          };
+      };
+      return Property;
+  })();
+  var Handler = (function () {
+      function Handler(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Handler.create = function (value0) {
+          return function (value1) {
+              return new Handler(value0, value1);
+          };
+      };
+      return Handler;
+  })();
+  var Ref = (function () {
+      function Ref(value0) {
+          this.value0 = value0;
+      };
+      Ref.create = function (value0) {
+          return new Ref(value0);
+      };
+      return Ref;
+  })();
+  var unsafeGetProperty = Halogen_VDom_Util.unsafeGetAny;
+  var setProperty = Halogen_VDom_Util.unsafeSetAny;
+  var removeProperty = function (key, el) {
+      var v = Foreign.typeOf(Halogen_VDom_Util.unsafeGetAny(key, el));
+      if (v === "string") {
+          return Halogen_VDom_Util.unsafeSetAny(key, "", el);
+      };
+      if (key === "rowSpan") {
+          return Halogen_VDom_Util.unsafeSetAny(key, 1, el);
+      };
+      if (key === "colSpan") {
+          return Halogen_VDom_Util.unsafeSetAny(key, 1, el);
+      };
+      return Halogen_VDom_Util.unsafeSetAny(key, Halogen_VDom_Util.jsUndefined, el);
+  };
+  var propToStrKey = function (v) {
+      if (v instanceof Attribute && v.value0 instanceof Data_Maybe.Just) {
+          return "attr/" + (v.value0.value0 + (":" + v.value1));
+      };
+      if (v instanceof Attribute) {
+          return "attr/:" + v.value1;
+      };
+      if (v instanceof Property) {
+          return "prop/" + v.value0;
+      };
+      if (v instanceof Handler) {
+          return "handler/" + v.value0;
+      };
+      if (v instanceof Ref) {
+          return "ref";
+      };
+      throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 178, column 16 - line 185, column 1: " + [ v.constructor.name ]);
+  };
+  var propFromString = Unsafe_Coerce.unsafeCoerce; 
+  var functorProp = new Data_Functor.Functor(function (f) {
+      return function (v) {
+          if (v instanceof Handler) {
+              return new Handler(v.value0, Data_Functor.map(Data_Functor.functorFn)(Data_Functor.map(Data_Maybe.functorMaybe)(f))(v.value1));
+          };
+          if (v instanceof Ref) {
+              return new Ref(Data_Functor.map(Data_Functor.functorFn)(Data_Functor.map(Data_Maybe.functorMaybe)(f))(v.value0));
+          };
+          return v;
+      };
+  });
+  var buildProp = function (emit) {
+      return function (el) {
+          var removeProp = function (prevEvents) {
+              return function (v, v1) {
+                  if (v1 instanceof Attribute) {
+                      return Halogen_VDom_Util.removeAttribute(Data_Nullable.toNullable(v1.value0), v1.value1, el);
+                  };
+                  if (v1 instanceof Property) {
+                      return removeProperty(v1.value0, el);
+                  };
+                  if (v1 instanceof Handler) {
+                      var handler = Halogen_VDom_Util.unsafeLookup(v1.value0, prevEvents);
+                      return Halogen_VDom_Util.removeEventListener(v1.value0, Data_Tuple.fst(handler), el);
+                  };
+                  if (v1 instanceof Ref) {
+                      return Data_Unit.unit;
+                  };
+                  throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 165, column 5 - line 175, column 18: " + [ v1.constructor.name ]);
+              };
+          };
+          var mbEmit = function (v) {
+              if (v instanceof Data_Maybe.Just) {
+                  return emit(v.value0)();
+              };
+              return Data_Unit.unit;
+          };
+          var done = function (ps) {
+              var v = Foreign_Object.lookup("ref")(ps);
+              if (v instanceof Data_Maybe.Just && v.value0 instanceof Ref) {
+                  return function () {
+                      return mbEmit(v.value0.value0(new Removed(el)));
+                  };
+              };
+              return Halogen_VDom_Util.effectUnit;
+          };
+          var diffProp = function (prevEvents, events) {
+              return function (v, v1, v11, v2) {
+                  if (v11 instanceof Attribute && v2 instanceof Attribute) {
+                      var $61 = v11.value2 === v2.value2;
+                      if ($61) {
+                          return v2;
+                      };
+                      Halogen_VDom_Util.setAttribute(Data_Nullable.toNullable(v2.value0), v2.value1, v2.value2, el);
+                      return v2;
+                  };
+                  if (v11 instanceof Property && v2 instanceof Property) {
+                      var v4 = Halogen_VDom_Util.refEq(v11.value1, v2.value1);
+                      if (v4) {
+                          return v2;
+                      };
+                      if (v2.value0 === "value") {
+                          var elVal = unsafeGetProperty("value", el);
+                          var $70 = Halogen_VDom_Util.refEq(elVal, v2.value1);
+                          if ($70) {
+                              return v2;
+                          };
+                          setProperty(v2.value0, v2.value1, el);
+                          return v2;
+                      };
+                      setProperty(v2.value0, v2.value1, el);
+                      return v2;
+                  };
+                  if (v11 instanceof Handler && v2 instanceof Handler) {
+                      var handler = Halogen_VDom_Util.unsafeLookup(v2.value0, prevEvents);
+                      Effect_Ref.write(v2.value1)(Data_Tuple.snd(handler))();
+                      Halogen_VDom_Util.pokeMutMap(v2.value0, handler, events);
+                      return v2;
+                  };
+                  return v2;
+              };
+          };
+          var applyProp = function (events) {
+              return function (v, v1, v2) {
+                  if (v2 instanceof Attribute) {
+                      Halogen_VDom_Util.setAttribute(Data_Nullable.toNullable(v2.value0), v2.value1, v2.value2, el);
+                      return v2;
+                  };
+                  if (v2 instanceof Property) {
+                      setProperty(v2.value0, v2.value1, el);
+                      return v2;
+                  };
+                  if (v2 instanceof Handler) {
+                      var v3 = Halogen_VDom_Util.unsafeGetAny(v2.value0, events);
+                      if (Halogen_VDom_Util.unsafeHasAny(v2.value0, events)) {
+                          Effect_Ref.write(v2.value1)(Data_Tuple.snd(v3))();
+                          return v2;
+                      };
+                      var v4 = Effect_Ref["new"](v2.value1)();
+                      var v5 = Web_Event_EventTarget.eventListener(function (ev) {
+                          return function __do() {
+                              var v5 = Effect_Ref.read(v4)();
+                              return mbEmit(v5(ev));
+                          };
+                      })();
+                      Halogen_VDom_Util.pokeMutMap(v2.value0, new Data_Tuple.Tuple(v5, v4), events);
+                      Halogen_VDom_Util.addEventListener(v2.value0, v5, el);
+                      return v2;
+                  };
+                  if (v2 instanceof Ref) {
+                      mbEmit(v2.value0(new Created(el)));
+                      return v2;
+                  };
+                  throw new Error("Failed pattern match at Halogen.VDom.DOM.Prop line 109, column 5 - line 131, column 15: " + [ v2.constructor.name ]);
+              };
+          };
+          var patch = function (prevEvents, ps1) {
+              return function (ps2) {
+                  var v = Halogen_VDom_Util.newMutMap();
+                  var onThis = removeProp(prevEvents);
+                  var onThese = diffProp(prevEvents, v);
+                  var onThat = applyProp(v);
+                  var v1 = Halogen_VDom_Util.diffWithKeyAndIxE(ps1, ps2, propToStrKey, onThese, onThis, onThat);
+                  return new Halogen_VDom_Machine.Step(Data_Unit.unit, patch(Halogen_VDom_Util.unsafeFreeze(v), v1), done(v1));
+              };
+          };
+          var render = function (ps1) {
+              var v = Halogen_VDom_Util.newMutMap();
+              var v1 = Halogen_VDom_Util.strMapWithIxE(ps1, propToStrKey, applyProp(v));
+              return new Halogen_VDom_Machine.Step(Data_Unit.unit, patch(Halogen_VDom_Util.unsafeFreeze(v), v1), done(v1));
+          };
+          return render;
+      };
+  };
+  exports["Attribute"] = Attribute;
+  exports["Property"] = Property;
+  exports["Handler"] = Handler;
+  exports["Ref"] = Ref;
+  exports["Created"] = Created;
+  exports["Removed"] = Removed;
+  exports["propFromString"] = propFromString;
+  exports["buildProp"] = buildProp;
+  exports["functorProp"] = functorProp;
+})(PS["Halogen.VDom.DOM.Prop"] = PS["Halogen.VDom.DOM.Prop"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var DOM_HTML_Indexed_ButtonType = PS["DOM.HTML.Indexed.ButtonType"];
+  var DOM_HTML_Indexed_CrossOriginValue = PS["DOM.HTML.Indexed.CrossOriginValue"];
+  var DOM_HTML_Indexed_DirValue = PS["DOM.HTML.Indexed.DirValue"];
+  var DOM_HTML_Indexed_FormMethod = PS["DOM.HTML.Indexed.FormMethod"];
+  var DOM_HTML_Indexed_InputType = PS["DOM.HTML.Indexed.InputType"];
+  var DOM_HTML_Indexed_KindValue = PS["DOM.HTML.Indexed.KindValue"];
+  var DOM_HTML_Indexed_MenuType = PS["DOM.HTML.Indexed.MenuType"];
+  var DOM_HTML_Indexed_MenuitemType = PS["DOM.HTML.Indexed.MenuitemType"];
+  var DOM_HTML_Indexed_OnOff = PS["DOM.HTML.Indexed.OnOff"];
+  var DOM_HTML_Indexed_OrderedListType = PS["DOM.HTML.Indexed.OrderedListType"];
+  var DOM_HTML_Indexed_PreloadValue = PS["DOM.HTML.Indexed.PreloadValue"];
+  var DOM_HTML_Indexed_ScopeValue = PS["DOM.HTML.Indexed.ScopeValue"];
+  var DOM_HTML_Indexed_StepValue = PS["DOM.HTML.Indexed.StepValue"];
+  var DOM_HTML_Indexed_WrapValue = PS["DOM.HTML.Indexed.WrapValue"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_MediaType = PS["Data.MediaType"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Halogen_VDom = PS["Halogen.VDom"];
+  var Halogen_VDom_DOM_Prop = PS["Halogen.VDom.DOM.Prop"];
+  var Halogen_VDom_Types = PS["Halogen.VDom.Types"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var HTML = function (x) {
+      return x;
+  };
+  var ClassName = function (x) {
+      return x;
+  };
+  var IsProp = function (toPropValue) {
+      this.toPropValue = toPropValue;
+  }; 
+  var toPropValue = function (dict) {
+      return dict.toPropValue;
+  };
+  var text = function ($27) {
+      return HTML(Halogen_VDom_Types.Text.create($27));
+  };
+  var stringIsProp = new IsProp(Halogen_VDom_DOM_Prop.propFromString);
+  var prop = function (dictIsProp) {
+      return function (v) {
+          return function ($32) {
+              return Halogen_VDom_DOM_Prop.Property.create(v)(toPropValue(dictIsProp)($32));
+          };
+      };
+  };       
+  var newtypeClassName = new Data_Newtype.Newtype(function (n) {
+      return n;
+  }, ClassName);
+  var handler = Halogen_VDom_DOM_Prop.Handler.create;
+  var element = function (ns) {
+      return function (name) {
+          return function (props) {
+              return function (children) {
+                  return new Halogen_VDom_Types.Elem(new Halogen_VDom_Types.ElemSpec(ns, name, props), children);
+              };
+          };
+      };
+  };                                                                    
+  var bifunctorHTML = new Data_Bifunctor.Bifunctor(function (f) {
+      return function (g) {
+          return function (v) {
+              return Data_Bifunctor.bimap(Halogen_VDom_Types.bifunctorVDom)(Data_Functor.map(Data_Functor.functorArray)(Data_Functor.map(Halogen_VDom_DOM_Prop.functorProp)(Data_Functor.map(Halogen_Query_InputF.functorInputF)(g))))(f)(v);
+          };
+      };
+  });
+  exports["HTML"] = HTML;
+  exports["text"] = text;
+  exports["element"] = element;
+  exports["prop"] = prop;
+  exports["handler"] = handler;
+  exports["IsProp"] = IsProp;
+  exports["toPropValue"] = toPropValue;
+  exports["ClassName"] = ClassName;
+  exports["bifunctorHTML"] = bifunctorHTML;
+  exports["stringIsProp"] = stringIsProp;
+  exports["newtypeClassName"] = newtypeClassName;
+})(PS["Halogen.HTML.Core"] = PS["Halogen.HTML.Core"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Coroutine = PS["Control.Coroutine"];
+  var Control_Monad_Free_Trans = PS["Control.Monad.Free.Trans"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Aff_AVar = PS["Effect.Aff.AVar"];
+  var Effect_Aff_Class = PS["Effect.Aff.Class"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Prelude = PS["Prelude"];                 
+  var Listening = (function () {
+      function Listening() {
+
+      };
+      Listening.value = new Listening();
+      return Listening;
+  })();
+  var Done = (function () {
+      function Done() {
+
+      };
+      Done.value = new Done();
+      return Done;
+  })();
+  var unEventSource = function (v) {
+      return v;
+  };
+  var eqSubscribeStatus = new Data_Eq.Eq(function (x) {
+      return function (y) {
+          if (x instanceof Listening && y instanceof Listening) {
+              return true;
+          };
+          if (x instanceof Done && y instanceof Done) {
+              return true;
+          };
+          return false;
+      };
+  });
+  exports["Listening"] = Listening;
+  exports["Done"] = Done;
+  exports["unEventSource"] = unEventSource;
+  exports["eqSubscribeStatus"] = eqSubscribeStatus;
+})(PS["Halogen.Query.EventSource"] = PS["Halogen.Query.EventSource"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Category = PS["Control.Category"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var unFork = Unsafe_Coerce.unsafeCoerce;
+  exports["unFork"] = unFork;
+})(PS["Halogen.Query.ForkF"] = PS["Halogen.Query.ForkF"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Applicative_Free = PS["Control.Applicative.Free"];
+  var Control_Apply = PS["Control.Apply"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad = PS["Control.Monad"];
+  var Control_Monad_Free = PS["Control.Monad.Free"];
+  var Control_Monad_Reader_Class = PS["Control.Monad.Reader.Class"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Monad_State_Class = PS["Control.Monad.State.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Monad_Writer_Class = PS["Control.Monad.Writer.Class"];
+  var Control_Parallel_Class = PS["Control.Parallel.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Coyoneda = PS["Data.Coyoneda"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect_Aff_Class = PS["Effect.Aff.Class"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Halogen_Query_EventSource = PS["Halogen.Query.EventSource"];
+  var Halogen_Query_ForkF = PS["Halogen.Query.ForkF"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Prelude = PS["Prelude"];
+  var Web_DOM = PS["Web.DOM"];
+  var HalogenM = function (x) {
+      return x;
+  };
+  var State = (function () {
+      function State(value0) {
+          this.value0 = value0;
+      };
+      State.create = function (value0) {
+          return new State(value0);
+      };
+      return State;
+  })();
+  var Subscribe = (function () {
+      function Subscribe(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Subscribe.create = function (value0) {
+          return function (value1) {
+              return new Subscribe(value0, value1);
+          };
+      };
+      return Subscribe;
+  })();
+  var Lift = (function () {
+      function Lift(value0) {
+          this.value0 = value0;
+      };
+      Lift.create = function (value0) {
+          return new Lift(value0);
+      };
+      return Lift;
+  })();
+  var Halt = (function () {
+      function Halt(value0) {
+          this.value0 = value0;
+      };
+      Halt.create = function (value0) {
+          return new Halt(value0);
+      };
+      return Halt;
+  })();
+  var GetSlots = (function () {
+      function GetSlots(value0) {
+          this.value0 = value0;
+      };
+      GetSlots.create = function (value0) {
+          return new GetSlots(value0);
+      };
+      return GetSlots;
+  })();
+  var CheckSlot = (function () {
+      function CheckSlot(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      CheckSlot.create = function (value0) {
+          return function (value1) {
+              return new CheckSlot(value0, value1);
+          };
+      };
+      return CheckSlot;
+  })();
+  var ChildQuery = (function () {
+      function ChildQuery(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      ChildQuery.create = function (value0) {
+          return function (value1) {
+              return new ChildQuery(value0, value1);
+          };
+      };
+      return ChildQuery;
+  })();
+  var Raise = (function () {
+      function Raise(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      Raise.create = function (value0) {
+          return function (value1) {
+              return new Raise(value0, value1);
+          };
+      };
+      return Raise;
+  })();
+  var Par = (function () {
+      function Par(value0) {
+          this.value0 = value0;
+      };
+      Par.create = function (value0) {
+          return new Par(value0);
+      };
+      return Par;
+  })();
+  var Fork = (function () {
+      function Fork(value0) {
+          this.value0 = value0;
+      };
+      Fork.create = function (value0) {
+          return new Fork(value0);
+      };
+      return Fork;
+  })();
+  var GetRef = (function () {
+      function GetRef(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      GetRef.create = function (value0) {
+          return function (value1) {
+              return new GetRef(value0, value1);
+          };
+      };
+      return GetRef;
+  })();
+  var functorHalogenM = new Data_Functor.Functor(function (f) {
+      return function (v) {
+          return Data_Functor.map(Control_Monad_Free.freeFunctor)(f)(v);
+      };
+  });
+  var applyHalogenM = new Control_Apply.Apply(function () {
+      return functorHalogenM;
+  }, function (v) {
+      return function (v1) {
+          return Control_Apply.apply(Control_Monad_Free.freeApply)(v)(v1);
+      };
+  });
+  var bindHalogenM = new Control_Bind.Bind(function () {
+      return applyHalogenM;
+  }, function (v) {
+      return function (f) {
+          return Control_Bind.bind(Control_Monad_Free.freeBind)(v)(function (x) {
+              var v1 = f(x);
+              return v1;
+          });
+      };
+  });                                                       
+  var applicativeHalogenM = new Control_Applicative.Applicative(function () {
+      return applyHalogenM;
+  }, function (a) {
+      return Control_Applicative.pure(Control_Monad_Free.freeApplicative)(a);
+  });
+  var monadHalogenM = new Control_Monad.Monad(function () {
+      return applicativeHalogenM;
+  }, function () {
+      return bindHalogenM;
+  });
+  var monadStateHalogenM = new Control_Monad_State_Class.MonadState(function () {
+      return monadHalogenM;
+  }, function ($180) {
+      return HalogenM(Control_Monad_Free.liftF(State.create($180)));
+  });
+  exports["State"] = State;
+  exports["Subscribe"] = Subscribe;
+  exports["Lift"] = Lift;
+  exports["Halt"] = Halt;
+  exports["GetSlots"] = GetSlots;
+  exports["CheckSlot"] = CheckSlot;
+  exports["ChildQuery"] = ChildQuery;
+  exports["Raise"] = Raise;
+  exports["Par"] = Par;
+  exports["Fork"] = Fork;
+  exports["GetRef"] = GetRef;
+  exports["HalogenM"] = HalogenM;
+  exports["functorHalogenM"] = functorHalogenM;
+  exports["applyHalogenM"] = applyHalogenM;
+  exports["applicativeHalogenM"] = applicativeHalogenM;
+  exports["bindHalogenM"] = bindHalogenM;
+  exports["monadHalogenM"] = monadHalogenM;
+  exports["monadStateHalogenM"] = monadStateHalogenM;
+})(PS["Halogen.Query.HalogenM"] = PS["Halogen.Query.HalogenM"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Bifunctor = PS["Data.Bifunctor"];
+  var Data_Const = PS["Data.Const"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Halogen_Data_OrdBox = PS["Halogen.Data.OrdBox"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_Query_HalogenM = PS["Halogen.Query.HalogenM"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var unComponentSlot = function (f) {
+      return function (cs) {
+          return f(cs.value0)(cs.value1)(cs.value2)(cs.value3)(cs.value4)(cs.value5);
+      };
+  };
+  var unComponent = Unsafe_Coerce.unsafeCoerce;
+  var mkComponent = Unsafe_Coerce.unsafeCoerce;
+  var lifecycleComponent = function (dictBifunctor) {
+      return function (spec) {
+          return mkComponent({
+              initialState: spec.initialState,
+              render: spec.render,
+              "eval": spec["eval"],
+              receiver: spec.receiver,
+              initializer: spec.initializer,
+              finalizer: spec.finalizer,
+              mkOrdBox: Halogen_Data_OrdBox.mkOrdBox(Data_Ord.ordVoid)
+          });
+      };
+  }; 
+  var component = function (dictBifunctor) {
+      return function (spec) {
+          return lifecycleComponent(dictBifunctor)({
+              initialState: spec.initialState,
+              render: spec.render,
+              "eval": spec["eval"],
+              receiver: spec.receiver,
+              initializer: Data_Maybe.Nothing.value,
+              finalizer: Data_Maybe.Nothing.value
+          });
+      };
+  };
+  exports["mkComponent"] = mkComponent;
+  exports["unComponent"] = unComponent;
+  exports["component"] = component;
+  exports["lifecycleComponent"] = lifecycleComponent;
+  exports["unComponentSlot"] = unComponentSlot;
+})(PS["Halogen.Component"] = PS["Halogen.Component"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Map = PS["Data.Map"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Halogen_Component = PS["Halogen.Component"];
+  var Halogen_Data_OrdBox = PS["Halogen.Data.OrdBox"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM = PS["Web.DOM"];
+  var unRenderStateX = Unsafe_Coerce.unsafeCoerce;
+  var unDriverStateX = Unsafe_Coerce.unsafeCoerce;
+  var renderStateX_ = function (dictApplicative) {
+      return function (f) {
+          return unDriverStateX(function (st) {
+              return Data_Foldable.traverse_(dictApplicative)(Data_Foldable.foldableMaybe)(f)(st.rendering);
+          });
+      };
+  };
+  var mkRenderStateX = function (v) {
+      return Unsafe_Coerce.unsafeCoerce;
+  };
+  var renderStateX = function (dictFunctor) {
+      return function (f) {
+          return unDriverStateX(function (st) {
+              return mkRenderStateX(st.prjQuery)(f(st.rendering));
+          });
+      };
+  };
+  var mkDriverStateXRef = Unsafe_Coerce.unsafeCoerce;
+  var initDriverState = function (component) {
+      return function (input) {
+          return function (handler) {
+              return function (prjQuery) {
+                  return function (lchs) {
+                      return function __do() {
+                          var v = Effect_Ref["new"]({})();
+                          var v1 = Effect_Ref["new"](Data_Map_Internal.empty)();
+                          var v2 = Effect_Ref["new"](Data_Map_Internal.empty)();
+                          var v3 = Effect_Ref["new"](Data_Functor.voidLeft(Data_Maybe.functorMaybe)(component.initializer)(Data_List_Types.Nil.value))();
+                          var v4 = Effect_Ref["new"](new Data_Maybe.Just(Data_List_Types.Nil.value))();
+                          var v5 = Effect_Ref["new"](Data_Maybe.Nothing.value)();
+                          var v6 = Effect_Ref["new"](0)();
+                          var v7 = Effect_Ref["new"](new Data_Maybe.Just(Data_Map_Internal.empty))();
+                          var ds = {
+                              component: component,
+                              state: component.initialState(input),
+                              refs: Data_Map_Internal.empty,
+                              children: Data_Map_Internal.empty,
+                              childrenIn: v1,
+                              childrenOut: v2,
+                              selfRef: v,
+                              handler: handler,
+                              pendingQueries: v3,
+                              pendingOuts: v4,
+                              pendingHandlers: v5,
+                              rendering: Data_Maybe.Nothing.value,
+                              prjQuery: prjQuery,
+                              fresh: v6,
+                              subscriptions: v7,
+                              lifecycleHandlers: lchs
+                          };
+                          Effect_Ref.write(ds)(v)();
+                          return mkDriverStateXRef(v);
+                      };
+                  };
+              };
+          };
+      };
+  };
+  exports["unDriverStateX"] = unDriverStateX;
+  exports["mkDriverStateXRef"] = mkDriverStateXRef;
+  exports["renderStateX"] = renderStateX;
+  exports["renderStateX_"] = renderStateX_;
+  exports["unRenderStateX"] = unRenderStateX;
+  exports["initDriverState"] = initDriverState;
+})(PS["Halogen.Aff.Driver.State"] = PS["Halogen.Aff.Driver.State"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.reallyUnsafeRefEq = function (a) {
+    return function (b) {
+      return a === b;
+    };
+  };
+})(PS["Unsafe.Reference"] = PS["Unsafe.Reference"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Unsafe.Reference"]; 
+  var unsafeRefEq = $foreign.reallyUnsafeRefEq;
+  exports["unsafeRefEq"] = unsafeRefEq;
+})(PS["Unsafe.Reference"] = PS["Unsafe.Reference"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Applicative_Free = PS["Control.Applicative.Free"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Coroutine = PS["Control.Coroutine"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Fork_Class = PS["Control.Monad.Fork.Class"];
+  var Control_Monad_Free = PS["Control.Monad.Free"];
+  var Control_Monad_Free_Trans = PS["Control.Monad.Free.Trans"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Parallel = PS["Control.Parallel"];
+  var Control_Parallel_Class = PS["Control.Parallel.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Boolean = PS["Data.Boolean"];
+  var Data_Coyoneda = PS["Data.Coyoneda"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Map = PS["Data.Map"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Set = PS["Data.Set"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Halogen_Aff_Driver_State = PS["Halogen.Aff.Driver.State"];
+  var Halogen_Data_OrdBox = PS["Halogen.Data.OrdBox"];
+  var Halogen_Query_EventSource = PS["Halogen.Query.EventSource"];
+  var Halogen_Query_ForkF = PS["Halogen.Query.ForkF"];
+  var Halogen_Query_HalogenM = PS["Halogen.Query.HalogenM"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Reference = PS["Unsafe.Reference"];                 
+  var queuingHandler = function (handler) {
+      return function (ref) {
+          return function (message) {
+              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v) {
+                  if (v instanceof Data_Maybe.Nothing) {
+                      return handler(message);
+                  };
+                  if (v instanceof Data_Maybe.Just) {
+                      return Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.write(new Data_Maybe.Just(new Data_List_Types.Cons(handler(message), v.value0)))(ref));
+                  };
+                  throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 171, column 3 - line 175, column 59: " + [ v.constructor.name ]);
+              });
+          };
+      };
+  };
+  var handleLifecycle = function (lchs) {
+      return function (f) {
+          return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.write({
+              initializers: Data_List_Types.Nil.value,
+              finalizers: Data_List_Types.Nil.value
+          })(lchs)))(function () {
+              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(f))(function (v) {
+                  return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(lchs)))(function (v1) {
+                      return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Data_Foldable.traverse_(Effect_Aff.applicativeAff)(Data_List_Types.foldableList)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff))(v1.finalizers))(function () {
+                          return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Control_Parallel.parSequence_(Effect_Aff.parallelAff)(Data_List_Types.foldableList)(v1.initializers))(function () {
+                              return Control_Applicative.pure(Effect_Aff.applicativeAff)(v);
+                          });
+                      });
+                  });
+              });
+          });
+      };
+  };
+  var $$eval = function (render) {
+      return function (r) {
+          var go = function (ref) {
+              return function (v) {
+                  if (v instanceof Halogen_Query_HalogenM.State) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          var v2 = v.value0(v1.state);
+                          if (Unsafe_Reference.unsafeRefEq(v1.state)(v2.value1)) {
+                              return Control_Applicative.pure(Effect_Aff.applicativeAff)(v2.value0);
+                          };
+                          if (Data_Boolean.otherwise) {
+                              return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.write({
+                                  component: v1.component,
+                                  state: v2.value1,
+                                  refs: v1.refs,
+                                  children: v1.children,
+                                  childrenIn: v1.childrenIn,
+                                  childrenOut: v1.childrenOut,
+                                  selfRef: v1.selfRef,
+                                  handler: v1.handler,
+                                  pendingQueries: v1.pendingQueries,
+                                  pendingOuts: v1.pendingOuts,
+                                  pendingHandlers: v1.pendingHandlers,
+                                  rendering: v1.rendering,
+                                  prjQuery: v1.prjQuery,
+                                  fresh: v1.fresh,
+                                  subscriptions: v1.subscriptions,
+                                  lifecycleHandlers: v1.lifecycleHandlers
+                              })(ref)))(function () {
+                                  return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(handleLifecycle(v1.lifecycleHandlers)(render(v1.lifecycleHandlers)(ref)))(function () {
+                                      return Control_Applicative.pure(Effect_Aff.applicativeAff)(v2.value0);
+                                  });
+                              });
+                          };
+                          throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 76, column 7 - line 82, column 21: " + [ v2.constructor.name ]);
+                      });
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Subscribe) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          return Control_Bind.bind(Effect_Aff.bindAff)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff)(Control_Bind.bind(Effect_Aff.bindAff)(Halogen_Query_EventSource.unEventSource(v.value0))(function (v2) {
+                              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref["modify'"](function (i) {
+                                  return {
+                                      state: i + 1 | 0,
+                                      value: i
+                                  };
+                              })(v1.fresh)))(function (v3) {
+                                  var done$prime = Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(v1.subscriptions)))(function (v4) {
+                                      return Control_Applicative.when(Effect_Aff.applicativeAff)(Data_Maybe.maybe(false)(Data_Map_Internal.member(Data_Ord.ordInt)(v3))(v4))(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.modify_(Data_Functor.map(Data_Maybe.functorMaybe)(Data_Map_Internal["delete"](Data_Ord.ordInt)(v3)))(v1.subscriptions)));
+                                  });
+                                  return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.modify_(Data_Functor.map(Data_Maybe.functorMaybe)(Data_Map_Internal.insert(Data_Ord.ordInt)(v3)(done$prime)))(v1.subscriptions)))(function () {
+                                      var consumer = Control_Bind.bind(Control_Monad_Free_Trans.bindFreeT(Control_Coroutine.functorAwait)(Effect_Aff.monadAff))(Control_Coroutine["await"](Effect_Aff.monadAff))(function (v4) {
+                                          return Control_Bind.bind(Control_Monad_Free_Trans.bindFreeT(Control_Coroutine.functorAwait)(Effect_Aff.monadAff))(Control_Monad_Trans_Class.lift(Control_Monad_Free_Trans.monadTransFreeT(Control_Coroutine.functorAwait))(Effect_Aff.monadAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(v1.subscriptions))))(function (v5) {
+                                              return Control_Applicative.when(Control_Monad_Free_Trans.applicativeFreeT(Control_Coroutine.functorAwait)(Effect_Aff.monadAff))(Data_Maybe.isJust(v5))(Control_Bind.bind(Control_Monad_Free_Trans.bindFreeT(Control_Coroutine.functorAwait)(Effect_Aff.monadAff))(Control_Monad_Trans_Class.lift(Control_Monad_Free_Trans.monadTransFreeT(Control_Coroutine.functorAwait))(Effect_Aff.monadAff)(evalF(ref)(v4)))(function (v6) {
+                                                  return Control_Applicative.when(Control_Monad_Free_Trans.applicativeFreeT(Control_Coroutine.functorAwait)(Effect_Aff.monadAff))(Data_Eq.eq(Halogen_Query_EventSource.eqSubscribeStatus)(v6)(Halogen_Query_EventSource.Listening.value))(consumer);
+                                              }));
+                                          });
+                                      });
+                                      return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Control_Coroutine.runProcess(Effect_Aff.monadRecAff)(Control_Coroutine.pullFrom(Effect_Aff.monadRecAff)(consumer)(v2.producer)))(function () {
+                                          return done$prime;
+                                      });
+                                  });
+                              });
+                          })))(function (v2) {
+                              return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value1);
+                          });
+                      });
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Lift) {
+                      return v.value0;
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Halt) {
+                      return Control_Monad_Error_Class.throwError(Effect_Aff.monadThrowAff)(Effect_Exception.error(v.value0));
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.GetSlots) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value0(Data_Functor.map(Data_List_Types.functorList)(Halogen_Data_OrdBox.unOrdBox)(Data_List.fromFoldable(Data_Set.foldableSet)(Data_Map.keys(v1.children)))));
+                      });
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.CheckSlot) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value1(Data_Map_Internal.member(Halogen_Data_OrdBox.ordOrdBox)(v1.component.mkOrdBox(v.value0))(v1.children)));
+                      });
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.ChildQuery) {
+                      return evalChildQuery(ref)(v.value0)(v.value1);
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Raise) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(queuingHandler(v1.handler)(v1.pendingOuts)(v.value0))(function () {
+                              return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value1);
+                          });
+                      });
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Par) {
+                      return Control_Parallel_Class.sequential(Effect_Aff.parallelAff)(Control_Applicative_Free.retractFreeAp(Effect_Aff.applicativeParAff)(Control_Applicative_Free.hoistFreeAp(function ($103) {
+                          return Control_Parallel_Class.parallel(Effect_Aff.parallelAff)(evalM(ref)($103));
+                      })(v.value0)));
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.Fork) {
+                      return Halogen_Query_ForkF.unFork(function (v1) {
+                          return Control_Bind.bind(Effect_Aff.bindAff)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff)(evalM(ref)(v1.value0)))(function (v2) {
+                              return Control_Applicative.pure(Effect_Aff.applicativeAff)(v1.value1(Data_Function.flip(Effect_Aff.killFiber)(v2)));
+                          });
+                      })(v.value0);
+                  };
+                  if (v instanceof Halogen_Query_HalogenM.GetRef) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v1) {
+                          return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value1(Data_Map_Internal.lookup(Data_Ord.ordString)(v.value0)(v1.refs)));
+                      });
+                  };
+                  throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 73, column 12 - line 128, column 33: " + [ v.constructor.name ]);
+              };
+          };
+          var evalM = function (ref) {
+              return function (v) {
+                  return Control_Monad_Free.foldFree(Effect_Aff.monadRecAff)(go(ref))(v);
+              };
+          };
+          var evalF = function (ref) {
+              return function (q) {
+                  return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v) {
+                      var v1 = v["component"]["eval"](q);
+                      return Control_Monad_Free.foldFree(Effect_Aff.monadRecAff)(go(ref))(v1);
+                  });
+              };
+          };
+          var evalChildQuery = function (ref) {
+              return function (p) {
+                  return Data_Coyoneda.unCoyoneda(function (k) {
+                      return function (q) {
+                          return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v) {
+                              var v1 = Data_Map_Internal.lookup(Halogen_Data_OrdBox.ordOrdBox)(v.component.mkOrdBox(p))(v.children);
+                              if (v1 instanceof Data_Maybe.Just) {
+                                  return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(v1.value0)))(function (v2) {
+                                      return Halogen_Aff_Driver_State.unDriverStateX(function (ds) {
+                                          var v3 = ds.prjQuery(q);
+                                          if (v3 instanceof Data_Maybe.Just) {
+                                              return Data_Functor.map(Effect_Aff.functorAff)(k)(evalF(ds.selfRef)(v3.value0));
+                                          };
+                                          if (v3 instanceof Data_Maybe.Nothing) {
+                                              return Control_Monad_Error_Class.throwError(Effect_Aff.monadThrowAff)(Effect_Exception.error("Query projection failed for child query"));
+                                          };
+                                          throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 141, column 32 - line 143, column 82: " + [ v3.constructor.name ]);
+                                      })(v2);
+                                  });
+                              };
+                              if (v1 instanceof Data_Maybe.Nothing) {
+                                  return Control_Monad_Error_Class.throwError(Effect_Aff.monadThrowAff)(Effect_Exception.error("Slot lookup failed for child query"));
+                              };
+                              throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 138, column 5 - line 144, column 73: " + [ v1.constructor.name ]);
+                          });
+                      };
+                  });
+              };
+          };
+          return function (v) {
+              if (v instanceof Halogen_Query_InputF.RefUpdate) {
+                  return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.modify_(function (v1) {
+                      return {
+                          component: v1.component,
+                          state: v1.state,
+                          refs: Data_Map_Internal.alter(Data_Ord.ordString)(Data_Function["const"](v.value1))(v.value0)(v1.refs),
+                          children: v1.children,
+                          childrenIn: v1.childrenIn,
+                          childrenOut: v1.childrenOut,
+                          selfRef: v1.selfRef,
+                          handler: v1.handler,
+                          pendingQueries: v1.pendingQueries,
+                          pendingOuts: v1.pendingOuts,
+                          pendingHandlers: v1.pendingHandlers,
+                          rendering: v1.rendering,
+                          prjQuery: v1.prjQuery,
+                          fresh: v1.fresh,
+                          subscriptions: v1.subscriptions,
+                          lifecycleHandlers: v1.lifecycleHandlers
+                      };
+                  })(r)))(function () {
+                      return Control_Applicative.pure(Effect_Aff.applicativeAff)(v.value2);
+                  });
+              };
+              if (v instanceof Halogen_Query_InputF.Query) {
+                  return evalF(r)(v.value0);
+              };
+              throw new Error("Failed pattern match at Halogen.Aff.Driver.Eval line 59, column 3 - line 64, column 25: " + [ v.constructor.name ]);
+          };
+      };
+  };
+  exports["handleLifecycle"] = handleLifecycle;
+  exports["eval"] = $$eval;
+  exports["queuingHandler"] = queuingHandler;
+})(PS["Halogen.Aff.Driver.Eval"] = PS["Halogen.Aff.Driver.Eval"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Coroutine = PS["Control.Coroutine"];
+  var Control_Monad_Fork_Class = PS["Control.Monad.Fork.Class"];
+  var Control_Monad_Rec_Class = PS["Control.Monad.Rec.Class"];
+  var Control_Parallel = PS["Control.Parallel"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Map = PS["Data.Map"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Semiring = PS["Data.Semiring"];
+  var Data_Traversable = PS["Data.Traversable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Aff_AVar = PS["Effect.Aff.AVar"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Console = PS["Effect.Console"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Halogen = PS["Halogen"];
+  var Halogen_Aff_Driver_Eval = PS["Halogen.Aff.Driver.Eval"];
+  var Halogen_Aff_Driver_State = PS["Halogen.Aff.Driver.State"];
+  var Halogen_Component = PS["Halogen.Component"];
+  var Halogen_Data_OrdBox = PS["Halogen.Data.OrdBox"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Prelude = PS["Prelude"];                 
+  var newLifecycleHandlers = Effect_Ref["new"]({
+      initializers: Data_List_Types.Nil.value,
+      finalizers: Data_List_Types.Nil.value
+  });
+  var handleAff = Effect_Aff.runAff_(Data_Either.either(Effect_Exception.throwException)(Data_Function["const"](Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit))));
+  var runUI = function (renderSpec) {
+      return function (component) {
+          return function (i) {
+              var subscribe = function (fresh) {
+                  return function (ref) {
+                      return function (consumer) {
+                          return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Aff_AVar.empty)(function (v) {
+                              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(function __do() {
+                                  var v1 = Effect_Ref.read(fresh)();
+                                  Effect_Ref.modify_(function (v2) {
+                                      return v2 + 1 | 0;
+                                  })(fresh)();
+                                  Effect_Ref.modify_(Data_Map_Internal.insert(Data_Ord.ordInt)(v1)(v))(ref)();
+                                  return v1;
+                              }))(function (v1) {
+                                  var producer = Control_Coroutine.producer(Effect_Aff.monadAff)(Data_Functor.map(Effect_Aff.functorAff)(Data_Either.Left.create)(Effect_Aff_AVar.take(v)));
+                                  return Data_Functor["void"](Effect_Aff.functorAff)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff)(Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Control_Coroutine.runProcess(Effect_Aff.monadRecAff)(Control_Coroutine.connect(Effect_Aff.monadRecAff)(Effect_Aff.parallelAff)(producer)(consumer)))(function () {
+                                      return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.modify_(Data_Map_Internal["delete"](Data_Ord.ordInt)(v1))(ref)))(function () {
+                                          return Effect_Aff_AVar.kill(Effect_Exception.error("ended"))(v);
+                                      });
+                                  })));
+                              });
+                          });
+                      };
+                  };
+              };
+              var rootHandler = function (ref) {
+                  return function (message) {
+                      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref.read(ref)))(function (v) {
+                          return Data_Foldable.traverse_(Effect_Aff.applicativeAff)(Data_Map_Internal.foldableMap)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff))(Data_Functor.map(Data_Map_Internal.functorMap)(Effect_Aff_AVar.put(message))(v));
+                      });
+                  };
+              };
+              var handlePending = function (ref) {
+                  return function __do() {
+                      var v = Effect_Ref.read(ref)();
+                      Effect_Ref.write(Data_Maybe.Nothing.value)(ref)();
+                      return Data_Foldable.for_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(v)(function ($63) {
+                          return handleAff(Data_Foldable.traverse_(Effect_Aff.applicativeAff)(Data_List_Types.foldableList)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff))(Data_List.reverse($63)));
+                      })();
+                  };
+              };
+              var cleanupSubscriptions = function (v) {
+                  return function __do() {
+                      Control_Bind.bindFlipped(Effect.bindEffect)(Data_Foldable.traverse_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(function ($64) {
+                          return handleAff(Data_Foldable.traverse_(Effect_Aff.applicativeAff)(Data_Map_Internal.foldableMap)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff))($64));
+                      }))(Effect_Ref.read(v.subscriptions))();
+                      return Effect_Ref.write(Data_Maybe.Nothing.value)(v.subscriptions)();
+                  };
+              };
+              var squashChildInitializers = function (lchs) {
+                  return function (preInits) {
+                      return Halogen_Aff_Driver_State.unDriverStateX(function (st) {
+                          var parentInitializer = Data_Functor.map(Data_Maybe.functorMaybe)(function ($65) {
+                              return evalF(st.selfRef)(Halogen_Query_InputF.Query.create($65));
+                          })(st.component.initializer);
+                          return Effect_Ref.modify_(function (handlers) {
+                              return {
+                                  initializers: new Data_List_Types.Cons(Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Control_Parallel.parSequence_(Effect_Aff.parallelAff)(Data_List_Types.foldableList)(Data_List.reverse(handlers.initializers)))(function () {
+                                      return Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(Data_Foldable.sequence_(Effect_Aff.applicativeAff)(Data_Foldable.foldableMaybe)(parentInitializer))(function () {
+                                          return Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(function __do() {
+                                              handlePending(st.pendingQueries)();
+                                              return handlePending(st.pendingOuts)();
+                                          });
+                                      });
+                                  }), preInits),
+                                  finalizers: handlers.finalizers
+                              };
+                          })(lchs);
+                      });
+                  };
+              };
+              var runComponent = function (lchs) {
+                  return function (handler) {
+                      return function (j) {
+                          return function (prjQuery) {
+                              return Halogen_Component.unComponent(function (c) {
+                                  return function __do() {
+                                      var v = newLifecycleHandlers();
+                                      var v1 = Halogen_Aff_Driver_State.initDriverState(c)(j)(handler)(prjQuery)(v)();
+                                      var v2 = Effect_Ref.read(lchs)();
+                                      Effect_Ref.write({
+                                          initializers: Data_List_Types.Nil.value,
+                                          finalizers: v2.finalizers
+                                      })(lchs)();
+                                      Control_Bind.bindFlipped(Effect.bindEffect)(Halogen_Aff_Driver_State.unDriverStateX(function ($66) {
+                                          return render(lchs)((function (v3) {
+                                              return v3.selfRef;
+                                          })($66));
+                                      }))(Effect_Ref.read(v1))();
+                                      Control_Bind.bindFlipped(Effect.bindEffect)(squashChildInitializers(lchs)(v2.initializers))(Effect_Ref.read(v1))();
+                                      return v1;
+                                  };
+                              });
+                          };
+                      };
+                  };
+              };
+              var renderChild = function (lchs) {
+                  return function (handler) {
+                      return function (mkOrdBox) {
+                          return function (childrenInRef) {
+                              return function (childrenOutRef) {
+                                  return Halogen_Component.unComponentSlot(function (p) {
+                                      return function (ctor) {
+                                          return function (input) {
+                                              return function (inputQuery) {
+                                                  return function (outputQuery) {
+                                                      return function (prjQuery) {
+                                                          var ordP = mkOrdBox(p);
+                                                          return function __do() {
+                                                              var v = Effect_Ref.read(childrenInRef)();
+                                                              var v1 = (function () {
+                                                                  var v1 = Data_Map_Internal.pop(Halogen_Data_OrdBox.ordOrdBox)(ordP)(v);
+                                                                  if (v1 instanceof Data_Maybe.Just) {
+                                                                      Effect_Ref.write(v1.value0.value1)(childrenInRef)();
+                                                                      Data_Foldable.for_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(inputQuery(input))(function (q) {
+                                                                          return function __do() {
+                                                                              var v2 = Effect_Ref.read(v1.value0.value0)();
+                                                                              return Halogen_Aff_Driver_State.unDriverStateX(function (st) {
+                                                                                  return Data_Foldable.for_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(st.prjQuery(q))(function ($67) {
+                                                                                      return handleAff(evalF(st.selfRef)(Halogen_Query_InputF.Query.create($67)));
+                                                                                  });
+                                                                              })(v2)();
+                                                                          };
+                                                                      })();
+                                                                      return v1.value0.value0;
+                                                                  };
+                                                                  if (v1 instanceof Data_Maybe.Nothing) {
+                                                                      return runComponent(lchs)(function ($68) {
+                                                                          return Data_Maybe.maybe(Control_Applicative.pure(Effect_Aff.applicativeAff)(Data_Unit.unit))(handler)(outputQuery($68));
+                                                                      })(input)(prjQuery)(ctor)();
+                                                                  };
+                                                                  throw new Error("Failed pattern match at Halogen.Aff.Driver line 258, column 14 - line 266, column 92: " + [ v1.constructor.name ]);
+                                                              })();
+                                                              var v2 = Data_Functor.map(Effect.functorEffect)(Data_Map_Internal.member(Halogen_Data_OrdBox.ordOrdBox)(ordP))(Effect_Ref.read(childrenOutRef))();
+                                                              Control_Applicative.when(Effect.applicativeEffect)(v2)(Effect_Console.warn("Halogen: Duplicate slot address was detected during rendering, unexpected results may occur"))();
+                                                              Effect_Ref.modify_(Data_Map_Internal.insert(Halogen_Data_OrdBox.ordOrdBox)(ordP)(v1))(childrenOutRef)();
+                                                              return Control_Bind.bind(Effect.bindEffect)(Effect_Ref.read(v1))(Halogen_Aff_Driver_State.renderStateX(Effect.functorEffect)(function (v3) {
+                                                                  if (v3 instanceof Data_Maybe.Nothing) {
+                                                                      return Effect_Exception["throw"]("Halogen internal error: child was not initialized in renderChild");
+                                                                  };
+                                                                  if (v3 instanceof Data_Maybe.Just) {
+                                                                      return Control_Applicative.pure(Effect.applicativeEffect)(renderSpec.renderChild(v3.value0));
+                                                                  };
+                                                                  throw new Error("Failed pattern match at Halogen.Aff.Driver line 271, column 37 - line 273, column 50: " + [ v3.constructor.name ]);
+                                                              }))();
+                                                          };
+                                                      };
+                                                  };
+                                              };
+                                          };
+                                      };
+                                  });
+                              };
+                          };
+                      };
+                  };
+              };
+              var render = function (lchs) {
+                  return function ($$var) {
+                      return function __do() {
+                          var v = Effect_Ref.read($$var)();
+                          var v1 = Data_Functor.map(Effect.functorEffect)(Data_Maybe.isNothing)(Effect_Ref.read(v.pendingHandlers))();
+                          Control_Applicative.when(Effect.applicativeEffect)(v1)(Effect_Ref.write(new Data_Maybe.Just(Data_List_Types.Nil.value))(v.pendingHandlers))();
+                          Effect_Ref.write(Data_Map_Internal.empty)(v.childrenOut)();
+                          Effect_Ref.write(v.children)(v.childrenIn)();
+                          var handler = Halogen_Aff_Driver_Eval.queuingHandler(function ($69) {
+                              return Data_Functor["void"](Effect_Aff.functorAff)(evalF(v.selfRef)($69));
+                          })(v.pendingHandlers);
+                          var childHandler = Halogen_Aff_Driver_Eval.queuingHandler(function ($70) {
+                              return handler(Halogen_Query_InputF.Query.create($70));
+                          })(v.pendingQueries);
+                          var v2 = renderSpec.render(function ($71) {
+                              return handleAff(handler($71));
+                          })(renderChild(lchs)(childHandler)(v.component.mkOrdBox)(v.childrenIn)(v.childrenOut))(v.component.render(v.state))(v.rendering)();
+                          var v3 = Effect_Ref.read(v.childrenOut)();
+                          Control_Bind.bind(Effect.bindEffect)(Effect_Ref.read(v.childrenIn))(Data_Foldable.traverse_(Effect.applicativeEffect)(Data_Map_Internal.foldableMap)(function (childVar) {
+                              return function __do() {
+                                  var v4 = Effect_Ref.read(childVar)();
+                                  Halogen_Aff_Driver_State.renderStateX_(Effect.applicativeEffect)(renderSpec.removeChild)(v4)();
+                                  return finalize(lchs)(v4)();
+                              };
+                          }))();
+                          Effect_Ref.modify_(function (v4) {
+                              return {
+                                  rendering: new Data_Maybe.Just(v2),
+                                  children: v3,
+                                  component: v4.component,
+                                  state: v4.state,
+                                  refs: v4.refs,
+                                  childrenIn: v4.childrenIn,
+                                  childrenOut: v4.childrenOut,
+                                  selfRef: v4.selfRef,
+                                  handler: v4.handler,
+                                  pendingQueries: v4.pendingQueries,
+                                  pendingOuts: v4.pendingOuts,
+                                  pendingHandlers: v4.pendingHandlers,
+                                  prjQuery: v4.prjQuery,
+                                  fresh: v4.fresh,
+                                  subscriptions: v4.subscriptions,
+                                  lifecycleHandlers: v4.lifecycleHandlers
+                              };
+                          })(v.selfRef)();
+                          return Control_Applicative.when(Effect.applicativeEffect)(v1)(Data_Function.flip(Control_Monad_Rec_Class.tailRecM(Control_Monad_Rec_Class.monadRecEffect))(Data_Unit.unit)(function (v4) {
+                              return function __do() {
+                                  var v5 = Effect_Ref.read(v.pendingHandlers)();
+                                  Effect_Ref.write(new Data_Maybe.Just(Data_List_Types.Nil.value))(v.pendingHandlers)();
+                                  Data_Foldable.traverse_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(function ($72) {
+                                      return handleAff(Data_Foldable.traverse_(Effect_Aff.applicativeAff)(Data_List_Types.foldableList)(Control_Monad_Fork_Class.fork(Control_Monad_Fork_Class.monadForkAff))(Data_List.reverse($72)));
+                                  })(v5)();
+                                  var v6 = Effect_Ref.read(v.pendingHandlers)();
+                                  var $57 = Data_Maybe.maybe(false)(Data_List["null"])(v6);
+                                  if ($57) {
+                                      return Data_Functor.voidLeft(Effect.functorEffect)(Effect_Ref.write(Data_Maybe.Nothing.value)(v.pendingHandlers))(new Control_Monad_Rec_Class.Done(Data_Unit.unit))();
+                                  };
+                                  return new Control_Monad_Rec_Class.Loop(Data_Unit.unit);
+                              };
+                          }))();
+                      };
+                  };
+              };
+              var finalize = function (lchs) {
+                  return Halogen_Aff_Driver_State.unDriverStateX(function (st) {
+                      return function __do() {
+                          cleanupSubscriptions(st)();
+                          Data_Foldable.for_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(Data_Functor.map(Data_Maybe.functorMaybe)(function ($73) {
+                              return evalF(st.selfRef)(Halogen_Query_InputF.Query.create($73));
+                          })(st.component.finalizer))(function (f) {
+                              return Effect_Ref.modify_(function (handlers) {
+                                  return {
+                                      initializers: handlers.initializers,
+                                      finalizers: new Data_List_Types.Cons(f, handlers.finalizers)
+                                  };
+                              })(lchs);
+                          })();
+                          return Data_Foldable.for_(Effect.applicativeEffect)(Data_Map_Internal.foldableMap)(st.children)(Control_Bind.composeKleisliFlipped(Effect.bindEffect)(finalize(lchs))(Effect_Ref.read))();
+                      };
+                  });
+              };
+              var evalF = function (ref) {
+                  return Halogen_Aff_Driver_Eval["eval"](render)(ref);
+              };
+              var evalDriver = function (ref) {
+                  return function (prjQuery) {
+                      return function (q) {
+                          var v = prjQuery(q);
+                          if (v instanceof Data_Maybe.Just) {
+                              return evalF(ref)(new Halogen_Query_InputF.Query(v.value0));
+                          };
+                          if (v instanceof Data_Maybe.Nothing) {
+                              return Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Exception.throwException(Effect_Exception.error("Halogen internal error: query projection failed in runUI'")));
+                          };
+                          throw new Error("Failed pattern match at Halogen.Aff.Driver line 136, column 5 - line 138, column 113: " + [ v.constructor.name ]);
+                      };
+                  };
+              };
+              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(newLifecycleHandlers))(function (v) {
+                  return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Effect_Ref["new"](0)))(function (v1) {
+                      return Halogen_Aff_Driver_Eval.handleLifecycle(v)(function __do() {
+                          var v2 = Effect_Ref["new"](Data_Map_Internal.empty)();
+                          return Control_Bind.bind(Effect.bindEffect)(Control_Bind.bind(Effect.bindEffect)(runComponent(v)(rootHandler(v2))(i)(Data_Maybe.Just.create)(component))(Effect_Ref.read))(Halogen_Aff_Driver_State.unDriverStateX(function (st) {
+                              return Control_Applicative.pure(Effect.applicativeEffect)({
+                                  query: evalDriver(st.selfRef)(st.prjQuery),
+                                  subscribe: subscribe(v1)(v2)
+                              });
+                          }))();
+                      });
+                  });
+              });
+          };
+      };
+  };
+  exports["runUI"] = runUI;
+})(PS["Halogen.Aff.Driver"] = PS["Halogen.Aff.Driver"] || {});
+(function(exports) {
+  /* global window */
+  "use strict";
+
+  exports.window = function () {
+    return window;
+  };
+})(PS["Web.HTML"] = PS["Web.HTML"] || {});
+(function(exports) {
+    "use strict";
+
+  exports._readyState = function (doc) {
+    return function () {
+      return doc.readyState;
+    };
+  };
+})(PS["Web.HTML.HTMLDocument"] = PS["Web.HTML.HTMLDocument"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Ord = PS["Data.Ord"];
+  var Data_Ordering = PS["Data.Ordering"];
+  var Data_Show = PS["Data.Show"];
+  var Prelude = PS["Prelude"];                 
+  var Loading = (function () {
+      function Loading() {
+
+      };
+      Loading.value = new Loading();
+      return Loading;
+  })();
+  var Interactive = (function () {
+      function Interactive() {
+
+      };
+      Interactive.value = new Interactive();
+      return Interactive;
+  })();
+  var Complete = (function () {
+      function Complete() {
+
+      };
+      Complete.value = new Complete();
+      return Complete;
+  })();
+  var parse = function (v) {
+      if (v === "loading") {
+          return new Data_Maybe.Just(Loading.value);
+      };
+      if (v === "interactive") {
+          return new Data_Maybe.Just(Interactive.value);
+      };
+      if (v === "complete") {
+          return new Data_Maybe.Just(Complete.value);
+      };
+      return Data_Maybe.Nothing.value;
+  };
+  exports["Loading"] = Loading;
+  exports["Interactive"] = Interactive;
+  exports["Complete"] = Complete;
+  exports["parse"] = parse;
+})(PS["Web.HTML.HTMLDocument.ReadyState"] = PS["Web.HTML.HTMLDocument.ReadyState"] || {});
+(function(exports) {
+    "use strict";
+
+  exports._read = function (nothing, just, value) {
+    var tag = Object.prototype.toString.call(value);
+    if (tag.indexOf("[object HTML") === 0 && tag.indexOf("Element]") === tag.length - 8) {
+      return just(value);
+    } else {
+      return nothing;
+    }
+  };
+})(PS["Web.HTML.HTMLElement"] = PS["Web.HTML.HTMLElement"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.HTML.HTMLElement"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM = PS["Web.DOM"];
+  var Web_DOM_DOMTokenList = PS["Web.DOM.DOMTokenList"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_DOM_Internal_Types = PS["Web.DOM.Internal.Types"];
+  var Web_DOM_NonDocumentTypeChildNode = PS["Web.DOM.NonDocumentTypeChildNode"];
+  var Web_DOM_ParentNode = PS["Web.DOM.ParentNode"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];    
+  var toNode = Unsafe_Coerce.unsafeCoerce;
+  var fromElement = function (x) {
+      return $foreign._read(Data_Maybe.Nothing.value, Data_Maybe.Just.create, x);
+  };
+  exports["fromElement"] = fromElement;
+  exports["toNode"] = toNode;
+})(PS["Web.HTML.HTMLElement"] = PS["Web.HTML.HTMLElement"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.HTML.HTMLDocument"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Document = PS["Web.DOM.Document"];
+  var Web_DOM_Internal_Types = PS["Web.DOM.Internal.Types"];
+  var Web_DOM_NonElementParentNode = PS["Web.DOM.NonElementParentNode"];
+  var Web_DOM_ParentNode = PS["Web.DOM.ParentNode"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];
+  var Web_HTML_HTMLDocument_ReadyState = PS["Web.HTML.HTMLDocument.ReadyState"];
+  var Web_HTML_HTMLElement = PS["Web.HTML.HTMLElement"];
+  var Web_Internal_FFI = PS["Web.Internal.FFI"];                 
+  var toParentNode = Unsafe_Coerce.unsafeCoerce; 
+  var toDocument = Unsafe_Coerce.unsafeCoerce;
+  var readyState = function ($0) {
+      return Data_Functor.map(Effect.functorEffect)(function ($1) {
+          return Data_Maybe.fromMaybe(Web_HTML_HTMLDocument_ReadyState.Loading.value)(Web_HTML_HTMLDocument_ReadyState.parse($1));
+      })($foreign._readyState($0));
+  };
+  exports["toDocument"] = toDocument;
+  exports["toParentNode"] = toParentNode;
+  exports["readyState"] = readyState;
+})(PS["Web.HTML.HTMLDocument"] = PS["Web.HTML.HTMLDocument"] || {});
+(function(exports) {
+    "use strict";
+
+  exports.document = function (window) {
+    return function () {
+      return window.document;
+    };
+  };
+})(PS["Web.HTML.Window"] = PS["Web.HTML.Window"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.HTML.Window"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Data_Ord = PS["Data.Ord"];
+  var Effect = PS["Effect"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];
+  var Web_HTML_HTMLDocument = PS["Web.HTML.HTMLDocument"];
+  var Web_HTML_History = PS["Web.HTML.History"];
+  var Web_HTML_Location = PS["Web.HTML.Location"];
+  var Web_HTML_Navigator = PS["Web.HTML.Navigator"];
+  var Web_Storage_Storage = PS["Web.Storage.Storage"];
+  var toEventTarget = Unsafe_Coerce.unsafeCoerce;
+  exports["toEventTarget"] = toEventTarget;
+  exports["document"] = $foreign.document;
+})(PS["Web.HTML.Window"] = PS["Web.HTML.Window"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Web.HTML"];
+  var Effect = PS["Effect"];
+  var Web_HTML_HTMLAnchorElement = PS["Web.HTML.HTMLAnchorElement"];
+  var Web_HTML_HTMLAreaElement = PS["Web.HTML.HTMLAreaElement"];
+  var Web_HTML_HTMLAudioElement = PS["Web.HTML.HTMLAudioElement"];
+  var Web_HTML_HTMLBRElement = PS["Web.HTML.HTMLBRElement"];
+  var Web_HTML_HTMLBaseElement = PS["Web.HTML.HTMLBaseElement"];
+  var Web_HTML_HTMLBodyElement = PS["Web.HTML.HTMLBodyElement"];
+  var Web_HTML_HTMLButtonElement = PS["Web.HTML.HTMLButtonElement"];
+  var Web_HTML_HTMLCanvasElement = PS["Web.HTML.HTMLCanvasElement"];
+  var Web_HTML_HTMLDListElement = PS["Web.HTML.HTMLDListElement"];
+  var Web_HTML_HTMLDataElement = PS["Web.HTML.HTMLDataElement"];
+  var Web_HTML_HTMLDataListElement = PS["Web.HTML.HTMLDataListElement"];
+  var Web_HTML_HTMLDivElement = PS["Web.HTML.HTMLDivElement"];
+  var Web_HTML_HTMLDocument = PS["Web.HTML.HTMLDocument"];
+  var Web_HTML_HTMLElement = PS["Web.HTML.HTMLElement"];
+  var Web_HTML_HTMLEmbedElement = PS["Web.HTML.HTMLEmbedElement"];
+  var Web_HTML_HTMLFieldSetElement = PS["Web.HTML.HTMLFieldSetElement"];
+  var Web_HTML_HTMLFormElement = PS["Web.HTML.HTMLFormElement"];
+  var Web_HTML_HTMLHRElement = PS["Web.HTML.HTMLHRElement"];
+  var Web_HTML_HTMLHeadElement = PS["Web.HTML.HTMLHeadElement"];
+  var Web_HTML_HTMLHeadingElement = PS["Web.HTML.HTMLHeadingElement"];
+  var Web_HTML_HTMLIFrameElement = PS["Web.HTML.HTMLIFrameElement"];
+  var Web_HTML_HTMLImageElement = PS["Web.HTML.HTMLImageElement"];
+  var Web_HTML_HTMLInputElement = PS["Web.HTML.HTMLInputElement"];
+  var Web_HTML_HTMLKeygenElement = PS["Web.HTML.HTMLKeygenElement"];
+  var Web_HTML_HTMLLIElement = PS["Web.HTML.HTMLLIElement"];
+  var Web_HTML_HTMLLabelElement = PS["Web.HTML.HTMLLabelElement"];
+  var Web_HTML_HTMLLegendElement = PS["Web.HTML.HTMLLegendElement"];
+  var Web_HTML_HTMLLinkElement = PS["Web.HTML.HTMLLinkElement"];
+  var Web_HTML_HTMLMapElement = PS["Web.HTML.HTMLMapElement"];
+  var Web_HTML_HTMLMediaElement = PS["Web.HTML.HTMLMediaElement"];
+  var Web_HTML_HTMLMetaElement = PS["Web.HTML.HTMLMetaElement"];
+  var Web_HTML_HTMLMeterElement = PS["Web.HTML.HTMLMeterElement"];
+  var Web_HTML_HTMLModElement = PS["Web.HTML.HTMLModElement"];
+  var Web_HTML_HTMLOListElement = PS["Web.HTML.HTMLOListElement"];
+  var Web_HTML_HTMLObjectElement = PS["Web.HTML.HTMLObjectElement"];
+  var Web_HTML_HTMLOptGroupElement = PS["Web.HTML.HTMLOptGroupElement"];
+  var Web_HTML_HTMLOptionElement = PS["Web.HTML.HTMLOptionElement"];
+  var Web_HTML_HTMLOutputElement = PS["Web.HTML.HTMLOutputElement"];
+  var Web_HTML_HTMLParagraphElement = PS["Web.HTML.HTMLParagraphElement"];
+  var Web_HTML_HTMLParamElement = PS["Web.HTML.HTMLParamElement"];
+  var Web_HTML_HTMLPreElement = PS["Web.HTML.HTMLPreElement"];
+  var Web_HTML_HTMLProgressElement = PS["Web.HTML.HTMLProgressElement"];
+  var Web_HTML_HTMLQuoteElement = PS["Web.HTML.HTMLQuoteElement"];
+  var Web_HTML_HTMLScriptElement = PS["Web.HTML.HTMLScriptElement"];
+  var Web_HTML_HTMLSelectElement = PS["Web.HTML.HTMLSelectElement"];
+  var Web_HTML_HTMLSourceElement = PS["Web.HTML.HTMLSourceElement"];
+  var Web_HTML_HTMLSpanElement = PS["Web.HTML.HTMLSpanElement"];
+  var Web_HTML_HTMLStyleElement = PS["Web.HTML.HTMLStyleElement"];
+  var Web_HTML_HTMLTableCaptionElement = PS["Web.HTML.HTMLTableCaptionElement"];
+  var Web_HTML_HTMLTableCellElement = PS["Web.HTML.HTMLTableCellElement"];
+  var Web_HTML_HTMLTableColElement = PS["Web.HTML.HTMLTableColElement"];
+  var Web_HTML_HTMLTableDataCellElement = PS["Web.HTML.HTMLTableDataCellElement"];
+  var Web_HTML_HTMLTableElement = PS["Web.HTML.HTMLTableElement"];
+  var Web_HTML_HTMLTableHeaderCellElement = PS["Web.HTML.HTMLTableHeaderCellElement"];
+  var Web_HTML_HTMLTableRowElement = PS["Web.HTML.HTMLTableRowElement"];
+  var Web_HTML_HTMLTableSectionElement = PS["Web.HTML.HTMLTableSectionElement"];
+  var Web_HTML_HTMLTemplateElement = PS["Web.HTML.HTMLTemplateElement"];
+  var Web_HTML_HTMLTextAreaElement = PS["Web.HTML.HTMLTextAreaElement"];
+  var Web_HTML_HTMLTimeElement = PS["Web.HTML.HTMLTimeElement"];
+  var Web_HTML_HTMLTitleElement = PS["Web.HTML.HTMLTitleElement"];
+  var Web_HTML_HTMLTrackElement = PS["Web.HTML.HTMLTrackElement"];
+  var Web_HTML_HTMLUListElement = PS["Web.HTML.HTMLUListElement"];
+  var Web_HTML_HTMLVideoElement = PS["Web.HTML.HTMLVideoElement"];
+  var Web_HTML_History = PS["Web.HTML.History"];
+  var Web_HTML_Location = PS["Web.HTML.Location"];
+  var Web_HTML_Navigator = PS["Web.HTML.Navigator"];
+  var Web_HTML_Window = PS["Web.HTML.Window"];
+  exports["window"] = $foreign.window;
+})(PS["Web.HTML"] = PS["Web.HTML"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var domcontentloaded = "DOMContentLoaded";
+  exports["domcontentloaded"] = domcontentloaded;
+})(PS["Web.HTML.Event.EventTypes"] = PS["Web.HTML.Event.EventTypes"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Exception = PS["Effect.Exception"];
+  var Prelude = PS["Prelude"];
+  var Web_DOM_ParentNode = PS["Web.DOM.ParentNode"];
+  var Web_Event_EventTarget = PS["Web.Event.EventTarget"];
+  var Web_HTML = PS["Web.HTML"];
+  var Web_HTML_Event_EventTypes = PS["Web.HTML.Event.EventTypes"];
+  var Web_HTML_HTMLDocument = PS["Web.HTML.HTMLDocument"];
+  var Web_HTML_HTMLDocument_ReadyState = PS["Web.HTML.HTMLDocument.ReadyState"];
+  var Web_HTML_HTMLElement = PS["Web.HTML.HTMLElement"];
+  var Web_HTML_Window = PS["Web.HTML.Window"];                 
+  var selectElement = function (query) {
+      return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Control_Bind.bindFlipped(Effect.bindEffect)(Control_Bind.composeKleisliFlipped(Effect.bindEffect)(function ($12) {
+          return Web_DOM_ParentNode.querySelector(query)(Web_HTML_HTMLDocument.toParentNode($12));
+      })(Web_HTML_Window.document))(Web_HTML.window)))(function (v) {
+          return Control_Applicative.pure(Effect_Aff.applicativeAff)(Control_Bind.bindFlipped(Data_Maybe.bindMaybe)(Web_HTML_HTMLElement.fromElement)(v));
+      });
+  };
+  var runHalogenAff = Effect_Aff.runAff_(Data_Either.either(Effect_Exception.throwException)(Data_Function["const"](Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit))));
+  var awaitLoad = Effect_Aff.makeAff(function (callback) {
+      return function __do() {
+          var v = Control_Bind.bindFlipped(Effect.bindEffect)(Web_HTML_HTMLDocument.readyState)(Control_Bind.bindFlipped(Effect.bindEffect)(Web_HTML_Window.document)(Web_HTML.window))();
+          if (v instanceof Web_HTML_HTMLDocument_ReadyState.Loading) {
+              var v1 = Data_Functor.map(Effect.functorEffect)(Web_HTML_Window.toEventTarget)(Web_HTML.window)();
+              var v2 = Web_Event_EventTarget.eventListener(function (v2) {
+                  return callback(new Data_Either.Right(Data_Unit.unit));
+              })();
+              Web_Event_EventTarget.addEventListener(Web_HTML_Event_EventTypes.domcontentloaded)(v2)(false)(v1)();
+              return Effect_Aff.effectCanceler(Web_Event_EventTarget.removeEventListener(Web_HTML_Event_EventTypes.domcontentloaded)(v2)(false)(v1));
+          };
+          callback(new Data_Either.Right(Data_Unit.unit))();
+          return Effect_Aff.nonCanceler;
+      };
+  });
+  var awaitBody = Control_Bind.discard(Control_Bind.discardUnit)(Effect_Aff.bindAff)(awaitLoad)(function () {
+      return Control_Bind.bind(Effect_Aff.bindAff)(selectElement("body"))(function (v) {
+          return Data_Maybe.maybe(Control_Monad_Error_Class.throwError(Effect_Aff.monadThrowAff)(Effect_Exception.error("Could not find body")))(Control_Applicative.pure(Effect_Aff.applicativeAff))(v);
+      });
+  });
+  exports["awaitLoad"] = awaitLoad;
+  exports["awaitBody"] = awaitBody;
+  exports["selectElement"] = selectElement;
+  exports["runHalogenAff"] = runHalogenAff;
+})(PS["Halogen.Aff.Util"] = PS["Halogen.Aff.Util"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var DOM_HTML_Indexed = PS["DOM.HTML.Indexed"];
+  var DOM_HTML_Indexed_ButtonType = PS["DOM.HTML.Indexed.ButtonType"];
+  var DOM_HTML_Indexed_FormMethod = PS["DOM.HTML.Indexed.FormMethod"];
+  var DOM_HTML_Indexed_InputType = PS["DOM.HTML.Indexed.InputType"];
+  var DOM_HTML_Indexed_MenuType = PS["DOM.HTML.Indexed.MenuType"];
+  var DOM_HTML_Indexed_MenuitemType = PS["DOM.HTML.Indexed.MenuitemType"];
+  var DOM_HTML_Indexed_OnOff = PS["DOM.HTML.Indexed.OnOff"];
+  var DOM_HTML_Indexed_OrderedListType = PS["DOM.HTML.Indexed.OrderedListType"];
+  var DOM_HTML_Indexed_PreloadValue = PS["DOM.HTML.Indexed.PreloadValue"];
+  var DOM_HTML_Indexed_StepValue = PS["DOM.HTML.Indexed.StepValue"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_MediaType = PS["Data.MediaType"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_String = PS["Data.String"];
+  var Data_String_Common = PS["Data.String.Common"];
+  var Data_Unit = PS["Data.Unit"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Halogen_VDom_DOM_Prop = PS["Halogen.VDom.DOM.Prop"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var prop = function (dictIsProp) {
+      return Halogen_HTML_Core.prop(dictIsProp);
+  };
+  var class_ = function ($13) {
+      return prop(Halogen_HTML_Core.stringIsProp)("className")(Data_Newtype.unwrap(Halogen_HTML_Core.newtypeClassName)($13));
+  };
+  exports["prop"] = prop;
+  exports["class_"] = class_;
+})(PS["Halogen.HTML.Properties"] = PS["Halogen.HTML.Properties"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var DOM_HTML_Indexed = PS["DOM.HTML.Indexed"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_HTML_Properties = PS["Halogen.HTML.Properties"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Halogen_VDom = PS["Halogen.VDom"];
+  var Halogen_VDom_Types = PS["Halogen.VDom.Types"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var element = Halogen_HTML_Core.element(Data_Maybe.Nothing.value);
+  var h1 = element("h1");
+  var h1_ = h1([  ]);
+  var h2 = element("h2");
+  var label = element("label");
+  var label_ = label([  ]);
+  var div = element("div");
+  var button = element("button");
+  exports["element"] = element;
+  exports["button"] = button;
+  exports["div"] = div;
+  exports["h1"] = h1;
+  exports["h1_"] = h1_;
+  exports["h2"] = h2;
+  exports["label"] = label;
+  exports["label_"] = label_;
+})(PS["Halogen.HTML.Elements"] = PS["Halogen.HTML.Elements"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Control_Monad_State_Class = PS["Control.Monad.State.Class"];
+  var Control_Monad_Trans_Class = PS["Control.Monad.Trans.Class"];
+  var Control_Parallel = PS["Control.Parallel"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
+  var Data_Map = PS["Data.Map"];
+  var Data_Map_Internal = PS["Data.Map.Internal"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect_Aff_Class = PS["Effect.Aff.Class"];
+  var Effect_Class = PS["Effect.Class"];
+  var Halogen_Component_ChildPath = PS["Halogen.Component.ChildPath"];
+  var Halogen_Query_EventSource = PS["Halogen.Query.EventSource"];
+  var Halogen_Query_HalogenM = PS["Halogen.Query.HalogenM"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Prelude = PS["Prelude"];
+  var Web_HTML_HTMLElement = PS["Web.HTML.HTMLElement"];
+  var action = function (act) {
+      return act(Data_Unit.unit);
+  };
+  exports["action"] = action;
+})(PS["Halogen.Query"] = PS["Halogen.Query"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var click = "click";
+  exports["click"] = click;
+})(PS["Web.UIEvent.MouseEvent.EventTypes"] = PS["Web.UIEvent.MouseEvent.EventTypes"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad_Except = PS["Control.Monad.Except"];
+  var Control_Monad_Except_Trans = PS["Control.Monad.Except.Trans"];
+  var Control_Semigroupoid = PS["Control.Semigroupoid"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Identity = PS["Data.Identity"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Foreign = PS["Foreign"];
+  var Foreign_Index = PS["Foreign.Index"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_HTML_Properties = PS["Halogen.HTML.Properties"];
+  var Halogen_Query = PS["Halogen.Query"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Coerce = PS["Unsafe.Coerce"];
+  var Web_Clipboard_ClipboardEvent = PS["Web.Clipboard.ClipboardEvent"];
+  var Web_Clipboard_ClipboardEvent_EventTypes = PS["Web.Clipboard.ClipboardEvent.EventTypes"];
+  var Web_Event_Event = PS["Web.Event.Event"];
+  var Web_HTML_Event_DragEvent = PS["Web.HTML.Event.DragEvent"];
+  var Web_HTML_Event_DragEvent_EventTypes = PS["Web.HTML.Event.DragEvent.EventTypes"];
+  var Web_HTML_Event_EventTypes = PS["Web.HTML.Event.EventTypes"];
+  var Web_TouchEvent_TouchEvent = PS["Web.TouchEvent.TouchEvent"];
+  var Web_UIEvent_FocusEvent = PS["Web.UIEvent.FocusEvent"];
+  var Web_UIEvent_FocusEvent_EventTypes = PS["Web.UIEvent.FocusEvent.EventTypes"];
+  var Web_UIEvent_KeyboardEvent = PS["Web.UIEvent.KeyboardEvent"];
+  var Web_UIEvent_KeyboardEvent_EventTypes = PS["Web.UIEvent.KeyboardEvent.EventTypes"];
+  var Web_UIEvent_MouseEvent = PS["Web.UIEvent.MouseEvent"];
+  var Web_UIEvent_MouseEvent_EventTypes = PS["Web.UIEvent.MouseEvent.EventTypes"];
+  var Web_UIEvent_WheelEvent = PS["Web.UIEvent.WheelEvent"];
+  var Web_UIEvent_WheelEvent_EventTypes = PS["Web.UIEvent.WheelEvent.EventTypes"];
+  var mouseHandler = Unsafe_Coerce.unsafeCoerce;
+  var input_ = function (f) {
+      return function (v) {
+          return Data_Maybe.Just.create(Halogen_Query.action(f));
+      };
+  };
+  var handler = function (et) {
+      return function ($1) {
+          return Halogen_HTML_Core.handler(et)(Data_Functor.map(Data_Functor.functorFn)(Data_Functor.map(Data_Maybe.functorMaybe)(Halogen_Query_InputF.Query.create))($1));
+      };
+  };                                                       
+  var onClick = function ($2) {
+      return handler(Web_UIEvent_MouseEvent_EventTypes.click)(mouseHandler($2));
+  };
+  exports["input_"] = input_;
+  exports["handler"] = handler;
+  exports["onClick"] = onClick;
+})(PS["Halogen.HTML.Events"] = PS["Halogen.HTML.Events"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Data_Array = PS["Data.Array"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function_Uncurried = PS["Data.Function.Uncurried"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Nullable = PS["Data.Nullable"];
+  var Data_Tuple = PS["Data.Tuple"];
+  var Effect = PS["Effect"];
+  var Effect_Uncurried = PS["Effect.Uncurried"];
+  var Halogen_VDom_Machine = PS["Halogen.VDom.Machine"];
+  var Halogen_VDom_Types = PS["Halogen.VDom.Types"];
+  var Halogen_VDom_Util = PS["Halogen.VDom.Util"];
+  var Prelude = PS["Prelude"];
+  var Web_DOM_Document = PS["Web.DOM.Document"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_DOM_Node = PS["Web.DOM.Node"];
+  var eqElemSpec = function (a, b) {
+      if (a.value1 === b.value1) {
+          if (a.value0 instanceof Data_Maybe.Just && (b.value0 instanceof Data_Maybe.Just && a.value0.value0 === b.value0.value0)) {
+              return true;
+          };
+          if (a.value0 instanceof Data_Maybe.Nothing && b.value0 instanceof Data_Maybe.Nothing) {
+              return true;
+          };
+          return false;
+      };
+      return false;
+  };
+  var buildWidget = (function () {
+      var patch = function (build, v) {
+          return function (v1) {
+              if (v1 instanceof Halogen_VDom_Types.Grafted) {
+                  return patch(build, v)(Halogen_VDom_Types.runGraft(v1.value0));
+              };
+              if (v1 instanceof Halogen_VDom_Types.Widget) {
+                  var v2 = v.value1(v1.value0);
+                  return new Halogen_VDom_Machine.Step(v2.value0, patch(build, v2), v2.value2);
+              };
+              v.value2();
+              return build(v1);
+          };
+      };
+      var render = function (v, build, w) {
+          var v1 = v.buildWidget(v)(w);
+          return new Halogen_VDom_Machine.Step(v1.value0, patch(build, v1), v1.value2);
+      };
+      return render;
+  })();
+  var buildText = (function () {
+      var patch = function (build, halt, node, s1) {
+          return function (v) {
+              if (v instanceof Halogen_VDom_Types.Grafted) {
+                  return patch(build, halt, node, s1)(Halogen_VDom_Types.runGraft(v.value0));
+              };
+              if (v instanceof Halogen_VDom_Types.Text) {
+                  var res = new Halogen_VDom_Machine.Step(node, patch(build, halt, node, v.value0), halt);
+                  var $84 = s1 === v.value0;
+                  if ($84) {
+                      return res;
+                  };
+                  Halogen_VDom_Util.setTextContent(v.value0, node);
+                  return res;
+              };
+              halt();
+              return build(v);
+          };
+      };
+      var done = function (node) {
+          return function __do() {
+              var v = Halogen_VDom_Util.parentNode(node);
+              return Halogen_VDom_Util.removeChild(node, v);
+          };
+      };
+      var render = function (v, build, s) {
+          var v1 = Halogen_VDom_Util.createTextNode(s, v.document);
+          var halt = done(v1);
+          return new Halogen_VDom_Machine.Step(v1, patch(build, halt, v1, s), halt);
+      };
+      return render;
+  })();
+  var buildKeyed = (function () {
+      var done = function (node, attrs, steps) {
+          return function __do() {
+              var v = Halogen_VDom_Util.parentNode(node);
+              Halogen_VDom_Util.removeChild(node, v);
+              Halogen_VDom_Util.forInE(steps, function (v1, v2) {
+                  return v2.value2();
+              });
+              return Halogen_VDom_Machine.halt(attrs)();
+          };
+      };
+      var patch = function (build, halt, node, attrs, v, ch1, len1) {
+          return function (v1) {
+              if (v1 instanceof Halogen_VDom_Types.Grafted) {
+                  return patch(build, halt, node, attrs, v, ch1, len1)(Halogen_VDom_Types.runGraft(v1.value0));
+              };
+              if (v1 instanceof Halogen_VDom_Types.Keyed && eqElemSpec(v, v1.value0)) {
+                  var v2 = Data_Array.length(v1.value1);
+                  if (len1 === 0 && v2 === 0) {
+                      var v4 = Halogen_VDom_Machine.step(attrs)(v1.value0.value2);
+                      var halt$prime = done(node, v4, ch1);
+                      return new Halogen_VDom_Machine.Step(node, patch(build, halt$prime, node, v4, v1.value0, ch1, 0), halt$prime);
+                  };
+                  var onThis = function (v4, v5) {
+                      return v5.value2();
+                  };
+                  var onThese = function (v4, ix$prime, v5, v6) {
+                      var v7 = v5.value1(v6.value1);
+                      Halogen_VDom_Util.insertChildIx(ix$prime, v7.value0, node);
+                      return v7;
+                  };
+                  var onThat = function (v4, ix, v5) {
+                      var v6 = build(v5.value1);
+                      Halogen_VDom_Util.insertChildIx(ix, v6.value0, node);
+                      return v6;
+                  };
+                  var v4 = Halogen_VDom_Util.diffWithKeyAndIxE(ch1, v1.value1, Data_Tuple.fst, onThese, onThis, onThat);
+                  var v5 = Halogen_VDom_Machine.step(attrs)(v1.value0.value2);
+                  var halt$prime = done(node, v5, v4);
+                  return new Halogen_VDom_Machine.Step(node, patch(build, halt$prime, node, v5, v1.value0, v4, v2), halt$prime);
+              };
+              halt();
+              return build(v1);
+          };
+      };
+      var render = function (v, build, v1, ch1) {
+          var v2 = Halogen_VDom_Util.createElement(Data_Nullable.toNullable(v1.value0), v1.value1, v.document);
+          var node = Web_DOM_Element.toNode(v2);
+          var onChild = function (k, ix, v3) {
+              var v4 = build(v3.value1);
+              Halogen_VDom_Util.insertChildIx(ix, v4.value0, node);
+              return v4;
+          };
+          var v3 = Halogen_VDom_Util.strMapWithIxE(ch1, Data_Tuple.fst, onChild);
+          var v4 = v.buildAttributes(v2)(v1.value2);
+          var halt = done(node, v4, v3);
+          return new Halogen_VDom_Machine.Step(node, patch(build, halt, node, v4, v1, v3, Data_Array.length(ch1)), halt);
+      };
+      return render;
+  })();
+  var buildElem = (function () {
+      var done = function (node, attrs, steps) {
+          return function __do() {
+              var v = Halogen_VDom_Util.parentNode(node);
+              Halogen_VDom_Util.removeChild(node, v);
+              Effect.foreachE(steps)(Halogen_VDom_Machine.halt)();
+              return Halogen_VDom_Machine.halt(attrs)();
+          };
+      };
+      var patch = function (build, halt, node, attrs, v, ch1) {
+          return function (v1) {
+              if (v1 instanceof Halogen_VDom_Types.Grafted) {
+                  return patch(build, halt, node, attrs, v, ch1)(Halogen_VDom_Types.runGraft(v1.value0));
+              };
+              if (v1 instanceof Halogen_VDom_Types.Elem && eqElemSpec(v, v1.value0)) {
+                  var v2 = Data_Array.length(v1.value1);
+                  var v3 = Data_Array.length(ch1);
+                  if (v3 === 0 && v2 === 0) {
+                      var v4 = Halogen_VDom_Machine.step(attrs)(v1.value0.value2);
+                      var halt$prime = done(node, v4, ch1);
+                      return new Halogen_VDom_Machine.Step(node, patch(build, halt$prime, node, v4, v1.value0, ch1), halt$prime);
+                  };
+                  var onThis = function (ix, v4) {
+                      return v4.value2();
+                  };
+                  var onThese = function (ix, v4, vdom) {
+                      var v5 = v4.value1(vdom);
+                      Halogen_VDom_Util.insertChildIx(ix, v5.value0, node);
+                      return v5;
+                  };
+                  var onThat = function (ix, vdom) {
+                      var v4 = build(vdom);
+                      Halogen_VDom_Util.insertChildIx(ix, v4.value0, node);
+                      return v4;
+                  };
+                  var v4 = Halogen_VDom_Util.diffWithIxE(ch1, v1.value1, onThese, onThis, onThat);
+                  var v5 = Halogen_VDom_Machine.step(attrs)(v1.value0.value2);
+                  var halt$prime = done(node, v5, v4);
+                  return new Halogen_VDom_Machine.Step(node, patch(build, halt$prime, node, v5, v1.value0, v4), halt$prime);
+              };
+              halt();
+              return build(v1);
+          };
+      };
+      var render = function (v, build, v1, ch1) {
+          var v2 = Halogen_VDom_Util.createElement(Data_Nullable.toNullable(v1.value0), v1.value1, v.document);
+          var node = Web_DOM_Element.toNode(v2);
+          var onChild = function (ix, child) {
+              var v3 = build(child);
+              Halogen_VDom_Util.insertChildIx(ix, v3.value0, node);
+              return v3;
+          };
+          var v3 = Halogen_VDom_Util.forE(ch1, onChild);
+          var v4 = v.buildAttributes(v2)(v1.value2);
+          var halt = done(node, v4, v3);
+          return new Halogen_VDom_Machine.Step(node, patch(build, halt, node, v4, v1, v3), halt);
+      };
+      return render;
+  })();
+  var buildVDom = function (spec) {
+      var build = function (v) {
+          if (v instanceof Halogen_VDom_Types.Text) {
+              return buildText(spec, build, v.value0);
+          };
+          if (v instanceof Halogen_VDom_Types.Elem) {
+              return buildElem(spec, build, v.value0, v.value1);
+          };
+          if (v instanceof Halogen_VDom_Types.Keyed) {
+              return buildKeyed(spec, build, v.value0, v.value1);
+          };
+          if (v instanceof Halogen_VDom_Types.Widget) {
+              return buildWidget(spec, build, v.value0);
+          };
+          if (v instanceof Halogen_VDom_Types.Grafted) {
+              return build(Halogen_VDom_Types.runGraft(v.value0));
+          };
+          throw new Error("Failed pattern match at Halogen.VDom.DOM line 58, column 27 - line 63, column 52: " + [ v.constructor.name ]);
+      };
+      return build;
+  };
+  exports["buildVDom"] = buildVDom;
+  exports["buildText"] = buildText;
+  exports["buildElem"] = buildElem;
+  exports["buildKeyed"] = buildKeyed;
+  exports["buildWidget"] = buildWidget;
+})(PS["Halogen.VDom.DOM"] = PS["Halogen.VDom.DOM"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Category = PS["Control.Category"];
+  var Data_Foldable = PS["Data.Foldable"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Class = PS["Effect.Class"];
+  var Effect_Ref = PS["Effect.Ref"];
+  var Effect_Uncurried = PS["Effect.Uncurried"];
+  var Halogen_Aff_Driver = PS["Halogen.Aff.Driver"];
+  var Halogen_Aff_Driver_State = PS["Halogen.Aff.Driver.State"];
+  var Halogen_Component = PS["Halogen.Component"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_Query_InputF = PS["Halogen.Query.InputF"];
+  var Halogen_VDom = PS["Halogen.VDom"];
+  var Halogen_VDom_DOM = PS["Halogen.VDom.DOM"];
+  var Halogen_VDom_DOM_Prop = PS["Halogen.VDom.DOM.Prop"];
+  var Halogen_VDom_Machine = PS["Halogen.VDom.Machine"];
+  var Prelude = PS["Prelude"];
+  var Unsafe_Reference = PS["Unsafe.Reference"];
+  var Web_DOM_Document = PS["Web.DOM.Document"];
+  var Web_DOM_Element = PS["Web.DOM.Element"];
+  var Web_DOM_Node = PS["Web.DOM.Node"];
+  var Web_HTML = PS["Web.HTML"];
+  var Web_HTML_HTMLDocument = PS["Web.HTML.HTMLDocument"];
+  var Web_HTML_HTMLElement = PS["Web.HTML.HTMLElement"];
+  var Web_HTML_Window = PS["Web.HTML.Window"];
+  var substInParent = function (v) {
+      return function (v1) {
+          return function (v2) {
+              if (v1 instanceof Data_Maybe.Just && v2 instanceof Data_Maybe.Just) {
+                  return Data_Functor["void"](Effect.functorEffect)(Web_DOM_Node.insertBefore(v)(v1.value0)(v2.value0));
+              };
+              if (v1 instanceof Data_Maybe.Nothing && v2 instanceof Data_Maybe.Just) {
+                  return Data_Functor["void"](Effect.functorEffect)(Web_DOM_Node.appendChild(v)(v2.value0));
+              };
+              return Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit);
+          };
+      };
+  };
+  var removeChild = function (v) {
+      return function __do() {
+          var v1 = Web_DOM_Node.parentNode(v.node)();
+          return Data_Foldable.traverse_(Effect.applicativeEffect)(Data_Foldable.foldableMaybe)(function (pn) {
+              return Web_DOM_Node.removeChild(v.node)(pn);
+          })(v1)();
+      };
+  };
+  var mkSpec = function (handler) {
+      return function (renderChildRef) {
+          return function (document) {
+              var getNode = Halogen_Aff_Driver_State.unRenderStateX(function (v) {
+                  return v.node;
+              });
+              var done = Control_Applicative.pure(Effect.applicativeEffect)(Data_Unit.unit);
+              var patch = function (slot) {
+                  var v = Effect_Ref.read(renderChildRef)();
+                  var v1 = v(slot)();
+                  var node = getNode(v1);
+                  return new Halogen_VDom_Machine.Step(node, patch, done);
+              };
+              var buildWidget = function (spec) {
+                  return function (slot) {
+                      var v = Effect_Ref.read(renderChildRef)();
+                      var v1 = v(slot)();
+                      var node = getNode(v1);
+                      return new Halogen_VDom_Machine.Step(node, patch, done);
+                  };
+              };
+              var buildAttributes = Halogen_VDom_DOM_Prop.buildProp(handler);
+              return {
+                  buildWidget: buildWidget,
+                  buildAttributes: buildAttributes,
+                  document: document
+              };
+          };
+      };
+  };
+  var renderSpec = function (document) {
+      return function (container) {
+          var render = function (handler) {
+              return function (child) {
+                  return function (v) {
+                      return function (v1) {
+                          if (v1 instanceof Data_Maybe.Nothing) {
+                              return function __do() {
+                                  var v2 = Effect_Ref["new"](child)();
+                                  var spec = mkSpec(handler)(v2)(document);
+                                  var v3 = Halogen_VDom_DOM.buildVDom(spec)(v);
+                                  var node = Halogen_VDom_Machine.extract(v3);
+                                  Data_Functor["void"](Effect.functorEffect)(Web_DOM_Node.appendChild(node)(Web_HTML_HTMLElement.toNode(container)))();
+                                  return {
+                                      machine: v3,
+                                      node: node,
+                                      renderChildRef: v2
+                                  };
+                              };
+                          };
+                          if (v1 instanceof Data_Maybe.Just) {
+                              return function __do() {
+                                  Effect_Ref.write(child)(v1.value0.renderChildRef)();
+                                  var v2 = Web_DOM_Node.parentNode(v1.value0.node)();
+                                  var v3 = Web_DOM_Node.nextSibling(v1.value0.node)();
+                                  var v4 = Halogen_VDom_Machine.step(v1.value0.machine)(v);
+                                  var newNode = Halogen_VDom_Machine.extract(v4);
+                                  Control_Applicative.when(Effect.applicativeEffect)(Data_HeytingAlgebra.not(Data_HeytingAlgebra.heytingAlgebraFunction(Data_HeytingAlgebra.heytingAlgebraFunction(Data_HeytingAlgebra.heytingAlgebraBoolean)))(Unsafe_Reference.unsafeRefEq)(v1.value0.node)(newNode))(substInParent(newNode)(v3)(v2))();
+                                  return {
+                                      machine: v4,
+                                      node: newNode,
+                                      renderChildRef: v1.value0.renderChildRef
+                                  };
+                              };
+                          };
+                          throw new Error("Failed pattern match at Halogen.VDom.Driver line 118, column 5 - line 134, column 80: " + [ v1.constructor.name ]);
+                      };
+                  };
+              };
+          };
+          return {
+              render: render,
+              renderChild: Control_Category.identity(Control_Category.categoryFn),
+              removeChild: removeChild
+          };
+      };
+  };
+  var runUI = function (component) {
+      return function (i) {
+          return function (element) {
+              return Control_Bind.bind(Effect_Aff.bindAff)(Effect_Class.liftEffect(Effect_Aff.monadEffectAff)(Data_Functor.map(Effect.functorEffect)(Web_HTML_HTMLDocument.toDocument)(Control_Bind.bindFlipped(Effect.bindEffect)(Web_HTML_Window.document)(Web_HTML.window))))(function (v) {
+                  return Halogen_Aff_Driver.runUI(renderSpec(v)(element))(component)(i);
+              });
+          };
+      };
+  };
+  exports["runUI"] = runUI;
+})(PS["Halogen.VDom.Driver"] = PS["Halogen.VDom.Driver"] || {});
+(function(exports) {exports.createObjectURL = function(file) {
+    return function() {
+      return URL.createObjectURL(file);
+    };
+  };
+
+  exports.revokeObjectURL = function(objectURL) {
+    return function() {
+      return URL.revokeObjectURL(objectURL);
+    };
+  };
+})(PS["Main"] = PS["Main"] || {});
+(function(exports) {
+  // Generated by purs version 0.12.0
+  "use strict";
+  var $foreign = PS["Main"];
+  var Control_Applicative = PS["Control.Applicative"];
+  var Control_Bind = PS["Control.Bind"];
+  var Control_Monad_Error_Class = PS["Control.Monad.Error.Class"];
+  var Control_Monad_Except = PS["Control.Monad.Except"];
+  var Control_Monad_Except_Trans = PS["Control.Monad.Except.Trans"];
+  var Control_Monad_State_Class = PS["Control.Monad.State.Class"];
+  var Data_Array = PS["Data.Array"];
+  var Data_Array_NonEmpty = PS["Data.Array.NonEmpty"];
+  var Data_Array_NonEmpty_Internal = PS["Data.Array.NonEmpty.Internal"];
+  var Data_Either = PS["Data.Either"];
+  var Data_Eq = PS["Data.Eq"];
+  var Data_Function = PS["Data.Function"];
+  var Data_Functor = PS["Data.Functor"];
+  var Data_Generic_Rep = PS["Data.Generic.Rep"];
+  var Data_Generic_Rep_Show = PS["Data.Generic.Rep.Show"];
+  var Data_Map = PS["Data.Map"];
+  var Data_Maybe = PS["Data.Maybe"];
+  var Data_Newtype = PS["Data.Newtype"];
+  var Data_Semigroup = PS["Data.Semigroup"];
+  var Data_Show = PS["Data.Show"];
+  var Data_Symbol = PS["Data.Symbol"];
+  var Data_Unit = PS["Data.Unit"];
+  var Effect = PS["Effect"];
+  var Effect_Aff = PS["Effect.Aff"];
+  var Effect_Class_Console = PS["Effect.Class.Console"];
+  var Halogen = PS["Halogen"];
+  var Halogen_Aff = PS["Halogen.Aff"];
+  var Halogen_Aff_Util = PS["Halogen.Aff.Util"];
+  var Halogen_Component = PS["Halogen.Component"];
+  var Halogen_HTML = PS["Halogen.HTML"];
+  var Halogen_HTML_Core = PS["Halogen.HTML.Core"];
+  var Halogen_HTML_Elements = PS["Halogen.HTML.Elements"];
+  var Halogen_HTML_Events = PS["Halogen.HTML.Events"];
+  var Halogen_HTML_Properties = PS["Halogen.HTML.Properties"];
+  var Halogen_Query_HalogenM = PS["Halogen.Query.HalogenM"];
+  var Halogen_VDom_Driver = PS["Halogen.VDom.Driver"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
+  var Prelude = PS["Prelude"];
+  var Web_File_File = PS["Web.File.File"];
+  var Web_File_FileList = PS["Web.File.FileList"];
+  var Web_HTML_HTMLAudioElement = PS["Web.HTML.HTMLAudioElement"];
+  var Web_HTML_HTMLInputElement = PS["Web.HTML.HTMLInputElement"];
+  var Web_HTML_HTMLMediaElement = PS["Web.HTML.HTMLMediaElement"];                 
+  var A = (function () {
+      function A() {
+
+      };
+      A.value = new A();
+      return A;
+  })();
+  var E = (function () {
+      function E() {
+
+      };
+      E.value = new E();
+      return E;
+  })();
+  var I = (function () {
+      function I() {
+
+      };
+      I.value = new I();
+      return I;
+  })();
+  var O = (function () {
+      function O() {
+
+      };
+      O.value = new O();
+      return O;
+  })();
+  var U = (function () {
+      function U() {
+
+      };
+      U.value = new U();
+      return U;
+  })();
+  var Correct = (function () {
+      function Correct() {
+
+      };
+      Correct.value = new Correct();
+      return Correct;
+  })();
+  var Incorrect = (function () {
+      function Incorrect() {
+
+      };
+      Incorrect.value = new Incorrect();
+      return Incorrect;
+  })();
+  var ObjectURL = function (x) {
+      return x;
+  };
+  var SelectAnswer = (function () {
+      function SelectAnswer(value0, value1) {
+          this.value0 = value0;
+          this.value1 = value1;
+      };
+      SelectAnswer.create = function (value0) {
+          return function (value1) {
+              return new SelectAnswer(value0, value1);
+          };
+      };
+      return SelectAnswer;
+  })();
+  var GoToNext = (function () {
+      function GoToNext(value0) {
+          this.value0 = value0;
+      };
+      GoToNext.create = function (value0) {
+          return new GoToNext(value0);
+      };
+      return GoToNext;
+  })();
+  var vowelGroups = [ A.value, E.value, I.value, O.value, U.value ];
+  var ui = function (challenges1) {
+      var render = function (state) {
+          var replayButton = Halogen_HTML_Elements.button([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("btn btn-success")) ])([ Halogen_HTML_Elements.label_([ Halogen_HTML_Core.text("replay") ]) ]);
+          var message = (function () {
+              if (state.answerGiven instanceof Data_Maybe.Nothing) {
+                  return Halogen_HTML_Elements.div([  ])([  ]);
+              };
+              if (state.answerGiven instanceof Data_Maybe.Just && state.answerGiven.value0 instanceof Correct) {
+                  return Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card border-success mb-3")) ])([ Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card-body text-success")) ])([ Halogen_HTML_Elements.h2([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card-title")) ])([ Halogen_HTML_Core.text("Well done!") ]), Halogen_HTML_Elements.button([ Halogen_HTML_Events.onClick(Halogen_HTML_Events.input_(GoToNext.create)), Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("btn btn-success")) ])([ Halogen_HTML_Elements.label_([ Halogen_HTML_Core.text("Next") ]) ]) ]) ]);
+              };
+              if (state.answerGiven instanceof Data_Maybe.Just && state.answerGiven.value0 instanceof Incorrect) {
+                  return Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card border-danger mb-3")) ])([ Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card-body text-danger")) ])([ Halogen_HTML_Elements.h2([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("card-title")) ])([ Halogen_HTML_Core.text("Oh noes!") ]), Halogen_HTML_Elements.button([ Halogen_HTML_Events.onClick(Halogen_HTML_Events.input_(GoToNext.create)), Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("btn btn-danger")) ])([ Halogen_HTML_Elements.label_([ Halogen_HTML_Core.text("Next") ]) ]) ]) ]);
+              };
+              throw new Error("Failed pattern match at Main line 197, column 19 - line 226, column 18: " + [ state.answerGiven.constructor.name ]);
+          })();
+          var choices = Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("list-group")) ])(Data_Functor.mapFlipped(Data_Functor.functorArray)(Data_Array.cons(state.current.correctAnswer)(Data_Array_NonEmpty.toArray(state.current.incorrectAnswers)))(function (ans) {
+              return Halogen_HTML_Elements.button([ Halogen_HTML_Events.onClick(Halogen_HTML_Events.input_(SelectAnswer.create(ans.spelling))), Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("list-group-item list-group-item-warning list-group-item-action")) ])([ Halogen_HTML_Elements.label_([ Halogen_HTML_Core.text(ans.spelling) ]) ]);
+          }));
+          if (state.finished) {
+              return Halogen_HTML_Elements.h1_([ Halogen_HTML_Core.text("End.") ]);
+          };
+          return Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("container")) ])([ Halogen_HTML_Elements.div([ Halogen_HTML_Properties.class_(Data_Newtype.wrap(Halogen_HTML_Core.newtypeClassName)("root")) ])([ replayButton, choices, message ]) ]);
+      };
+      var initialState = Data_Function["const"]({
+          results: [  ],
+          current: Data_Array_NonEmpty.head(challenges1),
+          answerGiven: Data_Maybe.Nothing.value,
+          todo: Data_Array_NonEmpty.tail(challenges1),
+          finished: false
+      });
+      var $$eval = function (v) {
+          if (v instanceof SelectAnswer) {
+              return Control_Bind.bind(Halogen_Query_HalogenM.bindHalogenM)(Control_Monad_State_Class.modify(Halogen_Query_HalogenM.monadStateHalogenM)(function (st) {
+                  var result = (function () {
+                      var $19 = v.value0 === st.current.correctAnswer.spelling;
+                      if ($19) {
+                          return Correct.value;
+                      };
+                      return Incorrect.value;
+                  })();
+                  var $20 = {};
+                  for (var $21 in st) {
+                      if ({}.hasOwnProperty.call(st, $21)) {
+                          $20[$21] = st[$21];
+                      };
+                  };
+                  $20.answerGiven = new Data_Maybe.Just(result);
+                  $20.results = Data_Array.cons({
+                      result: result,
+                      vowelGroup: st.current.vowelGroup
+                  })(st.results);
+                  return $20;
+              }))(function (v1) {
+                  return Control_Applicative.pure(Halogen_Query_HalogenM.applicativeHalogenM)(v.value1);
+              });
+          };
+          if (v instanceof GoToNext) {
+              return Control_Bind.bind(Halogen_Query_HalogenM.bindHalogenM)(Control_Monad_State_Class.modify(Halogen_Query_HalogenM.monadStateHalogenM)(function (st) {
+                  var v1 = Data_Array.uncons(st.todo);
+                  if (v1 instanceof Data_Maybe.Just) {
+                      var $26 = {};
+                      for (var $27 in st) {
+                          if ({}.hasOwnProperty.call(st, $27)) {
+                              $26[$27] = st[$27];
+                          };
+                      };
+                      $26.current = v1.value0.head;
+                      $26.todo = v1.value0.tail;
+                      $26.answerGiven = Data_Maybe.Nothing.value;
+                      return $26;
+                  };
+                  if (v1 instanceof Data_Maybe.Nothing) {
+                      var $32 = {};
+                      for (var $33 in st) {
+                          if ({}.hasOwnProperty.call(st, $33)) {
+                              $32[$33] = st[$33];
+                          };
+                      };
+                      $32.finished = true;
+                      return $32;
+                  };
+                  throw new Error("Failed pattern match at Main line 249, column 9 - line 251, column 44: " + [ v1.constructor.name ]);
+              }))(function (v1) {
+                  return Control_Applicative.pure(Halogen_Query_HalogenM.applicativeHalogenM)(v.value0);
+              });
+          };
+          throw new Error("Failed pattern match at Main line 230, column 5 - line 230, column 57: " + [ v.constructor.name ]);
+      };
+      return Halogen_Component.component(Halogen_HTML_Core.bifunctorHTML)({
+          initialState: initialState,
+          render: render,
+          "eval": $$eval,
+          receiver: Data_Function["const"](Data_Maybe.Nothing.value)
+      });
+  };
+  var newtypeFilePath = new Data_Newtype.Newtype(function (n) {
+      return n;
+  }, ObjectURL);
+  var genericVowelGroup = new Data_Generic_Rep.Generic(function (x) {
+      if (x instanceof A) {
+          return new Data_Generic_Rep.Inl(Data_Generic_Rep.NoArguments.value);
+      };
+      if (x instanceof E) {
+          return new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inl(Data_Generic_Rep.NoArguments.value));
+      };
+      if (x instanceof I) {
+          return new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inl(Data_Generic_Rep.NoArguments.value)));
+      };
+      if (x instanceof O) {
+          return new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inl(Data_Generic_Rep.NoArguments.value))));
+      };
+      if (x instanceof U) {
+          return new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(new Data_Generic_Rep.Inr(Data_Generic_Rep.NoArguments.value))));
+      };
+      throw new Error("Failed pattern match at Main line 112, column 8 - line 112, column 58: " + [ x.constructor.name ]);
+  }, function (x) {
+      if (x instanceof Data_Generic_Rep.Inl) {
+          return A.value;
+      };
+      if (x instanceof Data_Generic_Rep.Inr && x.value0 instanceof Data_Generic_Rep.Inl) {
+          return E.value;
+      };
+      if (x instanceof Data_Generic_Rep.Inr && (x.value0 instanceof Data_Generic_Rep.Inr && x.value0.value0 instanceof Data_Generic_Rep.Inl)) {
+          return I.value;
+      };
+      if (x instanceof Data_Generic_Rep.Inr && (x.value0 instanceof Data_Generic_Rep.Inr && (x.value0.value0 instanceof Data_Generic_Rep.Inr && x.value0.value0.value0 instanceof Data_Generic_Rep.Inl))) {
+          return O.value;
+      };
+      if (x instanceof Data_Generic_Rep.Inr && (x.value0 instanceof Data_Generic_Rep.Inr && (x.value0.value0 instanceof Data_Generic_Rep.Inr && x.value0.value0.value0 instanceof Data_Generic_Rep.Inr))) {
+          return U.value;
+      };
+      throw new Error("Failed pattern match at Main line 112, column 8 - line 112, column 58: " + [ x.constructor.name ]);
+  });
+  var showVowelGroup = new Data_Show.Show(Data_Generic_Rep_Show.genericShow(genericVowelGroup)(Data_Generic_Rep_Show.genericShowSum(Data_Generic_Rep_Show.genericShowConstructor(Data_Generic_Rep_Show.genericShowArgsNoArguments)(new Data_Symbol.IsSymbol(function () {
+      return "A";
+  })))(Data_Generic_Rep_Show.genericShowSum(Data_Generic_Rep_Show.genericShowConstructor(Data_Generic_Rep_Show.genericShowArgsNoArguments)(new Data_Symbol.IsSymbol(function () {
+      return "E";
+  })))(Data_Generic_Rep_Show.genericShowSum(Data_Generic_Rep_Show.genericShowConstructor(Data_Generic_Rep_Show.genericShowArgsNoArguments)(new Data_Symbol.IsSymbol(function () {
+      return "I";
+  })))(Data_Generic_Rep_Show.genericShowSum(Data_Generic_Rep_Show.genericShowConstructor(Data_Generic_Rep_Show.genericShowArgsNoArguments)(new Data_Symbol.IsSymbol(function () {
+      return "O";
+  })))(Data_Generic_Rep_Show.genericShowConstructor(Data_Generic_Rep_Show.genericShowArgsNoArguments)(new Data_Symbol.IsSymbol(function () {
+      return "U";
+  }))))))));
+  var eqVowelGroup = new Data_Eq.Eq(function (x) {
+      return function (y) {
+          if (x instanceof A && y instanceof A) {
+              return true;
+          };
+          if (x instanceof E && y instanceof E) {
+              return true;
+          };
+          if (x instanceof I && y instanceof I) {
+              return true;
+          };
+          if (x instanceof O && y instanceof O) {
+              return true;
+          };
+          if (x instanceof U && y instanceof U) {
+              return true;
+          };
+          return false;
+      };
+  });
+  var challenges = (function () {
+      var x = Data_Array_NonEmpty.singleton({
+          correctAnswer: {
+              spelling: "A"
+          },
+          incorrectAnswers: Data_Semigroup.append(Data_Array_NonEmpty_Internal.semigroupNonEmptyArray)(Data_Array_NonEmpty.singleton({
+              spelling: "B"
+          }))(Data_Array_NonEmpty.singleton({
+              spelling: "C"
+          })),
+          vowelGroup: U.value
+      });
+      return Data_Semigroup.append(Data_Array_NonEmpty_Internal.semigroupNonEmptyArray)(x)(x);
+  })();
+  var main = Halogen_Aff_Util.runHalogenAff(Control_Bind.bind(Effect_Aff.bindAff)(Halogen_Aff_Util.awaitBody)(function (v) {
+      return Control_Bind.bind(Effect_Aff.bindAff)(Halogen_VDom_Driver.runUI(ui(challenges))(Data_Unit.unit)(v))(function (v1) {
+          return Effect_Class_Console.log(Effect_Aff.monadEffectAff)("Running");
+      });
+  }));
+  exports["ObjectURL"] = ObjectURL;
+  exports["A"] = A;
+  exports["E"] = E;
+  exports["I"] = I;
+  exports["O"] = O;
+  exports["U"] = U;
+  exports["vowelGroups"] = vowelGroups;
+  exports["Correct"] = Correct;
+  exports["Incorrect"] = Incorrect;
+  exports["SelectAnswer"] = SelectAnswer;
+  exports["GoToNext"] = GoToNext;
+  exports["ui"] = ui;
+  exports["main"] = main;
+  exports["challenges"] = challenges;
+  exports["newtypeFilePath"] = newtypeFilePath;
+  exports["eqVowelGroup"] = eqVowelGroup;
+  exports["genericVowelGroup"] = genericVowelGroup;
+  exports["showVowelGroup"] = showVowelGroup;
+  exports["createObjectURL"] = $foreign.createObjectURL;
+  exports["revokeObjectURL"] = $foreign.revokeObjectURL;
+})(PS["Main"] = PS["Main"] || {});
+PS["Main"].main();
+},{}]},{},[1]);

@@ -1,12 +1,14 @@
 module Main where
 
-import Prelude
-
+import Control.Applicative (when)
 import Control.Monad.Error.Class (throwError)
 import Control.Monad.Except (ExceptT)
 import Control.Monad.Except.Trans (lift, runExceptT)
+import Data.Array
+import Data.Array.NonEmpty as NEA
 import Data.Either (Either(..))
-import Data.Maybe (Maybe(..), fromMaybe, maybe)
+import Data.Maybe (Maybe(..), fromJust, maybe)
+import Data.Map as Map
 import Data.Newtype (class Newtype, unwrap, wrap)
 import Effect (Effect)
 import Effect.Aff (Aff)
@@ -17,12 +19,20 @@ import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
 import Halogen.HTML.Properties as HP
 import Halogen.VDom.Driver as D
+import Prelude
 import Web.File.File (File)
 import Web.File.File as File
 import Web.File.FileList as FileList
 import Web.HTML.HTMLAudioElement as AudioElement
 import Web.HTML.HTMLInputElement as InputElement
-import Web.HTML.HTMLMediaElement (currentTime, setCurrentTime, setPlaybackRate)
+import Web.HTML.HTMLMediaElement (ended, play)
+
+-- import Data.Foldable (elem, foldr)
+import Data.Generic.Rep (class Generic)
+import Data.Generic.Rep.Show (class GenericShow, genericShow)
+
+
+import Partial.Unsafe
 
 newtype ObjectURL = ObjectURL String
 derive instance newtypeFilePath :: Newtype ObjectURL _
@@ -30,137 +40,226 @@ derive instance newtypeFilePath :: Newtype ObjectURL _
 foreign import createObjectURL :: File -> Effect ObjectURL
 foreign import revokeObjectURL :: ObjectURL -> Effect Unit
 
-type State =
-  { file :: Maybe { url :: ObjectURL, name :: String }
+-- data Vowel
+--   = VowelTim
+--   | VowelTeam
+--   | VowelTime
+--   | VowelTame
+--   | VowelTen
+--   | VowelTurn
+--   | VowelTote
+--   | VowelTot
+--   | VowelTaught
+--   | VowelPool
+--   | VowelPull
+--   | VowelTan
+--   | VowelTarn
+--   | VowelTonne
+--
+-- derive instance eqVowel :: Eq Vowel
+-- derive instance genericVowel :: Generic Vowel _
+-- instance showVowel :: Show Vowel where show = genericShow
+--
+-- associations =
+--   [ { vowel: VowelTim,    ipa: "ɪ" }
+--   , { vowel: VowelTeam,   ipa: "iː" }
+--   , { vowel: VowelTime,   ipa: "aɪ" }
+--   , { vowel: VowelTame,   ipa: "eɪ" }
+--   , { vowel: VowelTen,    ipa: "e" }
+--   , { vowel: VowelTurn,   ipa: "ɜː" }
+--   , { vowel: VowelTote,   ipa: "ɔː" }
+--   , { vowel: VowelTot,    ipa: "əʊ" }
+--   , { vowel: VowelTaught, ipa: "ɒ" }
+--   , { vowel: VowelPool,   ipa: "u:" }
+--   , { vowel: VowelPull,   ipa: "ʊ" }
+--   , { vowel: VowelTan,    ipa: "æ" }
+--   , { vowel: VowelTarn,   ipa: "ɑː" }
+--   , { vowel: VowelTonne,  ipa: "ʌ" }
+--   ]
+--
+-- toIPA :: Vowel -> String
+-- toIPA v = foldr step "" associations
+--   where
+--     step {vowel: v', ipa: i} acc = if v == v' then i else acc
+--
+--
+-- fromIPA :: String -> Maybe Vowel
+-- fromIPA i = foldr step Nothing associations
+--   where
+--     step {vowel: v, ipa: i'} acc = if i == i' then Just v else acc
+--
+--
+-- getRelated :: Vowel -> Array Vowel
+-- getRelated v = foldr step [] groups
+--   where
+--     step gr acc = if v `elem` gr then gr {-delete v gr-} else acc
+--
+-- groups :: Array (Array Vowel)
+-- groups = [group1, group2, group3, group4, group5]
+--   where
+--     group1 = [VowelTim, VowelTeam, VowelTime, VowelTame]
+--     group2 = [VowelTen, VowelTurn]
+--     group3 = [VowelTote, VowelTot, VowelTaught]
+--     group4 = [VowelPool, VowelPull]
+--     group5 = [VowelTan, VowelTarn, VowelTonne]
+
+data VowelGroup = A | E | I | O | U
+
+vowelGroups :: Array VowelGroup
+vowelGroups = [A,E,I,O,U]
+
+derive instance eqVowelGroup :: Eq VowelGroup
+derive instance genericVowelGroup :: Generic VowelGroup _
+instance showVowelGroup :: Show VowelGroup where show = genericShow
+
+type English = String
+
+type Stimulus =
+  { spelling :: English
+  -- , pronunciation :: ObjectURL  -- wav file location
   }
 
-data SkipDir = Bck | Fwd
-data SkipSize = Sm | Md | Lg
-data Speed = One | OneHalf | Two
+type Challenge =
+  { correctAnswer :: Stimulus
+  , incorrectAnswers :: NEA.NonEmptyArray Stimulus
+  , vowelGroup :: VowelGroup    -- the vowel we are testing against
+  }
+
+data Result = Correct | Incorrect
+
+type State =
+  { results :: Array { vowelGroup :: VowelGroup, result :: Result }
+  , current :: Challenge
+  , answerGiven :: Maybe Result
+  , todo :: Array Challenge
+  , finished :: Boolean
+  }
 
 data Query a
-  = FileSet a
-  | Skip SkipDir SkipSize a
-  | SetSpeed Speed a
+  = SelectAnswer English a
+  -- | Replay a
+  | GoToNext a
 
-
-ui :: H.Component HH.HTML Query Unit Void Aff
-ui =
-  H.component
-    { initialState: const initialState
+ui :: NEA.NonEmptyArray Challenge -> H.Component HH.HTML Query Unit Void Aff
+ui challenges = H.component
+    { initialState
     , render
     , eval
     , receiver: const Nothing
     }
 
   where
-    initialState =
-      { file: Nothing
+    initialState :: forall a . a -> State
+    initialState = const
+      { results: []
+      , current: NEA.head challenges
+      , answerGiven: Nothing
+      , todo: NEA.tail challenges
+      , finished: false
       }
 
     render :: State -> H.ComponentHTML Query
-    render state =
-      HH.div
-        [ HP.class_ $ wrap "container" ]
-        [ HH.div
-          [ HP.class_ $ wrap "root" ]
-          [ HH.h1_ [HH.text
-                      case (_.name <$> state.file) of
-                        Nothing -> "nothing playing currently"
-                        Just x -> "now playing: " <> x
-                   ]
-          , HH.div_
-            [ HH.input
-              [ HP.ref $ wrap "input"
-              , HP.type_ HP.InputFile
-              , HP.prop (wrap "accept")  "audio/*"
-              , HE.onChange (HE.input_ FileSet)
-              ]
-            ]
-          , HH.div_
-              [ HH.audio
-                [ HP.ref $ wrap "audio"
-                , HP.src $ fromMaybe "" (unwrap <<< _.url <$> state.file)
-                , HP.controls true
-                , HP.autoplay true
-                ]
-              []
-            ]
-          , HH.div
-              [ HP.class_ $ wrap "buttons" ]
-              [ HH.button [HE.onClick $ HE.input_ (Skip Bck Lg)] [HH.label_ [HH.text "<<<"]]
-              , HH.button [HE.onClick $ HE.input_ (Skip Bck Md)] [HH.label_ [HH.text "<<"]]
-              , HH.button [HE.onClick $ HE.input_ (Skip Bck Sm)] [HH.label_ [HH.text "<"]]
-              , HH.button [HE.onClick $ HE.input_ (Skip Fwd Sm)] [HH.label_ [HH.text ">"]]
-              , HH.button [HE.onClick $ HE.input_ (Skip Fwd Md)] [HH.label_ [HH.text ">>"]]
-              , HH.button [HE.onClick $ HE.input_ (Skip Fwd Lg)] [HH.label_ [HH.text ">>>"]]
-              ]
-          , HH.div
-              [ HP.class_ $ wrap "speed" ]
-              [ HH.button [HE.onClick $ HE.input_ (SetSpeed One)] [HH.label_ [HH.text "1x"]]
-              , HH.button [HE.onClick $ HE.input_ (SetSpeed OneHalf)] [HH.label_ [HH.text "1.5x"]]
-              , HH.button [HE.onClick $ HE.input_ (SetSpeed Two)] [HH.label_ [HH.text "2x"]]
-              ]
+    render state = if state.finished
+        then HH.h1_ [HH.text "End."]
+        else HH.div
+          [ HP.class_ $ wrap "container" ]
+          [ HH.div
+            [ HP.class_ $ wrap "root" ]
+            [ replayButton {-, audio -} , choices, message ]
           ]
-      ]
+      where
+        replayButton = HH.button
+          [  {- HE.onClick $ HE.input_ Replay
+          ,-} HP.class_ $ wrap "btn btn-success" ]
+          [ HH.label_ [ HH.text "replay" ] ]
 
-    log' = H.liftAff <<< log
+        -- audio = HH.div_
+        --   [ HH.audio -- TODO: hidden attribute?
+        --     [ HP.ref $ wrap "audio"
+        --     , HP.src $ state.current.url
+        --     , HP.controls false
+        --     , HP.autoplay true
+        --     ]
+        --     []
+        --   ]
+
+        choices = HH.div
+            [ HP.class_ $ wrap "list-group" ]
+            (state.current.correctAnswer : (NEA.toArray state.current.incorrectAnswers) -- TODO: shuffle!
+              <#>
+                \ans -> HH.button
+                  [ HE.onClick $ HE.input_ $ SelectAnswer ans.spelling
+                  , HP.class_ $ wrap "list-group-item list-group-item-warning list-group-item-action"
+                  ]
+                  [ HH.label_ [ HH.text ans.spelling ] ])
+
+
+        message = case state.answerGiven of
+            Nothing -> HH.div [] []
+            Just Correct ->
+              HH.div
+                [HP.class_ $ wrap "card border-success mb-3"]
+                [HH.div
+                  [HP.class_ $ wrap "card-body text-success"]
+                  [HH.h2
+                    [HP.class_ $ wrap "card-title"]
+                    [HH.text "Well done!"]
+                  ,HH.button
+                    [HE.onClick $ HE.input_ GoToNext
+                    , HP.class_ $ wrap "btn btn-success" ]
+                    [HH.label_ [ HH.text "Next" ]]
+                  ]
+                ]
+            Just Incorrect ->
+              HH.div
+                [HP.class_ $ wrap "card border-danger mb-3"]
+                [HH.div
+                  [HP.class_ $ wrap "card-body text-danger"]
+                  [HH.h2
+                    [HP.class_ $ wrap "card-title"]
+                    [HH.text "Oh noes!"]
+                  ,HH.button
+                    [HE.onClick $ HE.input_ GoToNext
+                    , HP.class_ $ wrap "btn btn-danger" ]
+                    [HH.label_ [ HH.text "Next" ]]
+                  ]
+                ]
+
+    -- log' = H.liftAff <<< log
 
     eval :: Query ~> H.ComponentDSL State Query Void Aff
-    eval (FileSet next) = do
-      result <- runExceptT do
-        em <- onNothing "no input found" =<< (lift <<< H.getHTMLElementRef $ wrap "input")
-        el <- onNothing "conversion failed" $ InputElement.fromHTMLElement em
-        fs <- onNothing "no file found" =<< (lift <<< H.liftEffect <<< InputElement.files $ el)
-        onNothing "files was empty" $ FileList.item 0 fs
-      case result of
-        Left e -> log' e
-        Right file -> do
-          blob <- H.liftEffect $ createObjectURL file
-          prevFile <- H.gets _.file
-          case prevFile of
-            Just { url } -> H.liftEffect $ revokeObjectURL url
-            _ -> pure unit
-          H.modify_ \s ->
-            s {file = pure { url: blob, name: File.name file} }
-          pure unit
-      pure next
-      where
-        onNothing :: forall m. Monad m => String -> Maybe ~> ExceptT String m
-        onNothing s = maybe (throwError s) pure
+    -- eval (Replay next) = do
+    --   audio <- H.getHTMLElementRef $ wrap "audio"
+    --   case AudioElement.toHTMLMediaElement <$> (AudioElement.fromHTMLElement =<< audio) of
+    --     Just el -> do
+    --       ended <- H.liftEffect ended
+    --       H.liftEffect $ when ended (play el)
+    --     Nothing -> log' "No audio ref found"
+    --   pure next
 
-    eval (Skip dir size next) = do
-      audio <- H.getHTMLElementRef $ wrap "audio"
-      case AudioElement.toHTMLMediaElement <$> (AudioElement.fromHTMLElement =<< audio) of
-        Just el -> do
-          current <- H.liftEffect $ currentTime el
-          H.liftEffect $ setCurrentTime (current + delta) el
-        _ -> log' "No audio ref found"
+    eval (SelectAnswer ans next) = do
+      _ <- H.modify \st ->
+        let result = if ans == st.current.correctAnswer.spelling then Correct else Incorrect
+        in st { answerGiven = Just result
+              , results = {result, vowelGroup: st.current.vowelGroup} : st.results}
       pure next
-      where
-        skip = case size of
-          Lg -> 30.0
-          Md -> 10.0
-          Sm -> 5.0
-        delta = skip * case dir of
-          Bck -> -1.0
-          _ -> 1.0
-    eval (SetSpeed speed next) = do
-      audio <- H.getHTMLElementRef $ wrap "audio"
-      case AudioElement.toHTMLMediaElement <$> (AudioElement.fromHTMLElement =<< audio) of
-        Just el -> do
-          H.liftEffect $ setPlaybackRate rate el
-        _ -> log' "No audio ref found"
+
+    eval (GoToNext next) = do
+      _ <- H.modify \st ->
+        case uncons st.todo of
+          Just { head: x, tail: xs } -> st { current = x, todo = xs, answerGiven = Nothing}
+          Nothing -> st { finished = true }
       pure next
-      where
-        rate = case speed of
-          One -> 1.0
-          OneHalf -> 1.5
-          Two -> 2.0
 
 main :: Effect Unit
 main = HA.runHalogenAff do
   body <- HA.awaitBody
-  io <- D.runUI ui unit body
+
+  io <- D.runUI (ui challenges) unit body
 
   log "Running"
+
+challenges :: NEA.NonEmptyArray Challenge
+challenges = x <> x
+  where
+    x = NEA.singleton { correctAnswer: { spelling: "A" }, incorrectAnswers: (NEA.singleton { spelling: "B" } <> NEA.singleton { spelling: "C" }), vowelGroup: U }

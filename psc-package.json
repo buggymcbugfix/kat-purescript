@@ -3,9 +3,12 @@
   "set": "160618",
   "source": "https://github.com/justinwoo/spacchetti.git",
   "depends": [
+    "generics-rep",
+    "psci-support",
     "console",
     "halogen",
     "prelude",
-    "web-dom"
+    "web-dom",
+    "arrays"
   ]
 }
